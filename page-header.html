@@ -1,0 +1,165 @@
+<!-- Page Header Component -->
+<section class="page-header">
+  <div class="page-header-overlay"></div>
+  <div class="container">
+    <div class="page-header-content">
+      <h1 class="page-header-title" id="page-title">Page Title</h1>
+      <p class="page-header-description" id="page-description">
+        Page description goes here
+      </p>
+      <nav class="page-breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list" id="breadcrumb-list">
+          <li class="breadcrumb-item">
+            <a href="index.html" class="breadcrumb-link">Home</a>
+          </li>
+          <li class="breadcrumb-item active" id="current-page">Current Page</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<style>
+  .page-header {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      var(--primary-color) 0%,
+      var(--primary-hover) 100%
+    );
+    color: var(--white);
+    padding: calc(var(--space-12)) 0 var(--space-12);
+    text-align: center;
+    overflow: hidden;
+    height: 267px; /* Fixed height to ensure consistency across all pages */
+    display: flex;
+    align-items: center;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"%3E%3Cpath d="M0,100 Q250,50 500,100 T1000,100 L1000,300 L0,300 Z" fill="rgba(255,255,255,0.05)"/%3E%3Cpath d="M0,150 Q250,200 500,150 T1000,150 L1000,300 L0,300 Z" fill="rgba(255,255,255,0.03)"/%3E%3C/svg%3E')
+      no-repeat center bottom;
+    background-size: cover;
+    pointer-events: none;
+  }
+
+  .page-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(139, 21, 56, 0.1);
+    pointer-events: none;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .page-header-title {
+    font-size: clamp(
+      1.75rem,
+      4vw,
+      2.75rem
+    ); /* Reduced from 2.5rem-4rem to 1.75rem-2.75rem */
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-4); /* Reduced margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
+  }
+
+  .page-header-description {
+    font-size: clamp(
+      1rem,
+      2vw,
+      1.25rem
+    ); /* Reduced from 1.125rem-1.5rem to 1rem-1.25rem */
+    line-height: 1.6;
+    margin-bottom: var(--space-6); /* Reduced margin */
+    opacity: 0.95;
+    max-width: 500px; /* Slightly reduced max-width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page-breadcrumb {
+    margin-top: var(--space-6); /* Reduced margin */
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    font-size: var(--text-sm); /* Reduced from text-base to text-sm */
+  }
+
+  .breadcrumb-item:not(:last-child)::after {
+    content: "›";
+    margin-left: var(--space-2);
+    opacity: 0.7;
+    font-size: var(--text-base); /* Reduced from text-lg to text-base */
+  }
+
+  .breadcrumb-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--white);
+    text-decoration: underline;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--white);
+    font-weight: var(--font-weight-medium);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .page-header {
+      padding: calc(80px + var(--space-10)) 0 var(--space-10); /* Equal top and bottom padding */
+      min-height: 200px; /* Reduced mobile height */
+    }
+
+    .page-header-content {
+      padding: 0 var(--space-4);
+    }
+
+    .breadcrumb-list {
+      flex-wrap: wrap;
+      gap: var(--space-1);
+    }
+
+    .breadcrumb-item {
+      font-size: var(--text-xs); /* Further reduced for mobile */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-header {
+      padding: calc(var(--space-8) + 80px) 0 var(--space-8); /* Further reduced padding */
+      min-height: 180px; /* Further reduced mobile height */
+    }
+  }
+</style>

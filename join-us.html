@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Join CMU Africa Research Club - Become part of our vibrant research community"
+    />
+    <title>Join Us - CMU Africa Research Club</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="research_club_logo.png" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Load Navigation -->
+    <div id="navigation-container">
+      <!-- Navigation will be loaded here -->
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Load page header -->
+      <div id="page-header-container">
+        <!-- Page header will be loaded here -->
+      </div>
+
+      <!-- Benefits Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Why Join Us?</h2>
+            <p class="section-subtitle">
+              Discover the benefits of being part of our research community.
+            </p>
+          </div>
+
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-users" aria-hidden="true"></i>
+              </div>
+              <h3>Collaborative Network</h3>
+              <p>
+                Connect with researchers from diverse disciplines and
+                backgrounds, fostering interdisciplinary collaboration.
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-lightbulb" aria-hidden="true"></i>
+              </div>
+              <h3>Knowledge Sharing</h3>
+              <p>
+                Access to cutting-edge research, workshops, and seminars to
+                enhance your academic and professional growth.
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-rocket" aria-hidden="true"></i>
+              </div>
+              <h3>Research Support</h3>
+              <p>
+                Get support for your research projects, from ideation to
+                publication, with mentorship and resources.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Membership Form -->
+      <section class="section" style="background: var(--gray-50)">
+        <div class="container">
+          <div class="membership-container">
+            <div class="membership-info">
+              <h2>Welcome to the Research Club at CMU-Africa!</h2>
+              <p>
+                The Research Club promotes collaboration between students and
+                faculty while raising awareness of research opportunities and
+                resources at CMU-Africa. We connect students to initiatives,
+                funding, and communities across disciplines.
+
+                <br />
+                <br />
+                Whether you're new to research or experienced, join us by
+                filling out our form to stay connected to events, opportunities,
+                and our growing research community.
+              </p>
+
+              <div class="membership-features">
+                <div class="feature-item">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <span>Free membership</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <span>Access to all events</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <span>Research collaboration opportunities</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <span>Monthly newsletter</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="membership-form-container">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSehCdgzDqWTbRa8uYaCGNi-gdg418xiQ9_lnqleJl-L0Z3uSw/viewform?embedded=true"
+                width="640"
+                height="640"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                >Loading…</iframe
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Load footer -->
+    <div id="footer-container">
+      <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/interactions.js"></script>
+
+    <!-- Load page components -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          // Load navigation
+          const navResponse = await fetch("navigation.html");
+          if (navResponse.ok) {
+            const navHTML = await navResponse.text();
+            document.getElementById("navigation-container").innerHTML = navHTML;
+            if (window.initializeNavigation) window.initializeNavigation();
+          }
+
+          // Load page header
+          const headerResponse = await fetch("page-header.html");
+          if (headerResponse.ok) {
+            const headerHTML = await headerResponse.text();
+            document.getElementById("page-header-container").innerHTML =
+              headerHTML;
+
+            // Set page-specific content
+            document.getElementById("page-title").textContent =
+              "Join Our Research Community";
+            document.getElementById("page-description").textContent =
+              "Become part of our vibrant community of researchers and innovators advancing knowledge.";
+            document.getElementById("current-page").textContent = "Join Us";
+          }
+
+          // Load footer
+          const footerResponse = await fetch("footer.html");
+          if (footerResponse.ok) {
+            const footerHTML = await footerResponse.text();
+            document.getElementById("footer-container").innerHTML = footerHTML;
+          }
+
+          // Initialize navigation after loading
+          if (window.initializeNavigation) {
+            window.initializeNavigation();
+          }
+        } catch (error) {
+          console.error("Error loading page components:", error);
+        }
+      });
+    </script>
+
+    <style>
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--space-8);
+      }
+
+      .benefit-card {
+        background: var(--white);
+        border-radius: var(--radius-2xl);
+        padding: var(--space-8);
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+        transition: all var(--transition-base);
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-2xl);
+      }
+
+      .benefit-icon {
+        background: var(--primary-color);
+        color: var(--white);
+        width: 80px;
+        height: 80px;
+        border-radius: var(--radius-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--text-3xl);
+        margin: 0 auto var(--space-6);
+      }
+
+      .membership-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+        align-items: start;
+      }
+
+      .membership-info h2 {
+        font-size: var(--text-3xl);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--space-4);
+        color: var(--gray-800);
+      }
+
+      .membership-info p {
+        color: var(--gray-600);
+        margin-bottom: var(--space-8);
+        line-height: 1.6;
+        font-size: var(--text-lg);
+      }
+
+      .membership-features {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        color: var(--gray-700);
+      }
+
+      .feature-item i {
+        color: var(--success);
+        font-size: var(--text-lg);
+      }
+
+      .membership-form-container {
+        background: var(--white);
+        border-radius: var(--radius-2xl);
+        padding: var(--space-8);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .membership-form h3 {
+        font-size: var(--text-2xl);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--space-6);
+        color: var(--gray-800);
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+      }
+
+      .checkbox-label {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-3);
+        cursor: pointer;
+        line-height: 1.5;
+      }
+
+      .checkbox-label input[type="checkbox"] {
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .membership-container {
+          grid-template-columns: 1fr;
+          gap: var(--space-8);
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <script>
+      document
+        .getElementById("join-form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const name = this.name.value;
+          const email = this.email.value;
+          const program = this.program.value;
+          const reason = this.reason.value;
+          const res = await fetch("http://localhost:5000/api/join", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, program, reason }),
+          });
+          if (res.ok) {
+            alert("Application sent! We will contact you soon.");
+            this.reset();
+          } else {
+            alert("Error sending application. Please try again.");
+          }
+        });
+    </script>
+  </body>
+</html>

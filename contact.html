@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact CMU Africa Research Club - Get in touch with our research community"
+    />
+    <title>Contact - CMU Africa Research Club</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="research_club_logo.png" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Load Navigation -->
+    <div id="navigation-container">
+      <!-- Navigation will be loaded here -->
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Load page header -->
+      <div id="page-header-container">
+        <!-- Page header will be loaded here -->
+      </div>
+
+      <!-- Contact Information -->
+      <section class="section">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-info">
+              <h2>Get in Touch</h2>
+              <p>
+                Whether you're interested in joining our research community,
+                have questions about our projects, or want to collaborate with
+                us, we'd love to hear from you.
+              </p>
+
+              <div class="contact-methods">
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h3>Email</h3>
+                    <p>research@africa.cmu.edu</p>
+                    <small>We typically respond within 24 hours</small>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h3>Location</h3>
+                    <p>CMU Africa Campus<br />Kigali, Rwanda</p>
+                    <small>Visit us during office hours</small>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday<br />9:00 AM - 5:00 PM EAT</p>
+                    <small>Available for meetings and consultations</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-form-container">
+              <form class="contact-form" id="contact-form">
+                <h2>Send us a Message</h2>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="subject" class="form-label">Subject</label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    class="form-input"
+                    required
+                  >
+                    <option value="">Select a subject</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="membership">Membership</option>
+                    <option value="research">Research Collaboration</option>
+                    <option value="events">Events</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-input form-textarea"
+                    rows="6"
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg">
+                  <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="section" style="background: var(--gray-50)">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">
+              Find answers to common questions about our research club.
+            </p>
+          </div>
+
+          <div class="faq-grid">
+            <div class="faq-item">
+              <h3>How can I join the research club?</h3>
+              <p>
+                You can join by filling out our membership form on the "Join Us"
+                page. We welcome researchers, students, and academics from all
+                disciplines.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <h3>What types of research do you support?</h3>
+              <p>
+                We support interdisciplinary research across various fields
+                including AI, climate science, healthcare, and more. Our focus
+                is on collaborative research that creates meaningful impact.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <h3>Are there membership fees?</h3>
+              <p>
+                No, membership in the CMU Africa Research Club is completely
+                free. We believe in making research collaboration accessible to
+                everyone.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <h3>How often do you organize events?</h3>
+              <p>
+                We organize regular workshops, seminars, and networking events
+                throughout the academic year. Check our events page for the
+                latest schedule.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Load footer -->
+    <div id="footer-container">
+      <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/interactions.js"></script>
+
+    <!-- Load page components -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          // Load navigation
+          const navResponse = await fetch("navigation.html");
+          if (navResponse.ok) {
+            const navHTML = await navResponse.text();
+            document.getElementById("navigation-container").innerHTML = navHTML;
+            if (window.initializeNavigation) window.initializeNavigation();
+          }
+
+          // Load page header
+          const headerResponse = await fetch("page-header.html");
+          if (headerResponse.ok) {
+            const headerHTML = await headerResponse.text();
+            document.getElementById("page-header-container").innerHTML =
+              headerHTML;
+
+            // Set page-specific content
+            document.getElementById("page-title").textContent = "Contact Us";
+            document.getElementById("page-description").textContent =
+              "Get in touch with the CMU Africa Research Club for research support and collaboration.";
+            document.getElementById("current-page").textContent = "Contact";
+          }
+
+          // Load footer
+          const footerResponse = await fetch("footer.html");
+          if (footerResponse.ok) {
+            const footerHTML = await footerResponse.text();
+            document.getElementById("footer-container").innerHTML = footerHTML;
+          }
+
+          // Initialize navigation after loading
+          if (window.initializeNavigation) {
+            window.initializeNavigation();
+          }
+        } catch (error) {
+          console.error("Error loading page components:", error);
+        }
+      });
+    </script>
+
+    <style>
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+        align-items: start;
+      }
+
+      .contact-info h2 {
+        font-size: var(--text-3xl);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--space-4);
+        color: var(--gray-800);
+      }
+
+      .contact-info p {
+        color: var(--gray-600);
+        margin-bottom: var(--space-8);
+        line-height: 1.6;
+        font-size: var(--text-lg);
+      }
+
+      .contact-methods {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+      }
+
+      .contact-method {
+        display: flex;
+        gap: var(--space-4);
+        align-items: flex-start;
+      }
+
+      .contact-icon {
+        background: var(--primary-color);
+        color: var(--white);
+        width: 50px;
+        height: 50px;
+        border-radius: var(--radius-xl);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--text-xl);
+        flex-shrink: 0;
+      }
+
+      .contact-details h3 {
+        font-size: var(--text-lg);
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: var(--space-1);
+        color: var(--gray-800);
+      }
+
+      .contact-details p {
+        color: var(--gray-700);
+        margin-bottom: var(--space-1);
+        line-height: 1.5;
+      }
+
+      .contact-details small {
+        color: var(--gray-500);
+        font-size: var(--text-sm);
+      }
+
+      .contact-form-container {
+        background: var(--white);
+        border-radius: var(--radius-2xl);
+        padding: var(--space-8);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .contact-form h2 {
+        font-size: var(--text-2xl);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--space-6);
+        color: var(--gray-800);
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-8);
+      }
+
+      .faq-item {
+        background: var(--white);
+        border-radius: var(--radius-xl);
+        padding: var(--space-6);
+        box-shadow: var(--shadow-md);
+      }
+
+      .faq-item h3 {
+        font-size: var(--text-lg);
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: var(--space-3);
+        color: var(--gray-800);
+      }
+
+      .faq-item p {
+        color: var(--gray-600);
+        line-height: 1.6;
+      }
+
+      @media (max-width: 768px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-8);
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-method {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const name = this.name.value;
+          const email = this.email.value;
+          const message = this.message.value;
+          const res = await fetch("http://localhost:5000/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, message }),
+          });
+          if (res.ok) {
+            alert("Message sent! We will get back to you soon.");
+            this.reset();
+          } else {
+            alert("Error sending message. Please try again.");
+          }
+        });
+    </script>
+  </body>
+</html>

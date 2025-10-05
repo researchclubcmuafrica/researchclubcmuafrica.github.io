@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CMU Africa Research Club Gallery - Photos from our events, workshops, and community activities"
+    />
+    <title>Gallery - CMU Africa Research Club</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="research_club_logo.png" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Load Navigation -->
+    <div id="navigation-container">
+      <!-- Navigation will be loaded here -->
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Load page header -->
+      <div id="page-header-container">
+        <!-- Page header will be loaded here -->
+      </div>
+
+      <!-- Gallery Filter -->
+      <section class="section">
+        <div class="container">
+          <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">
+              All Photos
+            </button>
+            <button class="filter-btn" data-filter="events">Events</button>
+            <button class="filter-btn" data-filter="workshops">
+              Workshops
+            </button>
+            <button class="filter-btn" data-filter="networking">
+              Networking
+            </button>
+            <button class="filter-btn" data-filter="research">Research</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Photo Gallery -->
+      <section class="section" style="padding-top: 0">
+        <div class="container">
+          <div class="gallery-grid">
+            <!-- Using slider images as placeholders -->
+            <div class="gallery-item" data-category="events">
+              <div
+                class="gallery-image"
+                style="
+                  background-image: url('assets/images/sliders/20250506_101647.jpg');
+                "
+              >
+                <div class="gallery-overlay">
+                  <div class="gallery-info">
+                    <h3>Research Symposium 2025</h3>
+                    <p>Annual research presentations and networking</p>
+                  </div>
+                  <button
+                    class="gallery-expand"
+                    onclick="openLightbox('assets/images/sliders/20250506_101647.jpg', 'Research Symposium 2025')"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="workshops">
+              <div
+                class="gallery-image"
+                style="
+                  background-image: url('assets/images/sliders/20250506_105319.jpg');
+                "
+              >
+                <div class="gallery-overlay">
+                  <div class="gallery-info">
+                    <h3>AI Workshop</h3>
+                    <p>Hands-on machine learning session</p>
+                  </div>
+                  <button
+                    class="gallery-expand"
+                    onclick="openLightbox('assets/images/sliders/20250506_105319.jpg', 'AI Workshop')"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="networking">
+              <div
+                class="gallery-image"
+                style="
+                  background-image: url('assets/images/sliders/20250506_105617.jpg');
+                "
+              >
+                <div class="gallery-overlay">
+                  <div class="gallery-info">
+                    <h3>Networking Mixer</h3>
+                    <p>Community building and collaboration</p>
+                  </div>
+                  <button
+                    class="gallery-expand"
+                    onclick="openLightbox('assets/images/sliders/20250506_105617.jpg', 'Networking Mixer')"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Placeholder gallery items -->
+            <div class="gallery-item" data-category="research">
+              <div
+                class="gallery-image"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    var(--primary-color),
+                    var(--primary-hover)
+                  );
+                "
+              >
+                <div class="gallery-overlay">
+                  <div class="gallery-info">
+                    <h3>Lab Research Session</h3>
+                    <p>Students working on climate data analysis</p>
+                  </div>
+                  <div class="placeholder-icon">
+                    <i class="fas fa-microscope" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="events">
+              <div
+                class="gallery-image"
+                style="background: linear-gradient(135deg, #10b981, #065f46)"
+              >
+                <div class="gallery-overlay">
+                  <div class="gallery-info">
+                    <h3>Guest Lecture</h3>
+                    <p>Distinguished speaker on AI ethics</p>
+                  </div>
+                  <div class="placeholder-icon">
+                    <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="workshops">
+              <div
+                class="gallery-image"
+                style="background: linear-gradient(135deg, #3b82f6, #1e40af)"
+              >
+                <div class="gallery-overlay">
+                  <div class="gallery-info">
+                    <h3>Data Science Workshop</h3>
+                    <p>Hands-on data analysis training</p>
+                  </div>
+                  <div class="placeholder-icon">
+                    <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="networking">
+              <div
+                class="gallery-image"
+                style="background: linear-gradient(135deg, #8b5cf6, #5b21b6)"
+              >
+                <div class="gallery-overlay">
+                  <div class="gallery-info">
+                    <h3>Coffee & Research</h3>
+                    <p>Informal discussion session</p>
+                  </div>
+                  <div class="placeholder-icon">
+                    <i class="fas fa-coffee" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="research">
+              <div
+                class="gallery-image"
+                style="background: linear-gradient(135deg, #f59e0b, #d97706)"
+              >
+                <div class="gallery-overlay">
+                  <div class="gallery-info">
+                    <h3>Poster Session</h3>
+                    <p>Student research presentations</p>
+                  </div>
+                  <div class="placeholder-icon">
+                    <i class="fas fa-presentation" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <div class="lightbox-content">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-image" src="" alt="" />
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
+    </div>
+
+    <!-- Load footer -->
+    <div id="footer-container">
+      <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/interactions.js"></script>
+
+    <!-- Load page components -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          // Load navigation
+          const navResponse = await fetch("navigation.html");
+          if (navResponse.ok) {
+            const navHTML = await navResponse.text();
+            document.getElementById("navigation-container").innerHTML = navHTML;
+            if (window.initializeNavigation) window.initializeNavigation();
+          }
+
+          // Load page header
+          const headerResponse = await fetch("page-header.html");
+          if (headerResponse.ok) {
+            const headerHTML = await headerResponse.text();
+            document.getElementById("page-header-container").innerHTML =
+              headerHTML;
+
+            // Set page-specific content
+            document.getElementById("page-title").textContent = "Gallery";
+            document.getElementById("page-description").textContent =
+              "Explore photos from our events, workshops, and research activities throughout the year.";
+            document.getElementById("current-page").textContent = "Gallery";
+          }
+
+          // Load footer
+          const footerResponse = await fetch("footer.html");
+          if (footerResponse.ok) {
+            const footerHTML = await footerResponse.text();
+            document.getElementById("footer-container").innerHTML = footerHTML;
+          }
+
+          // Initialize navigation after loading
+          if (window.initializeNavigation) {
+            window.initializeNavigation();
+          }
+        } catch (error) {
+          console.error("Error loading page components:", error);
+        }
+      });
+
+      // Gallery filtering
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const galleryItems = document.querySelectorAll(".gallery-item");
+
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const filter = this.getAttribute("data-filter");
+
+            // Update active button
+            filterBtns.forEach((b) => b.classList.remove("active"));
+            this.classList.add("active");
+
+            // Filter gallery items
+            galleryItems.forEach((item) => {
+              if (
+                filter === "all" ||
+                item.getAttribute("data-category") === filter
+              ) {
+                item.style.display = "block";
+                item.style.animation = "fadeIn 0.5s ease";
+              } else {
+                item.style.display = "none";
+              }
+            });
+          });
+        });
+      });
+
+      // Lightbox functionality
+      function openLightbox(imageSrc, caption) {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-image").src = imageSrc;
+        document.getElementById("lightbox-caption").textContent = caption;
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      // Close lightbox on escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeLightbox();
+        }
+      });
+    </script>
+
+    <style>
+      .gallery-filters {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-4);
+        margin-bottom: var(--space-8);
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        background: var(--white);
+        border: 2px solid var(--gray-300);
+        color: var(--gray-700);
+        padding: var(--space-3) var(--space-6);
+        border-radius: var(--radius-full);
+        font-weight: var(--font-weight-medium);
+        cursor: pointer;
+        transition: all var(--transition-base);
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--white);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-6);
+      }
+
+      .gallery-item {
+        border-radius: var(--radius-2xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        transition: all var(--transition-base);
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-2xl);
+      }
+
+      .gallery-image {
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: var(--space-6);
+        opacity: 0;
+        transition: opacity var(--transition-base);
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-info h3 {
+        color: var(--white);
+        font-size: var(--text-lg);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--space-2);
+      }
+
+      .gallery-info p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-4);
+      }
+
+      .gallery-expand {
+        position: absolute;
+        top: var(--space-4);
+        right: var(--space-4);
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: var(--white);
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all var(--transition-base);
+      }
+
+      .gallery-expand:hover {
+        background: var(--primary-color);
+        transform: scale(1.1);
+      }
+
+      .placeholder-icon {
+        font-size: var(--text-6xl);
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* Lightbox styles */
+      .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        color: var(--white);
+        font-size: var(--text-4xl);
+        font-weight: bold;
+        cursor: pointer;
+        transition: color var(--transition-base);
+      }
+
+      .lightbox-close:hover {
+        color: var(--primary-color);
+      }
+
+      #lightbox-image {
+        max-width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: var(--radius-lg);
+      }
+
+      .lightbox-caption {
+        color: var(--white);
+        text-align: center;
+        padding: var(--space-4);
+        font-size: var(--text-lg);
+        font-weight: var(--font-weight-medium);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-4);
+        }
+
+        .gallery-filters {
+          gap: var(--space-2);
+        }
+
+        .filter-btn {
+          padding: var(--space-2) var(--space-4);
+          font-size: var(--text-sm);
+        }
+
+        .gallery-image {
+          height: 200px;
+        }
+      }
+    </style>
+  </body>
+</html>
