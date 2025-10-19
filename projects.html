@@ -13,7 +13,6 @@
     <link rel="icon" type="image/png" href="research_club_logo.png" />
 
     <!-- CSS Files -->
-     <link rel="stylesheet" href="projects_/projects.css">
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/navigation.css" />
@@ -29,9 +28,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <!--Scripts-->
-    <script src="projects_/projects.js"></script>
   </head>
   <body>
     <!-- Skip to main content for accessibility -->
@@ -52,10 +48,8 @@
       <!-- Featured Projects -->
       <section class="section">
         <div class="container">
-          <div class="research-grid grid-auto-lg" id="researchCards">
-            <!--Research Cards Examples-->
-            <!--
-               <article class="research-card card">
+          <div class="research-grid grid-auto-lg">
+            <article class="research-card card">
               <div
                 class="research-image"
                 style="
@@ -88,11 +82,81 @@
                 </a>
               </div>
             </article>
-            -->
 
-            
+            <article class="research-card card">
+              <div
+                class="research-image"
+                role="img"
+                aria-label="Deep Learning BCI research visualization"
+              >
+                <span class="research-category badge badge-deep-learning"
+                  >Deep Learning</span
+                >
+                <span class="research-status badge badge-info">Published</span>
+              </div>
+              <div class="research-content card-body">
+                <h3 class="research-title">
+                  Improving SSVEP BCI Spellers With Data Augmentation and
+                  Language Models
+                </h3>
+                <p class="research-description">
+                  The research improved SSVEP-based brain-computer interface
+                  (BCI) spellers by using data augmentation and language models
+                  to boost accuracy and reliability, enabling more intuitive
+                  communication even when brain signals are unclear.
+                </p>
+                <div class="research-meta">
+                  <span
+                    ><strong>Advisors:</strong> Bhiksha Ramakrishnan & Rita
+                    Singh</span
+                  >
+                  <span><strong>Team:</strong> Kipngeno Koech (MSEAI)</span>
+                </div>
+                <a href="projects/bci-spellers.html" class="research-link">
+                  Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
 
+            <article class="research-card card">
+              <div
+                class="research-image"
+                role="img"
+                aria-label="Deep learning medical research visualization"
+              >
+                <span class="research-category badge badge-deep-learning"
+                  >Deep Learning</span
+                >
+                <span class="research-status badge badge-info">Published</span>
+              </div>
+              <div class="research-content card-body">
+                <h3 class="research-title">
+                  Deep Learning-Based Lesion Segmentation for Early Liver Tumor
+                  Detection
+                </h3>
+                <p class="research-description">
+                  The research developed a deep learning model combining
+                  ResNet34 and U-Net to improve liver lesion detection and
+                  segmentation, aiming to enhance early liver tumor diagnosis
+                  and treatment in Rwanda through scalable AI-driven healthcare
+                  solutions.
+                </p>
+                <div class="research-meta">
+                  <span><strong>Advisor:</strong> Prof. Ahmed Biyabani</span>
+                  <span><strong>Team:</strong> Diane Mugunga (MSIT)</span>
+                </div>
+                <a
+                  href="projects/liver-tumor-detection.html"
+                  class="research-link"
+                >
+                  Learn More
+                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
           </div>
+        </div>
+      </section>
 
       <!-- Project Statistics -->
       <section class="section" style="background: var(--gray-50)">
@@ -139,45 +203,6 @@
 
     <!-- Load page components -->
     <script>
-      const cardsContainer = document.getElementById('researchCards')
-      //fetch data from the projects array in projects.js
-      projects.forEach(project => {
-          cardsContainer.innerHTML += 
-          `
-             <article class="research-card card">
-              <div
-                class="research-image"
-                style="
-                  background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 200\'%3E%3Crect fill=\'%2310b981\' width=\'400\' height=\'200\'/%3E%3Crect x=\'50\' y=\'50\' width=\'120\' height=\'80\' rx=\'15\' fill=\'%23065f46\' opacity=\'0.3\'/%3E%3Crect x=\'230\' y=\'70\' width=\'100\' height=\'60\' rx=\'12\' fill=\'%23065f46\' opacity=\'0.5\'/%3E%3C/svg%3E');
-                "
-                role="img"
-                aria-label="${project.imageLabel}"
-              >
-                <span class="research-category badge badge-deep-learning">
-                  ${project.category}
-                </span>
-                <span class="research-status badge badge-info">${project.status}</span>
-              </div>
-              <div class="research-content card-body">
-                <h3 class="research-title">
-                  ${project.title}
-                </h3>
-                <p class="research-description">
-                  ${project.description}
-                </p>
-                <div class="research-meta">
-                  <span><strong>Advisor:</strong> ${project.advisors.map(advisor => advisor.name ).join(", ")}</span>
-                  <span><strong>Team:</strong> ${project.teamMembers.map(member => member.name).join(", ")}</span>
-                </div>
-
-                <a href="projects/page.html?id=${project.id}" class="research-link">
-                  Learn More <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </article>
-          `
-      })
-      //-----------------------------------------------------------------//
       document.addEventListener("DOMContentLoaded", async () => {
         try {
           // Load navigation
@@ -220,6 +245,91 @@
       });
     </script>
 
-   
+    <style>
+      .project-details {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+        margin: var(--space-4) 0;
+        padding: var(--space-4);
+        background: var(--gray-50);
+        border-radius: var(--radius-lg);
+      }
+
+      .detail-item {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        font-size: var(--text-sm);
+        color: var(--gray-600);
+      }
+
+      .detail-item i {
+        color: var(--primary-color);
+        width: 16px;
+      }
+
+      .placeholder-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: var(--text-6xl);
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-8);
+      }
+
+      .stat-item {
+        text-align: center;
+        background: var(--white);
+        border-radius: var(--radius-xl);
+        padding: var(--space-8);
+        box-shadow: var(--shadow-md);
+        transition: all var(--transition-base);
+      }
+
+      .stat-item:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .stat-number {
+        font-size: var(--text-5xl);
+        font-weight: var(--font-weight-bold);
+        color: var(--primary-color);
+        display: block;
+        margin-bottom: var(--space-2);
+      }
+
+      .stat-label {
+        font-size: var(--text-lg);
+        color: var(--gray-700);
+        font-weight: var(--font-weight-medium);
+      }
+
+      @media (max-width: 768px) {
+        .project-details {
+          padding: var(--space-3);
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: var(--space-4);
+        }
+
+        .stat-item {
+          padding: var(--space-6);
+        }
+
+        .stat-number {
+          font-size: var(--text-4xl);
+        }
+      }
+    </style>
   </body>
 </html>
