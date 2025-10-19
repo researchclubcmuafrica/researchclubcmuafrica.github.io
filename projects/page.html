@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Deep Learning-Based Lesion Segmentation for Early Liver Tumor Detection - Research by Diane Mugunga"
+      content="Simulation of PEM Electrolyzer Power Management with Renewable Generation - Research by Chisom Ogbogu"
     />
-    <title>Liver Tumor Detection Research - CMU Africa Research Club</title>
+    <title>PEM Electrolyzer Research - CMU Africa Research Club</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../research_club_logo.png" />
 
     <!-- CSS Files -->
+    <link rel="stylesheet" href="../projects_/projects.css">
     <link rel="stylesheet" href="../css/variables.css" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/navigation.css" />
@@ -28,6 +29,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!--Projects JS-->
+    <script src="../projects_/projects.js"></script>  
   </head>
   <body>
     <!-- Skip to main content for accessibility -->
@@ -212,65 +216,54 @@
         <div class="container">
           <div class="research-overview">
             <div class="research-info">
-              <div class="research-badges">
-                <span class="badge badge-primary">Deep Learning</span>
-                <span class="badge badge-info">Published</span>
+              <div class="research-badges" id="researchBadges">
+                <!--a bunch of spans go here-->
               </div>
 
               <h2>Abstract</h2>
-              <p class="research-abstract">
-                This research presents a novel deep learning approach for early
-                liver tumor detection through advanced lesion segmentation
-                techniques. The study combines ResNet34 and U-Net architectures
-                to create a robust model capable of accurately identifying and
-                segmenting liver lesions in medical imaging data, with specific
-                focus on improving diagnostic capabilities in Rwanda's
-                healthcare system.
-              </p>
+              <p class="research-abstract" id="abstract"></p>
 
-              <p class="research-abstract">
-                The proposed methodology addresses critical challenges in
-                medical image analysis, particularly in resource-limited
-                settings where early detection can significantly impact patient
-                outcomes. By leveraging scalable AI-driven healthcare solutions,
-                this research contributes to the development of accessible
-                diagnostic tools that can enhance liver tumor diagnosis and
-                treatment planning. The model demonstrates superior performance
-                in lesion detection accuracy and segmentation precision compared
-                to traditional approaches.
-              </p>
+             
 
-              <div class="research-links">
-                <a href="#" class="btn btn-primary">
+              <div class="research-links" id="researchCTA">
+               <!--
+                 <a href="" class="btn btn-primary">
                   <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                   View Publication
                 </a>
+                -->
+
                 <!--Change by Theophilus (Removed the download PDF Button)-->
                 <!--<a href="#" class="btn btn-secondary">
                   <i class="fas fa-download" aria-hidden="true"></i>
                   Download PDF
                 </a>-->
+
+
               </div>
             </div>
 
-            <div class="researcher-profile">
+            <div class="researcher-profile" id="researchProfileSection">
+              <!--researcher cards go here-->
+              <!--
               <div class="profile-card">
+
                 <div class="profile-image">
                   <i class="fas fa-user" aria-hidden="true"></i>
                 </div>
+
                 <div class="profile-info">
-                  <h3>Diane Mugunga</h3>
+                  <h3>Chisom Ogbogu</h3>
                   <p class="profile-degree">
                     Master of Science in Information Technology (MSIT)
                   </p>
                   <p class="profile-focus">
-                    Research Focus: Medical Image Analysis, Deep Learning,
-                    Healthcare AI
+                    Research Focus: Renewable Energy Systems, Power Management
                   </p>
 
                   <div class="profile-contact">
                     <a
-                      href="mailto:diane.mugunga@africa.cmu.edu"
+                      href="mailto:chisom.ogbogu@africa.cmu.edu"
                       class="contact-btn"
                     >
                       <i class="fas fa-envelope" aria-hidden="true"></i>
@@ -279,30 +272,108 @@
                   </div>
                 </div>
               </div>
+              -->
 
-              <div class="advisor-info">
+              <!--<div class="advisor-info" id="advisorInfo">
                 <h4>Research Advisor</h4>
+                <!--advisor cards go here-->
+                <!--
                 <div class="advisor-card">
                   <div class="advisor-image">
                     <i class="fas fa-user-tie" aria-hidden="true"></i>
                   </div>
                   <div class="advisor-details">
-                    <h5>Prof. Ahmed Biyabani</h5>
-                    <p>Professor of Information Technology</p>
+                    <h5>Prof. Jesse Thornburg</h5>
+                    <p>Professor of Electrical Engineering</p>
                     <a
-                      href="mailto:ahmed.biyabani@africa.cmu.edu"
+                      href="mailto:jesse.thornburg@africa.cmu.edu"
                       class="advisor-contact"
                     >
                       <i class="fas fa-envelope" aria-hidden="true"></i>
                     </a>
                   </div>
                 </div>
-              </div>
+                
+              </div>-->
+            </div>
+
+              
+
+              
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Research Visuals -- commented out by Theophilus Owiti on 10/14/2025-->
+       <!--as agreed this section is not required for now-->
+      <!--
+      <section class="section" style="background: var(--gray-50)">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Research Visuals & Data</h2>
+            <p class="section-subtitle">
+              Key findings and visualizations from the PEM electrolyzer
+              simulation study.
+            </p>
+          </div>
+
+          <div class="visuals-grid">
+            <div class="visual-item">
+              <div
+                class="visual-placeholder"
+                style="background: linear-gradient(135deg, #10b981, #065f46)"
+              >
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                <div class="visual-overlay">
+                  <h3>Power Efficiency Analysis</h3>
+                  <p>Comparative analysis of power management algorithms</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-item">
+              <div
+                class="visual-placeholder"
+                style="background: linear-gradient(135deg, #3b82f6, #1e40af)"
+              >
+                <i class="fas fa-battery-three-quarters" aria-hidden="true"></i>
+                <div class="visual-overlay">
+                  <h3>Hydrogen Production Rates</h3>
+                  <p>Optimization results under varying renewable inputs</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-item">
+              <div
+                class="visual-placeholder"
+                style="background: linear-gradient(135deg, #8b5cf6, #5b21b6)"
+              >
+                <i class="fas fa-solar-panel" aria-hidden="true"></i>
+                <div class="visual-overlay">
+                  <h3>Renewable Integration</h3>
+                  <p>Solar and wind energy integration patterns</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-item">
+              <div
+                class="visual-placeholder"
+                style="background: linear-gradient(135deg, #f59e0b, #d97706)"
+              >
+                <i class="fas fa-cogs" aria-hidden="true"></i>
+                <div class="visual-overlay">
+                  <h3>System Architecture</h3>
+                  <p>Complete electrolyzer system design and components</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    -->
       <!-- Call to Action -->
       <section class="section cta-research">
         <div class="container">
@@ -340,6 +411,27 @@
 
     <!-- Load page components -->
     <script>
+      //research cta
+      const researchbtns = document.getElementById('researchCTA')
+      //abstract
+      const abstractParagraph = document.getElementById('abstract')
+      //researchers section
+      const researchsProfSection = document.getElementById('researchProfileSection')
+      //research badge
+      const researchBadgesTags = document.getElementById('researchBadges')
+      //web URL fetch
+      const urlParams = new URLSearchParams(window.location.search)
+      const idParam = urlParams.get("id")
+      
+      //fetch research project with corresponding ID
+      const researchProjectFetch = projects.filter( project => {
+        return project.id == idParam
+      } )
+
+      const researchProject = researchProjectFetch[0]
+
+      
+      
       document.addEventListener("DOMContentLoaded", async () => {
         try {
           // Load page header
@@ -350,10 +442,8 @@
               headerHTML;
 
             // Set page-specific content
-            document.getElementById("page-title").textContent =
-              "Liver Tumor Detection Research";
-            document.getElementById("page-description").textContent =
-              "Deep Learning-Based Lesion Segmentation for Early Liver Tumor Detection";
+            document.getElementById("page-title").textContent = `${researchProject.seoPhrase}`;
+            document.getElementById("page-description").textContent =`${researchProject.title}`;
 
             // Update breadcrumb
             const breadcrumbList = document.getElementById("breadcrumb-list");
@@ -365,7 +455,7 @@
                 <a href="../projects.html" class="breadcrumb-link">Projects</a>
               </li>
               <li class="breadcrumb-item active">
-                Liver Tumor Detection
+                ${researchProject.shortTitle}
               </li>
             `;
           }
@@ -380,220 +470,95 @@
           console.error("Error loading page components:", error);
         }
       });
+
+      //deal with research badges/ for now we show published work here
+      //TODO: Change the colors with appropriate badges
+      researchBadgesTags.innerHTML = 
+      `
+        <span class="badge badge-success">${researchProject.category}</span>
+        <span class="badge badge-info">${researchProject.status}</span>
+      `
+
+      //add abstract
+      abstractParagraph.innerText = `${researchProject.abstract}`
+
+      
+
+      //fill up researchers section
+      researchProject.teamMembers.forEach( member => {
+      researchsProfSection.innerHTML += 
+      `
+      <div class="profile-card">
+          <div class="profile-image">
+            <i class="fas fa-user" aria-hidden="true"></i>
+          </div>
+
+          <div class="profile-info">
+              <h3>${member.name}</h3>
+              <p class="profile-degree">
+                ${member.degree}
+              </p>
+              <p class="profile-focus">
+                Research Focus: ${member.focus}
+              </p>
+
+              <div class="profile-contact">
+                <a
+                  href="mailto:${member.email}"
+                  class="contact-btn"
+                >
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  Contact Researcher
+                </a>
+              </div>
+          </div>
+      </div>
+      `
+    })
+
+    let advisorStore = ''
+    //fill up advisors section
+      researchProject.advisors.forEach( advisor => {
+        advisorStore += 
+        `
+        <div class="advisor-card">
+          <div class="advisor-image">
+            <i class="fas fa-user-tie" aria-hidden="true"></i>
+          </div>
+          <div class="advisor-details">
+            <h5>${advisor.name}</h5>
+            <p>${advisor.title}</p>
+            <a
+              href="mailto:${advisor.email}"
+              class="advisor-contact"
+            >
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        `
+      })
+
+    researchsProfSection.innerHTML += 
+    `
+    <div class="advisor-info" id="advisorInfo">
+      <h4>Research Advisor</h4>
+      ${advisorStore}
+    </div>
+    `
+    //research CTA
+    researchbtns.innerHTML = 
+    `
+      <a href="${researchProject.publicationLink}" class="btn btn-primary">
+        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+        View Publication
+      </a>
+    `
+
+
+
     </script>
 
-    <style>
-      .research-overview {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: var(--space-16);
-        align-items: start;
-      }
-
-      .research-badges {
-        display: flex;
-        gap: var(--space-3);
-        margin-bottom: var(--space-8);
-        flex-wrap: wrap;
-      }
-
-      .research-info h2 {
-        font-size: var(--text-3xl);
-        font-weight: var(--font-weight-bold);
-        color: var(--gray-800);
-        margin-bottom: var(--space-6);
-      }
-
-      .research-abstract {
-        font-size: var(--text-lg);
-        line-height: 1.7;
-        color: var(--gray-700);
-        margin-bottom: var(--space-6);
-      }
-
-      .research-links {
-        display: flex;
-        gap: var(--space-4);
-        flex-wrap: wrap;
-      }
-
-      .researcher-profile {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-8);
-      }
-
-      .profile-card {
-        background: var(--white);
-        border-radius: var(--radius-2xl);
-        padding: var(--space-8);
-        box-shadow: var(--shadow-lg);
-        text-align: center;
-      }
-
-      .profile-image {
-        background: var(--primary-color);
-        color: var(--white);
-        width: 120px;
-        height: 120px;
-        border-radius: var(--radius-full);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: var(--text-5xl);
-        margin: 0 auto var(--space-6);
-      }
-
-      .profile-info h3 {
-        font-size: var(--text-2xl);
-        font-weight: var(--font-weight-bold);
-        color: var(--gray-800);
-        margin-bottom: var(--space-2);
-      }
-
-      .profile-degree {
-        font-size: var(--text-base);
-        color: var(--primary-color);
-        font-weight: var(--font-weight-semibold);
-        margin-bottom: var(--space-3);
-      }
-
-      .profile-focus {
-        font-size: var(--text-sm);
-        color: var(--gray-600);
-        margin-bottom: var(--space-6);
-        line-height: 1.5;
-      }
-
-      .contact-btn {
-        background: var(--primary-color);
-        color: var(--white);
-        padding: var(--space-3) var(--space-6);
-        border-radius: var(--radius-lg);
-        text-decoration: none;
-        font-weight: var(--font-weight-semibold);
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-2);
-        transition: all var(--transition-base);
-      }
-
-      .contact-btn:hover {
-        background: var(--primary-hover);
-        transform: translateY(-2px);
-      }
-
-      .advisor-info h4 {
-        font-size: var(--text-lg);
-        font-weight: var(--font-weight-semibold);
-        color: var(--gray-800);
-        margin-bottom: var(--space-4);
-      }
-
-      .advisor-card {
-        background: var(--white);
-        border-radius: var(--radius-xl);
-        padding: var(--space-6);
-        box-shadow: var(--shadow-md);
-        display: flex;
-        align-items: center;
-        gap: var(--space-4);
-      }
-
-      .advisor-image {
-        background: var(--gray-200);
-        color: var(--gray-600);
-        width: 60px;
-        height: 60px;
-        border-radius: var(--radius-full);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: var(--text-xl);
-        flex-shrink: 0;
-      }
-
-      .advisor-details h5 {
-        font-size: var(--text-base);
-        font-weight: var(--font-weight-semibold);
-        color: var(--gray-800);
-        margin-bottom: var(--space-1);
-      }
-
-      .advisor-details p {
-        font-size: var(--text-sm);
-        color: var(--gray-600);
-        margin-bottom: var(--space-2);
-      }
-
-      .advisor-contact {
-        color: var(--primary-color);
-        text-decoration: none;
-        font-size: var(--text-lg);
-        transition: color var(--transition-base);
-      }
-
-      .advisor-contact:hover {
-        color: var(--primary-hover);
-      }
-
-      .cta-research {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--primary-hover)
-        );
-        color: var(--white);
-        text-align: center;
-      }
-
-      .cta-content h2 {
-        font-size: var(--text-4xl);
-        font-weight: var(--font-weight-bold);
-        margin-bottom: var(--space-4);
-      }
-
-      .cta-content p {
-        font-size: var(--text-xl);
-        margin-bottom: var(--space-8);
-        opacity: 0.9;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .cta-buttons {
-        display: flex;
-        gap: var(--space-4);
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      @media (max-width: 768px) {
-        .research-overview {
-          grid-template-columns: 1fr;
-          gap: var(--space-8);
-        }
-
-        .research-links {
-          justify-content: center;
-        }
-
-        .advisor-card {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .cta-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .cta-buttons .btn {
-          width: 100%;
-          max-width: 300px;
-        }
-      }
-    </style>
+   
   </body>
 </html>
