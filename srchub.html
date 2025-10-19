@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Student Research Collaboration Hub (SRC Hub) - Connect with peers and faculty to turn research ideas into high-quality publications at CMU-Africa"
+    />
+    <title>SRC Hub - CMU Africa Research Club</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="research_club_logo.png" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      /* Page-specific styles for SRC Hub */
+      .intro-section {
+        background: linear-gradient(135deg, #fff5f8 0%, #ffffff 100%);
+        padding: var(--space-12) var(--space-4) var(--space-16);
+      }
+
+      .intro-content {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .intro-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 800;
+        color: var(--gray-900);
+        margin-bottom: var(--space-4);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      .intro-subtitle {
+        font-size: var(--text-xl);
+        color: var(--gray-700);
+        line-height: 1.6;
+        margin-bottom: var(--space-8);
+        font-weight: 500;
+      }
+
+      .submit-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-3);
+        padding: var(--space-4) var(--space-8);
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+        color: var(--white);
+        border-radius: var(--radius-full);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: var(--text-lg);
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(177, 30, 74, 0.3);
+      }
+
+      .submit-badge:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(177, 30, 74, 0.4);
+      }
+
+      .submit-badge i {
+        font-size: 1.2rem;
+      }
+
+      .objectives-section {
+        background: linear-gradient(135deg, #fff5f8 0%, #fef9fb 100%);
+        padding: var(--space-16) var(--space-4);
+      }
+
+      .objective-list {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        gap: var(--space-6);
+      }
+
+      .objective-item {
+        display: flex;
+        gap: var(--space-5);
+        align-items: flex-start;
+        padding: var(--space-8);
+        background: var(--white);
+        border-radius: var(--radius-2xl);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(177, 30, 74, 0.1);
+      }
+
+      .objective-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(177, 30, 74, 0.15);
+        border-color: var(--primary-color);
+      }
+
+      .objective-icon {
+        font-size: 2.5rem;
+        flex-shrink: 0;
+        line-height: 1;
+      }
+
+      .objective-text {
+        font-size: var(--text-lg);
+        color: var(--gray-800);
+        line-height: 1.7;
+        font-weight: 400;
+      }
+
+      .objective-text strong {
+        color: var(--primary-color);
+        font-weight: 700;
+      }
+
+      .initiatives-section {
+        background: var(--white);
+        padding: var(--space-16) var(--space-4);
+      }
+
+      .initiative-card {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-2xl);
+        padding: var(--space-8);
+        margin-bottom: var(--space-8);
+        box-shadow: var(--shadow-lg);
+        transition: all 0.3s ease;
+      }
+
+      .initiative-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-2xl);
+        border-color: var(--primary-color);
+      }
+
+      .initiative-title {
+        font-size: var(--text-2xl);
+        font-weight: 700;
+        color: var(--gray-900);
+        margin-bottom: var(--space-4);
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+      }
+
+      .initiative-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+        color: var(--white);
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: var(--text-lg);
+      }
+
+      .initiative-description {
+        font-size: var(--text-base);
+        color: var(--gray-700);
+        line-height: 1.8;
+        margin-bottom: var(--space-4);
+      }
+
+      .initiative-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: var(--space-4);
+      }
+
+      .initiative-list li {
+        padding: var(--space-3) 0;
+        padding-left: var(--space-6);
+        position: relative;
+        color: var(--gray-700);
+        line-height: 1.7;
+      }
+
+      .initiative-list li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      .highlight-box {
+        background: var(--primary-50);
+        border-left: 4px solid var(--primary-color);
+        padding: var(--space-4) var(--space-6);
+        margin: var(--space-6) 0;
+        border-radius: var(--radius-lg);
+      }
+
+      .highlight-box p {
+        margin: 0;
+        color: var(--gray-800);
+        font-size: var(--text-base);
+        line-height: 1.7;
+      }
+
+      .participants-section {
+        background: var(--gray-50);
+        padding: var(--space-16) var(--space-4);
+      }
+
+      .participant-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--space-6);
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .participant-card {
+        background: var(--white);
+        border-radius: var(--radius-2xl);
+        padding: var(--space-8);
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .participant-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-2xl);
+        border-color: var(--primary-color);
+      }
+
+      .participant-icon {
+        font-size: 3rem;
+        margin-bottom: var(--space-4);
+        color: var(--primary-color);
+      }
+
+      .participant-title {
+        font-size: var(--text-xl);
+        font-weight: 700;
+        color: var(--gray-900);
+        margin-bottom: var(--space-2);
+      }
+
+      .participant-description {
+        font-size: var(--text-base);
+        color: var(--gray-600);
+        line-height: 1.6;
+      }
+
+      .outcomes-section {
+        background: var(--white);
+        padding: var(--space-16) var(--space-4);
+      }
+
+      .outcome-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-6);
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .outcome-card {
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+        color: var(--white);
+        border-radius: var(--radius-2xl);
+        padding: var(--space-8);
+        box-shadow: var(--shadow-xl);
+        transition: transform 0.3s ease;
+      }
+
+      .outcome-card:hover {
+        transform: scale(1.05);
+      }
+
+      .outcome-title {
+        font-size: var(--text-xl);
+        font-weight: 700;
+        margin-bottom: var(--space-3);
+      }
+
+      .outcome-description {
+        font-size: var(--text-base);
+        line-height: 1.7;
+        opacity: 0.95;
+      }
+
+      .why-matters-section {
+        background: var(--gray-50);
+        padding: var(--space-16) var(--space-4);
+      }
+
+      .matters-list {
+        max-width: 900px;
+        margin: 0 auto;
+        display: grid;
+        gap: var(--space-6);
+      }
+
+      .matters-item {
+        display: flex;
+        gap: var(--space-4);
+        align-items: flex-start;
+        padding: var(--space-6);
+        background: var(--white);
+        border-radius: var(--radius-2xl);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .matters-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+      }
+
+      .matters-content h3 {
+        font-size: var(--text-xl);
+        font-weight: 700;
+        color: var(--gray-900);
+        margin-bottom: var(--space-2);
+      }
+
+      .matters-content p {
+        font-size: var(--text-base);
+        color: var(--gray-700);
+        line-height: 1.7;
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+        color: var(--white);
+        padding: var(--space-16) var(--space-4);
+        text-align: center;
+      }
+
+      .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .cta-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        margin-bottom: var(--space-4);
+      }
+
+      .cta-description {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-8);
+        opacity: 0.95;
+        line-height: 1.7;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-3);
+        padding: var(--space-4) var(--space-8);
+        background: var(--white);
+        color: var(--primary-color);
+        border-radius: var(--radius-full);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: var(--text-lg);
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .cta-button i {
+        font-size: 1.5rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .participant-grid,
+        .outcome-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .initiative-card {
+          padding: var(--space-6);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Load Navigation -->
+    <div id="navigation-container">
+      <!-- Navigation will be loaded here -->
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Load page header -->
+      <div id="page-header-container">
+        <!-- Page header will be loaded here -->
+      </div>
+
+      <!-- Introduction Section -->
+      <section class="intro-section">
+        <div class="container">
+          <div class="intro-content">
+            <h2 class="intro-title">
+              Student Research Collaboration Hub (SRC Hub)
+            </h2>
+            <p class="intro-subtitle">
+              <strong>Organized by:</strong> CMU-Africa Research Club
+            </p>
+            <a
+              href="https://forms.gle/xQvCBXBES97SfWfa9"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="submit-badge"
+            >
+              <i class="fas fa-paper-plane"></i>
+              Submit Your Project
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Introduction -->
+      <section class="section" style="background: var(--white); padding: var(--space-16) var(--space-4);">
+        <div class="container">
+          <div style="max-width: 1000px; margin: 0 auto; background: var(--gray-50); padding: var(--space-10); border-radius: var(--radius-2xl); border: 1px solid var(--gray-200);">
+            <p style="font-size: var(--text-xl); line-height: 1.8; color: var(--gray-800); margin-bottom: var(--space-6); font-weight: 400;">
+              The <strong style="color: var(--primary-color);">CMU-Africa Research Club</strong> proudly introduces
+              the <strong style="color: var(--primary-color);">Student Research Collaboration Hub (SRC Hub)</strong> —
+              an initiative designed to boost student research output and foster
+              meaningful collaborations across all experience levels.
+            </p>
+            <p style="font-size: var(--text-xl); line-height: 1.8; color: var(--gray-800); margin-bottom: 0; font-weight: 400;">
+              The <strong style="color: var(--primary-color);">SRC Hub</strong> provides a central platform where
+              students with innovative research ideas — from coursework, capstone
+              projects, or independent exploration — can connect with peers and
+              faculty to turn their ideas into publishable, high-quality research
+              contributions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Objectives Section -->
+      <section class="objectives-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Objectives</h2>
+            <p class="section-subtitle">The SRC Hub aims to:</p>
+          </div>
+          <div class="objective-list">
+            <div class="objective-item">
+              <div class="objective-icon">🧩</div>
+              <p class="objective-text">
+                <strong>Increase student research output</strong> at CMU-Africa by
+                promoting collaboration and mentorship.
+              </p>
+            </div>
+            <div class="objective-item">
+              <div class="objective-icon">📚</div>
+              <p class="objective-text">
+                <strong>Facilitate publications</strong> in top-tier conferences
+                and journals across engineering, AI, and interdisciplinary fields.
+              </p>
+            </div>
+            <div class="objective-item">
+              <div class="objective-icon">🌍</div>
+              <p class="objective-text">
+                <strong>Foster a student–faculty research culture</strong> that
+                supports long-term impact, knowledge exchange, and mentorship.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Initiatives Section -->
+      <section class="initiatives-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Initiatives</h2>
+          </div>
+          <div style="max-width: 1200px; margin: 0 auto">
+            <!-- Initiative 1 -->
+            <div class="initiative-card">
+              <h3 class="initiative-title">
+                <span class="initiative-number">1</span>
+                Student Project Advertisement
+              </h3>
+              <p class="initiative-description">
+                Students can share their individual or group research projects
+                through the SRC Hub. Each <strong>primary researcher</strong>
+                submits a proposal including:
+              </p>
+              <ul class="initiative-list">
+                <li>Problem statement and research gap</li>
+                <li>Background and related work</li>
+                <li>Proposed methodology and approach</li>
+                <li>Required skills (e.g., coding, data analysis, writing)</li>
+                <li>Proposed timeline and milestones</li>
+                <li>
+                  Expected outcomes (e.g., publication, prototype, dataset)
+                </li>
+              </ul>
+              <p class="initiative-description">
+                A <strong>collaboration advert</strong> will accompany each
+                proposal so peers can join projects based on interest and skill.
+              </p>
+              <div class="highlight-box">
+                <p>
+                  <strong>🔸 Important:</strong> Every project must have a
+                  <strong>faculty supervisor</strong> to provide guidance,
+                  feedback, and mentorship.
+                </p>
+              </div>
+            </div>
+
+            <!-- Initiative 2 -->
+            <div class="initiative-card">
+              <h3 class="initiative-title">
+                <span class="initiative-number">2</span>
+                Research Assistant Collaboration
+              </h3>
+              <p class="initiative-description">
+                Research Assistants (RAs) currently working on faculty-led
+                projects can also post opportunities on the SRC Hub.
+              </p>
+              <p class="initiative-description">RAs submit:</p>
+              <ul class="initiative-list">
+                <li>A brief description of the ongoing project</li>
+                <li>
+                  Required skills and expected contributions from collaborators
+                </li>
+                <li>Approval from the supervising professor</li>
+              </ul>
+              <p class="initiative-description">
+                This initiative enables hands-on collaboration under structured
+                mentorship, allowing peers to contribute meaningfully while
+                gaining valuable research experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Who Can Participate Section -->
+      <section class="participants-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Who Can Participate?</h2>
+          </div>
+          <div class="participant-grid">
+            <div class="participant-card">
+              <div class="participant-icon">👩‍🔬</div>
+              <h3 class="participant-title">Primary Researchers</h3>
+              <p class="participant-description">
+                Students leading original research projects
+              </p>
+            </div>
+            <div class="participant-card">
+              <div class="participant-icon">🤝</div>
+              <h3 class="participant-title">Collaborators</h3>
+              <p class="participant-description">
+                Students joining active projects to gain experience
+              </p>
+            </div>
+            <div class="participant-card">
+              <div class="participant-icon">🧑‍🏫</div>
+              <h3 class="participant-title">Faculty Supervisors</h3>
+              <p class="participant-description">
+                Mentors ensuring research quality and guidance
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Target Outcomes Section -->
+      <section class="outcomes-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Target Outcomes</h2>
+          </div>
+          <div class="outcome-grid">
+            <div class="outcome-card">
+              <h3 class="outcome-title">📄 High-Impact Publications</h3>
+              <p class="outcome-description">
+                Projects aiming for NeurIPS, ACL, ICML, IEEE, AAAI, and similar
+                venues.
+              </p>
+            </div>
+            <div class="outcome-card">
+              <h3 class="outcome-title">🎓 Skill Development</h3>
+              <p class="outcome-description">
+                Supporting students new to research through collaboration and
+                mentorship.
+              </p>
+            </div>
+            <div class="outcome-card">
+              <h3 class="outcome-title">🔄 Research Continuity</h3>
+              <p class="outcome-description">
+                Encouraging projects that span multiple semesters and evolve into
+                theses or funded work.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why SRC Hub Matters Section -->
+      <section class="why-matters-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Why the SRC Hub Matters</h2>
+          </div>
+          <div class="matters-list">
+            <div class="matters-item">
+              <div class="matters-icon">🌱</div>
+              <div class="matters-content">
+                <h3>Bridging the Experience Gap</h3>
+                <p>
+                  Structured pathways for students with great ideas but limited
+                  experience.
+                </p>
+              </div>
+            </div>
+            <div class="matters-item">
+              <div class="matters-icon">🚀</div>
+              <div class="matters-content">
+                <h3>Enhancing CMU-Africa's Reputation</h3>
+                <p>
+                  Strengthens the student–faculty research ecosystem and global
+                  visibility.
+                </p>
+              </div>
+            </div>
+            <div class="matters-item">
+              <div class="matters-icon">🤗</div>
+              <div class="matters-content">
+                <h3>Building a Supportive Ecosystem</h3>
+                <p>
+                  Encourages sustainable collaboration and cross-semester
+                  teamwork.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2 class="cta-title">Get Involved</h2>
+            <p class="cta-description">
+              Ready to share your project or find collaborators?
+            </p>
+            <a
+              href="https://forms.gle/xQvCBXBES97SfWfa9"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-button"
+            >
+              <i class="fas fa-rocket"></i>
+              Submit Your Research Project
+            </a>
+            <p style="margin-top: var(--space-8); font-size: var(--text-base); opacity: 0.9">
+              For inquiries, contact the <strong>CMU-Africa Research Club</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Load footer -->
+    <div id="footer-container">
+      <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/interactions.js"></script>
+
+    <!-- Load page components -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          // Load navigation
+          const navResponse = await fetch("navigation.html");
+          if (navResponse.ok) {
+            const navHTML = await navResponse.text();
+            document.getElementById("navigation-container").innerHTML = navHTML;
+            if (window.initializeNavigation) window.initializeNavigation();
+          }
+
+          // Load page header
+          const headerResponse = await fetch("page-header.html");
+          if (headerResponse.ok) {
+            const headerHTML = await headerResponse.text();
+            document.getElementById("page-header-container").innerHTML =
+              headerHTML;
+
+            // Set page-specific content
+            document.getElementById("page-title").textContent =
+              "Student Research Collaboration Hub";
+            document.getElementById("page-description").textContent =
+              "Connect with peers and faculty to turn your research ideas into high-quality publications";
+            document.getElementById("current-page").textContent = "SRC Hub";
+          }
+
+          // Load footer
+          const footerResponse = await fetch("footer.html");
+          if (footerResponse.ok) {
+            const footerHTML = await footerResponse.text();
+            document.getElementById("footer-container").innerHTML = footerHTML;
+          }
+
+          // Initialize navigation after loading
+          if (window.initializeNavigation) {
+            window.initializeNavigation();
+          }
+        } catch (error) {
+          console.error("Error loading page components:", error);
+        }
+      });
+    </script>
+  </body>
+</html>
