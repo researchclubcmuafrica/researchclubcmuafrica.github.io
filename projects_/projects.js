@@ -1,5 +1,3 @@
-
-
 const projects = [
   {
     id: "2049gbdqWT94b34",
@@ -76,36 +74,34 @@ const projects = [
     imageLabel: "Deep Learning BCI research visualization"
   },
   {
-    id: "54jhrjfj3920tkOp",
-    category: "Deep Learning",
+    id: "7k8l9m0n1o2p3q",
+    category: "Smart Grid",
     status: "Published",
-    title: "Deep Learning-Based Lesion Segmentation for Early Liver Tumor Detection",
-    shortTitle: "Liver Tumor Detection",
-    seoPhrase: "AI-Driven Liver Tumor Early Detection",
-    description:
-      "The research developed a deep learning model combining ResNet34 and U-Net to improve liver lesion detection and segmentation, aiming to enhance early liver tumor diagnosis and treatment in Rwanda through scalable AI-driven healthcare solutions.",
-    seoMetaDescription: "Revolutionize liver tumor detection with ResNet34-U-Net deep learning for precise lesion segmentation—early diagnosis and scalable AI healthcare in Rwanda.",
-    
-    abstract: `This research presents a novel deep learning approach for early liver tumor detection through advanced lesion segmentation techniques. The study combines ResNet34 and U-Net architectures to create a robust model capable of accurately identifying and segmenting liver lesions in medical imaging data, with specific focus on improving diagnostic capabilities in Rwanda's healthcare system.
+    title: "Smart Grid Fault Mitigation and Cybersecurity with Wide-Area Measurement Systems: A Review",
+    shortTitle: "Smart Grid Fault Mitigation",
+    seoPhrase: "Enhancing Smart Grid Reliability and Cybersecurity",
+    description: "This review examines Wide-Area Measurement Systems (WAMS) for fault mitigation in smart grids, highlighting their advantages over traditional SCADA systems and applications for cybersecurity and efficiency in developing nations.",
+    seoMetaDescription: "Explore smart grid fault mitigation and cybersecurity via Wide-Area Measurement Systems (WAMS)—upgrading traditional grids to resilient, real-time monitored infrastructure for global energy stability.",
+    abstract: `Smart grid reliability and efficiency are critical for uninterrupted service, especially amidst growing demand and network complexity. Wide-Area Measurement Systems (WAMS) are valuable tools for mitigating faults and reducing fault-clearing time while simultaneously prioritizing cybersecurity. This review looks at smart grid WAMS implementation and its potential for cyber-physical power system (CPPS) development and compares it to traditional Supervisory Control and Data Acquisition (SCADA) infrastructure. While traditionally used in smart grids, SCADA has become insufficient in handling modern grid dynamics. WAMS differ through utilizing phasor measurement units (PMUs) to provide real-time monitoring and enhance situational awareness.
 
-    The proposed methodology addresses critical challenges in medical image analysis, particularly in resource-limited settings where early detection can significantly impact patient outcomes. By leveraging scalable AI-driven healthcare solutions, this research contributes to the development of accessible diagnostic tools that can enhance liver tumor diagnosis and treatment planning. The model demonstrates superior performance in lesion detection accuracy and segmentation precision compared to traditional approaches.`,
+This review explores PMU deployment models and their integration into existing grid infrastructure for CPPS and smart grid development. The review discusses PMU configurations that enable precise measurements across the grid for quicker, more accurate decisions. This study highlights models of PMU and WAMS deployment for conventional grids to convert them into smart grids in terms of the Smart Grid Architecture Model (SGAM). Examples from developing nations illustrate cybersecurity benefits in cyber-physical frameworks and improvements in grid stability and efficiency. Further incorporating machine learning, multi-level optimization, and predictive analytics can enhance WAMS capabilities by enabling advanced fault prediction, automated response, and multilayer cybersecurity.`,
     advisors: [
       {
-        name: "Prof. Ahmed Biyabani",
-        title: "Professor of Information Technology",
-        email: "ahmed.biyabani@africa.cmu.edu"
+        name: "Prof. Jesse Thornburg",
+        title: "Professor of Electrical Engineering",
+        email: "jesse.thornburg@africa.cmu.edu"
       }
     ],
     teamMembers: [
       {
-        name: "Diane Mugunga",
+        name: "Chisom Ogbogu",
         degree: "Master of Science in Information Technology (MSIT)",
-        focus: "Medical Image Analysis, Deep Learning, Healthcare AI",
-        email: "diane.mugunga@africa.cmu.edu"
+        focus: "Renewable Energy Systems, Power Management",
+        email: "chisom.ogbogu@africa.cmu.edu"
       }
     ],
-    publicationLink: "#",
-    link: "projects/liver-tumor-detection.html",
-    imageLabel: "Deep learning medical research visualization"
+    publicationLink: "https://www.mdpi.com/1996-1073/18/4/994",
+    link: "projects/smart-grid-fault-mitigation.html",
+    imageLabel: "Smart Grid research visualization"
   }
-]
+];
