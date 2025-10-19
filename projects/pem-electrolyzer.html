@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Simulation of PEM Electrolyzer Power Management with Renewable Generation - Research by Chisom Ogbogu"
+    />
+    <title>PEM Electrolyzer Research - CMU Africa Research Club</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../research_club_logo.png" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/navigation.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/sections.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="../index.html" class="logo-link">
+            <img
+              src="../research_club_logo.png"
+              alt="CMU Africa Research Club"
+              class="logo-image"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              onload="this.classList.add('loaded'); console.log('Logo loaded successfully');"
+            />
+            <div class="logo-fallback" style="display: none">
+              <span class="logo-text">CMU Africa Research Club</span>
+            </div>
+          </a>
+        </div>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-expanded="false">
+              Community <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown">
+              <a href="../members.html" class="dropdown-item">
+                <i class="fas fa-users dropdown-icon" aria-hidden="true"></i>
+                <div class="dropdown-content">
+                  <h4>Members</h4>
+                  <p>Meet our research community</p>
+                </div>
+              </a>
+              <a href="../gallery.html" class="dropdown-item">
+                <i class="fas fa-images dropdown-icon" aria-hidden="true"></i>
+                <div class="dropdown-content">
+                  <h4>Gallery</h4>
+                  <p>Photos from our events and activities</p>
+                </div>
+              </a>
+              <a href="../events.html" class="dropdown-item">
+                <i class="fas fa-calendar dropdown-icon" aria-hidden="true"></i>
+                <div class="dropdown-content">
+                  <h4>Events</h4>
+                  <p>Upcoming workshops and seminars</p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-expanded="false">
+              Research <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown">
+              <a href="../projects.html" class="dropdown-item">
+                <i class="fas fa-flask dropdown-icon" aria-hidden="true"></i>
+                <div class="dropdown-content">
+                  <h4>Projects</h4>
+                  <p>Explore our research projects</p>
+                </div>
+              </a>
+              <a href="../resources.html" class="dropdown-item">
+                <i class="fas fa-database dropdown-icon" aria-hidden="true"></i>
+                <div class="dropdown-content">
+                  <h4>Resources</h4>
+                  <p>Access research tools and data</p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="../newsletter.html" class="nav-link">Newsletter</a>
+          </li>
+          <li class="nav-item">
+            <a href="../contact.html" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="../join-us.html" class="btn btn-primary">Join Us</a>
+          </li>
+        </ul>
+
+        <button
+          class="mobile-toggle"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="../index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a
+            href="#"
+            class="nav-link mobile-dropdown-toggle"
+            aria-expanded="false"
+          >
+            Community <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown">
+            <a href="../members.html" class="dropdown-item">
+              <i class="fas fa-users dropdown-icon" aria-hidden="true"></i>
+              <div class="dropdown-content">
+                <h4>Members</h4>
+                <p>Meet our research community</p>
+              </div>
+            </a>
+            <a href="../gallery.html" class="dropdown-item">
+              <i class="fas fa-images dropdown-icon" aria-hidden="true"></i>
+              <div class="dropdown-content">
+                <h4>Gallery</h4>
+                <p>Photos from our events and activities</p>
+              </div>
+            </a>
+            <a href="../events.html" class="dropdown-item">
+              <i class="fas fa-calendar dropdown-icon" aria-hidden="true"></i>
+              <div class="dropdown-content">
+                <h4>Events</h4>
+                <p>Upcoming workshops and seminars</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a
+            href="#"
+            class="nav-link mobile-dropdown-toggle"
+            aria-expanded="false"
+          >
+            Research <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown">
+            <a href="../projects.html" class="dropdown-item">
+              <i class="fas fa-flask dropdown-icon" aria-hidden="true"></i>
+              <div class="dropdown-content">
+                <h4>Projects</h4>
+                <p>Explore our research projects</p>
+              </div>
+            </a>
+            <a href="../resources.html" class="dropdown-item">
+              <i class="fas fa-database dropdown-icon" aria-hidden="true"></i>
+              <div class="dropdown-content">
+                <h4>Resources</h4>
+                <p>Access research tools and data</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="../newsletter.html" class="nav-link">Newsletter</a>
+        </li>
+        <li class="nav-item">
+          <a href="../contact.html" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a href="../join-us.html" class="btn btn-primary">Join Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Load page header -->
+      <div id="page-header-container">
+        <!-- Page header will be loaded here -->
+      </div>
+
+      <!-- Research Overview -->
+      <section class="section">
+        <div class="container">
+          <div class="research-overview">
+            <div class="research-info">
+              <div class="research-badges">
+                <span class="badge badge-success">Renewable Energy</span>
+                <span class="badge badge-info">Published</span>
+              </div>
+
+              <h2>Abstract</h2>
+              <p class="research-abstract">
+                This study presents a comprehensive simulation model for PEM
+                (Proton Exchange Membrane) electrolyzer power management
+                integrated with renewable energy generation systems. The
+                research focuses on optimizing hydrogen production efficiency
+                while ensuring reliable energy supply for sub-Saharan African
+                communities. The hybrid renewable-powered system combines solar
+                and wind energy sources with advanced power management
+                algorithms to maximize electrolyzer performance and minimize
+                energy waste.
+              </p>
+
+              <p class="research-abstract">
+                The simulation results demonstrate significant improvements in
+                energy utilization efficiency and hydrogen production rates
+                compared to conventional systems. The proposed model addresses
+                key challenges in renewable energy storage and provides a
+                pathway for sustainable, affordable energy solutions in
+                resource-limited environments. This work contributes to the
+                growing body of research on clean energy technologies
+                specifically adapted for African contexts.
+              </p>
+
+              <div class="research-links">
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  View Publication
+                </a>
+
+                <!--Change by Theophilus (Removed the download PDF Button)-->
+                <!--<a href="#" class="btn btn-secondary">
+                  <i class="fas fa-download" aria-hidden="true"></i>
+                  Download PDF
+                </a>-->
+
+
+              </div>
+            </div>
+
+            <div class="researcher-profile">
+              <div class="profile-card">
+                <div class="profile-image">
+                  <i class="fas fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="profile-info">
+                  <h3>Chisom Ogbogu</h3>
+                  <p class="profile-degree">
+                    Master of Science in Information Technology (MSIT)
+                  </p>
+                  <p class="profile-focus">
+                    Research Focus: Renewable Energy Systems, Power Management
+                  </p>
+
+                  <div class="profile-contact">
+                    <a
+                      href="mailto:chisom.ogbogu@africa.cmu.edu"
+                      class="contact-btn"
+                    >
+                      <i class="fas fa-envelope" aria-hidden="true"></i>
+                      Contact Researcher
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="advisor-info">
+                <h4>Research Advisor</h4>
+                <div class="advisor-card">
+                  <div class="advisor-image">
+                    <i class="fas fa-user-tie" aria-hidden="true"></i>
+                  </div>
+                  <div class="advisor-details">
+                    <h5>Prof. Jesse Thornburg</h5>
+                    <p>Professor of Electrical Engineering</p>
+                    <a
+                      href="mailto:jesse.thornburg@africa.cmu.edu"
+                      class="advisor-contact"
+                    >
+                      <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research Visuals -- commented out by Theophilus Owiti on 10/14/2025-->
+       <!--as agreed this section is not required for now-->
+      <!--
+      <section class="section" style="background: var(--gray-50)">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Research Visuals & Data</h2>
+            <p class="section-subtitle">
+              Key findings and visualizations from the PEM electrolyzer
+              simulation study.
+            </p>
+          </div>
+
+          <div class="visuals-grid">
+            <div class="visual-item">
+              <div
+                class="visual-placeholder"
+                style="background: linear-gradient(135deg, #10b981, #065f46)"
+              >
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                <div class="visual-overlay">
+                  <h3>Power Efficiency Analysis</h3>
+                  <p>Comparative analysis of power management algorithms</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-item">
+              <div
+                class="visual-placeholder"
+                style="background: linear-gradient(135deg, #3b82f6, #1e40af)"
+              >
+                <i class="fas fa-battery-three-quarters" aria-hidden="true"></i>
+                <div class="visual-overlay">
+                  <h3>Hydrogen Production Rates</h3>
+                  <p>Optimization results under varying renewable inputs</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-item">
+              <div
+                class="visual-placeholder"
+                style="background: linear-gradient(135deg, #8b5cf6, #5b21b6)"
+              >
+                <i class="fas fa-solar-panel" aria-hidden="true"></i>
+                <div class="visual-overlay">
+                  <h3>Renewable Integration</h3>
+                  <p>Solar and wind energy integration patterns</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-item">
+              <div
+                class="visual-placeholder"
+                style="background: linear-gradient(135deg, #f59e0b, #d97706)"
+              >
+                <i class="fas fa-cogs" aria-hidden="true"></i>
+                <div class="visual-overlay">
+                  <h3>System Architecture</h3>
+                  <p>Complete electrolyzer system design and components</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    -->
+      <!-- Call to Action -->
+      <section class="section cta-research">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Feature Your Research</h2>
+            <p>
+              Have groundbreaking research you'd like to showcase? Join our
+              featured research program and share your work with the CMU Africa
+              research community.
+            </p>
+            <div class="cta-buttons">
+              <a href="../contact.html" class="btn btn-white">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                Submit Your Research
+              </a>
+              <a href="../projects.html" class="btn btn-outline">
+                <i class="fas fa-flask" aria-hidden="true"></i>
+                View All Projects
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Load footer -->
+    <div id="footer-container">
+      <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="../js/utils.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/interactions.js"></script>
+
+    <!-- Load page components -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          // Load page header
+          const headerResponse = await fetch("../page-header.html");
+          if (headerResponse.ok) {
+            const headerHTML = await headerResponse.text();
+            document.getElementById("page-header-container").innerHTML =
+              headerHTML;
+
+            // Set page-specific content
+            document.getElementById("page-title").textContent =
+              "PEM Electrolyzer Research";
+            document.getElementById("page-description").textContent =
+              "Simulation of PEM Electrolyzer Power Management with Renewable Generation";
+
+            // Update breadcrumb
+            const breadcrumbList = document.getElementById("breadcrumb-list");
+            breadcrumbList.innerHTML = `
+              <li class="breadcrumb-item">
+                <a href="../index.html" class="breadcrumb-link">Home</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="../projects.html" class="breadcrumb-link">Projects</a>
+              </li>
+              <li class="breadcrumb-item active">
+                PEM Electrolyzer
+              </li>
+            `;
+          }
+
+          // Load footer
+          const footerResponse = await fetch("../footer.html");
+          if (footerResponse.ok) {
+            const footerHTML = await footerResponse.text();
+            document.getElementById("footer-container").innerHTML = footerHTML;
+          }
+        } catch (error) {
+          console.error("Error loading page components:", error);
+        }
+      });
+    </script>
+
+    <style>
+      .research-overview {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: var(--space-16);
+        align-items: start;
+      }
+
+      .research-badges {
+        display: flex;
+        gap: var(--space-3);
+        margin-bottom: var(--space-8);
+        flex-wrap: wrap;
+      }
+
+      .research-info h2 {
+        font-size: var(--text-3xl);
+        font-weight: var(--font-weight-bold);
+        color: var(--gray-800);
+        margin-bottom: var(--space-6);
+      }
+
+      .research-abstract {
+        font-size: var(--text-lg);
+        line-height: 1.7;
+        color: var(--gray-700);
+        margin-bottom: var(--space-6);
+      }
+
+      .research-links {
+        display: flex;
+        gap: var(--space-4);
+        flex-wrap: wrap;
+      }
+
+      .researcher-profile {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+      }
+
+      .profile-card {
+        background: var(--white);
+        border-radius: var(--radius-2xl);
+        padding: var(--space-8);
+        box-shadow: var(--shadow-lg);
+        text-align: center;
+      }
+
+      .profile-image {
+        background: var(--primary-color);
+        color: var(--white);
+        width: 120px;
+        height: 120px;
+        border-radius: var(--radius-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--text-5xl);
+        margin: 0 auto var(--space-6);
+      }
+
+      .profile-info h3 {
+        font-size: var(--text-2xl);
+        font-weight: var(--font-weight-bold);
+        color: var(--gray-800);
+        margin-bottom: var(--space-2);
+      }
+
+      .profile-degree {
+        font-size: var(--text-base);
+        color: var(--primary-color);
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: var(--space-3);
+      }
+
+      .profile-focus {
+        font-size: var(--text-sm);
+        color: var(--gray-600);
+        margin-bottom: var(--space-6);
+        line-height: 1.5;
+      }
+
+      .contact-btn {
+        background: var(--primary-color);
+        color: var(--white);
+        padding: var(--space-3) var(--space-6);
+        border-radius: var(--radius-lg);
+        text-decoration: none;
+        font-weight: var(--font-weight-semibold);
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        transition: all var(--transition-base);
+      }
+
+      .contact-btn:hover {
+        background: var(--primary-hover);
+        transform: translateY(-2px);
+      }
+
+      .advisor-info h4 {
+        font-size: var(--text-lg);
+        font-weight: var(--font-weight-semibold);
+        color: var(--gray-800);
+        margin-bottom: var(--space-4);
+      }
+
+      .advisor-card {
+        background: var(--white);
+        border-radius: var(--radius-xl);
+        padding: var(--space-6);
+        box-shadow: var(--shadow-md);
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+      }
+
+      .advisor-image {
+        background: var(--gray-200);
+        color: var(--gray-600);
+        width: 60px;
+        height: 60px;
+        border-radius: var(--radius-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--text-xl);
+        flex-shrink: 0;
+      }
+
+      .advisor-details h5 {
+        font-size: var(--text-base);
+        font-weight: var(--font-weight-semibold);
+        color: var(--gray-800);
+        margin-bottom: var(--space-1);
+      }
+
+      .advisor-details p {
+        font-size: var(--text-sm);
+        color: var(--gray-600);
+        margin-bottom: var(--space-2);
+      }
+
+      .advisor-contact {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-size: var(--text-lg);
+        transition: color var(--transition-base);
+      }
+
+      .advisor-contact:hover {
+        color: var(--primary-hover);
+      }
+
+      .visuals-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-8);
+      }
+
+      .visual-item {
+        border-radius: var(--radius-2xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        transition: all var(--transition-base);
+      }
+
+      .visual-item:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-2xl);
+      }
+
+      .visual-placeholder {
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: var(--text-6xl);
+      }
+
+      .visual-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: var(--white);
+        padding: var(--space-6);
+        text-align: center;
+      }
+
+      .visual-overlay h3 {
+        font-size: var(--text-lg);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--space-2);
+      }
+
+      .visual-overlay p {
+        font-size: var(--text-sm);
+        opacity: 0.9;
+      }
+
+      .cta-research {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--primary-hover)
+        );
+        color: var(--white);
+        text-align: center;
+      }
+
+      .cta-content h2 {
+        font-size: var(--text-4xl);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--space-4);
+      }
+
+      .cta-content p {
+        font-size: var(--text-xl);
+        margin-bottom: var(--space-8);
+        opacity: 0.9;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: var(--space-4);
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 768px) {
+        .research-overview {
+          grid-template-columns: 1fr;
+          gap: var(--space-8);
+        }
+
+        .research-links {
+          justify-content: center;
+        }
+
+        .advisor-card {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .cta-buttons .btn {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+    </style>
+  </body>
+</html>
