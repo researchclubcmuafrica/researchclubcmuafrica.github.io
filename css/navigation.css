@@ -186,16 +186,17 @@
 
 .mobile-menu {
   position: fixed;
-  top: 80px; /* Just the nav height */
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
   background: var(--white);
   transform: translateX(-100%);
   transition: transform var(--transition-base);
-  z-index: var(--z-modal);
+  z-index: 999;
   overflow-y: auto;
   box-shadow: var(--shadow-xl);
+  visibility: hidden;
 }
 
 /* Ensure consistent spacing for pages with headers */
@@ -210,23 +211,37 @@ body:not(.home-page) main {
 
 .mobile-menu.active {
   transform: translateX(0);
+  visibility: visible;
 }
 
 .mobile-menu .nav-menu {
   flex-direction: column;
   padding: var(--space-8);
   gap: 0;
+  display: flex;
 }
 
 .mobile-menu .nav-item {
   width: 100%;
   border-bottom: 1px solid var(--gray-200);
+  opacity: 1;
+  display: block;
 }
 
 .mobile-menu .nav-link {
   width: 100%;
   padding: var(--space-4);
   justify-content: space-between;
+  display: flex;
+  color: var(--gray-700);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+
+.mobile-menu .nav-link:active,
+.mobile-menu .nav-link:focus {
+  color: var(--primary-color);
+  background-color: rgba(139, 21, 56, 0.05);
 }
 
 .mobile-menu .dropdown {
@@ -239,12 +254,25 @@ body:not(.home-page) main {
   margin: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-base);
+  transition: max-height 0.3s ease-in-out;
+  display: block;
 }
 
 .mobile-menu .dropdown.active {
-  max-height: 500px;
+  max-height: 600px;
   padding: var(--space-4);
+}
+
+.mobile-menu .dropdown-item {
+  display: flex;
+  color: var(--gray-700);
+  text-decoration: none;
+  opacity: 1;
+}
+
+.mobile-menu .dropdown-item:active,
+.mobile-menu .dropdown-item:focus {
+  background-color: var(--gray-100);
 }
 
 .mobile-dropdown-toggle {
@@ -263,11 +291,33 @@ body:not(.home-page) main {
 
   .mobile-toggle {
     display: block;
+    z-index: 1001;
   }
 
   .logo-image {
     height: 40px;
     max-width: 150px;
+  }
+
+  /* Ensure mobile menu items are visible */
+  .mobile-menu .nav-item {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu .nav-link,
+  .mobile-menu .dropdown-item {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu .btn {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: var(--space-4);
   }
 
   /* Ensure proper spacing for all pages on mobile */
