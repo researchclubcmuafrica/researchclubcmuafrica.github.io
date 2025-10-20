@@ -216,31 +216,37 @@ body:not(.home-page) main {
 
 .mobile-menu .nav-menu {
   flex-direction: column;
-  padding: var(--space-8);
+  padding: var(--space-6) var(--space-4);
   gap: 0;
-  display: flex;
+  display: flex !important;
+  list-style: none;
+  margin: 0;
 }
 
 .mobile-menu .nav-item {
   width: 100%;
   border-bottom: 1px solid var(--gray-200);
-  opacity: 1;
-  display: block;
+  opacity: 1 !important;
+  display: block !important;
+  visibility: visible !important;
 }
 
 .mobile-menu .nav-link {
   width: 100%;
-  padding: var(--space-4);
+  padding: var(--space-4) var(--space-3);
   justify-content: space-between;
-  display: flex;
-  color: var(--gray-700);
+  display: flex !important;
+  color: var(--gray-800) !important;
   text-decoration: none;
   font-weight: var(--font-weight-medium);
+  font-size: var(--text-base);
+  align-items: center;
 }
 
+.mobile-menu .nav-link:hover,
 .mobile-menu .nav-link:active,
 .mobile-menu .nav-link:focus {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
   background-color: rgba(139, 21, 56, 0.05);
 }
 
@@ -256,23 +262,37 @@ body:not(.home-page) main {
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
   display: block;
+  padding: 0;
 }
 
 .mobile-menu .dropdown.active {
   max-height: 600px;
-  padding: var(--space-4);
+  padding: var(--space-3) 0;
 }
 
 .mobile-menu .dropdown-item {
-  display: flex;
-  color: var(--gray-700);
+  display: flex !important;
+  color: var(--gray-700) !important;
   text-decoration: none;
-  opacity: 1;
+  opacity: 1 !important;
+  visibility: visible !important;
+  padding: var(--space-3) var(--space-6);
 }
 
+.mobile-menu .dropdown-item:hover,
 .mobile-menu .dropdown-item:active,
 .mobile-menu .dropdown-item:focus {
   background-color: var(--gray-100);
+}
+
+.mobile-menu .dropdown-content h4 {
+  color: var(--gray-800) !important;
+  font-size: var(--text-sm);
+}
+
+.mobile-menu .dropdown-content p {
+  color: var(--gray-600) !important;
+  font-size: var(--text-xs);
 }
 
 .mobile-dropdown-toggle {
@@ -292,6 +312,7 @@ body:not(.home-page) main {
   .mobile-toggle {
     display: block;
     z-index: 1001;
+    position: relative;
   }
 
   .logo-image {
@@ -299,25 +320,37 @@ body:not(.home-page) main {
     max-width: 150px;
   }
 
-  /* Ensure mobile menu items are visible */
-  .mobile-menu .nav-item {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+  /* Force mobile menu items to be visible */
+  .mobile-menu.active .nav-menu {
+    display: flex !important;
   }
 
-  .mobile-menu .nav-link,
-  .mobile-menu .dropdown-item {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
+  .mobile-menu.active .nav-item {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .mobile-menu.active .nav-link {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: var(--gray-800) !important;
+  }
+
+  .mobile-menu.active .dropdown-item {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: var(--gray-700) !important;
   }
 
   .mobile-menu .btn {
-    display: inline-flex;
-    width: 100%;
+    display: inline-flex !important;
+    width: auto;
     justify-content: center;
-    margin-top: var(--space-4);
+    margin: var(--space-4) var(--space-3);
+    padding: var(--space-3) var(--space-6);
   }
 
   /* Ensure proper spacing for all pages on mobile */
