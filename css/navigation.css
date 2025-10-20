@@ -299,6 +299,55 @@ body:not(.home-page) main {
   cursor: pointer;
 }
 
+/* Tablet Responsive Design */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 0 var(--space-4);
+    max-width: 100%;
+  }
+
+  .nav-menu {
+    gap: var(--space-4);
+  }
+
+  .nav-link {
+    padding: var(--space-2);
+    font-size: var(--text-sm);
+  }
+
+  .nav-item .btn {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+    white-space: nowrap;
+  }
+
+  .logo-image {
+    height: 45px;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-menu {
+    gap: var(--space-3);
+  }
+
+  .nav-link {
+    padding: var(--space-2);
+    font-size: var(--text-sm);
+  }
+
+  .nav-item .btn {
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.8rem;
+  }
+
+  .logo-image {
+    height: 42px;
+    max-width: 160px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-container {
