@@ -186,16 +186,17 @@
 
 .mobile-menu {
   position: fixed;
-  top: 80px; /* Just the nav height */
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
   background: var(--white);
   transform: translateX(-100%);
   transition: transform var(--transition-base);
-  z-index: var(--z-modal);
+  z-index: 999;
   overflow-y: auto;
   box-shadow: var(--shadow-xl);
+  visibility: hidden;
 }
 
 /* Ensure consistent spacing for pages with headers */
@@ -210,23 +211,43 @@ body:not(.home-page) main {
 
 .mobile-menu.active {
   transform: translateX(0);
+  visibility: visible;
 }
 
 .mobile-menu .nav-menu {
   flex-direction: column;
-  padding: var(--space-8);
+  padding: var(--space-6) var(--space-4);
   gap: 0;
+  display: flex !important;
+  list-style: none;
+  margin: 0;
 }
 
 .mobile-menu .nav-item {
   width: 100%;
   border-bottom: 1px solid var(--gray-200);
+  opacity: 1 !important;
+  display: block !important;
+  visibility: visible !important;
 }
 
 .mobile-menu .nav-link {
   width: 100%;
-  padding: var(--space-4);
+  padding: var(--space-4) var(--space-3);
   justify-content: space-between;
+  display: flex !important;
+  color: var(--gray-800) !important;
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-base);
+  align-items: center;
+}
+
+.mobile-menu .nav-link:hover,
+.mobile-menu .nav-link:active,
+.mobile-menu .nav-link:focus {
+  color: var(--primary-color) !important;
+  background-color: rgba(139, 21, 56, 0.05);
 }
 
 .mobile-menu .dropdown {
@@ -239,16 +260,92 @@ body:not(.home-page) main {
   margin: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-base);
+  transition: max-height 0.3s ease-in-out;
+  display: block;
+  padding: 0;
 }
 
 .mobile-menu .dropdown.active {
-  max-height: 500px;
-  padding: var(--space-4);
+  max-height: 600px;
+  padding: var(--space-3) 0;
+}
+
+.mobile-menu .dropdown-item {
+  display: flex !important;
+  color: var(--gray-700) !important;
+  text-decoration: none;
+  opacity: 1 !important;
+  visibility: visible !important;
+  padding: var(--space-3) var(--space-6);
+}
+
+.mobile-menu .dropdown-item:hover,
+.mobile-menu .dropdown-item:active,
+.mobile-menu .dropdown-item:focus {
+  background-color: var(--gray-100);
+}
+
+.mobile-menu .dropdown-content h4 {
+  color: var(--gray-800) !important;
+  font-size: var(--text-sm);
+}
+
+.mobile-menu .dropdown-content p {
+  color: var(--gray-600) !important;
+  font-size: var(--text-xs);
 }
 
 .mobile-dropdown-toggle {
   cursor: pointer;
+}
+
+/* Tablet Responsive Design */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 0 var(--space-4);
+    max-width: 100%;
+  }
+
+  .nav-menu {
+    gap: var(--space-4);
+  }
+
+  .nav-link {
+    padding: var(--space-2);
+    font-size: var(--text-sm);
+  }
+
+  .nav-item .btn {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+    white-space: nowrap;
+  }
+
+  .logo-image {
+    height: 45px;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-menu {
+    gap: var(--space-3);
+  }
+
+  .nav-link {
+    padding: var(--space-2);
+    font-size: var(--text-sm);
+  }
+
+  .nav-item .btn {
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.8rem;
+  }
+
+  .logo-image {
+    height: 42px;
+    max-width: 160px;
+  }
 }
 
 /* Responsive Design */
@@ -263,11 +360,46 @@ body:not(.home-page) main {
 
   .mobile-toggle {
     display: block;
+    z-index: 1001;
+    position: relative;
   }
 
   .logo-image {
     height: 40px;
     max-width: 150px;
+  }
+
+  /* Force mobile menu items to be visible */
+  .mobile-menu.active .nav-menu {
+    display: flex !important;
+  }
+
+  .mobile-menu.active .nav-item {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .mobile-menu.active .nav-link {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: var(--gray-800) !important;
+  }
+
+  .mobile-menu.active .dropdown-item {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: var(--gray-700) !important;
+  }
+
+  .mobile-menu .btn {
+    display: inline-flex !important;
+    width: auto;
+    justify-content: center;
+    margin: var(--space-4) var(--space-3);
+    padding: var(--space-3) var(--space-6);
   }
 
   /* Ensure proper spacing for all pages on mobile */
