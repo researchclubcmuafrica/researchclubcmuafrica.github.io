@@ -549,6 +549,88 @@
             </div>
         </section>
 
+        <!-- Project Statistics -->
+        <section class="section" style="background: var(--gray-50)">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Research Impact</h2>
+                    <p class="section-subtitle">
+                        Our projects are making a real difference in communities across
+                        Africa and beyond.
+                    </p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Featured Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Active Members</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Published Papers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Ongoing Projects</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: var(--space-8);
+            }
+
+            .stat-item {
+                text-align: center;
+                background: var(--white);
+                border-radius: var(--radius-xl);
+                padding: var(--space-8);
+                box-shadow: var(--shadow-md);
+                transition: all var(--transition-base);
+            }
+
+            .stat-item:hover {
+                transform: translateY(-4px);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .stat-number {
+                font-size: var(--text-5xl);
+                font-weight: var(--font-weight-bold);
+                color: var(--primary-color);
+                display: block;
+                margin-bottom: var(--space-2);
+            }
+
+            .stat-label {
+                font-size: var(--text-lg);
+                color: var(--gray-700);
+                font-weight: var(--font-weight-medium);
+            }
+
+            @media (max-width: 768px) {
+                .stats-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: var(--space-4);
+                }
+
+                .stat-item {
+                    padding: var(--space-6);
+                }
+
+                .stat-number {
+                    font-size: var(--text-4xl);
+                }
+            }
+        </style>
     </main>
 
     <!-- Load footer -->
