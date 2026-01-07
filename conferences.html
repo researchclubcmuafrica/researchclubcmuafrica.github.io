@@ -321,7 +321,45 @@
                 <a href="http://2026.ijcnn.org" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
               </div>
             </div>
-            <!-- ...continue for all remaining conferences, each as a card, sorted by deadline... -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Load footer -->
+    <div id="footer-container">
+      <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/interactions.js"></script>
+
+    <!-- Load page components -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          // Load navigation
+          const navResponse = await fetch("navigation.html");
+          if (navResponse.ok) {
+            const navHTML = await navResponse.text();
+            document.getElementById("navigation-container").innerHTML = navHTML;
+            if (window.initializeNavigation) window.initializeNavigation();
+          }
+
+          // Load page header
+          const headerResponse = await fetch("page-header.html");
+          if (headerResponse.ok) {
+            const headerHTML = await headerResponse.text();
+            document.getElementById("page-header-container").innerHTML = headerHTML;
+            // Update page header content for conferences page
+            const pageTitle = document.querySelector(".page-header-title");
+            const pageSubtitle = document.querySelector(".page-header-subtitle");
+            if (pageTitle) pageTitle.textContent = "Open Conferences";
+            if (pageSubtitle) pageSubtitle.textContent = "Discover upcoming conferences and submission deadlines for your research";
+          }
+
           // Load footer
           const footerResponse = await fetch("footer.html");
           if (footerResponse.ok) {
