@@ -54,7 +54,7 @@
         <!-- Page header will be loaded here -->
       </div>
 
-      <!-- Executive Members -->
+      <!-- Executive Members Tabs -->
       <section class="section">
         <div class="container">
           <div class="section-header">
@@ -63,152 +63,247 @@
               Meet the dedicated leaders who guide our research community.
             </p>
           </div>
-
-          <div class="executive-grid">
-            <div class="executive-card">
-              <div class="executive-image">
-                <img
-                  src="assets/images/members/Edward%20Ajayi.jpeg"
-                  alt="Edward Ajayi"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  onload="this.classList.add('loaded'); console.log('Edward Ajayi image loaded successfully');"
-                />
-                <div class="member-avatar-fallback" style="display: none">
-                  <i class="fas fa-user" aria-hidden="true"></i>
-                </div>
-                <div class="social-overlay">
-                  <a href="mailto:edward@africa.cmu.edu" class="social-link">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/edward-ajayi-a652b6203"
-                    class="social-link"
-                  >
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="executive-info">
-                <h3 class="executive-name">Edward Ajayi</h3>
-                <p class="executive-position">Chair</p>
-                <p class="executive-course">
-                  Masters in Engineering Artificial Intelligence (MSEAI)
-                </p>
-                <div class="research-tags">
-                  <span class="tag">AI & ML</span>
-                  <span class="tag">NLP</span>
-                </div>
-              </div>
+          <!-- Tab Navigation -->
+          <div class="tabs-container">
+            <div class="tabs-nav">
+              <button class="tab-link" role="tab" aria-selected="true" data-target="tab-current-leaders">
+                <i class="fas fa-users"></i>
+                <span>Current Leaders</span>
+              </button>
+              <button class="tab-link" role="tab" aria-selected="false" data-target="tab-past-leaders">
+                <i class="fas fa-user-clock"></i>
+                <span>Past Leaders</span>
+              </button>
             </div>
-
-            <div class="executive-card">
-              <div class="executive-image">
-                <img
-                  src="assets/images/members/Stephen%20Oduh.jpeg"
-                  alt="Stephen Oduh"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  onload="this.classList.add('loaded'); console.log('Stephen Oduh image loaded successfully');"
-                />
-                <div class="member-avatar-fallback" style="display: none">
-                  <i class="fas fa-user" aria-hidden="true"></i>
+          </div>
+          <!-- Tab Contents -->
+          <div id="tab-current-leaders" class="tab-content" role="tabpanel" style="display:block;">
+            <div class="executive-grid">
+              <!-- Matewos Tegete Endaylalu -->
+              <div class="executive-card">
+                <div class="executive-image">
+                  <img src="assets/images/members/Matewos%20Tegete%20Endaylalu.jpeg" alt="Matewos Tegete Endaylalu" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="member-avatar-fallback" style="display: none">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  </div>
+                  <div class="social-overlay">
+                    <a href="http://www.linkedin.com/in/matewos-tegete-328760247" class="social-link" target="_blank">
+                      <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                  </div>
                 </div>
-                <div class="social-overlay">
-                  <a href="mailto:soduh@andrew.cmu.edu" class="social-link">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/osobotu"
-                    class="social-link"
-                  >
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="executive-info">
-                <h3 class="executive-name">Stephen Oduh</h3>
-                <p class="executive-position">Vice Chair</p>
-                <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
-                <div class="research-tags">
-                  <span class="tag">ML & DL</span>
-                  <span class="tag">CV</span>
-                  <!-- <span class="tag">Data Science</span> -->
+                <div class="executive-info">
+                  <h3 class="executive-name">Matewos Tegete Endaylalu</h3>
+                  <p class="executive-position">Chair</p>
+                  <p class="executive-course">MS EAI</p>
                 </div>
               </div>
-            </div>
-
-            <div class="executive-card">
-              <div class="executive-image">
-                <img
-                  src="assets/images/members/Joel%20Adebayo.jpg"
-                  alt="Joel Adebayo"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  onload="this.classList.add('loaded'); console.log('Joel Adebayo image loaded successfully');"
-                />
-                <div class="member-avatar-fallback" style="display: none">
-                  <i class="fas fa-user" aria-hidden="true"></i>
+              <!-- Grace Kaimburi -->
+              <div class="executive-card">
+                <div class="executive-image">
+                  <img src="assets/images/members/Grace%20Kaimburi.jpeg" alt="Grace Kaimburi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="member-avatar-fallback" style="display: none">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  </div>
+                  <div class="social-overlay">
+                    <a href="https://www.linkedin.com/in/grace-kaimburi/" class="social-link" target="_blank">
+                      <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                  </div>
                 </div>
-                <div class="social-overlay">
-                  <a href="mailto:joeltooni@cmu.edu" class="social-link">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/joeltooni"
-                    class="social-link"
-                  >
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                  </a>
-                  <a href="https://github.com/joeltooni" class="social-link">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                  </a>
+                <div class="executive-info">
+                  <h3 class="executive-name">Grace Kaimburi</h3>
+                  <p class="executive-position">Community Engagement Officer</p>
+                  <p class="executive-course">MSEAI</p>
                 </div>
               </div>
-              <div class="executive-info">
-                <h3 class="executive-name">Joel Adebayo</h3>
-                <p class="executive-position">
-                  Community Engagement Officer & Webmaster
-                </p>
-                <p class="executive-course">Masters in Electrical and Computer Engineering - Advanced (MSECE-AD)</p>
-                <div class="research-tags">
-                  <span class="tag">Robotics</span>
-                  <span class="tag">3D Vision</span>
+              <!-- Zainab Akintayo -->
+              <div class="executive-card">
+                <div class="executive-image">
+                  <img src="assets/images/members/Zainab%20Akintayo.jpeg" alt="Zainab Akintayo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="member-avatar-fallback" style="display: none">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  </div>
+                  <div class="social-overlay">
+                    <a href="https://www.linkedin.com/in/zainab-akintayo-7a8aaa1a9/" class="social-link" target="_blank">
+                      <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="executive-info">
+                  <h3 class="executive-name">Zainab Akintayo</h3>
+                  <p class="executive-position">Vice Chair</p>
+                  <p class="executive-course">MSEAI</p>
                 </div>
               </div>
-            </div>
-
-            <div class="executive-card">
-              <div class="executive-image">
-                <img
-                  src="assets/images/members/Angelique%20Uwamahoro.jpeg"
-                  alt="Angelique Uwamahoro"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  onload="this.classList.add('loaded'); console.log('Angelique Uwamahoro image loaded successfully');"
-                />
-                <div class="member-avatar-fallback" style="display: none">
-                  <i class="fas fa-user" aria-hidden="true"></i>
+              <!-- Paul Migume -->
+              <div class="executive-card">
+                <div class="executive-image">
+                  <img src="assets/images/members/Paul%20Mugume.jpeg" alt="Paul Migume" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="member-avatar-fallback" style="display: none">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  </div>
+                  <div class="social-overlay">
+                    <a href="https://www.linkedin.com/in/paul-mugume-8166a2161/" class="social-link" target="_blank">
+                      <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                  </div>
                 </div>
-                <div class="social-overlay">
-                  <a href="mailto:auwamaho@andrew.cmu.edu" class="social-link">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/angelique-u"
-                    class="social-link"
-                  >
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                  </a>
+                <div class="executive-info">
+                  <h3 class="executive-name">Paul Migume</h3>
+                  <p class="executive-position">Public Relations</p>
+                  <p class="executive-course">MSEAI</p>
                 </div>
               </div>
-              <div class="executive-info">
-                <h3 class="executive-name">Angelique Uwamahoro</h3>
-                <p class="executive-position">Strategist</p>
-                <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
-                <div class="research-tags">
-                  <span class="tag">ML</span>
-                  <span class="tag">CyberSecurity</span>
+              <!-- Jean Gabriel Mpuhwezimana -->
+              <div class="executive-card">
+                <div class="executive-image">
+                  <img src="assets/images/members/Jean%20Gabriel%20Mpuhwezimana.jpeg" alt="Jean Gabriel Mpuhwezimana" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="member-avatar-fallback" style="display: none">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  </div>
+                  <div class="social-overlay">
+                    <a href="https://www.linkedin.com/in/workwithgabby/" class="social-link" target="_blank">
+                      <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="executive-info">
+                  <h3 class="executive-name">Jean Gabriel Mpuhwezimana</h3>
+                  <p class="executive-position">Strategist</p>
+                  <p class="executive-course">MSIT</p>
                 </div>
               </div>
             </div>
           </div>
+          <div id="tab-past-leaders" class="tab-content" role="tabpanel" style="display:none;">
+            <h3 style="text-align:center; margin-bottom: 1.5rem; color: var(--primary-color, #8b1538); font-size: 1.5rem;">2025 Research Club Executives</h3>
+            <div class="executive-grid">
+              <!-- ...existing code for previous executives moved here... -->
+              <div class="executive-card">
+                <div class="executive-image">
+                  <img src="assets/images/members/Edward%20Ajayi.jpeg" alt="Edward Ajayi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="member-avatar-fallback" style="display: none">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  </div>
+                  <div class="social-overlay">
+                    <a href="mailto:edward@africa.cmu.edu" class="social-link">
+                      <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/edward-ajayi-a652b6203" class="social-link">
+                      <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="executive-info">
+                  <h3 class="executive-name">Edward Ajayi</h3>
+                  <p class="executive-position">Chair</p>
+                  <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
+                  <div class="research-tags">
+                    <span class="tag">AI & ML</span>
+                    <span class="tag">NLP</span>
+                  </div>
+                </div>
+              </div>
+              <div class="executive-card">
+                <div class="executive-image">
+                  <img src="assets/images/members/Stephen%20Oduh.jpeg" alt="Stephen Oduh" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="member-avatar-fallback" style="display: none">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  </div>
+                  <div class="social-overlay">
+                    <a href="mailto:soduh@andrew.cmu.edu" class="social-link">
+                      <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/osobotu" class="social-link">
+                      <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="executive-info">
+                  <h3 class="executive-name">Stephen Oduh</h3>
+                  <p class="executive-position">Vice Chair</p>
+                  <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
+                  <div class="research-tags">
+                    <span class="tag">ML & DL</span>
+                    <span class="tag">CV</span>
+                  </div>
+                </div>
+              </div>
+              <div class="executive-card">
+                <div class="executive-image">
+                  <img src="assets/images/members/Joel%20Adebayo.jpg" alt="Joel Adebayo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="member-avatar-fallback" style="display: none">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  </div>
+                  <div class="social-overlay">
+                    <a href="mailto:joeltooni@cmu.edu" class="social-link">
+                      <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/joeltooni" class="social-link">
+                      <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/joeltooni" class="social-link">
+                      <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="executive-info">
+                  <h3 class="executive-name">Joel Adebayo</h3>
+                  <p class="executive-position">Community Engagement Officer & Webmaster</p>
+                  <p class="executive-course">Masters in Electrical and Computer Engineering - Advanced (MSECE-AD)</p>
+                  <div class="research-tags">
+                    <span class="tag">Robotics</span>
+                    <span class="tag">3D Vision</span>
+                  </div>
+                </div>
+              </div>
+              <div class="executive-card">
+                <div class="executive-image">
+                  <img src="assets/images/members/Angelique%20Uwamahoro.jpeg" alt="Angelique Uwamahoro" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                  <div class="member-avatar-fallback" style="display: none">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  </div>
+                  <div class="social-overlay">
+                    <a href="mailto:auwamaho@andrew.cmu.edu" class="social-link">
+                      <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/angelique-u" class="social-link">
+                      <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="executive-info">
+                  <h3 class="executive-name">Angelique Uwamahoro</h3>
+                  <p class="executive-position">Strategist</p>
+                  <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
+                  <div class="research-tags">
+                    <span class="tag">ML</span>
+                    <span class="tag">CyberSecurity</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tab switching script -->
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const tabLinks = Array.from(document.querySelectorAll('.tab-link'));
+              const tabContents = Array.from(document.querySelectorAll('.tab-content'));
+              function activateTab(targetId, clickedButton) {
+                tabContents.forEach(tc => tc.style.display = 'none');
+                document.getElementById(targetId).style.display = 'block';
+                tabLinks.forEach(btn => btn.setAttribute('aria-selected', 'false'));
+                clickedButton.setAttribute('aria-selected', 'true');
+              }
+              tabLinks.forEach(btn => {
+                btn.addEventListener('click', function() {
+                  const target = btn.getAttribute('data-target');
+                  activateTab(target, btn);
+                });
+              });
+            });
+          </script>
         </div>
       </section>
 
