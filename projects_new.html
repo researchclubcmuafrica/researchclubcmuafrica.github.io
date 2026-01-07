@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="CMU-Africa Research Club Projects - Explore our ongoing research initiatives and collaborations" />
+    <title>Projects - CMU-Africa Research Club</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="research_club_logo.png" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/resources-custom.css" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R2LTW1285G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-R2LTW1285G');
+    </script>
+
+    <style>
+        .publication-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            margin-bottom: var(--space-4);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .publication-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .publication-card:hover::before {
+            opacity: 1;
+        }
+
+        .publication-type-badge {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background: var(--gray-100);
+            color: var(--gray-600);
+            font-weight: 600;
+        }
+
+        .publication-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: var(--space-3);
+            line-height: 1.4;
+            padding-right: 2rem;
+            /* Make space for badge if needed */
+        }
+
+        .publication-authors {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            margin-bottom: var(--space-4);
+            line-height: 1.6;
+        }
+
+        .publication-authors strong {
+            color: var(--gray-900);
+        }
+
+        .publication-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: var(--space-4);
+            padding-top: var(--space-4);
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .publication-venue {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            background: rgba(var(--primary-rgb), 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+        }
+
+        /* Custom Tab Styles Override if needed */
+        .tabs-nav {
+            justify-content: center;
+            margin-bottom: var(--space-8);
+        }
+
+        .tab-link {
+            min-width: 180px;
+        }
+
+        @media (max-width: 768px) {
+            .tabs-nav {
+                flex-direction: column;
+            }
+
+            .tab-link {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Load Navigation -->
+    <div id="navigation-container">
+        <!-- Navigation will be loaded here -->
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Load page header -->
+        <div id="page-header-container">
+            <!-- Page header will be loaded here -->
+        </div>
+
+        <section class="section" style="background: var(--gray-50); min-height: 80vh;">
+            <div class="container">
+
+                <!-- Tab Navigation -->
+                <div class="tabs-container">
+                    <div class="tabs-nav">
+                        <button class="tab-link active" role="tab" aria-selected="true" data-target="tab-conference">
+                            <i class="fas fa-users-rectangle"></i>
+                            <span>Conference Publications</span>
+                        </button>
+                        <button class="tab-link" role="tab" aria-selected="false" data-target="tab-journal">
+                            <i class="fas fa-book-open"></i>
+                            <span>Journal Publications</span>
+                        </button>
+                        <button class="tab-link" role="tab" aria-selected="false" data-target="tab-posters">
+                            <i class="fas fa-image"></i>
+                            <span>Posters</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Conference Publications Tab -->
+                <div id="tab-conference" class="tab-content" role="tabpanel" style="display:block;">
+                    <div class="resource-list">
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Empowering Medical Equipment Sustainability in Low-Resource
+                                Settings: An AI-Powered Diagnostic and Support Platform for Biomedical Technicians</h3>
+                            <div class="publication-authors">
+                                Bernes Lorier Atabonfack, Ahmed Tahiru Issah, Mohammed Hardi Abdul Baaki, Clemence
+                                Ingabire, Tolulope Olusuyi, Maruf Adewole, Udunna C. Anazodo, and Timothy X Brown
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> MICCAI 2025</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Reassessing Glioma Segmentation Strategies: nnU-Net as a
+                                Strong Baseline on Limited Sub-Saharan MRI Data</h3>
+                            <div class="publication-authors">
+                                Uwimana Lowami, Andrew Blayama Stephen, Confidence Raymond, Dong Zhang, Maruf Adewole,
+                                Udunna C Anazodo, Mehmet Kurt, Damilare Olatunji, and Bernes Lorier Atabonfack
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> MICCAI 2025</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">A Machine Learning Approach for Mental Health Conditions and
+                                Cyberbullying Detection from Social Media (Oral)</h3>
+                            <div class="publication-authors">
+                                Edward Ajayi, Martha Kachweka, Mawuli Deku, Emily Aiken
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> AAAI 2026 (AI in
+                                    Medicine and Healthcare)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Eyes and Ears: Automated Annotation of Audio Data Using
+                                Computer Vision</h3>
+                            <div class="publication-authors">
+                                Galane Basha Namomsa, Alex Gichamba, Brian Ebiyau, João Barros
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> IEEE Int. Conf. on
+                                    Image Processing (ICIP)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Strategic PMU Deployment for Grid Observability and Stability:
+                                First Deployment in Rwanda</h3>
+                            <div class="publication-authors">
+                                Rock Agon, Jasper Kwizera, Dieudonne Iradukunda, Ateny Aguto, Barry Rawn
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> IEEE PES
+                                    Innovative Smart Grid Technologies (ISGT)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Automated and Accessible Leukemia Detection from Microscopic
+                                Blood Films Using YOLO and Vision Transformers</h3>
+                            <div class="publication-authors">
+                                Andrew Blayama Stephen, Miracle James Olotuche, Mona Aman, Azizuddin Ahmed Biyabani
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> IEEE AFRICON
+                                    Conference 2025</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Mapping Socioeconomic Air Quality Disparities in Rwanda Using
+                                Sentinel-5P TROPOMI Data in Google Earth Engine (Publication)</h3>
+                            <div class="publication-authors">
+                                Baimam Boukar Jean Jacques, Kamikazi Ndayizeye Raissa, Umubyeyi Evelyne, Bertinn Ndahayo
+                                Singizwa, Emily Aiken
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> Int. Conf. on
+                                    Machine Intelligence for GeoAnalytics and Remote Sensing (MIGARS)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Phasor Measurement Integration in Wireless Power Transfer
+                                Systems for Grid Applications</h3>
+                            <div class="publication-authors">
+                                Chisom Ogbogu, Kipngeno Koech, Jesse Thornburg
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> IEEE MTT-S/AP-S
+                                    Int. Microwave and Antennas Symposium (IMAS)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Modeling of Hybrid Geothermal-Solar PV Power Generation in
+                                Uganda</h3>
+                            <div class="publication-authors">
+                                Akabway Rurangwa, Jesse Thornburg
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> IEEE Southern
+                                    Power Electronics Conference (SPEC 2025)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">KG-Rank-Plus: Enhancing LLM-Based Medical Question Answering
+                                with Multi-Hop Knowledge Graph Traversal and Ranking Techniques</h3>
+                            <div class="publication-authors">
+                                Ahmed Tahiru Issah, Idaya Seidu, Emmanuel Amankwaa Adjei, Mona Aman, Azizuddin Ahmed
+                                Biyabani
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> IEEE AFRICON
+                                    Conference 2025</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Techno-Economic Analysis of Solar PV and Grid Integration for
+                                Electric Vehicle DC Fast Charging in Uganda</h3>
+                            <div class="publication-authors">
+                                Ian Ahereza, Jesse Thornburg
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> IEEE
+                                    Transportation Electrification Conference and Expo – Asia Pacific (ITEC-AP)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">TSANet: Unified Face Attack Detection via Triplet Embedding
+                                and Soft ACER Loss</h3>
+                            <div class="publication-authors">
+                                Gabrial Zencha Ashungafac, Miracle James Oloutuche, Mukar Wepngong Eleanor, Blessed
+                                Guda, Assane Gueye, Moise Busogi
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> IEEE/CVF
+                                    International Conference on Computer Vision</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Evaluating User Experience of Government and E-Government
+                                Services: A technology-neutral ecosystem lens</h3>
+                            <div class="publication-authors">
+                                Timothy Brown, David Nkundineza
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> Africhi '25: 5th
+                                    Biennial African Human Computer Interaction Conference</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Improving SSVEP BCI Spellers with Data Augmentation and
+                                Language Models</h3>
+                            <div class="publication-authors">
+                                Joseph Zhang, Ruiming Zhang, Kipngeno Koech, David Hill, Kateryna Shapovalenko
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-map-marker-alt"></i> International
+                                    Conference on Digital Signal Processing</span>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- Journal Publications Tab -->
+                <div id="tab-journal" class="tab-content" role="tabpanel" style="display:none;">
+                    <div class="resource-list">
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Optimizing healthcare facility distribution in Rwanda: a
+                                data-driven approach</h3>
+                            <div class="publication-authors">
+                                Brandone Fonya, Nchofon Tagha, Michaella Rugumbira, Irene Busah, Emily Aiken
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-book"></i> European Journal of Public
+                                    Health (Journal)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Smart Grid Fault Mitigation and Cybersecurity with Wide-Area
+                                Measurement Systems: A Review</h3>
+                            <div class="publication-authors">
+                                Chisom E. Ogbogu, Jesse Thornburg and Samuel O. Okozi
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-book"></i> Energies (Journal)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Simulation of PEM Electrolyzer Power Management with Renewable
+                                Generation in Owerri, Nigeria</h3>
+                            <div class="publication-authors">
+                                MacMatthew C. Ahaotu, Chisom E. Ogbogu, Jesse Thornburg and Isdore Onyema Akwukwaegbu
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-book"></i> Energies (Journal)</span>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- Posters Tab -->
+                <div id="tab-posters" class="tab-content" role="tabpanel" style="display:none;">
+                    <div class="resource-list">
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Ehugbo Ka! Advancing Machine Translation for the Low-Resource
+                                Ehugbo Language through Parallel Corpus Development.</h3>
+                            <div class="publication-authors">
+                                Ukachi Agnes Eze-Mbey, Uloma Calista Eze-Mbey, Ololade Anjuwon
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-image"></i> Deep Learning Indaba (DLI)
+                                    2025 (Poster)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Targeting the Right Farmer: Predictive Analytics for
+                                Agricultural Input Subsidy Allocation in Sub-Saharan Africa</h3>
+                            <div class="publication-authors">
+                                Nasiru Iliya
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-image"></i> Deep Learning Indaba (DLI)
+                                    2025 (Poster)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Accelerating Medical Image annotation: A Model-Assisted
+                                Labeling pipeline leveraging Yolov8 and SAM</h3>
+                            <div class="publication-authors">
+                                Paul Okwija Mugume, Andrew Katumba, Ronald Omoding
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-image"></i> Deep Learning Indaba (DLI)
+                                    2025 (Poster)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Retrieval with Multiple Query Vectors through Anomalous
+                                Pattern Detection (Poster)</h3>
+                            <div class="publication-authors">
+                                Baimam Boukar Jean Jacques
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-image"></i> AAAI 2026 Workshop on New
+                                    Frontiers in Information Retrieval (Poster)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Bridging the Gap in Malaria Diagnostics: An Attention-Centric
+                                YOLO Framework with Species-Specific Augmentation for Tiny Parasite Detection in
+                                Low-Resource Settings (Poster)</h3>
+                            <div class="publication-authors">
+                                Ahmed Tahiru Issah, Carine Mukamakuza
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-image"></i> AAAI 2026 (AI in Medicine
+                                    and Healthcare)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">A Systematic Comparison of Data Representations for
+                                Transformer-Based ECG Arrhythmia Classification (Poster)</h3>
+                            <div class="publication-authors">
+                                Mona Aman, Godbright Nixon Uiso, Carine Mukamakuza
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-image"></i> AAAI 2026 (AI in Medicine
+                                    and Healthcare)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Architecture-Aware Explainability in ECG Analysis: A Case
+                                Study of Aortic Stenosis Detection with ResNet18, LSTM, and ViT-MAE ECG (Poster)</h3>
+                            <div class="publication-authors">
+                                Chol Buol, Julius Zannu, Carine Mukamakuza, Olatunji Damilare Emmanuel, Vijayakumar
+                                Bhagavatula
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-image"></i> AAAI 2026 (AI in Medicine
+                                    and Healthcare)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Humidity Inference with Geographic Features and Machine
+                                Learning for Enhanced Contrail Prediction for African Airspace (Poster)</h3>
+                            <div class="publication-authors">
+                                Alice Mugengano, Baimam Boukar Jean Jacques, Jonathan Kayizzi, Moise Busogi
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-image"></i> Int. Conf. on Machine
+                                    Intelligence for GeoAnalytics and Remote Sensing (MIGARS)</span>
+                            </div>
+                        </article>
+
+                        <article class="publication-card">
+                            <h3 class="publication-title">Particle Swarm Optimization for Dispatch Scheduling of
+                                Renewable Energy in Rwanda (Poster)</h3>
+                            <div class="publication-authors">
+                                Chisom Ogbogu, Marion Kipsang, Jesse Thornburg
+                            </div>
+                            <div class="publication-footer">
+                                <span class="publication-venue"><i class="fas fa-image"></i> IEEE PES/IAS
+                                    PowerAfrica</span>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Load footer -->
+    <div id="footer-container">
+        <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/interactions.js"></script>
+
+    <!-- Load page components -->
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            try {
+                // Load navigation
+                const navResponse = await fetch("navigation.html");
+                if (navResponse.ok) {
+                    const navHTML = await navResponse.text();
+                    document.getElementById("navigation-container").innerHTML = navHTML;
+                    if (window.initializeNavigation) window.initializeNavigation();
+                }
+
+                // Load page header
+                const headerResponse = await fetch("page-header.html");
+                if (headerResponse.ok) {
+                    const headerHTML = await headerResponse.text();
+                    document.getElementById("page-header-container").innerHTML =
+                        headerHTML;
+
+                    // Set page-specific content
+                    document.getElementById("page-title").textContent =
+                        "Research Publications";
+                    document.getElementById("page-description").textContent =
+                        "Our members publish their work in top-tier conferences and journals.";
+                    document.getElementById("current-page").textContent = "Research";
+                }
+
+                // Load footer
+                const footerResponse = await fetch("footer.html");
+                if (footerResponse.ok) {
+                    const footerHTML = await footerResponse.text();
+                    document.getElementById("footer-container").innerHTML = footerHTML;
+                }
+
+                // Initialize navigation after loading
+                if (window.initializeNavigation) {
+                    window.initializeNavigation();
+                }
+            } catch (error) {
+                console.error("Error loading page components:", error);
+            }
+        });
+    </script>
+
+    <!-- Tab switching script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabLinks = Array.from(document.querySelectorAll('.tab-link'));
+            const tabContents = Array.from(document.querySelectorAll('.tab-content'));
+
+            function activateTab(targetId, clickedButton) {
+                // Hide all tab contents
+                tabContents.forEach(tc => {
+                    tc.style.display = (tc.id === targetId) ? 'block' : 'none';
+                });
+
+                // Update aria-selected and active class for all tab links
+                tabLinks.forEach(btn => {
+                    const selected = btn === clickedButton;
+                    btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+                    if (selected) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+
+            // Attach click events to tab links
+            tabLinks.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = btn.getAttribute('data-target');
+                    activateTab(target, btn);
+                });
+
+                // Keyboard navigation (left/right arrows)
+                btn.addEventListener('keydown', function (e) {
+                    const idx = tabLinks.indexOf(btn);
+                    if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        const next = tabLinks[(idx + 1) % tabLinks.length];
+                        next.focus();
+                    } else if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        const prev = tabLinks[(idx - 1 + tabLinks.length) % tabLinks.length];
+                        prev.focus();
+                    } else if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        btn.click();
+                    }
+                });
+            });
+
+            // Initialize: Make sure Conference tab is active by default
+            const defaultTab = tabLinks.find(btn => btn.getAttribute('data-target') === 'tab-conference') || tabLinks[0];
+            if (defaultTab) {
+                activateTab(defaultTab.getAttribute('data-target'), defaultTab);
+            }
+        });
+    </script>
+</body>
+
+</html>
