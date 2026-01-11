@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Open Conferences for Research Submission - CMU Africa Research Club"
+    />
+    <title>Open Conferences - CMU Africa Research Club</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="research_club_logo.png" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Internal Styles for New Features (Search & Countdown) -->
+    <style>
+      /* Search and Filter Section Styles */
+      .filters-section {
+        margin-bottom: 2rem;
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+
+      .filters-container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 0 auto;
+        align-items: center; /* Aligns items vertically */
+      }
+
+      .search-box {
+        flex: 999 1 300px; /* Allows it to grow, but wrap sooner if needed */
+        position: relative;
+      }
+
+      .search-box i {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c757d;
+        pointer-events: none; /* Allows clicking through the icon */
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 0.75rem 1rem 0.75rem 2.5rem;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.2s;
+        box-sizing: border-box; /* CRITICAL: Prevents padding from causing overlap */
+      }
+
+      .search-input:focus {
+        outline: none;
+        border-color: #c41230; /* CMU Red assumption */
+        box-shadow: 0 0 0 3px rgba(196, 18, 48, 0.1);
+      }
+
+      .category-select {
+        flex: 1 1 200px; /* Allows wrapping on smaller screens */
+        padding: 0.75rem 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        font-size: 1rem;
+        background-color: white;
+        cursor: pointer;
+        box-sizing: border-box; /* CRITICAL: Prevents padding from causing sizing issues */
+      }
+
+      /* Countdown Badge Styles */
+      .countdown-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-top: 0.5rem;
+      }
+
+      .days-many {
+        background-color: #d4edda;
+        color: #155724;
+      }
+
+      .days-few {
+        background-color: #fff3cd;
+        color: #856404;
+      }
+
+      .days-urgent {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+
+      .days-passed {
+        background-color: #e2e3e5;
+        color: #383d41;
+        text-decoration: line-through;
+      }
+
+      /* Helper for fallback styling if CSS files are missing in preview */
+      body { font-family: sans-serif; margin: 0; line-height: 1.6; color: #333; }
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+      .section { padding: 3rem 0; }
+      .section-header { text-align: center; margin-bottom: 3rem; }
+      .section-title { font-size: 2rem; margin-bottom: 1rem; color: #c41230; }
+      .conferences-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+      
+      .conference-card {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+        background: white;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .conference-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+
+      .conference-header {
+        padding: 1.5rem;
+        background-color: #f8f9fa;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .conference-icon {
+        font-size: 1.5rem;
+        color: #c41230;
+        background: white;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      }
+
+      .conference-meta {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .conference-type { font-size: 0.8rem; color: #6c757d; text-transform: uppercase; letter-spacing: 0.5px; }
+      .conference-deadline { font-weight: bold; color: #333; margin-top: 0.25rem; }
+
+      .conference-content { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+      .conference-title { margin: 0 0 0.5rem 0; font-size: 1.25rem; }
+      .conference-theme { color: #6c757d; margin-bottom: 1.5rem; font-weight: 500; }
+      
+      .conference-details { margin-bottom: 1.5rem; flex: 1; }
+      .detail-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; color: #555; font-size: 0.95rem; }
+      .detail-item i { width: 20px; text-align: center; color: #c41230; }
+
+      .conference-link {
+        display: inline-block;
+        text-align: center;
+        background-color: #c41230;
+        color: white;
+        padding: 0.75rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background-color 0.2s;
+      }
+      .conference-link:hover { background-color: #a00e26; }
+      .conference-link i { margin-right: 0.5rem; }
+
+      /* Utility for JS filtering */
+      .hidden { display: none !important; }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R2LTW1285G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R2LTW1285G');
+    </script>
+  </head>
+  <body class="conferences-page">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Load Navigation -->
+    <div id="navigation-container">
+      <!-- Navigation will be loaded here -->
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Load page header -->
+      <div id="page-header-container">
+        <!-- Page header will be loaded here -->
+      </div>
+
+      <!-- Conferences Hero Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Open Conferences for Research Submission</h2>
+            <p class="section-subtitle">
+              The CMU-Africa Research Club is excited to share upcoming conferences that are currently accepting submissions. Students are encouraged to submit their work, showcase their ideas to the world, and receive valuable feedback to strengthen the quality of their research.
+            </p>
+          </div>
+
+          <!-- NEW: Search and Filter Section -->
+          <div class="filters-section">
+            <div class="filters-container">
+              <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search by name, theme, or location...">
+              </div>
+              <select id="themeFilter" class="category-select">
+                <option value="all">All Themes</option>
+                <!-- Options will be populated by JavaScript -->
+              </select>
+            </div>
+          </div>
+
+          <div class="conferences-grid" id="conferencesGrid">
+            <!-- ICPR 2026 (NEW) -->
+            <div class="conference-card" data-theme="Pattern Recognition">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-fingerprint"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Jan 10, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ICPR 2026</h3>
+                    <p class="conference-theme">Pattern Recognition</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Aug 17–21, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Lyon, France</span></div>
+                    </div>
+                    <a href="https://icpr2026.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+            <!-- KSEM 2026 -->
+            <div class="conference-card" data-theme="Knowledge Representation">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Jan 15, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">KSEM 2026</h3>
+                    <p class="conference-theme">Knowledge Representation</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>July 17–19, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Beijing, China</span></div>
+                    </div>
+                    <a href="https://ksem2026.rosc.org.cn/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- FG 2026 -->
+            <div class="conference-card" data-theme="Computer Vision">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-eye"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Jan 15, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">FG 2026</h3>
+                    <p class="conference-theme">Computer Vision</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>May 25–29, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Kyoto, Japan</span></div>
+                    </div>
+                    <a href="https://fg2026.ieee-biometrics.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- ICWSM 2026 -->
+            <div class="conference-card" data-theme="Social Media / IR">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-hashtag"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper (Round 3)</span>
+                        <span class="conference-deadline">Jan 16, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ICWSM 2026</h3>
+                    <p class="conference-theme">Social Media / IR</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>May 27–29, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Los Angeles, USA</span></div>
+                    </div>
+                    <a href="https://www.icwsm.org/2026/index.html" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- IJCAI 2026 -->
+            <div class="conference-card" data-theme="AI (General)">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-robot"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Jan 20, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">IJCAI 2026</h3>
+                    <p class="conference-theme">AI (General)</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Aug 15–21, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Bremen, Germany</span></div>
+                    </div>
+                    <a href="https://2026.ijcai.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- ICIP 2026 -->
+            <div class="conference-card" data-theme="Computer Vision">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-eye"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Jan 21, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ICIP 2026</h3>
+                    <p class="conference-theme">Computer Vision</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Sep 13–17, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Tampere, Finland</span></div>
+                    </div>
+                    <a href="https://2026.ieeeicip.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- SIGGRAPH 2026 -->
+            <div class="conference-card" data-theme="Computer Graphics">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-paint-brush"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Jan 22, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">SIGGRAPH 2026</h3>
+                    <p class="conference-theme">Computer Graphics</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>July 19–23, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Los Angeles, USA</span></div>
+                    </div>
+                    <a href="https://s2026.siggraph.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- SIGIR 2026 -->
+            <div class="conference-card" data-theme="Info Retrieval">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-search"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Jan 23, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">SIGIR 2026</h3>
+                    <p class="conference-theme">Info Retrieval</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>July 20–24, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Melbourne, Australia</span></div>
+                    </div>
+                    <a href="https://sigir2026.org/en-AU" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- GECCO 2026 -->
+            <div class="conference-card" data-theme="Evolutionary Comp.">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-dna"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Papers</span>
+                        <span class="conference-deadline">Jan 27, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">GECCO 2026</h3>
+                    <p class="conference-theme">Evolutionary Comp.</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>July 13–17, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>San José, Costa Rica</span></div>
+                    </div>
+                    <a href="https://gecco-2026.sigevo.org/HomePage" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- ICML 2026 -->
+            <div class="conference-card" data-theme="Machine Learning">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-brain"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Jan 29, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ICML 2026</h3>
+                    <p class="conference-theme">Machine Learning</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>July 6–12, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Seoul, Korea</span></div>
+                    </div>
+                    <a href="https://icml.cc/Conferences/2026" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- RSS 2026 -->
+            <div class="conference-card" data-theme="Robotics">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-robot"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Jan 31, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">RSS 2026</h3>
+                    <p class="conference-theme">Robotics</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>July 13–17, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Sydney, Australia</span></div>
+                    </div>
+                    <a href="https://roboticsconference.org" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+            <!-- ACE Uganda 2026 -->
+            <div class="conference-card" data-theme="Bioinformatics">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-dna"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Jan 31, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ACE Uganda 2026</h3>
+                    <p class="conference-theme">Bioinformatics</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Mar 16-17, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Kampala, Uganda</span></div>
+                    </div>
+                    <a href="https://x.com/AceUganda/status/2008194882104602680" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+            <!-- IJCNN 2026 -->
+            <div class="conference-card" data-theme="Neural Networks">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Feb 1, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">IJCNN 2026</h3>
+                    <p class="conference-theme">Neural Networks</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>June 21–26, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Maastricht, Netherlands</span></div>
+                    </div>
+                    <a href="https://attend.ieee.org/wcci-2026/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- CogSci 2026 -->
+            <div class="conference-card" data-theme="Cognitive Science">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-brain"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Feb 3, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">CogSci 2026</h3>
+                    <p class="conference-theme">Cognitive Science</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>July 22–25, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Rio de Janeiro, Brazil</span></div>
+                    </div>
+                    <a href="https://cognitivesciencesociety.org/cogsci-2026/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- ICMR 2026 -->
+            <div class="conference-card" data-theme="Multimedia Retrieval">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-photo-video"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Feb 7, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ICMR 2026</h3>
+                    <p class="conference-theme">Multimedia Retrieval</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>June 16–19, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Amsterdam, Netherlands</span></div>
+                    </div>
+                    <a href="https://seds.nu.edu.kz/icmr2026" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- SIGKDD 2026 -->
+            <div class="conference-card" data-theme="Data Mining">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-database"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Feb 9, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">SIGKDD 2026</h3>
+                    <p class="conference-theme">Data Mining</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Aug 9–13, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Jeju, Korea</span></div>
+                    </div>
+                    <a href="https://kdd2026.kdd.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- KR 2026 -->
+            <div class="conference-card" data-theme="Knowledge Rep.">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Feb 14, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">KR 2026</h3>
+                    <p class="conference-theme">Knowledge Rep.</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>July 20–23, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Lisbon, Portugal</span></div>
+                    </div>
+                    <a href="https://kr.org/KR2026/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- CoNLL 2026 -->
+            <div class="conference-card" data-theme="NLP (Learning)">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-language"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Feb 20, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">CoNLL 2026</h3>
+                    <p class="conference-theme">NLP (Learning)</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>July 3–4, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>San Diego, USA</span></div>
+                    </div>
+                    <a href="https://www.conll.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- Interspeech 2026 -->
+            <div class="conference-card" data-theme="Speech Processing">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-microphone"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Feb 25, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">Interspeech 2026</h3>
+                    <p class="conference-theme">Speech Processing</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Sep 27–Oct 1, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Sydney, Australia</span></div>
+                    </div>
+                    <a href="https://interspeech2026.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- MICCAI 2026 -->
+            <div class="conference-card" data-theme="Medical Imaging">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-x-ray"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Feb 26, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">MICCAI 2026</h3>
+                    <p class="conference-theme">Medical Imaging</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Oct 4–8, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Abu Dhabi, UAE</span></div>
+                    </div>
+                    <a href="https://conferences.miccai.org/2026/en/default.asp" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- ICDAR 2026 -->
+            <div class="conference-card" data-theme="Doc. Analysis">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Feb 27, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ICDAR 2026</h3>
+                    <p class="conference-theme">Doc. Analysis</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Aug 30–Sep 4, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Vienna, Austria</span></div>
+                    </div>
+                    <a href="https://icdar2026.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+            <!-- iROS 2026 (NEW) -->
+            <div class="conference-card" data-theme="Robotics">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-robot"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Mar 1, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">iROS 2026</h3>
+                    <p class="conference-theme">Robotics</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Sep 27–Oct 1, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Pittsburgh, USA</span></div>
+                    </div>
+                    <a href="https://www.iros2026.org" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+            <!-- ECCV 2026 -->
+            <div class="conference-card" data-theme="Computer Vision">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-eye"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Mar 6, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ECCV 2026</h3>
+                    <p class="conference-theme">Computer Vision</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Sep 8–13, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Malmö, Sweden</span></div>
+                    </div>
+                    <a href="https://eccv.ecva.net/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- ICANN 2026 -->
+            <div class="conference-card" data-theme="Neural Networks">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Mar 17, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ICANN 2026</h3>
+                    <p class="conference-theme">Neural Networks</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Sep 14–17, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Padua, Italy</span></div>
+                    </div>
+                    <a href="https://e-nns.org/icann2026/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- ICCBR 2026 -->
+            <div class="conference-card" data-theme="Case-Based Reasoning">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-history"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Mar 21, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ICCBR 2026</h3>
+                    <p class="conference-theme">Case-Based Reasoning</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Aug 13–16, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Bremen, Germany</span></div>
+                    </div>
+                    <a href="https://2026.iccbr.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+            <!-- Ro-Man 2026 (NEW) -->
+            <div class="conference-card" data-theme="HRI">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-user-friends"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Mar 29, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">Ro-Man 2026</h3>
+                    <p class="conference-theme">Human-Robot Interaction</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Aug 24–28, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Kitakyushu, Japan</span></div>
+                    </div>
+                    <a href="https://www.ro-man2026.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+            <!-- COLM 2026 (NEW) -->
+            <div class="conference-card" data-theme="NLP / LLMs">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-comment-dots"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Mar 31, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">COLM 2026</h3>
+                    <p class="conference-theme">Language Modeling</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Oct 6–9, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>San Francisco, USA</span></div>
+                    </div>
+                    <a href="https://colmweb.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+            <!-- UIST 2026 -->
+            <div class="conference-card" data-theme="HCI">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-hand-pointer"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Mar 31, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">UIST 2026</h3>
+                    <p class="conference-theme">HCI</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Nov 2–5, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Detroit, USA</span></div>
+                    </div>
+                    <a href="https://uist.acm.org/2026/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- IJCB 2026 -->
+            <div class="conference-card" data-theme="Biometrics">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-fingerprint"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Apr 11, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">IJCB 2026</h3>
+                    <p class="conference-theme">Biometrics</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Sep 1–4, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Rome, Italy</span></div>
+                    </div>
+                    <a href="https://ijcb2026.ieee-biometrics.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- ICMI 2026 -->
+            <div class="conference-card" data-theme="Multimodal Interaction">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-comments"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Apr 20, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ICMI 2026</h3>
+                    <p class="conference-theme">Multimodal Interaction</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Oct 5–9, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Napoli, Italy</span></div>
+                    </div>
+                    <a href="https://icmi.acm.org/2026/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+            <!-- CoRL 2026 (NEW) -->
+            <div class="conference-card" data-theme="Robot Learning">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-robot"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Apr 23, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">CoRL 2026</h3>
+                    <p class="conference-theme">Robot Learning</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Sep 27–30, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>TBD</span></div>
+                    </div>
+                    <a href="https://www.corl.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- ICDM 2026 -->
+            <div class="conference-card">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-database"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Abstract / Full Paper</span>
+                        <span class="conference-deadline">Jun 7, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ICDM 2026</h3>
+                    <p class="conference-theme">Data Mining</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Nov 12–15, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Shenyang, China</span></div>
+                    </div>
+                    <a href="http://icdm2026.neu.edu.cn/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+
+            <!-- ACCV 2026 -->
+            <div class="conference-card">
+                <div class="conference-header">
+                    <div class="conference-icon"><i class="fas fa-eye"></i></div>
+                    <div class="conference-meta">
+                        <span class="conference-type">Full Paper</span>
+                        <span class="conference-deadline">Jul 6, 2026</span>
+                    </div>
+                </div>
+                <div class="conference-content">
+                    <h3 class="conference-title">ACCV 2026</h3>
+                    <p class="conference-theme">Computer Vision</p>
+                    <div class="conference-details">
+                        <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Dec 14–18, 2026</span></div>
+                        <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Osaka, Japan</span></div>
+                    </div>
+                    <a href="https://accv2026.org/" target="_blank" class="conference-link"><i class="fas fa-external-link-alt"></i>View Details</a>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JavaScript for Countdown and Search/Filter -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- Countdown Logic ---
+        const cards = document.querySelectorAll(".conference-card");
+        const themeSet = new Set();
+        const today = new Date();
+
+        cards.forEach((card) => {
+          // 1. Calculate Days Left
+          const deadlineText = card.querySelector(".conference-deadline").textContent;
+          // Parse date like "Jan 15, 2026"
+          const deadlineDate = new Date(deadlineText);
+          
+          // Create Badge Element
+          const badge = document.createElement("span");
+          badge.classList.add("countdown-badge");
+
+          // Handle invalid dates (e.g. "TBA")
+          if (isNaN(deadlineDate.getTime())) {
+             badge.textContent = "Check Deadline";
+             badge.classList.add("days-few");
+             card.querySelector(".conference-meta").appendChild(badge);
+          } else {
+              // Calculate difference in milliseconds
+              const diffTime = deadlineDate - today;
+              // Convert to days (rounding up)
+              const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+              if (diffDays < 0) {
+                badge.textContent = "Deadline Passed";
+                badge.classList.add("days-passed");
+              } else if (diffDays === 0) {
+                badge.textContent = "Deadline Today!";
+                badge.classList.add("days-urgent");
+              } else {
+                badge.textContent = `${diffDays} days left`;
+                
+                // Color coding based on urgency
+                if (diffDays <= 7) {
+                  badge.classList.add("days-urgent");
+                } else if (diffDays <= 30) {
+                  badge.classList.add("days-few");
+                } else {
+                  badge.classList.add("days-many");
+                }
+              }
+              // Append badge to the meta section
+              const metaSection = card.querySelector(".conference-meta");
+              metaSection.appendChild(badge);
+          }
+
+          // 2. Collect Theme for Filter Dropdown
+          const theme = card.querySelector(".conference-theme").textContent;
+          // Also set data attribute for easier filtering later if not manually set in HTML
+          card.setAttribute("data-theme", theme);
+          themeSet.add(theme);
+        });
+
+        // --- Populate Theme Filter ---
+        const themeSelect = document.getElementById("themeFilter");
+        const sortedThemes = Array.from(themeSet).sort();
+        
+        sortedThemes.forEach(theme => {
+            const option = document.createElement("option");
+            option.value = theme;
+            option.textContent = theme;
+            themeSelect.appendChild(option);
+        });
+
+        // --- Search and Filter Logic ---
+        const searchInput = document.getElementById("searchInput");
+
+        function filterConferences() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedTheme = themeSelect.value;
+
+            cards.forEach(card => {
+                const title = card.querySelector(".conference-title").textContent.toLowerCase();
+                const theme = card.querySelector(".conference-theme").textContent;
+                const location = card.querySelector(".detail-item:not(.date-item) span").textContent.toLowerCase();
+                
+                // Check Theme Match
+                const themeMatch = (selectedTheme === "all") || (theme === selectedTheme);
+
+                // Check Search Match (Title, Theme text, or Location)
+                const searchMatch = title.includes(searchTerm) || 
+                                    theme.toLowerCase().includes(searchTerm) || 
+                                    location.includes(searchTerm);
+
+                if (themeMatch && searchMatch) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+        }
+
+        // Attach Event Listeners
+        searchInput.addEventListener("keyup", filterConferences);
+        themeSelect.addEventListener("change", filterConferences);
+      });
+    </script>
+  </body>
+</html>
