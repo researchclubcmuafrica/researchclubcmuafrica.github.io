@@ -1,69 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="CMU Africa Research Club Members - Meet our passionate researchers and dedicated faculty"
-    />
-    <title>Members - CMU Africa Research Club</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="research_club_logo.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="CMU Africa Research Club Members - Meet our passionate researchers and dedicated faculty" />
+  <title>Members - CMU Africa Research Club</title>
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/variables.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/navigation.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/sections.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="research_club_logo.png" />
 
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only">Skip to main content</a>
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/footer.css" />
 
-    <!-- Load Navigation -->
-    <div id="navigation-container">
-      <!-- Navigation will be loaded here -->
+  <!-- Tab styles for members page (reuse resources tab style) -->
+  <link rel="stylesheet" href="css/resources-custom.css" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGRRFBFQN1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HGRRFBFQN1');
+  </script>
+</head>
+
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- Load Navigation -->
+  <div id="navigation-container">
+    <!-- Navigation will be loaded here -->
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Load page header -->
+    <div id="page-header-container">
+      <!-- Page header will be loaded here -->
     </div>
 
-    <!-- Main Content -->
-    <main id="main-content">
-      <!-- Load page header -->
-      <div id="page-header-container">
-        <!-- Page header will be loaded here -->
-      </div>
-
-      <!-- Executive Members -->
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Executive Members</h2>
-            <p class="section-subtitle">
-              Meet the dedicated leaders who guide our research community.
-            </p>
+    <!-- Executive Members Tabs -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Executive Members</h2>
+          <p class="section-subtitle">
+            Meet the dedicated leaders who guide our research community.
+          </p>
+        </div>
+        <!-- Tab Navigation -->
+        <div class="tabs-container">
+          <div class="tabs-nav">
+            <button class="tab-link" role="tab" aria-selected="true" data-target="tab-current-leaders">
+              <i class="fas fa-users"></i>
+              <span>Current Leaders</span>
+            </button>
+            <button class="tab-link" role="tab" aria-selected="false" data-target="tab-past-leaders">
+              <i class="fas fa-user-clock"></i>
+              <span>Past Leaders</span>
+            </button>
           </div>
-
+        </div>
+        <!-- Tab Contents -->
+        <div id="tab-current-leaders" class="tab-content" role="tabpanel" style="display:block;">
           <div class="executive-grid">
+            <!-- Matewos Tegete Endaylalu (Chair) -->
             <div class="executive-card">
               <div class="executive-image">
-                <img
-                  src="assets/images/members/Edward%20Ajayi.jpeg"
-                  alt="Edward Ajayi"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  onload="this.classList.add('loaded'); console.log('Edward Ajayi image loaded successfully');"
-                />
+                <img src="assets/images/members/Matewos%20Tegete%20Endaylalu.jpeg" alt="Matewos Tegete Endaylalu"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="member-avatar-fallback" style="display: none">
+                  <i class="fas fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="social-overlay">
+                  <a href="http://www.linkedin.com/in/matewos-tegete-328760247" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="executive-info">
+                <h3 class="executive-name">Matewos Tegete Endaylalu</h3>
+                <p class="executive-position">Chair</p>
+                <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
+              </div>
+            </div>
+            <!-- Zainab Akintayo (Vice Chair) -->
+            <div class="executive-card">
+              <div class="executive-image">
+                <img src="assets/images/members/Zainab%20Akintayo.jpeg" alt="Zainab Akintayo"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="member-avatar-fallback" style="display: none">
+                  <i class="fas fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="social-overlay">
+                  <a href="https://www.linkedin.com/in/zainab-akintayo-7a8aaa1a9/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="executive-info">
+                <h3 class="executive-name">Zainab Akintayo</h3>
+                <p class="executive-position">Vice Chair</p>
+                <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
+              </div>
+            </div>
+            <!-- Grace Kaimburi (Strategist) -->
+            <div class="executive-card">
+              <div class="executive-image">
+                <img src="assets/images/members/Grace%20Kaimburi.jpeg" alt="Grace Kaimburi"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="member-avatar-fallback" style="display: none">
+                  <i class="fas fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="social-overlay">
+                  <a href="https://www.linkedin.com/in/grace-kaimburi/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="executive-info">
+                <h3 class="executive-name">Grace Kaimburi</h3>
+                <p class="executive-position">Strategist</p>
+                <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
+              </div>
+            </div>
+            <!-- Paul Okwija Mugume (Public Relations) -->
+            <div class="executive-card">
+              <div class="executive-image">
+                <img src="assets/images/members/Paul%20Mugume.jpeg" alt="Paul Okwija Mugume"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="member-avatar-fallback" style="display: none">
+                  <i class="fas fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="social-overlay">
+                  <a href="https://www.linkedin.com/in/paul-mugume-8166a2161/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="executive-info">
+                <h3 class="executive-name">Paul Okwija Mugume</h3>
+                <p class="executive-position">Public Relations</p>
+                <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
+              </div>
+            </div>
+            <!-- Jean Gabriel Mpuhwezimana (Community Engagement Officer) -->
+            <div class="executive-card">
+              <div class="executive-image">
+                <img src="assets/images/members/Jean%20Gabriel%20Mpuhwezimana.jpeg" alt="Jean Gabriel Mpuhwezimana"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="member-avatar-fallback" style="display: none">
+                  <i class="fas fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="social-overlay">
+                  <a href="https://www.linkedin.com/in/workwithgabby/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="executive-info">
+                <h3 class="executive-name">Jean Gabriel Mpuhwezimana</h3>
+                <p class="executive-position">Community Engagement Officer</p>
+                <p class="executive-course">Masters in Information Technology (MSIT)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tab-past-leaders" class="tab-content" role="tabpanel" style="display:none;">
+          <h3
+            style="text-align:center; margin-bottom: 1.5rem; color: var(--primary-color, #8b1538); font-size: 1.5rem;">
+            2025 Research Club Executives</h3>
+          <div class="executive-grid">
+            <!-- ...existing code for previous executives moved here... -->
+            <div class="executive-card">
+              <div class="executive-image">
+                <img src="assets/images/members/Edward%20Ajayi.jpeg" alt="Edward Ajayi"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="member-avatar-fallback" style="display: none">
                   <i class="fas fa-user" aria-hidden="true"></i>
                 </div>
@@ -71,10 +197,7 @@
                   <a href="mailto:edward@africa.cmu.edu" class="social-link">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
                   </a>
-                  <a
-                    href="https://www.linkedin.com/in/edward-ajayi-a652b6203"
-                    class="social-link"
-                  >
+                  <a href="https://www.linkedin.com/in/edward-ajayi-a652b6203" class="social-link">
                     <i class="fab fa-linkedin" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -82,24 +205,17 @@
               <div class="executive-info">
                 <h3 class="executive-name">Edward Ajayi</h3>
                 <p class="executive-position">Chair</p>
-                <p class="executive-course">
-                  Masters in Information Technology (MSIT)
-                </p>
+                <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
                 <div class="research-tags">
                   <span class="tag">AI & ML</span>
                   <span class="tag">NLP</span>
                 </div>
               </div>
             </div>
-
             <div class="executive-card">
               <div class="executive-image">
-                <img
-                  src="assets/images/members/Stephen%20Oduh.jpeg"
-                  alt="Stephen Oduh"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  onload="this.classList.add('loaded'); console.log('Stephen Oduh image loaded successfully');"
-                />
+                <img src="assets/images/members/Stephen%20Oduh.jpeg" alt="Stephen Oduh"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="member-avatar-fallback" style="display: none">
                   <i class="fas fa-user" aria-hidden="true"></i>
                 </div>
@@ -107,10 +223,7 @@
                   <a href="mailto:soduh@andrew.cmu.edu" class="social-link">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
                   </a>
-                  <a
-                    href="https://www.linkedin.com/in/osobotu"
-                    class="social-link"
-                  >
+                  <a href="https://www.linkedin.com/in/osobotu" class="social-link">
                     <i class="fab fa-linkedin" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -118,22 +231,17 @@
               <div class="executive-info">
                 <h3 class="executive-name">Stephen Oduh</h3>
                 <p class="executive-position">Vice Chair</p>
-                <p class="executive-course">MSEAI</p>
+                <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
                 <div class="research-tags">
                   <span class="tag">ML & DL</span>
-                  <span class="tag">Data Science</span>
+                  <span class="tag">CV</span>
                 </div>
               </div>
             </div>
-
             <div class="executive-card">
               <div class="executive-image">
-                <img
-                  src="assets/images/members/Joel%20Adebayo.jpg"
-                  alt="Joel Adebayo"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  onload="this.classList.add('loaded'); console.log('Joel Adebayo image loaded successfully');"
-                />
+                <img src="assets/images/members/Joel%20Adebayo.jpg" alt="Joel Adebayo"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="member-avatar-fallback" style="display: none">
                   <i class="fas fa-user" aria-hidden="true"></i>
                 </div>
@@ -141,10 +249,7 @@
                   <a href="mailto:joeltooni@cmu.edu" class="social-link">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
                   </a>
-                  <a
-                    href="https://www.linkedin.com/in/joeltooni"
-                    class="social-link"
-                  >
+                  <a href="https://www.linkedin.com/in/joeltooni" class="social-link">
                     <i class="fab fa-linkedin" aria-hidden="true"></i>
                   </a>
                   <a href="https://github.com/joeltooni" class="social-link">
@@ -154,25 +259,18 @@
               </div>
               <div class="executive-info">
                 <h3 class="executive-name">Joel Adebayo</h3>
-                <p class="executive-position">
-                  Community Engagement Officer & Webmaster
-                </p>
-                <p class="executive-course">MSECE-AD</p>
+                <p class="executive-position">Community Engagement Officer & Webmaster</p>
+                <p class="executive-course">Masters in Electrical and Computer Engineering - Advanced (MSECE-AD)</p>
                 <div class="research-tags">
                   <span class="tag">Robotics</span>
                   <span class="tag">3D Vision</span>
                 </div>
               </div>
             </div>
-
             <div class="executive-card">
               <div class="executive-image">
-                <img
-                  src="assets/images/members/Angelique%20Uwamahoro.jpeg"
-                  alt="Angelique Uwamahoro"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  onload="this.classList.add('loaded'); console.log('Angelique Uwamahoro image loaded successfully');"
-                />
+                <img src="assets/images/members/Angelique%20Uwamahoro.jpeg" alt="Angelique Uwamahoro"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                 <div class="member-avatar-fallback" style="display: none">
                   <i class="fas fa-user" aria-hidden="true"></i>
                 </div>
@@ -180,18 +278,15 @@
                   <a href="mailto:auwamaho@andrew.cmu.edu" class="social-link">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
                   </a>
-                  <a
-                    href="https://www.linkedin.com/in/angelique-u"
-                    class="social-link"
-                  >
+                  <a href="https://www.linkedin.com/in/angelique-u" class="social-link">
                     <i class="fab fa-linkedin" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>
               <div class="executive-info">
                 <h3 class="executive-name">Angelique Uwamahoro</h3>
-                <p class="executive-position">Executive Member</p>
-                <p class="executive-course">MSEAI</p>
+                <p class="executive-position">Strategist</p>
+                <p class="executive-course">Masters in Engineering Artificial Intelligence (MSEAI)</p>
                 <div class="research-tags">
                   <span class="tag">ML</span>
                   <span class="tag">CyberSecurity</span>
@@ -200,630 +295,650 @@
             </div>
           </div>
         </div>
-      </section>
+        <!-- Tab switching script -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const tabLinks = Array.from(document.querySelectorAll('.tab-link'));
+            const tabContents = Array.from(document.querySelectorAll('.tab-content'));
+            function activateTab(targetId, clickedButton) {
+              tabContents.forEach(tc => tc.style.display = 'none');
+              document.getElementById(targetId).style.display = 'block';
+              tabLinks.forEach(btn => btn.setAttribute('aria-selected', 'false'));
+              clickedButton.setAttribute('aria-selected', 'true');
+            }
+            tabLinks.forEach(btn => {
+              btn.addEventListener('click', function () {
+                const target = btn.getAttribute('data-target');
+                activateTab(target, btn);
+              });
+            });
+          });
+        </script>
+      </div>
+    </section>
 
-      <!-- Faculty Advisers -->
-      <section class="section" style="background: var(--gray-50)">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Faculty Advisers</h2>
-            <p class="section-subtitle">
-              Distinguished faculty members who provide guidance and mentorship
-              to our research community.
-            </p>
-          </div>
+    <!-- Faculty Advisers -->
+    <section class="section" style="background: var(--gray-50)">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Faculty Advisor</h2>
+          <p class="section-subtitle">
+            Distinguished faculty member who provide guidance and mentorship
+            to our research community.
+          </p>
+        </div>
 
-          <div class="faculty-grid">
-            <div class="faculty-card">
-              <div class="faculty-image">
-                <img
-                  src="assets/images/members/timxb.png"
-                  alt="Prof. Timothy X. Brown"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  onload="this.classList.add('loaded'); console.log('Prof. Timothy X. Brown image loaded successfully');"
-                />
-                <div class="faculty-avatar-fallback">
-                  <i class="fas fa-user-tie" aria-hidden="true"></i>
-                </div>
+        <div class="faculty-grid">
+          <div class="faculty-card">
+            <div class="faculty-image">
+              <img src="assets/images/members/timxb.png" alt="Prof. Timothy X. Brown"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                onload="this.classList.add('loaded'); console.log('Prof. Timothy X. Brown image loaded successfully');" />
+              <div class="faculty-avatar-fallback">
+                <i class="fas fa-user-tie" aria-hidden="true"></i>
               </div>
-              <div class="faculty-info">
-                <h3 class="faculty-name">Prof. Timothy X. Brown</h3>
-                <p class="faculty-title">
-                  Professor, Electrical and Computer Engineering, and
-                  Engineering and Public Policy; Director, Kigali Collaborative
-                  Research Center
-                </p>
-                <p class="faculty-department">
-                  Electrical and Computer Engineering / Engineering and Public
-                  Policy
-                </p>
-                <p class="faculty-bio">
-                  Prof. Timothy X. Brown, Ph.D. (Caltech), researches adaptive
-                  network control, machine learning, and wireless systems. He
-                  leads CMU-Africa's research initiatives, fostering
-                  collaborations with industry and academia.
-                </p>
-                <div class="faculty-contact">
-                  <div class="contact-item">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <span>timxb@cmu.edu</span>
-                  </div>
-                  <div class="contact-item">
+            </div>
+            <div class="faculty-info">
+              <h3 class="faculty-name">Prof. Timothy X. Brown</h3>
+              <p class="faculty-title">
+                Professor, Electrical and Computer Engineering, and
+                Engineering and Public Policy;</br>
+                Director, Kigali Collaborative
+                Research Centre
+              </p>
+              <p class="faculty-department">
+                Electrical and Computer Engineering / Engineering and Public
+                Policy
+              </p>
+              <p class="faculty-bio">
+                Prof. Timothy X. Brown, Ph.D. (Caltech), leads CMU-Africa’s research initiatives and
+                fosters collaborations with industry and academia. His research focuses on adaptive network control,
+                machine learning, and wireless communication systems. As Director of the
+                Kigali Collaborative Research Centre,
+                he supports research partnerships, mentorship, and innovation across the CMU-Africa community.
+              </p>
+              <div class="faculty-contact">
+                <div class="contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <span>timxb@cmu.edu</span>
+                </div>
+                <!-- <div class="contact-item">
                     <i class="fas fa-phone" aria-hidden="true"></i>
                     <span>+250 787 674 062</span>
-                  </div>
-                </div>
+                  </div> -->
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Volunteers -->
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Volunteers</h2>
-            <p class="section-subtitle">
-              Dedicated community members who contribute their time and
-              expertise to support our mission.
-            </p>
+    <!-- Volunteers -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Volunteers</h2>
+          <p class="section-subtitle">
+            Dedicated community members who contribute their time and
+            expertise to support our mission.
+          </p>
+        </div>
+
+        <div class="volunteers-grid">
+          <div class="volunteer-card">
+            <div class="volunteer-info">
+              <p class="volunteer-role">WebPage Managers</p>
+              <h3 class="volunteer-name">Emmilly Immaculate Namuganga</h3>
+              <h3 class="volunteer-name">Theophilus Owiti</h3>
+              <h3 class="volunteer-name">Christian Byabushi</h3>
+
+            </div>
           </div>
 
-         <div class="volunteers-grid">
-    <div class="volunteer-card">
-        <div class="volunteer-info">
-            <p class="volunteer-role">WebPage Managers</p>
-            <h3 class="volunteer-name">Emmilly Immaculate Namuganga</h3>
-            <h3 class="volunteer-name">Theophilus Owiti</h3>
-            <h3 class="volunteer-name">Christian Byabushi</h3>
-
-        </div>
-    </div>
-
-    <div class="volunteer-card">
-        <div class="volunteer-info">
-            <p class="volunteer-role">Linkedin Managers</p>
-            <h3 class="volunteer-name">Yvette Tuyambaze</h3>
-            <h3 class="volunteer-name">Deborah Osibamowo</h3>
-            <h3 class="volunteer-name">Shedrack Eze</h3>
-        </div>
-    </div>
-
-    <div class="volunteer-card">
-        <div class="volunteer-info">
-            <p class="volunteer-role">Student Research Hub</p>
-            <h3 class="volunteer-name">Christian Byiringiro</h3>
-            <h3 class="volunteer-name">Anny Christelle Irakoze</h3>
-            <h3 class="volunteer-name">Alia Teto</h3>
-        </div>
-    </div>
-        <div class="volunteer-card">
-        <div class="volunteer-info">
-            <p class="volunteer-role">Conference Trackers</p>
-            <h3 class="volunteer-name">Mariamawit G. Arega</h3>
-            <h3 class="volunteer-name">John Dalton Gibson</h3>
-            <h3 class="volunteer-name">Mariamawit Gashahun Arega</h3>
-            <h3 class="volunteer-name">Ganontha Payang Bruno</h3>
-            <h3 class="volunteer-name">Ramsey Ith Njema</h3>
-            <h3 class="volunteer-name">Patrick Niyigena</h3>
-            <h3 class="volunteer-name">Victor</h3>
-            <h3 class="volunteer-name">Mohammed Abubakari Sadic</h3>
-            <h3 class="volunteer-name">Samuel Adeniji</h3>
-        </div>
-    </div>
-
-    <div class="volunteer-card">
-        <div class="volunteer-info">
-            <p class="volunteer-role">Events Planning Volunteers</p>
-            <h3 class="volunteer-name">David Stephen</h3>
-            <h3 class="volunteer-name">Cleophas Kadima</h3>
-            <h3 class="volunteer-name">Patricia Muriira</h3>
-            <h3 class="volunteer-name">Jeanne Muhimpundu</h3>
-            <h3 class="volunteer-name">Martin Koome</h3>
-            <h3 class="volunteer-name">IRADUKUNDA Kevin Jonathan</h3>
-            <h3 class="volunteer-name">Eileen Blessing Mbong Kabi</h3>
-            <h3 class="volunteer-name">Ukachi Eze-Mbey</h3>
-            <h3 class="volunteer-name">Georgina Njoroge</h3>
-            <h3 class="volunteer-name">Rhoda Ojetola</h3>
-        </div>
-    </div>
-
-    <div class="volunteer-card">
-        <div class="volunteer-info">
-            <p class="volunteer-role">Newsletter Writers & Editors</p>
-            <h3 class="volunteer-name">Temidayo Akanmu</h3>
-            <h3 class="volunteer-name">Obasi Goodness Chidera</h3>
-            <h3 class="volunteer-name">Matewos Tegete Endaylalu</h3>
-            <h3 class="volunteer-name">Oyindamola Olatunji</h3>
-            <h3 class="volunteer-name">Damilola Adetoro</h3>
-            <h3 class="volunteer-name">Whoopie Wanjiru</h3>
-            <h3 class="volunteer-name">Nicholaus (Emrys) Ladislaus</h3>
-            <h3 class="volunteer-name">Zainab AKINTAYO</h3>
-            <h3 class="volunteer-name">Gentille Uwera</h3>
-            <h3 class="volunteer-name">Samuel Olusola</h3>
-            <h3 class="volunteer-name">Idris Muhammed Kamil</h3>
-            <h3 class="volunteer-name">Raissa Kinkoh</h3>
-            <h3 class="volunteer-name">Uwimana Lowami</h3>
-        </div>
-    </div>
-</div>
-        </div>
-      </section>
-
-      <!-- Member Statistics -->
-      <section class="section" style="background: var(--gray-50)">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Our Community</h2>
-            <p class="section-subtitle">
-              A diverse group of researchers from various disciplines and
-              backgrounds.
-            </p>
+          <div class="volunteer-card">
+            <div class="volunteer-info">
+              <p class="volunteer-role">Linkedin Managers</p>
+              <h3 class="volunteer-name">Yvette Tuyambaze</h3>
+              <h3 class="volunteer-name">Deborah Osibamowo</h3>
+              <h3 class="volunteer-name">Shedrack Eze</h3>
+            </div>
           </div>
 
-          <div class="stats-grid">
-            <div class="stat-item">
-              <div class="stat-number">50+</div>
-              <div class="stat-label">Members</div>
+          <div class="volunteer-card">
+            <div class="volunteer-info">
+              <p class="volunteer-role">Student Research Hub</p>
+              <h3 class="volunteer-name">Christian Byiringiro</h3>
+              <h3 class="volunteer-name">Anny Christelle Irakoze</h3>
+              <h3 class="volunteer-name">Alia Teto</h3>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">4</div>
-              <div class="stat-label">Executive Members</div>
+          </div>
+          <div class="volunteer-card">
+            <div class="volunteer-info">
+              <p class="volunteer-role">Conference Trackers</p>
+              <h3 class="volunteer-name">Mariamawit G. Arega</h3>
+              <h3 class="volunteer-name">John Dalton Gibson</h3>
+              <h3 class="volunteer-name">Mariamawit Gashahun Arega</h3>
+              <h3 class="volunteer-name">Ganontha Payang Bruno</h3>
+              <h3 class="volunteer-name">Ramsey Ith Njema</h3>
+              <h3 class="volunteer-name">Patrick Niyigena</h3>
+              <h3 class="volunteer-name">Victor</h3>
+              <h3 class="volunteer-name">Mohammed Abubakari Sadic</h3>
+              <h3 class="volunteer-name">Samuel Adeniji</h3>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">2</div>
-              <div class="stat-label">Faculty Advisers</div>
+          </div>
+
+          <div class="volunteer-card">
+            <div class="volunteer-info">
+              <p class="volunteer-role">Events Planning Volunteers</p>
+              <h3 class="volunteer-name">David Stephen</h3>
+              <h3 class="volunteer-name">Cleophas Kadima</h3>
+              <h3 class="volunteer-name">Patricia Muriira</h3>
+              <h3 class="volunteer-name">Jeanne Muhimpundu</h3>
+              <h3 class="volunteer-name">Martin Koome</h3>
+              <h3 class="volunteer-name">IRADUKUNDA Kevin Jonathan</h3>
+              <h3 class="volunteer-name">Eileen Blessing Mbong Kabi</h3>
+              <h3 class="volunteer-name">Ukachi Eze-Mbey</h3>
+              <h3 class="volunteer-name">Georgina Njoroge</h3>
+              <h3 class="volunteer-name">Rhoda Ojetola</h3>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">6</div>
-              <div class="stat-label">Volunteers</div>
+          </div>
+
+          <div class="volunteer-card">
+            <div class="volunteer-info">
+              <p class="volunteer-role">Newsletter Writers & Editors</p>
+              <h3 class="volunteer-name">Temidayo Akanmu</h3>
+              <h3 class="volunteer-name">Obasi Goodness Chidera</h3>
+              <h3 class="volunteer-name">Matewos Tegete Endaylalu</h3>
+              <h3 class="volunteer-name">Oyindamola Olatunji</h3>
+              <h3 class="volunteer-name">Damilola Adetoro</h3>
+              <h3 class="volunteer-name">Whoopie Wanjiru</h3>
+              <h3 class="volunteer-name">Nicholaus (Emrys) Ladislaus</h3>
+              <h3 class="volunteer-name">Zainab AKINTAYO</h3>
+              <h3 class="volunteer-name">Gentille Uwera</h3>
+              <h3 class="volunteer-name">Samuel Olusola</h3>
+              <h3 class="volunteer-name">Idris Muhammed Kamil</h3>
+              <h3 class="volunteer-name">Raissa Kinkoh</h3>
+              <h3 class="volunteer-name">Uwimana Lowami</h3>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <!-- Load footer -->
-    <div id="footer-container">
-      <!-- Footer will be loaded here -->
-    </div>
+    <!-- Member Statistics -->
+    <section class="section" style="background: var(--gray-50)">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Community</h2>
+          <p class="section-subtitle">
+            A diverse group of researchers from various disciplines and
+            backgrounds.
+          </p>
+        </div>
 
-    <!-- JavaScript Files -->
-    <script src="js/utils.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/interactions.js"></script>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Members</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Executive Members</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Faculty Advisor</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">30+</div>
+            <div class="stat-label">Volunteers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <!-- Load page components -->
-    <script>
-      document.addEventListener("DOMContentLoaded", async () => {
-        try {
-          // Load navigation
-          const navResponse = await fetch("navigation.html");
-          if (navResponse.ok) {
-            const navHTML = await navResponse.text();
-            document.getElementById("navigation-container").innerHTML = navHTML;
-            if (window.initializeNavigation) window.initializeNavigation();
-          }
+  <!-- Load footer -->
+  <div id="footer-container">
+    <!-- Footer will be loaded here -->
+  </div>
 
-          // Load page header
-          const headerResponse = await fetch("page-header.html");
-          if (headerResponse.ok) {
-            const headerHTML = await headerResponse.text();
-            document.getElementById("page-header-container").innerHTML =
-              headerHTML;
+  <!-- JavaScript Files -->
+  <script src="js/utils.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/interactions.js"></script>
 
-            // Set page-specific content
-            document.getElementById("page-title").textContent = "Our Members";
-            document.getElementById("page-description").textContent =
-              "Meet our passionate researchers, executives, and faculty driving innovation forward.";
-            document.getElementById("current-page").textContent = "Members";
-          }
-
-          // Load footer
-          const footerResponse = await fetch("footer.html");
-          if (footerResponse.ok) {
-            const footerHTML = await footerResponse.text();
-            document.getElementById("footer-container").innerHTML = footerHTML;
-          }
-
-          // Initialize navigation after loading
-          if (window.initializeNavigation) {
-            window.initializeNavigation();
-          }
-        } catch (error) {
-          console.error("Error loading page components:", error);
+  <!-- Load page components -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        // Load navigation
+        const navResponse = await fetch("navigation.html");
+        if (navResponse.ok) {
+          const navHTML = await navResponse.text();
+          document.getElementById("navigation-container").innerHTML = navHTML;
+          if (window.initializeNavigation) window.initializeNavigation();
         }
-      });
-    </script>
 
-    <style>
-      /* Executive Members Styles */
+        // Load page header
+        const headerResponse = await fetch("page-header.html");
+        if (headerResponse.ok) {
+          const headerHTML = await headerResponse.text();
+          document.getElementById("page-header-container").innerHTML =
+            headerHTML;
+
+          // Set page-specific content
+          document.getElementById("page-title").textContent = "Our Members";
+          document.getElementById("page-description").textContent =
+            "Meet our passionate researchers, executives, and faculty driving innovation forward.";
+          document.getElementById("current-page").textContent = "Members";
+        }
+
+        // Load footer
+        const footerResponse = await fetch("footer.html");
+        if (footerResponse.ok) {
+          const footerHTML = await footerResponse.text();
+          document.getElementById("footer-container").innerHTML = footerHTML;
+        }
+
+        // Initialize navigation after loading
+        if (window.initializeNavigation) {
+          window.initializeNavigation();
+        }
+      } catch (error) {
+        console.error("Error loading page components:", error);
+      }
+    });
+  </script>
+
+  <style>
+    /* Executive Members Styles */
+    .executive-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+      margin-bottom: var(--space-12);
+    }
+
+    .executive-card {
+      background: var(--white);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      transition: all var(--transition-base);
+      position: relative;
+    }
+
+    .executive-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-2xl);
+    }
+
+    .executive-image {
+      position: relative;
+      width: 90%;
+      height: 230px;
+      margin: 0 auto var(--space-4);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .executive-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .executive-image img.loaded {
+      opacity: 1;
+    }
+
+    .member-avatar-fallback {
+      width: 100%;
+      height: 100%;
+      background: var(--primary-color);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: var(--text-4xl);
+    }
+
+    .social-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(139, 21, 56, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+      border-radius: var(--radius-lg);
+    }
+
+    .executive-image:hover .social-overlay {
+      opacity: 0.8;
+    }
+
+    .social-link {
+      background: var(--white);
+      color: var(--primary-color);
+      width: 35px;
+      height: 35px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: var(--text-base);
+      transition: all var(--transition-base);
+    }
+
+    .social-link:hover {
+      background: var(--gray-100);
+      transform: scale(1.1);
+    }
+
+    .executive-name {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-2);
+      color: var(--gray-800);
+    }
+
+    .executive-position {
+      font-size: var(--text-base);
+      color: var(--primary-color);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-1);
+    }
+
+    .executive-course {
+      font-size: var(--text-sm);
+      color: var(--gray-600);
+      margin-bottom: var(--space-4);
+    }
+
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      justify-content: center;
+    }
+
+    .tag {
+      background: var(--primary-color);
+      color: var(--white);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius);
+      font-size: var(--text-xs);
+      font-weight: var(--font-weight-medium);
+    }
+
+    /* Faculty Advisers Styles */
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      margin-bottom: var(--space-12);
+    }
+
+    .faculty-card {
+      background: var(--white);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      display: flex;
+      box-shadow: var(--shadow-lg);
+      transition: all var(--transition-base);
+    }
+
+    .faculty-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-2xl);
+    }
+
+    .faculty-image {
+      width: 200px;
+      height: 100%;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .faculty-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .faculty-avatar-fallback {
+      width: 100%;
+      height: 100%;
+      background: var(--primary-color);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: var(--text-4xl);
+    }
+
+    .faculty-info {
+      padding: var(--space-8);
+      flex: 1;
+    }
+
+    .faculty-name {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-2);
+      color: var(--gray-800);
+    }
+
+    .faculty-title {
+      font-size: var(--text-lg);
+      color: var(--primary-color);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-1);
+    }
+
+    .faculty-department {
+      font-size: var(--text-base);
+      color: var(--gray-600);
+      margin-bottom: var(--space-4);
+    }
+
+    .faculty-bio {
+      font-size: var(--text-base);
+      color: var(--gray-700);
+      line-height: 1.6;
+      margin-bottom: var(--space-6);
+    }
+
+    .faculty-contact {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      color: var(--gray-600);
+      font-size: var(--text-sm);
+    }
+
+    .contact-item i {
+      color: var(--primary-color);
+      width: 20px;
+    }
+
+    /* Volunteers Styles */
+    .volunteers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--space-8);
+    }
+
+    .volunteer-card {
+      background: var(--white);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-lg);
+      transition: all var(--transition-base);
+    }
+
+    .volunteer-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-2xl);
+    }
+
+    .volunteer-name {
+      font-size: var(--text-l);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-2);
+      color: var(--gray-800);
+    }
+
+    .volunteer-role {
+      font-size: var(--text-xl);
+      color: var(--primary-color);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-4);
+    }
+
+    .volunteer-course {
+      font-size: var(--text-base);
+      color: var(--gray-600);
+      margin-bottom: var(--space-4);
+    }
+
+    .volunteer-description {
+      font-size: var(--text-base);
+      color: var(--gray-700);
+      line-height: 1.6;
+      margin-bottom: var(--space-4);
+    }
+
+    .volunteer-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .role-tag {
+      background: var(--gray-100);
+      color: var(--gray-700);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius);
+      font-size: var(--text-xs);
+      font-weight: var(--font-weight-medium);
+      border: 1px solid var(--gray-300);
+    }
+
+    /* Statistics Section */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-8);
+    }
+
+    .stat-item {
+      text-align: center;
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-base);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stat-number {
+      font-size: var(--text-5xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--primary-color);
+      display: block;
+      margin-bottom: var(--space-2);
+    }
+
+    .stat-label {
+      font-size: var(--text-lg);
+      color: var(--gray-700);
+      font-weight: var(--font-weight-medium);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
       .executive-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--space-6);
-        margin-bottom: var(--space-12);
       }
 
-      .executive-card {
-        background: var(--white);
-        border-radius: var(--radius-2xl);
-        padding: var(--space-8);
-        text-align: center;
-        box-shadow: var(--shadow-lg);
-        transition: all var(--transition-base);
-        position: relative;
-      }
-
-      .executive-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-2xl);
-      }
-
-      .executive-image {
-        position: relative;
-        width: 90%;
-        height: 230px;
-        margin: 0 auto var(--space-4);
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-      }
-
-      .executive-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 1;
-        transition: opacity 0.3s ease;
-      }
-
-      .executive-image img.loaded {
-        opacity: 1;
-      }
-
-      .member-avatar-fallback {
-        width: 100%;
-        height: 100%;
-        background: var(--primary-color);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        color: var(--white);
-        font-size: var(--text-4xl);
-      }
-
-      .social-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(139, 21, 56, 0.9);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: var(--space-3);
-        opacity: 0;
-        transition: opacity var(--transition-base);
-        border-radius: var(--radius-lg);
-      }
-
-      .executive-image:hover .social-overlay {
-        opacity: 0.8;
-      }
-
-      .social-link {
-        background: var(--white);
-        color: var(--primary-color);
-        width: 35px;
-        height: 35px;
-        border-radius: var(--radius-full);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        font-size: var(--text-base);
-        transition: all var(--transition-base);
-      }
-
-      .social-link:hover {
-        background: var(--gray-100);
-        transform: scale(1.1);
-      }
-
-      .executive-name {
-        font-size: var(--text-xl);
-        font-weight: var(--font-weight-bold);
-        margin-bottom: var(--space-2);
-        color: var(--gray-800);
-      }
-
-      .executive-position {
-        font-size: var(--text-base);
-        color: var(--primary-color);
-        font-weight: var(--font-weight-semibold);
-        margin-bottom: var(--space-1);
-      }
-
-      .executive-course {
-        font-size: var(--text-sm);
-        color: var(--gray-600);
-        margin-bottom: var(--space-4);
-      }
-
-      .research-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-2);
-        justify-content: center;
-      }
-
-      .tag {
-        background: var(--primary-color);
-        color: var(--white);
-        padding: var(--space-1) var(--space-3);
-        border-radius: var(--radius);
-        font-size: var(--text-xs);
-        font-weight: var(--font-weight-medium);
-      }
-
-      /* Faculty Advisers Styles */
       .faculty-grid {
-        display: grid;
         grid-template-columns: 1fr;
-        gap: var(--space-8);
-        margin-bottom: var(--space-12);
       }
 
       .faculty-card {
-        background: var(--white);
-        border-radius: var(--radius-2xl);
-        overflow: hidden;
-        display: flex;
-        box-shadow: var(--shadow-lg);
-        transition: all var(--transition-base);
-      }
-
-      .faculty-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-2xl);
+        flex-direction: column;
       }
 
       .faculty-image {
-        width: 200px;
-        height: 100%;
-        flex-shrink: 0;
-        position: relative;
-      }
-
-      .faculty-image img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: 200px;
       }
 
-      .faculty-avatar-fallback {
-        width: 100%;
-        height: 100%;
-        background: var(--primary-color);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        color: var(--white);
-        font-size: var(--text-4xl);
+      .volunteers-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
       }
 
-      .faculty-info {
-        padding: var(--space-8);
-        flex: 1;
+      .executive-image {
+        width: 100px;
+        height: 100px;
+      }
+
+      .social-overlay {
+        opacity: 0.8;
+        background: rgba(139, 21, 56, 0.8);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .executive-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .executive-card,
+      .faculty-info,
+      .volunteer-card {
+        padding: var(--space-6);
       }
 
       .faculty-name {
-        font-size: var(--text-2xl);
-        font-weight: var(--font-weight-bold);
-        margin-bottom: var(--space-2);
-        color: var(--gray-800);
+        font-size: var(--text-xl);
       }
 
       .faculty-title {
-        font-size: var(--text-lg);
-        color: var(--primary-color);
-        font-weight: var(--font-weight-semibold);
-        margin-bottom: var(--space-1);
-      }
-
-      .faculty-department {
         font-size: var(--text-base);
-        color: var(--gray-600);
-        margin-bottom: var(--space-4);
       }
+    }
+  </style>
+</body>
 
-      .faculty-bio {
-        font-size: var(--text-base);
-        color: var(--gray-700);
-        line-height: 1.6;
-        margin-bottom: var(--space-6);
-      }
-
-      .faculty-contact {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-3);
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: var(--space-3);
-        color: var(--gray-600);
-        font-size: var(--text-sm);
-      }
-
-      .contact-item i {
-        color: var(--primary-color);
-        width: 20px;
-      }
-
-      /* Volunteers Styles */
-      .volunteers-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: var(--space-8);
-      }
-
-      .volunteer-card {
-        background: var(--white);
-        border-radius: var(--radius-2xl);
-        padding: var(--space-8);
-        box-shadow: var(--shadow-lg);
-        transition: all var(--transition-base);
-      }
-
-      .volunteer-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-2xl);
-      }
-
-      .volunteer-name {
-        font-size: var(--text-l);
-        font-weight: var(--font-weight-bold);
-        margin-bottom: var(--space-2);
-        color: var(--gray-800);
-      }
-
-      .volunteer-role {
-        font-size: var(--text-xl);
-        color: var(--primary-color);
-        font-weight: var(--font-weight-semibold);
-        margin-bottom: var(--space-4);
-      }
-
-      .volunteer-course {
-        font-size: var(--text-base);
-        color: var(--gray-600);
-        margin-bottom: var(--space-4);
-      }
-
-      .volunteer-description {
-        font-size: var(--text-base);
-        color: var(--gray-700);
-        line-height: 1.6;
-        margin-bottom: var(--space-4);
-      }
-
-      .volunteer-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-2);
-      }
-
-      .role-tag {
-        background: var(--gray-100);
-        color: var(--gray-700);
-        padding: var(--space-1) var(--space-3);
-        border-radius: var(--radius);
-        font-size: var(--text-xs);
-        font-weight: var(--font-weight-medium);
-        border: 1px solid var(--gray-300);
-      }
-
-      /* Statistics Section */
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: var(--space-8);
-      }
-
-      .stat-item {
-        text-align: center;
-        background: var(--white);
-        border-radius: var(--radius-xl);
-        padding: var(--space-8);
-        box-shadow: var(--shadow-md);
-        transition: all var(--transition-base);
-      }
-
-      .stat-item:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .stat-number {
-        font-size: var(--text-5xl);
-        font-weight: var(--font-weight-bold);
-        color: var(--primary-color);
-        display: block;
-        margin-bottom: var(--space-2);
-      }
-
-      .stat-label {
-        font-size: var(--text-lg);
-        color: var(--gray-700);
-        font-weight: var(--font-weight-medium);
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .executive-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: var(--space-6);
-        }
-
-        .faculty-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .faculty-card {
-          flex-direction: column;
-        }
-
-        .faculty-image {
-          width: 100%;
-          height: 200px;
-        }
-
-        .volunteers-grid {
-          grid-template-columns: 1fr;
-          gap: var(--space-6);
-        }
-
-        .executive-image {
-          width: 100px;
-          height: 100px;
-        }
-
-        .social-overlay {
-          opacity: 0.8;
-          background: rgba(139, 21, 56, 0.8);
-        }
-
-        .stats-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: var(--space-4);
-        }
-      }
-
-      @media (max-width: 480px) {
-        .executive-grid {
-          grid-template-columns: 1fr;
-          gap: var(--space-4);
-        }
-
-        .executive-card,
-        .faculty-info,
-        .volunteer-card {
-          padding: var(--space-6);
-        }
-
-        .faculty-name {
-          font-size: var(--text-xl);
-        }
-
-        .faculty-title {
-          font-size: var(--text-base);
-        }
-      }
-    </style>
-  </body>
 </html>

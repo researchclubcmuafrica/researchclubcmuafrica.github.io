@@ -28,6 +28,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGRRFBFQN1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-HGRRFBFQN1');
+    </script>
   </head>
   <body>
     <!-- Skip to main content for accessibility -->
@@ -64,7 +73,7 @@
                   </div>
                   <div class="contact-details">
                     <h3>Email</h3>
-                    <p>research@africa.cmu.edu</p>
+                    <p><a href="mailto:researchclub.cmuafrica@gmail.com" style="color: var(--primary-color); text-decoration: none;">researchclub.cmuafrica@gmail.com</a></p>
                     <small>We typically respond within 24 hours</small>
                   </div>
                 </div>
@@ -75,24 +84,26 @@
                   </div>
                   <div class="contact-details">
                     <h3>Location</h3>
-                    <p>CMU Africa Campus<br />Kigali, Rwanda</p>
+                    <p>CMU-Africa<br />Kigali, Rwanda</p>
                     <small>Visit us during office hours</small>
                   </div>
                 </div>
 
                 <div class="contact-method">
                   <div class="contact-icon">
-                    <i class="fas fa-clock" aria-hidden="true"></i>
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
                   </div>
                   <div class="contact-details">
-                    <h3>Office Hours</h3>
-                    <p>Monday - Friday<br />9:00 AM - 5:00 PM EAT</p>
-                    <small>Available for meetings and consultations</small>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/company/cmu-africa-research-club/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: none;">CMU-Africa Research Club</a></p>
+                    <small>Connect with us on LinkedIn</small>
                   </div>
                 </div>
               </div>
             </div>
 
+            <!-- FORM COMMENTED OUT - TO BE FIXED LATER -->
+            <!--
             <div class="contact-form-container">
               <form class="contact-form" id="contact-form">
                 <h2>Send us a Message</h2>
@@ -165,6 +176,7 @@
                 </button>
               </form>
             </div>
+            -->
           </div>
         </div>
       </section>
@@ -276,9 +288,11 @@
     <style>
       .contact-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: var(--space-16);
         align-items: start;
+        max-width: 900px;
+        margin: 0 auto;
       }
 
       .contact-info h2 {
@@ -286,44 +300,66 @@
         font-weight: var(--font-weight-bold);
         margin-bottom: var(--space-4);
         color: var(--gray-800);
+        text-align: center;
       }
 
-      .contact-info p {
+      .contact-info > p {
         color: var(--gray-600);
         margin-bottom: var(--space-8);
         line-height: 1.6;
         font-size: var(--text-lg);
+        text-align: center;
       }
 
       .contact-methods {
         display: flex;
         flex-direction: column;
-        gap: var(--space-8);
+        gap: var(--space-6);
       }
 
       .contact-method {
         display: flex;
+        flex-direction: column;
         gap: var(--space-4);
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
+        background: var(--white);
+        padding: var(--space-8);
+        border-radius: var(--radius-2xl);
+        box-shadow: var(--shadow-lg);
+        transition: all 0.3s ease;
+        border: 1px solid var(--gray-200);
+      }
+
+      .contact-method:hover {
+        box-shadow: var(--shadow-xl);
+        transform: translateY(-4px);
+        border-color: var(--primary-color);
       }
 
       .contact-icon {
         background: var(--primary-color);
         color: var(--white);
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         border-radius: var(--radius-xl);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: var(--text-xl);
+        font-size: var(--text-2xl);
         flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(177, 30, 74, 0.2);
+      }
+
+      .contact-details {
+        flex: 1;
+        width: 100%;
       }
 
       .contact-details h3 {
-        font-size: var(--text-lg);
-        font-weight: var(--font-weight-semibold);
-        margin-bottom: var(--space-1);
+        font-size: var(--text-xl);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--space-2);
         color: var(--gray-800);
       }
 
@@ -331,13 +367,26 @@
         color: var(--gray-700);
         margin-bottom: var(--space-1);
         line-height: 1.5;
+        font-size: var(--text-base);
       }
 
       .contact-details small {
         color: var(--gray-500);
         font-size: var(--text-sm);
+        display: block;
+        margin-top: var(--space-2);
       }
 
+      .contact-details a {
+        font-weight: 600;
+      }
+
+      .contact-details a:hover {
+        text-decoration: underline;
+      }
+
+      /* FORM STYLES - KEPT FOR LATER USE */
+      /*
       .contact-form-container {
         background: var(--white);
         border-radius: var(--radius-2xl);
@@ -357,6 +406,7 @@
         grid-template-columns: 1fr 1fr;
         gap: var(--space-4);
       }
+      */
 
       .faq-grid {
         display: grid;
@@ -389,16 +439,16 @@
           gap: var(--space-8);
         }
 
-        .form-row {
-          grid-template-columns: 1fr;
-        }
-
-        .contact-method {
-          flex-direction: column;
-          text-align: center;
+        .contact-icon {
+          width: 80px;
+          height: 80px;
+          font-size: var(--text-3xl);
         }
       }
     </style>
+    
+    <!-- FORM SUBMISSION SCRIPT - COMMENTED OUT FOR LATER USE -->
+    <!--
     <script>
       document
         .getElementById("contact-form")
@@ -420,5 +470,6 @@
           }
         });
     </script>
+    -->
   </body>
 </html>
