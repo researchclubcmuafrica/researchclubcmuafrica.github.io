@@ -3,10 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="css/navigation.css?v=2" />
-  <link rel="stylesheet" href="css/components.css?v=2" />
-  <link rel="stylesheet" href="css/sections.css?v=2" />
-  <link rel="stylesheet" href="css/footer.css?v=2" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="CMU Africa Research Club - Advancing Knowledge Through Collaborative Research" />
   <meta name="keywords" content="CMU Africa, research, collaboration, academic community, Carnegie Mellon" />
@@ -65,9 +61,14 @@
   <link rel="preload" href="css/base.css" as="style" />
   <link rel="preload" href="css/navigation.css" as="style" />
 
-  <!-- DNS Prefetch for External Resources -->
-  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
-  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <!-- Preconnect to external origins (faster than dns-prefetch: establishes TCP+TLS up front) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+
+  <!-- Prefetch HTML partials so they are ready before the JS fetches them -->
+  <link rel="prefetch" href="navigation.html" as="fetch" crossorigin />
+  <link rel="prefetch" href="sections.html"   as="fetch" crossorigin />
+  <link rel="prefetch" href="footer.html"     as="fetch" crossorigin />
 </head>
 
 <body class="home-page">
@@ -304,61 +305,44 @@
   <script src="js/interactions.js"></script>
   <script src="js/app.js"></script>
 
-  <!-- Load page content -->
+  <!-- Load page content — all three partials fetched in parallel with Promise.all -->
   <script>
-    // Load sections dynamically
     document.addEventListener("DOMContentLoaded", async () => {
       try {
-        // Load navigation first
-        const navResponse = await fetch("navigation.html");
-        if (navResponse.ok) {
-          const navHTML = await navResponse.text();
+        // Fire all three fetches simultaneously instead of one-by-one
+        const [navRes, sectionsRes, footerRes] = await Promise.all([
+          fetch("navigation.html"),
+          fetch("sections.html"),
+          fetch("footer.html"),
+        ]);
+
+        if (!sectionsRes.ok) throw new Error(`sections.html: ${sectionsRes.status}`);
+        if (!footerRes.ok)   throw new Error(`footer.html: ${footerRes.status}`);
+
+        // Parse all three responses in parallel
+        const [navHTML, sectionsHTML, footerHTML] = await Promise.all([
+          navRes.ok ? navRes.text() : Promise.resolve(""),
+          sectionsRes.text(),
+          footerRes.text(),
+        ]);
+
+        // Inject into DOM
+        if (navHTML) {
           document.getElementById("navigation-container").innerHTML = navHTML;
           if (window.initializeNavigation) window.initializeNavigation();
         }
+        document.getElementById("page-sections").innerHTML   = sectionsHTML;
+        document.getElementById("footer-container").innerHTML = footerHTML;
 
-        // Load sections
-        const sectionsResponse = await fetch("sections.html");
-        if (!sectionsResponse.ok) {
-          throw new Error(
-            `Failed to load sections: ${sectionsResponse.status}`,
-          );
-        }
-        const sectionsHTML = await sectionsResponse.text();
-        const sectionsContainer = document.getElementById("page-sections");
-        if (sectionsContainer) {
-          sectionsContainer.innerHTML = sectionsHTML;
-        }
-
-        // Load footer
-        const footerResponse = await fetch("footer.html");
-        if (!footerResponse.ok) {
-          throw new Error(`Failed to load footer: ${footerResponse.status}`);
-        }
-        const footerHTML = await footerResponse.text();
-        const footerContainer = document.getElementById("footer-container");
-        if (footerContainer) {
-          footerContainer.innerHTML = footerHTML;
-        }
-
-        // Dispatch event that content is loaded
+        // Signal that all content is now in the DOM
         document.dispatchEvent(new CustomEvent("contentLoaded"));
+
       } catch (error) {
-        console.error("Error loading page sections:", error);
-
-        // Show fallback content
-        const sectionsContainer = document.getElementById("page-sections");
-        const footerContainer = document.getElementById("footer-container");
-
-        if (sectionsContainer) {
-          sectionsContainer.innerHTML =
-            '<div class="section"><div class="container"><p>Content is temporarily unavailable. Please refresh the page.</p></div></div>';
-        }
-
-        if (footerContainer) {
-          footerContainer.innerHTML =
-            '<footer class="footer"><div class="container"><p>&copy; 2025 CMU Africa Research Club. All rights reserved.</p></div></footer>';
-        }
+        console.error("Error loading page components:", error);
+        document.getElementById("page-sections").innerHTML =
+          '<div class="section"><div class="container"><p>Content is temporarily unavailable. Please refresh the page.</p></div></div>';
+        document.getElementById("footer-container").innerHTML =
+          '<footer class="footer"><div class="container"><p>&copy; 2026 CMU Africa Research Club. All rights reserved.</p></div></footer>';
       }
     });
   </script>
