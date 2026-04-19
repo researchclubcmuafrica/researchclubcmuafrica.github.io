@@ -27,7 +27,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-top: 80px; /* Just the nav height */
 }
 
 .hero-slider {
@@ -213,7 +212,6 @@
   .hero {
     height: calc(100vh * 5 / 6);
     min-height: 450px;
-    margin-top: 70px;
     padding-top: var(--space-8);
   }
 
@@ -279,7 +277,6 @@
   .hero {
     height: calc(100vh * 5 / 6);
     min-height: 400px;
-    margin-top: 70px;
     padding-top: var(--space-10);
   }
 
