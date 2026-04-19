@@ -43,13 +43,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="research_club_logo.png" />
 
   <!-- CSS Files -->
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/navigation.css" />
-  <link rel="stylesheet" href="css/hero.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/sections.css" />
-  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/variables.css?v=3" />
+  <link rel="stylesheet" href="css/base.css?v=3" />
+  <link rel="stylesheet" href="css/navigation.css?v=3" />
+  <link rel="stylesheet" href="css/hero.css?v=3" />
+  <link rel="stylesheet" href="css/components.css?v=3" />
+  <link rel="stylesheet" href="css/sections.css?v=3" />
+  <link rel="stylesheet" href="css/footer.css?v=3" />
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -84,10 +84,11 @@
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    position: relative;
+    position: static;
     z-index: 1000;
     flex-wrap: wrap;
     border-bottom: 2px solid rgba(255,215,0,0.4);
+    margin-bottom: 10px; /* Slight buffer to place nav lower */
   " role="banner" aria-label="Research Showcase announcement">
     <!-- Live pulse dot -->
     <span style="display:inline-flex;align-items:center;gap:0.4rem;">
