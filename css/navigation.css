@@ -1,14 +1,19 @@
 /* Main Navigation */
+#navigation-container {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  height: 80px;
+  width: 100%;
+}
+
 .main-nav {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: var(--space-4) 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: var(--z-sticky);
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -199,15 +204,7 @@
   visibility: hidden;
 }
 
-/* Ensure consistent spacing for pages with headers */
-body:not(.home-page) main {
-  margin-top: 80px;
-}
-
-/* Home page specific styling */
-.home-page .hero {
-  margin-top: 80px;
-}
+/* Layout defaults removed because sticky nav stays in document flow */
 
 .mobile-menu.active {
   transform: translateX(0);
@@ -403,14 +400,6 @@ body:not(.home-page) main {
   }
 
   /* Ensure proper spacing for all pages on mobile */
-  body:not(.home-page) main {
-    margin-top: 80px;
-  }
-
-  .home-page .hero {
-    margin-top: 80px;
-  }
-}
 
 @media (max-width: 480px) {
   .logo-image {
