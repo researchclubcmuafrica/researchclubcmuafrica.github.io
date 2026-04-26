@@ -27,7 +27,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-top: 80px; /* Just the nav height */
 }
 
 .hero-slider {
@@ -213,7 +212,7 @@
   .hero {
     height: calc(100vh * 5 / 6);
     min-height: 450px;
-    margin-top: 80px;
+    padding-top: var(--space-8);
   }
 
   .hero-content {
@@ -221,6 +220,11 @@
     gap: var(--space-8);
     max-width: 95vw;
   }
+
+  .hero-title {
+    margin-top: var(--space-6);
+  }
+
   .hero-buttons {
     flex-direction: column;
     align-items: center;
@@ -262,7 +266,7 @@
     justify-content: center;
     min-width: 120px;
     max-width: 200px;
-
+  }
 
   .hero-controls {
     bottom: var(--space-4);
@@ -273,13 +277,19 @@
   .hero {
     height: calc(100vh * 5 / 6);
     min-height: 400px;
-    margin-top: 80px;
+    padding-top: var(--space-10);
   }
 
   .hero-content {
     padding: 0 var(--space-2);
     max-width: 99vw;
   }
+
+  .hero-title {
+    margin-top: var(--space-4);
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
   .hero-buttons {
     flex-direction: column;
     align-items: center;
@@ -331,5 +341,4 @@
   .stat-number {
     font-size: var(--text-2xl);
   }
-}
 }

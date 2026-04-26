@@ -138,12 +138,23 @@
   /* Responsive Design */
   @media (max-width: 768px) {
     .page-header {
-      padding: calc(80px + var(--space-10)) 0 var(--space-10); /* Equal top and bottom padding */
-      min-height: 200px; /* Reduced mobile height */
+      padding: calc(80px + var(--space-8)) 0 var(--space-8);
+      min-height: 220px;
+      height: auto;
     }
 
     .page-header-content {
       padding: 0 var(--space-4);
+    }
+
+    .page-header-title {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      margin-bottom: var(--space-3);
+    }
+
+    .page-header-description {
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      margin-bottom: var(--space-4);
     }
 
     .breadcrumb-list {
@@ -152,14 +163,25 @@
     }
 
     .breadcrumb-item {
-      font-size: var(--text-xs); /* Further reduced for mobile */
+      font-size: var(--text-xs);
     }
   }
 
   @media (max-width: 480px) {
     .page-header {
-      padding: calc(var(--space-8) + 80px) 0 var(--space-8); /* Further reduced padding */
-      min-height: 180px; /* Further reduced mobile height */
+      padding: calc(70px + var(--space-6)) 0 var(--space-6);
+      min-height: 200px;
+      height: auto;
+    }
+
+    .page-header-title {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .page-header-description {
+      font-size: 0.9rem;
+      margin-bottom: var(--space-3);
     }
   }
 </style>

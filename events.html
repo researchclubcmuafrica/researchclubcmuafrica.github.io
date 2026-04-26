@@ -1,336 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="CMU Africa Research Club Events - Join our workshops, seminars, and networking events"
-    />
-    <title>Events - CMU Africa Research Club</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="research_club_logo.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="CMU Africa Research Club Events - Join our workshops, seminars, and networking events" />
+  <title>Events - CMU Africa Research Club</title>
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/variables.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/navigation.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/sections.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="research_club_logo.png" />
 
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only">Skip to main content</a>
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/footer.css" />
 
-    <!-- Load Navigation -->
-    <div id="navigation-container">
-      <!-- Navigation will be loaded here -->
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGRRFBFQN1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HGRRFBFQN1');
+  </script>
+</head>
+
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- Load Navigation -->
+  <div id="navigation-container">
+    <!-- Navigation will be loaded here -->
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Load page header -->
+    <div id="page-header-container">
+      <!-- Page header will be loaded here -->
     </div>
 
-    <!-- Main Content -->
-    <main id="main-content">
-      <!-- Load page header -->
-      <div id="page-header-container">
-        <!-- Page header will be loaded here -->
-      </div>
+    <!-- Upcoming Events -->
+    <section class="section">
 
-      <!-- Upcoming Events -->
-      <section class="section">
-        <div class="container">
-          <div class="events-grid grid-auto-lg">
-            <article class="event-card card">
+      <div class="container">
+        <div class="events-grid grid-auto-lg">
+          <!-- Generated events start -->
+
+          <!-- ★ FEATURED: Research Showcase (April 24) ★ -->
+          <article class="event-card card" style="
+            border: 2px solid #ffd700;
+            position: relative;
+            overflow: visible;
+          ">
+            <!-- Gold "Featured" ribbon -->
+            <div style="
+              position: absolute;
+              top: -1px; right: 20px;
+              background: linear-gradient(135deg, #ffd700, #ffb300);
+              color: #6b0f22;
+              font-size: 0.65rem;
+              font-weight: 900;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              padding: 0.3rem 0.85rem 0.3rem;
+              border-radius: 0 0 10px 10px;
+              box-shadow: 0 4px 12px rgba(255,215,0,0.4);
+              display: flex;
+              align-items: center;
+              gap: 0.3rem;
+            ">
+              <i class="fas fa-star" style="font-size:0.6rem;"></i> Featured Event
+            </div>
+
+            <div class="event-date" style="background: linear-gradient(135deg, #8b1538, #c0392b);">
+              <span class="event-month">APR</span>
+              <span class="event-day">24</span>
+            </div>
+            <div class="event-content">
+              <h3 class="event-title" style="display:flex;align-items:center;gap:0.5rem;">
+                <i class="fas fa-trophy" style="color:#ffd700;font-size:1rem;"></i>
+                CMU Africa Research Showcase
+              </h3>
+              <p class="event-description">
+                Celebrate academic excellence! Present your research, Course Project, Practicum,
+                or Capstone and compete for prizes including Best Course-Based Research,
+                Best Practicum Project, Best Capstone Project, and Audience Choice Awards.
+              </p>
+              <!-- Poster thumbnails -->
+              <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;margin-top:0.25rem;">
+                <img src="assets/images/paper_presentations/paper_presentation.jpeg" alt="Showcase Poster 1"
+                  onclick="openShowcaseLightbox(0)"
+                  style="width:70px;height:90px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid rgba(139,21,56,0.3);transition:transform 0.2s,box-shadow 0.2s;"
+                  onmouseover="this.style.transform='scale(1.06)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='';this.style.boxShadow=''" loading="lazy" />
+                <img src="assets/images/paper_presentations/paper_presentation2.jpeg" alt="Showcase Poster 2"
+                  onclick="openShowcaseLightbox(1)"
+                  style="width:70px;height:90px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid rgba(139,21,56,0.3);transition:transform 0.2s,box-shadow 0.2s;"
+                  onmouseover="this.style.transform='scale(1.06)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='';this.style.boxShadow=''" loading="lazy" />
+                <div style="display:flex;flex-direction:column;justify-content:center;gap:0.3rem;margin-left:0.25rem;">
+                  <span style="font-size:0.72rem;color:var(--gray-500);">Click to enlarge</span>
+                  <span onclick="openShowcaseLightbox(0)"
+                    style="font-size:0.8rem;font-weight:700;color:#8b1538;cursor:pointer;display:flex;align-items:center;gap:0.25rem;">
+                    <i class="fas fa-search-plus"></i> View Posters
+                  </span>
+                </div>
+              </div>
+              <div class="event-details">
+                <div class="event-detail">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <span>Showcase Day — All Day</span>
+                </div>
+                <div class="event-detail">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <span>DEC Resource Center</span>
+                </div>
+                <div class="event-detail">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <span>Contact: Ukachi Agnes</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- ★ END FEATURED ★ -->
+
+
+
+          <!-- <article class="event-card card">
               <div class="event-date">
-                <span class="event-month">AUG</span>
-                <span class="event-day">15</span>
+                <span class="event-month">JAN</span>
+                <span class="event-day">29</span>
               </div>
               <div class="event-content">
-                <h3 class="event-title">AI Research Workshop</h3>
+                <h3 class="event-title">Pathways Into Research & Onboarding</h3>
                 <p class="event-description">
-                  Hands-on workshop covering the latest techniques in machine
-                  learning and deep learning applications for research.
+                  To be communicated.
                 </p>
                 <div class="event-details">
                   <div class="event-detail">
                     <i class="fas fa-clock" aria-hidden="true"></i>
-                    <span>2:00 PM - 5:00 PM</span>
+                    <span>12:00 PM - 2:00 PM</span>
                   </div>
                   <div class="event-detail">
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    <span>CMU Africa Campus</span>
+                    <span>Hybrid (Room A203 & Zoom)</span>
                   </div>
                   <div class="event-detail">
-                    <i class="fas fa-users" aria-hidden="true"></i>
-                    <span>25 participants max</span>
+                    <i class="fas fa-user-tie" aria-hidden="true"></i>
+                    <span>Club Executives</span>
                   </div>
                 </div>
-                <button class="register-btn btn btn-primary" type="button">
-                  Register Now
-                </button>
               </div>
-            </article>
+            </article> -->
 
-            <article class="event-card card">
+          <!-- <article class="event-card card">
               <div class="event-date">
-                <span class="event-month">AUG</span>
-                <span class="event-day">22</span>
+                <span class="event-month">FEB</span>
+                <span class="event-day">17</span>
               </div>
               <div class="event-content">
-                <h3 class="event-title">Research Symposium</h3>
+                <h3 class="event-title">Research Methods & Tools Workshop</h3>
                 <p class="event-description">
-                  Annual symposium featuring presentations of ongoing research
-                  projects and networking opportunities with fellow researchers.
+                  To be communicated.
                 </p>
                 <div class="event-details">
                   <div class="event-detail">
                     <i class="fas fa-clock" aria-hidden="true"></i>
-                    <span>9:00 AM - 5:00 PM</span>
+                    <span>12:00 PM - 2:00 PM</span>
                   </div>
                   <div class="event-detail">
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    <span>Main Auditorium</span>
+                    <span>Room A203 & Zoom</span>
                   </div>
                   <div class="event-detail">
-                    <i class="fas fa-users" aria-hidden="true"></i>
-                    <span>100 participants max</span>
+                    <i class="fas fa-user-tie" aria-hidden="true"></i>
+                    <span>TBD</span>
                   </div>
                 </div>
-                <button class="register-btn btn btn-primary" type="button">
-                  Register Now
-                </button>
               </div>
-            </article>
+            </article> -->
 
-            <article class="event-card card">
+          <!-- March 3 event has passed (current date: Mar 11, 2026) -->
+          <!-- <article class="event-card card">
               <div class="event-date">
-                <span class="event-month">SEP</span>
-                <span class="event-day">05</span>
+                <span class="event-month">MAR</span>
+                <span class="event-day">03</span>
               </div>
               <div class="event-content">
-                <h3 class="event-title">Climate Data Presentation</h3>
+                <h3 class="event-title">Research Talk: Meet the Researcher</h3>
                 <p class="event-description">
-                  Presentation of latest findings from our climate research team
-                  on ocean temperature modeling and environmental impact.
+                  To be communicated.
                 </p>
                 <div class="event-details">
                   <div class="event-detail">
                     <i class="fas fa-clock" aria-hidden="true"></i>
-                    <span>3:00 PM - 4:30 PM</span>
+                    <span>12:00 PM - 2:00 PM</span>
                   </div>
                   <div class="event-detail">
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    <span>Conference Room A</span>
+                    <span>Room A203 & Zoom</span>
                   </div>
                   <div class="event-detail">
-                    <i class="fas fa-users" aria-hidden="true"></i>
-                    <span>50 participants max</span>
+                    <i class="fas fa-user-tie" aria-hidden="true"></i>
+                    <span>TBD</span>
                   </div>
                 </div>
-                <button class="register-btn btn btn-primary" type="button">
-                  Register Now
-                </button>
               </div>
-            </article>
+            </article> -->
 
-            <article class="event-card card">
-              <div class="event-date">
-                <span class="event-month">SEP</span>
-                <span class="event-day">18</span>
-              </div>
-              <div class="event-content">
-                <h3 class="event-title">Networking Mixer</h3>
-                <p class="event-description">
-                  Informal networking event for researchers to connect, share
-                  ideas, and explore potential collaborations over refreshments.
-                </p>
-                <div class="event-details">
-                  <div class="event-detail">
-                    <i class="fas fa-clock" aria-hidden="true"></i>
-                    <span>6:00 PM - 8:00 PM</span>
-                  </div>
-                  <div class="event-detail">
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    <span>Student Lounge</span>
-                  </div>
-                  <div class="event-detail">
-                    <i class="fas fa-users" aria-hidden="true"></i>
-                    <span>Open to all members</span>
-                  </div>
+          <!-- March 31 event has passed (current date: Apr 19, 2026) -->
+          <!-- <article class="event-card card">
+            <div class="event-date">
+              <span class="event-month">MAR</span>
+              <span class="event-day">31</span>
+            </div>
+            <div class="event-content">
+              <h3 class="event-title">PhD Application Basics</h3>
+              <p class="event-description">
+                To be communicated.
+              </p>
+              <div class="event-details">
+                <div class="event-detail">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <span>12:00 PM - 2:00 PM</span>
                 </div>
-                <button class="register-btn btn btn-primary" type="button">
-                  Register Now
-                </button>
+                <div class="event-detail">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <span>Room A203 & Zoom</span>
+                </div>
+                <div class="event-detail">
+                  <i class="fas fa-user-tie" aria-hidden="true"></i>
+                  <span>TBD</span>
+                </div>
               </div>
-            </article>
+            </div>
+          </article> -->
+
+          <!-- April 17 event has passed (current date: Apr 19, 2026) -->
+          <!-- <article class="event-card card">
+            <div class="event-date">
+              <span class="event-month">APR</span>
+              <span class="event-day">17</span>
+            </div>
+            <div class="event-content">
+              <h3 class="event-title">Project Management in Research</h3>
+              <p class="event-description">
+                To be communicated.
+              </p>
+              <div class="event-details">
+                <div class="event-detail">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <span>1:00 PM - 2:00 PM</span>
+                </div>
+                <div class="event-detail">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <span>Room A203 & Zoom</span>
+                </div>
+                <div class="event-detail">
+                  <i class="fas fa-user-tie" aria-hidden="true"></i>
+                  <span>Collab with PMI Club</span>
+                </div>
+              </div>
+            </div>
+          </article> -->
+
+          <!-- No upcoming events currently scheduled. Check back soon! -->
+          <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--gray-500);">
+            <i class="fas fa-calendar-alt"
+              style="font-size: 3rem; margin-bottom: 1rem; display: block; opacity: 0.4;"></i>
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--gray-600); margin-bottom: 0.5rem;">No Upcoming
+              Events</h3>
+            <p style="max-width: 480px; margin: 0 auto; line-height: 1.6;">There are no upcoming events scheduled at
+              this time. Stay connected - new events will be announced soon!</p>
           </div>
-        </div>
-      </section>
 
-      <!-- Event Categories -->
-      <section class="section" style="background: var(--gray-50)">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Event Categories</h2>
-            <p class="section-subtitle">
-              Explore different types of events we organize throughout the year.
+          <!-- Generated events end -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Categories -->
+    <section class="section" style="background: var(--gray-50)">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Event Categories</h2>
+          <p class="section-subtitle">
+            Explore different types of events we organize throughout the year.
+          </p>
+        </div>
+
+        <div class="categories-grid grid-auto">
+          <div class="category-card card">
+            <div class="category-icon">
+              <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+            </div>
+            <h3>Workshops</h3>
+            <p>
+              Hands-on learning sessions covering research methodologies,
+              tools, and techniques.
             </p>
           </div>
 
-          <div class="categories-grid grid-auto">
-            <div class="category-card card">
-              <div class="category-icon">
-                <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
-              </div>
-              <h3>Workshops</h3>
-              <p>
-                Hands-on learning sessions covering research methodologies,
-                tools, and techniques.
-              </p>
+          <div class="category-card card">
+            <div class="category-icon">
+              <i class="fas fa-microphone" aria-hidden="true"></i>
             </div>
+            <h3>Seminars</h3>
+            <p>
+              Expert presentations on cutting-edge research topics and
+              industry insights.
+            </p>
+          </div>
 
-            <div class="category-card card">
-              <div class="category-icon">
-                <i class="fas fa-microphone" aria-hidden="true"></i>
-              </div>
-              <h3>Seminars</h3>
-              <p>
-                Expert presentations on cutting-edge research topics and
-                industry insights.
-              </p>
+          <div class="category-card card">
+            <div class="category-icon">
+              <i class="fas fa-users" aria-hidden="true"></i>
             </div>
+            <h3>Networking</h3>
+            <p>
+              Social events designed to foster connections and collaborations
+              among members.
+            </p>
+          </div>
 
-            <div class="category-card card">
-              <div class="category-icon">
-                <i class="fas fa-users" aria-hidden="true"></i>
-              </div>
-              <h3>Networking</h3>
-              <p>
-                Social events designed to foster connections and collaborations
-                among members.
-              </p>
+          <div class="category-card card">
+            <div class="category-icon">
+              <i class="fas fa-trophy" aria-hidden="true"></i>
             </div>
-
-            <div class="category-card card">
-              <div class="category-icon">
-                <i class="fas fa-trophy" aria-hidden="true"></i>
-              </div>
-              <h3>Competitions</h3>
-              <p>
-                Research competitions and hackathons to showcase innovative
-                solutions.
-              </p>
-            </div>
+            <h3>Competitions</h3>
+            <p>
+              Research competitions and hackathons to showcase innovative
+              solutions.
+            </p>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <!-- Load footer -->
-    <div id="footer-container">
-      <!-- Footer will be loaded here -->
-    </div>
+  <!-- Load footer -->
+  <div id="footer-container">
+    <!-- Footer will be loaded here -->
+  </div>
 
-    <!-- JavaScript Files -->
-    <script src="js/utils.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/interactions.js"></script>
+  <!-- JavaScript Files -->
+  <script src="js/utils.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/interactions.js"></script>
 
-    <!-- Load page components -->
-    <script>
-      document.addEventListener("DOMContentLoaded", async () => {
-        try {
-          // Load navigation
-          const navResponse = await fetch("navigation.html");
-          if (navResponse.ok) {
-            const navHTML = await navResponse.text();
-            document.getElementById("navigation-container").innerHTML = navHTML;
-            if (window.initializeNavigation) window.initializeNavigation();
-          }
-
-          // Load page header
-          const headerResponse = await fetch("page-header.html");
-          if (headerResponse.ok) {
-            const headerHTML = await headerResponse.text();
-            document.getElementById("page-header-container").innerHTML =
-              headerHTML;
-
-            // Set page-specific content
-            document.getElementById("page-title").textContent =
-              "Upcoming Events";
-            document.getElementById("page-description").textContent =
-              "Join our workshops, seminars, and networking events to connect with fellow researchers.";
-            document.getElementById("current-page").textContent = "Events";
-          }
-
-          // Load footer
-          const footerResponse = await fetch("footer.html");
-          if (footerResponse.ok) {
-            const footerHTML = await footerResponse.text();
-            document.getElementById("footer-container").innerHTML = footerHTML;
-          }
-
-          // Initialize navigation after loading
-          if (window.initializeNavigation) {
-            window.initializeNavigation();
-          }
-        } catch (error) {
-          console.error("Error loading page components:", error);
+  <!-- Load page components -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        // Load navigation
+        const navResponse = await fetch("navigation.html");
+        if (navResponse.ok) {
+          const navHTML = await navResponse.text();
+          document.getElementById("navigation-container").innerHTML = navHTML;
+          if (window.initializeNavigation) window.initializeNavigation();
         }
+
+        // Load page header
+        const headerResponse = await fetch("page-header.html");
+        if (headerResponse.ok) {
+          const headerHTML = await headerResponse.text();
+          document.getElementById("page-header-container").innerHTML =
+            headerHTML;
+
+          // Set page-specific content
+          document.getElementById("page-title").textContent =
+            "Upcoming Events";
+          document.getElementById("page-description").textContent =
+            "Join our workshops, seminars, and networking events to connect with fellow researchers.";
+          document.getElementById("current-page").textContent = "Events";
+        }
+
+        // Load footer
+        const footerResponse = await fetch("footer.html");
+        if (footerResponse.ok) {
+          const footerHTML = await footerResponse.text();
+          document.getElementById("footer-container").innerHTML = footerHTML;
+        }
+
+        // Initialize navigation after loading
+        if (window.initializeNavigation) {
+          window.initializeNavigation();
+        }
+      } catch (error) {
+        console.error("Error loading page components:", error);
+      }
+    });
+  </script>
+
+  <style>
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .category-card {
+      text-align: center;
+      padding: var(--space-8);
+      transition: all var(--transition-base);
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-2xl);
+    }
+
+    .category-icon {
+      background: var(--primary-color);
+      color: var(--white);
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-3xl);
+      margin: 0 auto var(--space-4);
+    }
+
+    .category-card h3 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-3);
+      color: var(--gray-800);
+    }
+
+    .category-card p {
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+  </style>
+
+  <!-- Lightbox for Showcase Posters -->
+  <div id="showcaseLightbox" style="
+    position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;
+    display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);
+  " role="dialog" aria-modal="true" aria-label="Poster viewer">
+    <button onclick="closeShowcaseLightbox()" aria-label="Close" style="
+      position:absolute;top:1rem;right:1.5rem;background:rgba(255,255,255,0.1);
+      border:none;color:white;font-size:1.75rem;cursor:pointer;width:48px;height:48px;
+      border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:10000;
+    "><i class="fas fa-times"></i></button>
+    <button onclick="shiftLightbox(-1)" aria-label="Previous" style="
+      position:absolute;top:50%;transform:translateY(-50%);left:1.5rem;
+      background:rgba(255,255,255,0.1);border:none;color:white;font-size:1.5rem;
+      cursor:pointer;width:52px;height:52px;border-radius:50%;display:flex;
+      align-items:center;justify-content:center;z-index:10000;
+    "><i class="fas fa-chevron-left"></i></button>
+    <img id="lightboxImg" src="" alt="" style="
+      max-width:90vw;max-height:90vh;object-fit:contain;border-radius:16px;
+      box-shadow:0 30px 100px rgba(0,0,0,0.8);
+    " />
+    <button onclick="shiftLightbox(1)" aria-label="Next" style="
+      position:absolute;top:50%;transform:translateY(-50%);right:1.5rem;
+      background:rgba(255,255,255,0.1);border:none;color:white;font-size:1.5rem;
+      cursor:pointer;width:52px;height:52px;border-radius:50%;display:flex;
+      align-items:center;justify-content:center;z-index:10000;
+    "><i class="fas fa-chevron-right"></i></button>
+    <p id="lightboxCaption" style="
+      position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);
+      color:rgba(255,255,255,0.75);font-size:0.85rem;font-weight:500;text-align:center;
+    "></p>
+  </div>
+  <script>
+    (function () {
+      const posters = [
+        { src: 'assets/images/paper_presentations/paper_presentation.jpeg', caption: 'Poster 1 of 2 — Submit Your Projects Today!' },
+        { src: 'assets/images/paper_presentations/paper_presentation2.jpeg', caption: 'Poster 2 of 2 — CMU Africa Research Showcase Details' }
+      ];
+      let current = 0;
+      window.openShowcaseLightbox = function (idx) {
+        current = idx;
+        const lb = document.getElementById('showcaseLightbox');
+        document.getElementById('lightboxImg').src = posters[current].src;
+        document.getElementById('lightboxImg').alt = posters[current].caption;
+        document.getElementById('lightboxCaption').textContent = posters[current].caption;
+        lb.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      };
+      window.closeShowcaseLightbox = function () {
+        document.getElementById('showcaseLightbox').style.display = 'none';
+        document.body.style.overflow = '';
+      };
+      window.shiftLightbox = function (dir) {
+        current = (current + dir + posters.length) % posters.length;
+        document.getElementById('lightboxImg').src = posters[current].src;
+        document.getElementById('lightboxImg').alt = posters[current].caption;
+        document.getElementById('lightboxCaption').textContent = posters[current].caption;
+      };
+      document.addEventListener('keydown', function (e) {
+        const lb = document.getElementById('showcaseLightbox');
+        if (lb.style.display !== 'flex') return;
+        if (e.key === 'Escape') window.closeShowcaseLightbox();
+        if (e.key === 'ArrowRight') window.shiftLightbox(1);
+        if (e.key === 'ArrowLeft') window.shiftLightbox(-1);
       });
-    </script>
+      document.getElementById('showcaseLightbox').addEventListener('click', function (e) {
+        if (e.target === this) window.closeShowcaseLightbox();
+      });
+    })();
+  </script>
+</body>
 
-    <style>
-      .categories-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: var(--space-6);
-      }
-
-      .category-card {
-        text-align: center;
-        padding: var(--space-8);
-        transition: all var(--transition-base);
-      }
-
-      .category-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-2xl);
-      }
-
-      .category-icon {
-        background: var(--primary-color);
-        color: var(--white);
-        width: 80px;
-        height: 80px;
-        border-radius: var(--radius-full);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: var(--text-3xl);
-        margin: 0 auto var(--space-4);
-      }
-
-      .category-card h3 {
-        font-size: var(--text-xl);
-        font-weight: var(--font-weight-bold);
-        margin-bottom: var(--space-3);
-        color: var(--gray-800);
-      }
-
-      .category-card p {
-        color: var(--gray-600);
-        line-height: 1.6;
-      }
-    </style>
-  </body>
 </html>
