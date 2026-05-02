@@ -104,7 +104,7 @@
 
 .nav-link:hover {
   color: var(--primary-color);
-  background-color: rgba(139, 21, 56, 0.05);
+  background-color: rgba(196, 18, 48, 0.05);
 }
 
 .nav-link i {
@@ -244,7 +244,7 @@
 .mobile-menu .nav-link:active,
 .mobile-menu .nav-link:focus {
   color: var(--primary-color) !important;
-  background-color: rgba(139, 21, 56, 0.05);
+  background-color: rgba(196, 18, 48, 0.05);
 }
 
 .mobile-menu .dropdown {

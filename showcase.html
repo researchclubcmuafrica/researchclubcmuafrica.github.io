@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="CMU Africa Research Club – Research Showcase 2026 highlights: award winners, keynote, RA sessions, posters, and gallery." />
-  <title>Research Showcase 2026 – CMU Africa Research Club</title>
+    content="CMU Africa Research Club -  Research Showcase 2026 highlights: award winners, keynote, RA sessions, and gallery." />
+  <title>Research Showcase 2026 -  CMU Africa Research Club</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="research_club_logo.png" />
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/sections.css" />
   <link rel="stylesheet" href="css/footer.css" />
@@ -34,146 +35,40 @@
   </script>
 
   <style>
-    /* =============================================
-       SHOWCASE PAGE — CUSTOM STYLES
-       ============================================= */
+    /* =======================================================
+       SHOWCASE PAGE -  BRAND PALETTE ONLY
+       Carnegie Red:  #C41230
+       Black:         #000000
+       Iron Gray:     #6d6e71
+       Steel Gray:    #E0E0E0
+       White:         #ffffff
+       ======================================================= */
 
-    /* ---------- Hero ---------- */
-    .showcase-hero {
-      position: relative;
-      min-height: 92vh;
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 5rem;
-      overflow: hidden;
+    /* ---- Brand overrides (showcase uses #C41230, not #8b1538) ---- */
+    :root {
+      --sc-red:    #C41230;
+      --sc-black:  #000000;
+      --sc-iron:   #6d6e71;
+      --sc-steel:  #E0E0E0;
+      --sc-dark:   #0d0d0d;
+      --sc-card:   #151515;
     }
 
-    .showcase-hero-bg {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      transform: scale(1.05);
-      animation: heroZoom 18s ease-in-out infinite alternate;
-    }
-
-    @keyframes heroZoom {
-      from { transform: scale(1.05); }
-      to   { transform: scale(1.12); }
-    }
-
-    .showcase-hero-overlay {
-      position: absolute;
-      inset: 0;
+    /* ---- Hero overlay ---- */
+    .hero-overlay {
       background: linear-gradient(
         160deg,
-        rgba(107, 15, 34, 0.78) 0%,
-        rgba(139, 21, 56, 0.65) 40%,
-        rgba(30, 10, 15, 0.85) 100%
-      );
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.55) 100%
+      ) !important;
     }
 
-    .showcase-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      width: 100%;
-    }
+    /* ---- Shared section utilities ---- */
+    .sc-section       { padding: 5rem 0; }
+    .sc-alt           { background: #f7f7f7; }
+    .sc-dark-section  { background: var(--sc-dark); color: #fff; }
 
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255, 215, 0, 0.15);
-      border: 1px solid rgba(255, 215, 0, 0.5);
-      color: #ffd700;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      padding: 0.45rem 1.1rem;
-      border-radius: 50px;
-      margin-bottom: 1.5rem;
-    }
-
-    .showcase-hero h1 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 24px rgba(0,0,0,0.5);
-    }
-
-    .showcase-hero h1 span {
-      color: #ffd700;
-    }
-
-    .showcase-hero-sub {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: rgba(255,255,255,0.85);
-      max-width: 640px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-meta-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #fff;
-      font-size: 0.88rem;
-      font-weight: 600;
-      padding: 0.45rem 1rem;
-      border-radius: 50px;
-      backdrop-filter: blur(6px);
-    }
-
-    .hero-pill i { color: #ffd700; }
-
-    .hero-scroll-cue {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: rgba(255,255,255,0.5);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-top: 1.5rem;
-      animation: bounce 2s ease-in-out infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
-    }
-
-    /* ---------- Section Shared ---------- */
-    .sc-section {
-      padding: 5rem 0;
-    }
-
-    .sc-section-alt {
-      background: var(--gray-50);
-    }
-
-    .sc-section-dark {
-      background: linear-gradient(135deg, #0f0a0c 0%, #1a0812 50%, #0f0a0c 100%);
-      color: white;
-    }
-
-    .sc-container {
+    .sc-wrap {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
@@ -184,141 +79,129 @@
       margin-bottom: 3.5rem;
     }
 
-    .sc-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(139, 21, 56, 0.1);
-      color: var(--primary-color);
+    /* Red overline + title */
+    .sc-overline {
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--sc-red);
+      margin: 0 auto 1.1rem;
+      border-radius: 2px;
+    }
+
+    .sc-overline-left {
+      margin-left: 0;
+    }
+
+    .sc-label {
       font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      padding: 0.35rem 0.9rem;
-      border-radius: 50px;
-      margin-bottom: 1rem;
-      border: 1px solid rgba(139, 21, 56, 0.2);
-    }
-
-    .sc-eyebrow-white {
-      background: rgba(255,215,0,0.1);
-      color: #ffd700;
-      border-color: rgba(255,215,0,0.25);
+      letter-spacing: 3px;
+      color: var(--sc-red);
+      display: block;
+      margin-bottom: 0.6rem;
     }
 
     .sc-title {
-      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       font-weight: 800;
-      color: var(--gray-800);
-      margin-bottom: 0.75rem;
+      color: #111;
       line-height: 1.2;
+      margin-bottom: 0.85rem;
     }
 
     .sc-title-white { color: #fff; }
 
     .sc-subtitle {
       font-size: 1.05rem;
-      color: var(--gray-500);
-      max-width: 600px;
+      color: var(--sc-iron);
+      max-width: 580px;
       margin: 0 auto;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    .sc-subtitle-white {
-      color: rgba(255,255,255,0.7);
-    }
+    .sc-subtitle-white { color: rgba(255,255,255,0.65); }
 
-    /* ---------- Keynote ---------- */
-    .keynote-block {
+    /* ---- Keynote ---- */
+    .keynote-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 5rem;
       align-items: center;
     }
 
-    .keynote-media {
+    .keynote-img-wrap {
       position: relative;
-      border-radius: 24px;
+      border-radius: 4px;
       overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-      aspect-ratio: 16/10;
+      aspect-ratio: 4/3;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.18);
     }
 
-    .keynote-media img,
-    .keynote-media video {
-      width: 100%;
-      height: 100%;
+    .keynote-img-wrap img {
+      width: 100%; height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    .keynote-media-overlay {
+    .keynote-img-wrap::after {
+      content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(139,21,56,0.6) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(196,18,48,0.35) 0%, transparent 55%);
     }
 
     .keynote-badge {
       position: absolute;
-      top: 1.25rem;
+      bottom: 1.25rem;
       left: 1.25rem;
-      background: linear-gradient(135deg, #ffd700, #ffb300);
-      color: #6b0f22;
-      font-size: 0.7rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 0.35rem 0.85rem;
-      border-radius: 50px;
-    }
-
-    .keynote-info {
-      padding: 1rem 0;
-    }
-
-    .keynote-label {
-      font-size: 0.75rem;
+      z-index: 2;
+      background: var(--sc-red);
+      color: #fff;
+      font-size: 0.68rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
+      letter-spacing: 1.5px;
+      padding: 0.35rem 0.85rem;
+      border-radius: 2px;
     }
+
+    .keynote-text { padding: 1rem 0; }
 
     .keynote-name {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
       font-weight: 800;
-      color: var(--gray-800);
+      color: #111;
       line-height: 1.2;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
 
-    .keynote-title {
-      font-size: 1rem;
-      color: var(--gray-500);
-      margin-bottom: 1.5rem;
-      font-style: italic;
+    .keynote-role {
+      font-size: 0.98rem;
+      color: var(--sc-iron);
+      margin-bottom: 1.75rem;
     }
 
-    .keynote-desc {
+    .keynote-bio {
       font-size: 1rem;
-      color: var(--gray-600);
-      line-height: 1.75;
-      margin-bottom: 2rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 1.75rem;
     }
 
     .keynote-quote {
-      border-left: 4px solid #ffd700;
-      background: linear-gradient(135deg, rgba(139,21,56,0.05), rgba(255,215,0,0.05));
-      border-radius: 0 16px 16px 0;
-      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--sc-red);
+      padding: 1rem 1.5rem;
+      background: #f7f7f7;
       font-style: italic;
-      font-size: 0.98rem;
-      color: var(--gray-700);
-      line-height: 1.7;
+      font-size: 0.97rem;
+      color: #555;
+      line-height: 1.75;
+      border-radius: 0 4px 4px 0;
     }
 
-    /* ---------- RA Sessions ---------- */
+    /* ---- RA Session Cards ---- */
     .ra-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -326,183 +209,221 @@
     }
 
     .ra-card {
-      background: white;
-      border-radius: 20px;
+      background: #fff;
+      border-radius: 4px;
       overflow: hidden;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid var(--gray-100);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      border: 1px solid var(--sc-steel);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
 
     .ra-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.14);
+      transform: translateY(-4px);
     }
 
     .ra-card-img {
       width: 100%;
       aspect-ratio: 16/9;
       object-fit: cover;
+      display: block;
     }
 
-    .ra-card-body {
-      padding: 1.75rem;
-    }
+    .ra-card-body { padding: 1.75rem 2rem; }
 
-    .ra-card-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--primary-color);
-      background: rgba(139, 21, 56, 0.08);
-      padding: 0.3rem 0.75rem;
-      border-radius: 50px;
-      margin-bottom: 0.85rem;
-    }
-
-    .ra-card-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--gray-800);
-      line-height: 1.4;
-      margin-bottom: 0.75rem;
-    }
-
-    .ra-card-presenter {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.92rem;
-      color: var(--gray-600);
-      font-weight: 600;
-    }
-
-    .ra-card-presenter i {
-      color: #ffd700;
-      background: rgba(255,215,0,0.15);
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    /* ---------- Awards ---------- */
-    .awards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .award-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 2rem;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .award-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--award-color, #ffd700), transparent);
-    }
-
-    .award-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,215,0,0.25);
-    }
-
-    .award-icon-wrap {
-      width: 60px;
-      height: 60px;
-      border-radius: 16px;
-      background: rgba(255,215,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-    }
-
-    .award-icon-wrap i {
-      font-size: 1.6rem;
-      color: #ffd700;
-    }
-
-    .award-category {
+    .ra-tag {
       font-size: 0.68rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #ffd700;
-      margin-bottom: 0.5rem;
+      color: var(--sc-red);
+      display: block;
+      margin-bottom: 0.75rem;
     }
 
-    .award-paper-title {
+    .ra-title {
       font-size: 1rem;
       font-weight: 700;
-      color: #fff;
-      line-height: 1.45;
+      color: #111;
+      line-height: 1.5;
       margin-bottom: 1rem;
-      font-style: italic;
+    }
+
+    .ra-presenter {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.9rem;
+      color: var(--sc-iron);
+      font-weight: 600;
+    }
+
+    .ra-presenter i {
+      color: var(--sc-red);
+      font-size: 0.95rem;
+    }
+
+    .ra-desc {
+      margin-top: 0.85rem;
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.75;
+    }
+
+    /* ---- Awards (Dark) ---- */
+
+    /* 6-column grid: 3 cards on row 1, 2 cards centred on row 2 */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1.25rem;
+    }
+
+    .award-card {
+      grid-column: span 2;
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .award-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 56px rgba(0,0,0,0.65), 0 0 0 1px rgba(196,18,48,0.25);
+    }
+
+    /* Photo + overlay ribbon */
+    .award-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .award-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .award-card:hover .award-card-img {
+      transform: scale(1.05);
+    }
+
+    /* Gradient scrim + label at photo bottom */
+    .award-ribbon {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.25) 65%, transparent 100%);
+      padding: 1.75rem 1rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* Icon: circle with outline only, white icon -  not a filled red box */
+    .award-icon {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      border: 1.5px solid rgba(196,18,48,0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .award-icon i {
+      color: #fff;
+      font-size: 0.85rem;
+    }
+
+    .award-ribbon-label {
+      font-size: 0.63rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.3;
+    }
+
+    /* Card text body */
+    .award-body {
+      padding: 1.4rem 1.4rem 1.6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-top: 2px solid var(--sc-red);
+    }
+
+    .award-paper {
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.55;
+      margin: 0 0 0.85rem;
+      flex: 1;
     }
 
     .award-authors {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 0.5rem;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
     }
 
-    .award-authors i {
-      color: rgba(255,215,0,0.6);
-      margin-top: 2px;
-      flex-shrink: 0;
+    .award-authors strong {
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
     }
 
     .award-supervisor {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.45);
+      margin-top: 0.3rem;
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.3);
       font-style: italic;
     }
 
-    .award-media {
+    /* Centre 2 cards in the second row of the 6-column grid */
+    .award-card:nth-child(4) { grid-column: 2 / 4; }
+    .award-card:nth-child(5) { grid-column: 4 / 6; }
+
+    /* ---- Video ---- */
+    .video-container {
+      max-width: 880px;
+      margin: 0 auto;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .video-container video {
       width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 14px;
-      object-fit: cover;
-      margin-bottom: 1.25rem;
-      border: 2px solid rgba(255,215,0,0.2);
+      display: block;
     }
 
-    /* Featured (Best Paper / People's Choice) take full column width */
-    .award-card-featured {
-      grid-column: span 1;
+    .video-note {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
     }
 
-    /* ---------- Photo Gallery ---------- */
-    .gallery-masonry {
+    /* ---- Gallery ---- */
+    .gallery-grid {
       columns: 4;
-      column-gap: 0.75rem;
+      column-gap: 0.6rem;
     }
 
     .gallery-item {
       break-inside: avoid;
-      margin-bottom: 0.75rem;
-      border-radius: 12px;
+      margin-bottom: 0.6rem;
       overflow: hidden;
+      border-radius: 2px;
       cursor: pointer;
       position: relative;
       display: block;
@@ -514,86 +435,47 @@
       transition: transform 0.4s ease;
     }
 
-    .gallery-item:hover img {
-      transform: scale(1.04);
-    }
-
-    .gallery-item-overlay {
+    .gallery-item::after {
+      content: '\f00e';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
       position: absolute;
       inset: 0;
-      background: rgba(139, 21, 56, 0.0);
-      transition: background 0.3s ease;
+      background: rgba(196, 18, 48, 0);
+      color: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 1.6rem;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
-    .gallery-item:hover .gallery-item-overlay {
-      background: rgba(139, 21, 56, 0.45);
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    .gallery-item:hover::after {
+      background: rgba(196, 18, 48, 0.45);
+      color: rgba(255,255,255,0.9);
     }
 
-    .gallery-item-overlay i {
-      color: white;
-      font-size: 1.75rem;
-      opacity: 0;
-      transform: scale(0.7);
-      transition: all 0.3s ease;
-    }
-
-    .gallery-item:hover .gallery-item-overlay i {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* ---------- Video Section ---------- */
-    .video-wrapper {
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-      background: #000;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .video-wrapper video {
-      width: 100%;
-      display: block;
-      max-height: 500px;
-    }
-
-    .video-note {
-      text-align: center;
-      margin-top: 1.25rem;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.45);
-    }
-
-    /* ---------- Lightbox ---------- */
+    /* ---- Lightbox ---- */
     #scLightbox {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.94);
+      background: rgba(0,0,0,0.95);
       z-index: 9999;
       display: none;
       align-items: center;
       justify-content: center;
-      backdrop-filter: blur(10px);
     }
 
     #scLightbox.open { display: flex; }
 
     #scLightboxImg {
-      max-width: 92vw;
-      max-height: 90vh;
+      max-width: 90vw;
+      max-height: 88vh;
       object-fit: contain;
-      border-radius: 16px;
-      box-shadow: 0 40px 120px rgba(0,0,0,0.9);
-      animation: lbPop 0.3s cubic-bezier(0.34,1.56,0.64,1);
-    }
-
-    @keyframes lbPop {
-      from { transform: scale(0.75); opacity: 0; }
-      to   { transform: scale(1);    opacity: 1; }
+      display: block;
+      border-radius: 2px;
     }
 
     #scLightboxCaption {
@@ -601,108 +483,62 @@
       bottom: 1.25rem;
       left: 50%;
       transform: translateX(-50%);
-      color: rgba(255,255,255,0.6);
-      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.78rem;
       white-space: nowrap;
     }
 
-    .lb-btn {
+    .lb-ctrl {
       position: absolute;
-      background: rgba(255,255,255,0.1);
-      border: none;
-      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
       cursor: pointer;
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: background 0.2s;
       z-index: 10000;
+      border-radius: 2px;
     }
 
-    .lb-btn:hover { background: rgba(255,255,255,0.25); }
+    .lb-ctrl:hover { background: rgba(196,18,48,0.65); border-color: transparent; }
+    .lb-close { top: 1.25rem; right: 1.5rem; width: 44px; height: 44px; font-size: 1.25rem; }
+    .lb-prev  { top: 50%; left: 1.5rem; transform: translateY(-50%); width: 48px; height: 48px; font-size: 1.2rem; }
+    .lb-next  { top: 50%; right: 1.5rem; transform: translateY(-50%); width: 48px; height: 48px; font-size: 1.2rem; }
 
-    .lb-close {
-      top: 1rem; right: 1.5rem;
-      width: 46px; height: 46px;
-      font-size: 1.5rem;
+    /* ---- Divider line ---- */
+    .sc-rule {
+      width: 100%;
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      margin: 0;
     }
 
-    .lb-prev {
-      top: 50%; left: 1.5rem;
-      transform: translateY(-50%);
-      width: 52px; height: 52px;
-      font-size: 1.35rem;
+    .sc-rule-light {
+      border-top-color: var(--sc-steel);
     }
 
-    .lb-next {
-      top: 50%; right: 1.5rem;
-      transform: translateY(-50%);
-      width: 52px; height: 52px;
-      font-size: 1.35rem;
-    }
-
-    /* ---------- Responsive ---------- */
+    /* ---- Responsive ---- */
     @media (max-width: 900px) {
-      .keynote-block { grid-template-columns: 1fr; gap: 2rem; }
-      .ra-grid { grid-template-columns: 1fr; }
-      .gallery-masonry { columns: 2; }
+      .keynote-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .ra-grid      { grid-template-columns: 1fr; }
+      .gallery-grid { columns: 2; }
+      /* 2-column awards on medium screens */
+      .awards-grid  { grid-template-columns: repeat(4, 1fr); }
+      .award-card                { grid-column: span 2; }
+      .award-card:nth-child(4)   { grid-column: 1 / 3; }
+      .award-card:nth-child(5)   { grid-column: 3 / 5; }
     }
 
     @media (max-width: 600px) {
-      .gallery-masonry { columns: 2; }
-      .awards-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ---------- Divider ---------- */
-    .sc-divider {
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, #8b1538, #ffd700);
-      border-radius: 4px;
-      margin: 1rem auto 0;
-    }
-
-    /* ---------- Stats Bar ---------- */
-    .stats-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      background: var(--primary-color);
-      border-radius: 20px;
-      overflow: hidden;
-      margin-top: 4rem;
-    }
-
-    .stat-item {
-      padding: 2rem 1.5rem;
-      text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.15);
-    }
-
-    .stat-item:last-child { border-right: none; }
-
-    .stat-item .num {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: #ffd700;
-      line-height: 1;
-      display: block;
-    }
-
-    .stat-item .lbl {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.75);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 0.4rem;
-      display: block;
-    }
-
-    @media (max-width: 700px) {
-      .stats-bar { grid-template-columns: 1fr 1fr; }
-      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
-      .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.15); }
+      .gallery-grid { columns: 2; }
+      .sc-section   { padding: 3.5rem 0; }
+      /* Single column awards on mobile */
+      .awards-grid  { grid-template-columns: 1fr; }
+      .award-card,
+      .award-card:nth-child(4),
+      .award-card:nth-child(5) { grid-column: 1 / -1; }
     }
   </style>
 </head>
@@ -713,366 +549,412 @@
 
   <main id="main-content">
 
-    <!-- ═══════════════════════════════════════════
-         HERO
-    ════════════════════════════════════════════ -->
-    <section class="showcase-hero" aria-label="Research Showcase 2026 hero">
-      <div class="showcase-hero-bg" style="background-image: url('assets/images/showcase/sc_3.jpg');" role="img" aria-label="Research Showcase event photo"></div>
-      <div class="showcase-hero-overlay" aria-hidden="true"></div>
+    <!-- ═══════════════════════════
+         HERO -  SLIDING PHOTOS
+    ════════════════════════════ -->
+    <section class="hero" aria-label="Research Showcase 2026">
 
-      <div class="showcase-hero-content">
-        <div class="hero-eyebrow">
-          <i class="fas fa-trophy"></i>
-          CMU Africa Research Club &nbsp;·&nbsp; April 24, 2026
+      <div class="hero-slider">
+        <div class="hero-slide active" style="background-image:
+            linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.45)),
+            url('assets/images/showcase/sc_3.jpg');"
+          role="img" aria-label="Research Showcase 2026 -  event overview"></div>
+
+        <div class="hero-slide" style="background-image:
+            linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.45)),
+            url('assets/images/showcase/sc_1.jpg');"
+          role="img" aria-label="Research Showcase 2026 -  presentations"></div>
+
+        <div class="hero-slide" style="background-image:
+            linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.45)),
+            url('assets/images/showcase/img_2834.jpg');"
+          role="img" aria-label="Research Showcase 2026 -  poster session"></div>
+
+        <div class="hero-slide" style="background-image:
+            linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.45)),
+            url('assets/images/showcase/sc_9.jpg');"
+          role="img" aria-label="Research Showcase 2026 -  award ceremony"></div>
+      </div>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-main">
+          <h1 class="hero-title">
+            CMU Africa<br />Research Showcase 2026
+          </h1>
+          <p class="hero-tagline">
+            April 24, 2026 &nbsp;·&nbsp; DEC Resource Center
+          </p>
+          <p class="hero-description">
+            Celebrating academic excellence -  a keynote from industry, two RA sessions,
+            poster presentations, and five awards recognising the best research from
+            CMU Africa's graduate community.
+          </p>
+          <div class="hero-buttons">
+            <a href="#awards" class="btn btn-white">
+              <i class="fas fa-trophy" aria-hidden="true"></i>
+              Award Winners
+            </a>
+            <a href="#gallery" class="btn btn-outline">
+              <i class="fas fa-images" aria-hidden="true"></i>
+              Photo Gallery
+            </a>
+          </div>
         </div>
 
-        <h1>Research<br /><span>Showcase 2026</span></h1>
-
-        <p class="showcase-hero-sub">
-          An evening celebrating academic excellence — from cutting-edge AI research
-          to healthcare innovation. Five awards, two RA sessions, one unforgettable keynote.
-        </p>
-
-        <div class="hero-meta-pills">
-          <span class="hero-pill"><i class="fas fa-map-marker-alt"></i> DEC Resource Center, CMU Africa</span>
-          <span class="hero-pill"><i class="fas fa-calendar-alt"></i> 24th April 2026</span>
-          <span class="hero-pill"><i class="fas fa-award"></i> 5 Awards</span>
-          <span class="hero-pill"><i class="fas fa-users"></i> Multiple Presentations</span>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Award Categories</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">2</span>
+            <span class="stat-label">RA Sessions</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">1</span>
+            <span class="stat-label">Industry Keynote</span>
+          </div>
         </div>
+      </div>
 
-        <div class="hero-scroll-cue">
-          <i class="fas fa-chevron-down"></i> Explore the highlights
-        </div>
+      <div class="hero-controls" role="tablist" aria-label="Slide navigation">
+        <button class="hero-dot active" role="tab" aria-label="Slide 1" aria-selected="true"></button>
+        <button class="hero-dot" role="tab" aria-label="Slide 2" aria-selected="false"></button>
+        <button class="hero-dot" role="tab" aria-label="Slide 3" aria-selected="false"></button>
+        <button class="hero-dot" role="tab" aria-label="Slide 4" aria-selected="false"></button>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
-         STATS BAR
-    ════════════════════════════════════════════ -->
-    <div class="sc-container" style="margin-top: -2rem; position: relative; z-index: 10;">
-      <div class="stats-bar">
-        <div class="stat-item">
-          <span class="num">5</span>
-          <span class="lbl">Award Categories</span>
-        </div>
-        <div class="stat-item">
-          <span class="num">2</span>
-          <span class="lbl">RA Sessions</span>
-        </div>
-        <div class="stat-item">
-          <span class="num">1</span>
-          <span class="lbl">Industry Keynote</span>
-        </div>
-        <div class="stat-item">
-          <span class="num">🏆</span>
-          <span class="lbl">Research Excellence</span>
-        </div>
-      </div>
-    </div>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═══════════════════════════
          KEYNOTE
-    ════════════════════════════════════════════ -->
-    <section class="sc-section" id="keynote">
-      <div class="sc-container">
-        <div class="keynote-block">
-          <!-- Media -->
-          <div class="keynote-media">
+    ════════════════════════════ -->
+    <section class="sc-section" id="keynote" aria-labelledby="keynote-heading">
+      <div class="sc-wrap">
+        <div class="keynote-grid">
+
+          <!-- Photo -->
+          <div class="keynote-img-wrap">
             <img src="assets/images/showcase/img_2815.jpg"
-                 alt="Keynote session at the Research Showcase 2026"
+                 alt="Mr. Samuel Rutunda delivering the keynote address"
                  loading="lazy" />
-            <div class="keynote-media-overlay" aria-hidden="true"></div>
-            <div class="keynote-badge"><i class="fas fa-microphone"></i> Keynote Speaker</div>
+            <div class="keynote-badge">Opening Keynote</div>
           </div>
 
-          <!-- Info -->
-          <div class="keynote-info">
-            <div class="sc-eyebrow"><i class="fas fa-microphone-alt"></i> Opening Keynote</div>
-            <h2 class="keynote-name">Mr. Samuel Rutunda</h2>
-            <p class="keynote-title">CTO, Digital Umuganda</p>
+          <!-- Text -->
+          <div class="keynote-text">
+            <span class="sc-overline sc-overline-left" aria-hidden="true"></span>
+            <span class="sc-label">Keynote Speaker</span>
+            <h2 class="keynote-name" id="keynote-heading">Mr. Samuel Rutunda</h2>
+            <p class="keynote-role">CTO, Digital Umuganda &nbsp;·&nbsp; Kigali, Rwanda</p>
 
-            <p class="keynote-desc">
-              Digital Umuganda's CTO opened the Research Showcase with an inspiring keynote,
-              sharing industry perspectives on how cutting-edge African tech innovation is
-              reshaping digital services across the continent. Drawing from his experience
-              building impactful technology products for the African market, Mr. Rutunda
-              challenged researchers to bridge the gap between academic inquiry and
-              real-world deployment.
+            <p class="keynote-bio">
+              Mr. Rutunda opened the Research Showcase with an industry perspective on how
+              African-led technology is reshaping digital infrastructure across the continent.
+              Drawing from his work building civic technology products at Digital Umuganda,
+              he challenged researchers to close the gap between academic inquiry and
+              deployable solutions that serve real communities.
             </p>
 
             <blockquote class="keynote-quote">
-              "The best research doesn't end in a paper — it ends in a product that changes
+              "The best research doesn't end in a paper -  it ends in a product that changes
               someone's life. Africa's researchers are uniquely positioned to solve African
               problems. This showcase is proof of that."
             </blockquote>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
+    <hr class="sc-rule-light" style="max-width:1200px;margin:0 auto;" />
+
+
+    <!-- ═══════════════════════════
          RA SESSIONS
-    ════════════════════════════════════════════ -->
-    <section class="sc-section sc-section-alt" id="ra-sessions">
-      <div class="sc-container">
+    ════════════════════════════ -->
+    <section class="sc-section sc-alt" id="ra-sessions" aria-labelledby="ra-heading">
+      <div class="sc-wrap">
+
         <div class="sc-header">
-          <div class="sc-eyebrow"><i class="fas fa-flask"></i> Research Assistant Sessions</div>
-          <h2 class="sc-title">RA Sessions</h2>
-          <div class="sc-divider"></div>
-          <p class="sc-subtitle" style="margin-top:1rem;">
-            Two exceptional researchers presented their ongoing work, showcasing the depth
-            and breadth of graduate research at CMU Africa.
+          <span class="sc-overline" aria-hidden="true"></span>
+          <span class="sc-label">Graduate Research</span>
+          <h2 class="sc-title" id="ra-heading">RA Sessions</h2>
+          <p class="sc-subtitle">
+            Two researchers presented their ongoing work, showcasing the depth of
+            graduate-level inquiry at CMU Africa.
           </p>
         </div>
 
         <div class="ra-grid">
+
           <!-- RA 1 -->
-          <div class="ra-card">
+          <article class="ra-card">
             <img class="ra-card-img"
                  src="assets/images/showcase/sc_6.jpg"
                  alt="Mona Aman presenting AI-Assisted Stethoscopy research"
                  loading="lazy" />
             <div class="ra-card-body">
-              <div class="ra-card-tag"><i class="fas fa-heartbeat"></i> Healthcare AI</div>
-              <h3 class="ra-card-title">
+              <span class="ra-tag"><i class="fas fa-heartbeat"></i>&nbsp; Healthcare AI</span>
+              <h3 class="ra-title">
                 Enhanced Cardiovascular Diseases Recovery in Medically Underserved
                 Communities via AI-Assisted Stethoscopy
               </h3>
-              <div class="ra-card-presenter">
+              <div class="ra-presenter">
                 <i class="fas fa-user-graduate"></i>
-                <div>
-                  <strong>Mona Aman</strong><br />
-                  <span style="font-weight:400;font-size:0.82rem;color:var(--gray-400);">RA Presenter</span>
-                </div>
+                <span>Mona Aman</span>
               </div>
-              <p style="margin-top:1rem;font-size:0.92rem;color:var(--gray-500);line-height:1.7;">
-                Exploring how AI-powered diagnostic tools can extend quality cardiovascular
-                care to communities that lack access to traditional specialist resources —
-                combining deep learning with acoustic stethoscope signals.
+              <p class="ra-desc">
+                Exploring how AI-powered acoustic diagnostics can extend quality cardiovascular
+                care to communities lacking specialist access -  combining deep learning with
+                stethoscope signals to enable early, remote detection.
               </p>
             </div>
-          </div>
+          </article>
 
           <!-- RA 2 -->
-          <div class="ra-card">
+          <article class="ra-card">
             <img class="ra-card-img"
                  src="assets/images/showcase/sc_9.jpg"
-                 alt="Yohannes Haile presenting Social Robotics research"
+                 alt="Yohannes Haile presenting Culturally Sensitive Social Robotics"
                  loading="lazy" />
             <div class="ra-card-body">
-              <div class="ra-card-tag"><i class="fas fa-robot"></i> Social Robotics</div>
-              <h3 class="ra-card-title">
+              <span class="ra-tag"><i class="fas fa-robot"></i>&nbsp; Social Robotics</span>
+              <h3 class="ra-title">
                 Culturally Sensitive Social Robotics for Africa
               </h3>
-              <div class="ra-card-presenter">
+              <div class="ra-presenter">
                 <i class="fas fa-user-graduate"></i>
-                <div>
-                  <strong>Yohannes Haile</strong><br />
-                  <span style="font-weight:400;font-size:0.82rem;color:var(--gray-400);">RA Presenter</span>
-                </div>
+                <span>Yohannes Haile</span>
               </div>
-              <p style="margin-top:1rem;font-size:0.92rem;color:var(--gray-500);line-height:1.7;">
-                Designing robotic systems that honour African cultural norms, social
-                cues, and linguistic diversity — moving beyond Western-centric robotics
-                frameworks to build machines that feel familiar and trustworthy to
-                African users.
+              <p class="ra-desc">
+                Designing robotic systems that honour African cultural norms, social cues,
+                and linguistic diversity -  moving beyond Western-centric frameworks to build
+                machines that feel familiar and trustworthy to African communities.
               </p>
             </div>
-          </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
-         AWARDS
-    ════════════════════════════════════════════ -->
-    <section class="sc-section sc-section-dark" id="awards">
-      <div class="sc-container">
+
+    <!-- ═══════════════════════════
+         AWARDS  (dark section)
+    ════════════════════════════ -->
+    <section class="sc-section sc-dark-section" id="awards" aria-labelledby="awards-heading">
+      <div class="sc-wrap">
+
         <div class="sc-header">
-          <div class="sc-eyebrow sc-eyebrow-white"><i class="fas fa-trophy"></i> Award Winners</div>
-          <h2 class="sc-title sc-title-white">2026 Showcase Awards</h2>
-          <div class="sc-divider"></div>
-          <p class="sc-subtitle sc-subtitle-white" style="margin-top:1rem;">
-            Recognising outstanding research across poster presentations, capstone projects,
-            and academic papers.
+          <span class="sc-overline" aria-hidden="true"></span>
+          <span class="sc-label">Recognition</span>
+          <h2 class="sc-title sc-title-white" id="awards-heading">2026 Award Winners</h2>
+          <p class="sc-subtitle sc-subtitle-white">
+            Five categories recognising outstanding research across posters,
+            capstone projects, and academic papers.
           </p>
         </div>
 
         <div class="awards-grid">
 
-          <!-- 1. People's Choice Award -->
-          <div class="award-card" style="--award-color: #a78bfa;">
-            <div class="award-icon-wrap" style="background:rgba(167,139,250,0.12);">
-              <i class="fas fa-star" style="color:#a78bfa;"></i>
+          <!-- People's Choice -->
+          <article class="award-card">
+            <div class="award-img-wrap">
+              <img class="award-card-img"
+                   src="assets/images/showcase/sc_5.jpg"
+                   alt="People's Choice Award"
+                   loading="lazy"
+                   onerror="this.style.display='none'" />
+              <div class="award-ribbon">
+                <div class="award-icon"><i class="fas fa-star"></i></div>
+                <span class="award-ribbon-label">People's Choice Award</span>
+              </div>
             </div>
-            <div class="award-category">🌟 People's Choice Award</div>
-            <!-- Placeholder image -->
-            <img class="award-media"
-                 src="assets/images/showcase/sc_5.jpg"
-                 alt="People's Choice Award winners"
-                 loading="lazy"
-                 onerror="this.style.display='none'" />
-            <p class="award-paper-title">
-              JEPA‑NAV: A Vision-Based Joint Embedding Architecture for Safe Indoor Navigation
-            </p>
-            <div class="award-authors">
-              <i class="fas fa-users"></i>
-              <span>Edward Ajayi &amp; Emrys Ladislaus</span>
+            <div class="award-body">
+              <p class="award-paper">
+                JEPA-NAV: A Vision-Based Joint Embedding Architecture for Safe Indoor Navigation
+              </p>
+              <div class="award-authors">
+                <strong>Edward Ajayi</strong> &amp; <strong>Emrys Ladislaus</strong>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- 2. Best Capstone Project -->
-          <div class="award-card" style="--award-color: #ffd700;">
-            <div class="award-icon-wrap">
-              <i class="fas fa-graduation-cap"></i>
+          <!-- Best Capstone -->
+          <article class="award-card">
+            <div class="award-img-wrap">
+              <img class="award-card-img"
+                   src="assets/images/showcase/sc_4.jpg"
+                   alt="Best Capstone Project Award"
+                   loading="lazy"
+                   onerror="this.style.display='none'" />
+              <div class="award-ribbon">
+                <div class="award-icon"><i class="fas fa-graduation-cap"></i></div>
+                <span class="award-ribbon-label">Winner -  Capstone Project Pitch</span>
+              </div>
             </div>
-            <div class="award-category">🏆 Winner — Capstone Project Pitch</div>
-            <img class="award-media"
-                 src="assets/images/showcase/sc_4.jpg"
-                 alt="Capstone Project Award winner"
-                 loading="lazy"
-                 onerror="this.style.display='none'" />
-            <p class="award-paper-title">
-              Decolonizing Edge AI: National Standards for Culturally Adaptive Quantized SLMs
-            </p>
-            <div class="award-authors">
-              <i class="fas fa-user"></i>
-              <span>Waweru Muhura</span>
+            <div class="award-body">
+              <p class="award-paper">
+                Decolonizing Edge AI: National Standards for Culturally Adaptive Quantized SLMs
+              </p>
+              <div class="award-authors">
+                <strong>Waweru Muhura</strong>
+              </div>
+              <div class="award-supervisor">Supervisor: Prof. Nathan Williams</div>
             </div>
-            <div class="award-supervisor">
-              Supervisor: Prof. Nathan Williams
-            </div>
-          </div>
+          </article>
 
-          <!-- 3. Best Poster Award -->
-          <div class="award-card" style="--award-color: #34d399;">
-            <div class="award-icon-wrap" style="background:rgba(52,211,153,0.12);">
-              <i class="fas fa-award" style="color:#34d399;"></i>
+          <!-- Best Poster -->
+          <article class="award-card">
+            <div class="award-img-wrap">
+              <img class="award-card-img"
+                   src="assets/images/showcase/sc_2.jpg"
+                   alt="Best Poster Award"
+                   loading="lazy"
+                   onerror="this.style.display='none'" />
+              <div class="award-ribbon">
+                <div class="award-icon"><i class="fas fa-award"></i></div>
+                <span class="award-ribbon-label">Best Poster Award</span>
+              </div>
             </div>
-            <div class="award-category">🥇 Best Poster Award</div>
-            <img class="award-media"
-                 src="assets/images/showcase/sc_2.jpg"
-                 alt="Best Poster Award winners"
-                 loading="lazy"
-                 onerror="this.style.display='none'" />
-            <p class="award-paper-title">
-              ImaraCare: Contact-Free Fetal Heart Rate Monitoring Using Wi-Fi Channel State
-              Information and Deep Learning for Low-Resource Sub-Saharan African Settings
-            </p>
-            <div class="award-authors">
-              <i class="fas fa-users"></i>
-              <span>Hafiz Adjei Innocent Anyaele, Martin Koome, Paul Mugume</span>
+            <div class="award-body">
+              <p class="award-paper">
+                ImaraCare: Contact-Free Fetal Heart Rate Monitoring Using Wi-Fi Channel State
+                Information and Deep Learning for Low-Resource Sub-Saharan African Settings
+              </p>
+              <div class="award-authors">
+                <strong>Hafiz Adjei Innocent Anyaele</strong>, <strong>Martin Koome</strong>,
+                <strong>Paul Mugume</strong>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- 4. 2nd Place Poster -->
-          <div class="award-card" style="--award-color: #60a5fa;">
-            <div class="award-icon-wrap" style="background:rgba(96,165,250,0.12);">
-              <i class="fas fa-medal" style="color:#60a5fa;"></i>
+          <!-- 2nd Place Poster -->
+          <article class="award-card">
+            <div class="award-img-wrap">
+              <img class="award-card-img"
+                   src="assets/images/showcase/sc_1.jpg"
+                   alt="2nd Place Poster"
+                   loading="lazy"
+                   onerror="this.style.display='none'" />
+              <div class="award-ribbon">
+                <div class="award-icon"><i class="fas fa-medal"></i></div>
+                <span class="award-ribbon-label">2nd Place -  Poster Presentations</span>
+              </div>
             </div>
-            <div class="award-category">🥈 2nd Place — Poster Presentations</div>
-            <img class="award-media"
-                 src="assets/images/showcase/sc_1.jpg"
-                 alt="2nd Place Poster Presentation"
-                 loading="lazy"
-                 onerror="this.style.display='none'" />
-            <p class="award-paper-title">
-              The African Speech Parity Gap: Benchmarking Edge-AI Across 32 Languages
-            </p>
-            <div class="award-authors">
-              <i class="fas fa-user"></i>
-              <span>Victor Olufemi</span>
+            <div class="award-body">
+              <p class="award-paper">
+                The African Speech Parity Gap: Benchmarking Edge-AI Across 32 Languages
+              </p>
+              <div class="award-authors">
+                <strong>Victor Olufemi</strong>
+              </div>
+              <div class="award-supervisor">Supervisor: Prof. Mitra</div>
             </div>
-            <div class="award-supervisor">
-              Supervisor: Professor Mitra
-            </div>
-          </div>
+          </article>
 
-          <!-- 5. Best Paper Award — spans to be featured -->
-          <div class="award-card award-card-featured" style="--award-color: #ffd700; grid-column: span 1;">
-            <div class="award-icon-wrap">
-              <i class="fas fa-file-alt"></i>
+          <!-- Best Paper -->
+          <article class="award-card">
+            <div class="award-img-wrap">
+              <img class="award-card-img"
+                   src="assets/images/showcase/sc_3.jpg"
+                   alt="Best Paper Award"
+                   loading="lazy"
+                   onerror="this.style.display='none'" />
+              <div class="award-ribbon">
+                <div class="award-icon"><i class="fas fa-file-alt"></i></div>
+                <span class="award-ribbon-label">Best Paper Award</span>
+              </div>
             </div>
-            <div class="award-category">📄 Best Paper Award</div>
-            <img class="award-media"
-                 src="assets/images/showcase/sc_3.jpg"
-                 alt="Best Paper Award winners"
-                 loading="lazy"
-                 onerror="this.style.display='none'" />
-            <p class="award-paper-title">
-              Fairness-Aware Credit Scoring
-            </p>
-            <div class="award-authors">
-              <i class="fas fa-users"></i>
-              <span>Rhoda Ojetola, Whoopie Wanjiru, George Nyatangi, Djibrilla Boubacar</span>
+            <div class="award-body">
+              <p class="award-paper">
+                Fairness-Aware Credit Scoring
+              </p>
+              <div class="award-authors">
+                <strong>Rhoda Ojetola</strong>, <strong>Whoopie Wanjiru</strong>,
+                <strong>George Nyatangi</strong>, <strong>Djibrilla Boubacar</strong>
+              </div>
             </div>
-          </div>
+          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
-         VIDEO HIGHLIGHT
-    ════════════════════════════════════════════ -->
-    <section class="sc-section" id="video-highlight" style="background: #0a0406;">
-      <div class="sc-container">
+
+    <!-- ═══════════════════════════
+         VIDEO  (dark, flows from awards)
+    ════════════════════════════ -->
+    <section class="sc-section sc-dark-section" id="video-highlight"
+             style="padding-top:0;border-top:1px solid rgba(255,255,255,0.06);"
+             aria-labelledby="video-heading">
+      <div class="sc-wrap" style="padding-top:4rem;">
+
         <div class="sc-header">
-          <div class="sc-eyebrow sc-eyebrow-white"><i class="fas fa-film"></i> Event Highlights</div>
-          <h2 class="sc-title sc-title-white">In the Moment</h2>
-          <div class="sc-divider"></div>
-          <p class="sc-subtitle sc-subtitle-white" style="margin-top:1rem;">
+          <span class="sc-overline" aria-hidden="true"></span>
+          <span class="sc-label">Event Highlights</span>
+          <h2 class="sc-title sc-title-white" id="video-heading">In the Moment</h2>
+          <p class="sc-subtitle sc-subtitle-white">
             A glimpse into the energy and excitement of Research Showcase 2026.
           </p>
         </div>
 
-        <div class="video-wrapper">
-          <video controls preload="metadata" poster="assets/images/showcase/sc_1.jpg"
+        <div class="video-container">
+          <video controls preload="metadata"
+                 poster="assets/images/showcase/sc_1.jpg"
                  aria-label="Research Showcase 2026 highlight video">
             <source src="assets/videos/showcase/showcase_highlight.mov" type="video/mp4" />
             <source src="assets/videos/showcase/showcase_highlight.mov" type="video/quicktime" />
-            <p style="padding:2rem;color:rgba(255,255,255,0.6);text-align:center;">
+            <p style="padding:2rem;color:rgba(255,255,255,0.5);text-align:center;">
               Your browser does not support video playback.
-              <a href="assets/videos/showcase/showcase_highlight.mov" style="color:#ffd700;">Download the video</a>.
+              <a href="assets/videos/showcase/showcase_highlight.mov"
+                 style="color:var(--sc-red);">Download the video</a>.
             </p>
           </video>
         </div>
+
         <p class="video-note">
-          <i class="fas fa-info-circle"></i>
-          If the video does not play automatically, try downloading it or opening it in a different browser.
+          <i class="fas fa-info-circle"></i>&nbsp;
+          If playback does not start, try downloading the file or opening in Safari.
         </p>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
-         PHOTO GALLERY
-    ════════════════════════════════════════════ -->
-    <section class="sc-section" id="gallery">
-      <div class="sc-container">
+
+    <!-- ═══════════════════════════
+         GALLERY
+    ════════════════════════════ -->
+    <section class="sc-section" id="gallery" aria-labelledby="gallery-heading">
+      <div class="sc-wrap">
+
         <div class="sc-header">
-          <div class="sc-eyebrow"><i class="fas fa-images"></i> Photo Gallery</div>
-          <h2 class="sc-title">From the Event</h2>
-          <div class="sc-divider"></div>
-          <p class="sc-subtitle" style="margin-top:1rem;">
-            Candid moments, poster sessions, award ceremonies, and the community that makes it all possible.
+          <span class="sc-overline" aria-hidden="true"></span>
+          <span class="sc-label">Photography</span>
+          <h2 class="sc-title" id="gallery-heading">From the Event</h2>
+          <p class="sc-subtitle">
+            Candid moments, poster sessions, award presentations, and the community
+            that makes it all possible.
           </p>
         </div>
 
-        <div class="gallery-masonry" id="galleryGrid">
-          <!-- Gallery items injected by JS below for DRY markup -->
-        </div>
+        <div class="gallery-grid" id="galleryGrid" aria-label="Event photo gallery"></div>
+
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════
-         CTA
-    ════════════════════════════════════════════ -->
+
+    <!-- ═══════════════════════════
+         CTA (uses existing site style)
+    ════════════════════════════ -->
     <section class="section cta">
       <div class="container">
         <h2>Be Part of the Next Showcase</h2>
         <p>
-          Research Showcase is just one of the ways we celebrate academic excellence
-          at CMU Africa. Join our community, share your work, and make an impact.
+          Research Showcase is one of many ways we celebrate excellence at CMU Africa.
+          Join our community, present your work, and collaborate on research that matters.
         </p>
         <div class="cta-buttons">
           <a href="join-us.html" class="btn btn-white">
@@ -1081,7 +963,7 @@
           </a>
           <a href="gallery.html" class="btn btn-outline">
             <i class="fas fa-images" aria-hidden="true"></i>
-            View Full Gallery
+            Full Gallery
           </a>
         </div>
       </div>
@@ -1092,102 +974,87 @@
   <!-- Footer -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- JS -->
   <script src="js/utils.js"></script>
+  <script src="js/hero-slider.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/interactions.js"></script>
 
   <!-- Gallery + Lightbox -->
   <script>
     (function () {
-      // All gallery images — ordered for visual variety
       const GALLERY = [
-        { src: 'assets/images/showcase/sc_1.jpg',      alt: 'Research Showcase 2026 - Event overview' },
-        { src: 'assets/images/showcase/img_2816.jpg',  alt: 'Research Showcase - Presentation' },
-        { src: 'assets/images/showcase/img_2819.jpg',  alt: 'Research Showcase - Poster session' },
-        { src: 'assets/images/showcase/img_2822.jpg',  alt: 'Research Showcase - Attendees' },
-        { src: 'assets/images/showcase/sc_6.jpg',      alt: 'Research Showcase - Group photo' },
-        { src: 'assets/images/showcase/img_2825.jpg',  alt: 'Research Showcase - Discussion' },
-        { src: 'assets/images/showcase/img_2828.jpg',  alt: 'Research Showcase - Networking' },
-        { src: 'assets/images/showcase/sc_9.jpg',      alt: 'Research Showcase - Award ceremony' },
-        { src: 'assets/images/showcase/img_2831.jpg',  alt: 'Research Showcase - Keynote' },
-        { src: 'assets/images/showcase/img_2834.jpg',  alt: 'Research Showcase - Poster display' },
-        { src: 'assets/images/showcase/sc_18.jpg',     alt: 'Research Showcase - Community moment' },
-        { src: 'assets/images/showcase/img_2837.jpg',  alt: 'Research Showcase - Presentation session' },
-        { src: 'assets/images/showcase/img_2840.jpg',  alt: 'Research Showcase - Audience' },
-        { src: 'assets/images/showcase/img_2843.jpg',  alt: 'Research Showcase - RA session' },
-        { src: 'assets/images/showcase/sc_35.jpg',     alt: 'Research Showcase - Winners' },
-        { src: 'assets/images/showcase/img_2846.jpg',  alt: 'Research Showcase - Interaction' },
-        { src: 'assets/images/showcase/img_2849.jpg',  alt: 'Research Showcase - Panel' },
-        { src: 'assets/images/showcase/img_2852.jpg',  alt: 'Research Showcase - Podium' },
-        { src: 'assets/images/showcase/img_2855.jpg',  alt: 'Research Showcase - Crowd' },
-        { src: 'assets/images/showcase/img_2858.jpg',  alt: 'Research Showcase - Celebration' },
-        { src: 'assets/images/showcase/img_2861.jpg',  alt: 'Research Showcase - Networking session' },
-        { src: 'assets/images/showcase/img_2864.jpg',  alt: 'Research Showcase - Award winner' },
-        { src: 'assets/images/showcase/img_2867.jpg',  alt: 'Research Showcase - Poster judging' },
-        { src: 'assets/images/showcase/img_2870.jpg',  alt: 'Research Showcase - Hall overview' },
-        { src: 'assets/images/showcase/img_2874.jpg',  alt: 'Research Showcase - Delegates' },
-        { src: 'assets/images/showcase/img_2877.jpg',  alt: 'Research Showcase - Live presentation' },
-        { src: 'assets/images/showcase/img_2880.jpg',  alt: 'Research Showcase - Closing moments' },
+        { src: 'assets/images/showcase/sc_1.jpg',     alt: 'Research Showcase 2026' },
+        { src: 'assets/images/showcase/img_2816.jpg', alt: 'Presentation session' },
+        { src: 'assets/images/showcase/img_2819.jpg', alt: 'Poster session' },
+        { src: 'assets/images/showcase/img_2822.jpg', alt: 'Attendees' },
+        { src: 'assets/images/showcase/sc_6.jpg',     alt: 'Group moment' },
+        { src: 'assets/images/showcase/img_2825.jpg', alt: 'Discussion' },
+        { src: 'assets/images/showcase/img_2828.jpg', alt: 'Networking' },
+        { src: 'assets/images/showcase/sc_9.jpg',     alt: 'Award ceremony' },
+        { src: 'assets/images/showcase/img_2831.jpg', alt: 'Keynote address' },
+        { src: 'assets/images/showcase/img_2834.jpg', alt: 'Poster display' },
+        { src: 'assets/images/showcase/sc_18.jpg',    alt: 'Community moment' },
+        { src: 'assets/images/showcase/img_2837.jpg', alt: 'Presentation' },
+        { src: 'assets/images/showcase/img_2840.jpg', alt: 'Audience' },
+        { src: 'assets/images/showcase/img_2843.jpg', alt: 'RA session' },
+        { src: 'assets/images/showcase/sc_35.jpg',    alt: 'Winners' },
+        { src: 'assets/images/showcase/img_2846.jpg', alt: 'Interaction' },
+        { src: 'assets/images/showcase/img_2849.jpg', alt: 'Panel' },
+        { src: 'assets/images/showcase/img_2852.jpg', alt: 'Podium' },
+        { src: 'assets/images/showcase/img_2855.jpg', alt: 'Crowd' },
+        { src: 'assets/images/showcase/img_2858.jpg', alt: 'Celebration' },
+        { src: 'assets/images/showcase/img_2861.jpg', alt: 'Networking' },
+        { src: 'assets/images/showcase/img_2864.jpg', alt: 'Award winner' },
+        { src: 'assets/images/showcase/img_2867.jpg', alt: 'Poster judging' },
+        { src: 'assets/images/showcase/img_2870.jpg', alt: 'Hall overview' },
+        { src: 'assets/images/showcase/img_2874.jpg', alt: 'Delegates' },
+        { src: 'assets/images/showcase/img_2877.jpg', alt: 'Live presentation' },
+        { src: 'assets/images/showcase/img_2880.jpg', alt: 'Closing moments' },
       ];
 
-      let current = 0;
+      let cur = 0;
 
-      // Build gallery grid
+      // Build gallery
       const grid = document.getElementById('galleryGrid');
-      GALLERY.forEach((item, idx) => {
-        const wrap = document.createElement('div');
-        wrap.className = 'gallery-item';
-        wrap.setAttribute('tabindex', '0');
-        wrap.setAttribute('role', 'button');
-        wrap.setAttribute('aria-label', `View photo: ${item.alt}`);
-        wrap.innerHTML = `
-          <img src="${item.src}" alt="${item.alt}" loading="lazy" />
-          <div class="gallery-item-overlay" aria-hidden="true">
-            <i class="fas fa-expand-alt"></i>
-          </div>
-        `;
-        wrap.addEventListener('click', () => openLightbox(idx));
-        wrap.addEventListener('keydown', e => { if (e.key === 'Enter') openLightbox(idx); });
-        grid.appendChild(wrap);
+      GALLERY.forEach((item, i) => {
+        const el = document.createElement('div');
+        el.className = 'gallery-item';
+        el.setAttribute('tabindex', '0');
+        el.setAttribute('role', 'button');
+        el.setAttribute('aria-label', `View photo: ${item.alt}`);
+        el.innerHTML = `<img src="${item.src}" alt="${item.alt}" loading="lazy" />`;
+        el.addEventListener('click',   () => openLb(i));
+        el.addEventListener('keydown', e => { if (e.key === 'Enter') openLb(i); });
+        grid.appendChild(el);
       });
 
       // Lightbox
-      const lb     = document.getElementById('scLightbox');
-      const lbImg  = document.getElementById('scLightboxImg');
-      const lbCap  = document.getElementById('scLightboxCaption');
+      const lb    = document.getElementById('scLightbox');
+      const lbImg = document.getElementById('scLightboxImg');
+      const lbCap = document.getElementById('scLightboxCaption');
 
-      function openLightbox(idx) {
-        current = idx;
-        lbImg.src = GALLERY[current].src;
-        lbImg.alt = GALLERY[current].alt;
-        lbCap.textContent = `${current + 1} / ${GALLERY.length} — ${GALLERY[current].alt}`;
+      function openLb(i) {
+        cur = i;
+        lbImg.src = GALLERY[cur].src;
+        lbImg.alt = GALLERY[cur].alt;
+        lbCap.textContent = `${cur + 1} / ${GALLERY.length}`;
         lb.classList.add('open');
         document.body.style.overflow = 'hidden';
-        lb.focus();
       }
 
-      window.scCloseLightbox = function () {
-        lb.classList.remove('open');
-        document.body.style.overflow = '';
+      window.scClose = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
+      window.scShift = dir => {
+        cur = (cur + dir + GALLERY.length) % GALLERY.length;
+        lbImg.src = GALLERY[cur].src;
+        lbImg.alt = GALLERY[cur].alt;
+        lbCap.textContent = `${cur + 1} / ${GALLERY.length}`;
       };
 
-      window.scShift = function (dir) {
-        current = (current + dir + GALLERY.length) % GALLERY.length;
-        lbImg.style.animation = 'none';
-        requestAnimationFrame(() => {
-          lbImg.style.animation = '';
-          lbImg.src = GALLERY[current].src;
-          lbImg.alt = GALLERY[current].alt;
-          lbCap.textContent = `${current + 1} / ${GALLERY.length} — ${GALLERY[current].alt}`;
-        });
-      };
-
-      lb.addEventListener('click', e => { if (e.target === lb) scCloseLightbox(); });
-
+      lb.addEventListener('click', e => { if (e.target === lb) scClose(); });
       document.addEventListener('keydown', e => {
         if (!lb.classList.contains('open')) return;
-        if (e.key === 'Escape')     scCloseLightbox();
+        if (e.key === 'Escape')     scClose();
         if (e.key === 'ArrowRight') scShift(1);
         if (e.key === 'ArrowLeft')  scShift(-1);
       });
@@ -1196,14 +1063,14 @@
 
   <!-- Lightbox DOM -->
   <div id="scLightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" tabindex="-1">
-    <button class="lb-btn lb-close" onclick="scCloseLightbox()" aria-label="Close photo viewer">
+    <button class="lb-ctrl lb-close" onclick="scClose()" aria-label="Close">
       <i class="fas fa-times"></i>
     </button>
-    <button class="lb-btn lb-prev" onclick="scShift(-1)" aria-label="Previous photo">
+    <button class="lb-ctrl lb-prev" onclick="scShift(-1)" aria-label="Previous">
       <i class="fas fa-chevron-left"></i>
     </button>
     <img id="scLightboxImg" src="" alt="" />
-    <button class="lb-btn lb-next" onclick="scShift(1)" aria-label="Next photo">
+    <button class="lb-ctrl lb-next" onclick="scShift(1)" aria-label="Next">
       <i class="fas fa-chevron-right"></i>
     </button>
     <p id="scLightboxCaption"></p>
@@ -1229,5 +1096,7 @@
       }
     });
   </script>
+
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              

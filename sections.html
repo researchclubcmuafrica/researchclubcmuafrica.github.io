@@ -1,23 +1,14 @@
-<!-- ===== POST-EVENT HIGHLIGHTS — Research Showcase 2026 ===== -->
+<!-- ===== POST-EVENT HIGHLIGHTS -  Research Showcase 2026 ===== -->
 <style>
+  /* Palette: Carnegie Red #C41230 · Black #000 · Iron Gray #6d6e71 · Steel Gray #E0E0E0 */
   .hlt-section {
-    background: linear-gradient(135deg, #6b0f22 0%, #8b1538 50%, #a01830 100%);
+    background: #000;
     position: relative;
     overflow: hidden;
     padding: 5rem 0;
   }
 
-  .hlt-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 15% 50%, rgba(255,255,255,0.05) 0%, transparent 55%),
-      radial-gradient(circle at 85% 20%, rgba(255,200,0,0.07) 0%, transparent 40%);
-    pointer-events: none;
-  }
-
-  .hlt-inner {
+.hlt-inner {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -31,20 +22,14 @@
 
   .hlt-content { color: white; }
 
-  .hlt-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255,215,0,0.15);
-    border: 1px solid rgba(255,215,0,0.4);
-    color: #ffd700;
-    font-size: 0.74rem;
+  .hlt-label {
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    margin-bottom: 1.25rem;
+    letter-spacing: 3px;
+    color: #C41230;
+    display: block;
+    margin-bottom: 1rem;
   }
 
   .hlt-title {
@@ -52,15 +37,13 @@
     font-weight: 900;
     line-height: 1.15;
     margin-bottom: 0.85rem;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    color: #fff;
   }
-
-  .hlt-title span { color: #ffd700; }
 
   .hlt-desc {
     font-size: 1rem;
-    opacity: 0.88;
-    line-height: 1.7;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
     margin-bottom: 2rem;
   }
 
@@ -69,78 +52,50 @@
     padding: 0; margin: 0 0 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.6rem;
+    gap: 0.5rem;
   }
 
   .hlt-award-list li {
     display: flex;
     align-items: center;
     gap: 0.45rem;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 10px;
+    color: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
     padding: 0.55rem 0.85rem;
+    border-radius: 2px;
   }
 
-  .hlt-award-list li i { color: #ffd700; width: 14px; }
+  .hlt-award-list li i {
+    color: #fff;
+    font-size: 0.72rem;
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(196,18,48,0.65);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.25);
+  }
 
   .hlt-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-
-  .hlt-btn-gold {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, #ffd700, #ffb300);
-    color: #6b0f22;
-    font-weight: 800;
-    font-size: 0.92rem;
-    padding: 0.8rem 1.6rem;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(255,215,0,0.4);
-    transition: all 0.25s;
-  }
-
-  .hlt-btn-gold:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(255,215,0,0.55);
-  }
-
-  .hlt-btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255,255,255,0.1);
-    border: 2px solid rgba(255,255,255,0.45);
-    color: white;
-    font-weight: 700;
-    font-size: 0.92rem;
-    padding: 0.8rem 1.6rem;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.25s;
-  }
-
-  .hlt-btn-ghost:hover {
-    background: rgba(255,255,255,0.2);
-    border-color: white;
-  }
 
   /* Photo strip */
   .hlt-photos {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 0.75rem;
+    gap: 0.6rem;
   }
 
   .hlt-photo {
-    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-    border: 2px solid rgba(255,255,255,0.12);
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.06);
   }
 
   .hlt-photo img {
@@ -153,16 +108,13 @@
 
   .hlt-photo:hover img { transform: scale(1.05); }
 
-  .hlt-photo-tall { grid-row: span 2; }
-
-  .hlt-photo-tall img { height: 320px; }
-  .hlt-photo img { height: 150px; }
+  .hlt-photo img { height: 160px; }
 
   @media (max-width: 900px) {
     .hlt-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hlt-photos { max-width: 500px; margin: 0 auto; }
+    .hlt-photos { max-width: 480px; margin: 0 auto; }
     .hlt-award-list { grid-template-columns: 1fr; }
-    .hlt-ctas { justify-content: center; }
+    .hlt-ctas { justify-content: flex-start; }
   }
 </style>
 
@@ -170,41 +122,36 @@
   <div class="hlt-inner">
     <!-- Left: Content -->
     <div class="hlt-content">
-      <div class="hlt-eyebrow">
-        <i class="fas fa-trophy"></i> April 24, 2026 &nbsp;·&nbsp; DEC Resource Center
-      </div>
-      <h2 class="hlt-title" id="hlt-heading">
-        Research Showcase
-        <span>2026 — Highlights</span>
-      </h2>
+      <span class="hlt-label">April 24, 2026 &nbsp;·&nbsp; DEC Resource Center</span>
+      <h2 class="hlt-title" id="hlt-heading">Research Showcase 2026</h2>
       <p class="hlt-desc">
         Our inaugural Research Showcase brought together brilliant minds from across CMU Africa.
-        Keynote by <strong>Mr. Samuel Rutunda (CTO, Digital Umuganda)</strong>, two RA sessions,
-        and five award categories celebrating outstanding research.
+        Keynote by <strong style="color:#fff;">Mr. Samuel Rutunda (CTO, Digital Umuganda)</strong>,
+        two RA sessions, and five award categories celebrating outstanding research.
       </p>
 
       <ul class="hlt-award-list">
         <li><i class="fas fa-star"></i> People's Choice Award</li>
         <li><i class="fas fa-graduation-cap"></i> Best Capstone Project</li>
         <li><i class="fas fa-award"></i> Best Poster Award</li>
-        <li><i class="fas fa-medal"></i> 2nd Place — Poster</li>
+        <li><i class="fas fa-medal"></i> 2nd Place -  Poster</li>
         <li><i class="fas fa-file-alt"></i> Best Paper Award</li>
         <li><i class="fas fa-microphone"></i> Keynote + RA Sessions</li>
       </ul>
 
       <div class="hlt-ctas">
-        <a href="showcase.html" class="hlt-btn-gold">
-          <i class="fas fa-trophy"></i> View Showcase Highlights
+        <a href="showcase.html" class="btn btn-primary">
+          <i class="fas fa-trophy"></i> View Highlights &amp; Winners
         </a>
-        <a href="gallery.html" class="hlt-btn-ghost">
-          <i class="fas fa-images"></i> Photo Gallery
+        <a href="gallery.html" class="btn btn-outline">
+          <i class="fas fa-images"></i> Gallery
         </a>
       </div>
     </div>
 
     <!-- Right: Photo strip -->
     <div class="hlt-photos" role="img" aria-label="Research Showcase 2026 photos">
-      <div class="hlt-photo hlt-photo-tall">
+      <div class="hlt-photo">
         <img src="assets/images/showcase/sc_3.jpg"
              alt="Research Showcase 2026 - event overview" loading="lazy" />
       </div>
@@ -215,6 +162,10 @@
       <div class="hlt-photo">
         <img src="assets/images/showcase/sc_9.jpg"
              alt="Research Showcase 2026 - poster presentations" loading="lazy" />
+      </div>
+      <div class="hlt-photo">
+        <img src="assets/images/showcase/sc_2.jpg"
+             alt="Research Showcase 2026 - keynote session" loading="lazy" />
       </div>
     </div>
   </div>
@@ -449,4 +400,4 @@
       </a>
     </div>
   </div>
-</section>
+</section>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
