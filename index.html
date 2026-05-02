@@ -1,354 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="css/navigation.css?v=2" />
-    <link rel="stylesheet" href="css/components.css?v=2" />
-    <link rel="stylesheet" href="css/sections.css?v=2" />
-    <link rel="stylesheet" href="css/footer.css?v=2" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="CMU Africa Research Club - Advancing Knowledge Through Collaborative Research"
-    />
-    <meta
-      name="keywords"
-      content="CMU Africa, research, collaboration, academic community, Carnegie Mellon"
-    />
-    <meta name="author" content="CMU Africa Research Club" />
 
-    <!-- Open Graph meta tags for social sharing -->
-    <meta property="og:title" content="CMU Africa Research Club" />
-    <meta
-      property="og:description"
-      content="Advancing Knowledge Through Collaborative Research"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://research.africa.cmu.edu" />
-    <meta
-      property="og:image"
-      content="https://research.africa.cmu.edu/images/og-image.png"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CMU Africa Research Club - Advancing Knowledge Through Collaborative Research" />
+  <meta name="keywords" content="CMU Africa, research, collaboration, academic community, Carnegie Mellon" />
+  <meta name="author" content="CMU Africa Research Club" />
 
-    <!-- Twitter Card meta tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@cmuafrica" />
-    <meta name="twitter:title" content="CMU Africa Research Club" />
-    <meta
-      name="twitter:description"
-      content="Advancing Knowledge Through Collaborative Research"
-    />
-    <meta
-      name="twitter:image"
-      content="https://research.africa.cmu.edu/images/twitter-card.png"
-    />
+  <!-- Open Graph meta tags for social sharing -->
+  <meta property="og:title" content="CMU Africa Research Club" />
+  <meta property="og:description" content="Advancing Knowledge Through Collaborative Research" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://research.africa.cmu.edu" />
+  <meta property="og:image" content="https://research.africa.cmu.edu/images/og-image.png" />
 
-    <title>
-      CMU Africa Research Club - Advancing Knowledge Through Collaborative
-      Research
-    </title>
+  <!-- Twitter Card meta tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@cmuafrica" />
+  <meta name="twitter:title" content="CMU Africa Research Club" />
+  <meta name="twitter:description" content="Advancing Knowledge Through Collaborative Research" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGRRFBFQN1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="research_club_logo.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="research_club_logo.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="research_club_logo.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="research_club_logo.png"
-    />
+    gtag('config', 'G-HGRRFBFQN1');
+  </script>
+  <meta name="twitter:image" content="https://research.africa.cmu.edu/images/twitter-card.png" />
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/variables.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/navigation.css" />
-    <link rel="stylesheet" href="css/hero.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/sections.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+  <title>
+    CMU Africa Research Club - Advancing Knowledge Through Collaborative
+    Research
+  </title>
 
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="research_club_logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="research_club_logo.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="research_club_logo.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="research_club_logo.png" />
 
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="css/variables.css" as="style" />
-    <link rel="preload" href="css/base.css" as="style" />
-    <link rel="preload" href="css/navigation.css" as="style" />
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/variables.css?v=3" />
+  <link rel="stylesheet" href="css/base.css?v=3" />
+  <link rel="stylesheet" href="css/navigation.css?v=3" />
+  <link rel="stylesheet" href="css/hero.css?v=3" />
+  <link rel="stylesheet" href="css/components.css?v=3" />
+  <link rel="stylesheet" href="css/sections.css?v=3" />
+  <link rel="stylesheet" href="css/footer.css?v=3" />
 
-    <!-- DNS Prefetch for External Resources -->
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-  </head>
-  <body class="home-page">
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only">Skip to main content</a>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Load Navigation -->
-    <div id="navigation-container">
-      <!-- Navigation will be loaded here -->
-    </div>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="css/variables.css" as="style" />
+  <link rel="preload" href="css/base.css" as="style" />
+  <link rel="preload" href="css/navigation.css" as="style" />
 
-    <!-- Main Content -->
-    <main id="main-content">
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="hero-slider">
-          <div
-            class="hero-slide active"
-            style="
+  <!-- Preconnect to external origins (faster than dns-prefetch: establishes TCP+TLS up front) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+
+  <!-- Prefetch HTML partials so they are ready before the JS fetches them -->
+  <link rel="prefetch" href="navigation.html" as="fetch" crossorigin />
+  <link rel="prefetch" href="sections.html"   as="fetch" crossorigin />
+  <link rel="prefetch" href="footer.html"     as="fetch" crossorigin />
+</head>
+
+<body class="home-page">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- Load Navigation -->
+  <div id="navigation-container">
+    <!-- Navigation will be loaded here -->
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-slider">
+        <div class="hero-slide active" style="
               background-image: linear-gradient(
-                  rgba(139, 21, 56, 0.4),
-                  rgba(229, 62, 62, 0.4)
+                  rgba(0, 0, 0, 0.18),
+                  rgba(0, 0, 0, 0.28)
                 ),
-                url('assets/images/sliders/20250506_101647.jpg');
-            "
-            role="img"
-            aria-label="Research collaboration background"
-          ></div>
-          <div
-            class="hero-slide"
-            style="
+                url('assets/images/sliders/20250506_101647.webp');
+            " role="img" aria-label="Research collaboration background"></div>
+        <div class="hero-slide" style="
               background-image: linear-gradient(
-                  rgba(139, 21, 56, 0.4),
-                  rgba(229, 62, 62, 0.4)
+                  rgba(0, 0, 0, 0.18),
+                  rgba(0, 0, 0, 0.28)
                 ),
-                url('assets/images/sliders/20250506_105319.jpg');
-            "
-            role="img"
-            aria-label="Innovation and research background"
-          ></div>
-          <div
-            class="hero-slide"
-            style="
+                url('assets/images/sliders/20250506_105319.webp');
+            " role="img" aria-label="Innovation and research background"></div>
+        <div class="hero-slide" style="
               background-image: linear-gradient(
-                  rgba(139, 21, 56, 0.4),
-                  rgba(229, 62, 62, 0.4)
+                  rgba(0, 0, 0, 0.18),
+                  rgba(0, 0, 0, 0.28)
                 ),
-                url('assets/images/sliders/20250506_105617.jpg');
-            "
-            role="img"
-            aria-label="Academic excellence background"
-          ></div>
-        </div>
-        <div class="hero-overlay" aria-hidden="true"></div>
-
-        <div class="hero-content">
-          <div class="hero-main">
-            <h1 class="hero-title">CMU Africa Research Club</h1>
-            <p class="hero-tagline">
-              Advancing Knowledge Through Collaborative Research
-            </p>
-            <p class="hero-description">
-              Join a vibrant community of researchers, academics, and innovators
-              working together to push the boundaries of human knowledge and
-              create meaningful impact through collaborative research
-              initiatives.
-            </p>
-            <div class="hero-buttons">
-              <a href="#" class="btn btn-white">
-                Join Our Community
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
-              </a>
-              <a href="#" class="btn btn-outline">
-                Explore Research
-                <i class="fas fa-microscope" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="hero-stats">
-            <div class="stat-card">
-              <span class="stat-number">50+</span>
-              <span class="stat-label">Active Members</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">20+</span>
-              <span class="stat-label">Published Papers</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">15+</span>
-              <span class="stat-label">Ongoing Projects</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-controls" role="tablist" aria-label="Slide navigation">
-          <button
-            class="hero-dot active"
-            role="tab"
-            aria-label="Slide 1"
-            aria-selected="true"
-          ></button>
-          <button
-            class="hero-dot"
-            role="tab"
-            aria-label="Slide 2"
-            aria-selected="false"
-          ></button>
-          <button
-            class="hero-dot"
-            role="tab"
-            aria-label="Slide 3"
-            aria-selected="false"
-          ></button>
-        </div>
-      </section>
-
-      <!-- About the Club Section -->
-      <section class="section about-section">
-        <div class="container">
-          <div class="about-club">
-            <div class="about-header">
-              <h2 class="section-title">About the Club</h2>
-              <p class="about-description">
-                The Research Club works to promote collaboration between faculty
-                and students on research. They ensure that students know of all
-                the support available for them if interested in research during
-                their study period in CMU-Africa, bridge the gap between faculty
-                and students, and raise awareness of support for African
-                researchers in different fields.
-              </p>
-            </div>
-
-            <div class="about-features">
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="fas fa-handshake" aria-hidden="true"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Faculty-Student Collaboration</h3>
-                  <p>
-                    Promoting meaningful partnerships between faculty and
-                    students in research endeavors.
-                  </p>
-                </div>
-              </div>
-
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="fas fa-lightbulb" aria-hidden="true"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Research Support</h3>
-                  <p>
-                    Ensuring students are aware of all available resources and
-                    support for their research interests.
-                  </p>
-                </div>
-              </div>
-
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="fas fa-globe-africa" aria-hidden="true"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>African Research Awareness</h3>
-                  <p>
-                    Raising awareness of support opportunities for African
-                    researchers across various fields.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Load page sections dynamically -->
-      <div id="page-sections">
-        <!-- Sections will be loaded here -->
+                url('assets/images/sliders/20250506_105617.webp');
+            " role="img" aria-label="Academic excellence background"></div>
       </div>
-    </main>
+      <div class="hero-overlay" aria-hidden="true"></div>
 
-    <!-- Load footer -->
-    <div id="footer-container">
-      <!-- Footer will be loaded here -->
+      <div class="hero-content">
+        <div class="hero-main">
+          <h1 class="hero-title">CMU-Africa Research Club</h1>
+          <p class="hero-tagline">
+            Advancing Knowledge Through Collaborative Research
+          </p>
+          <p class="hero-description">
+            Join a vibrant community of researchers, academics, and innovators
+            working together to push the boundaries of human knowledge and
+            create meaningful impact through collaborative research
+            initiatives.
+          </p>
+          <div class="hero-buttons">
+            <a href="join-us.html" class="btn btn-white">
+              Join Our Community
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="projects_new.html" class="btn btn-outline">
+              Explore Research
+              <i class="fas fa-microscope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">Active Members</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">Published Papers</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Ongoing Projects</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-controls" role="tablist" aria-label="Slide navigation">
+        <button class="hero-dot active" role="tab" aria-label="Slide 1" aria-selected="true"></button>
+        <button class="hero-dot" role="tab" aria-label="Slide 2" aria-selected="false"></button>
+        <button class="hero-dot" role="tab" aria-label="Slide 3" aria-selected="false"></button>
+      </div>
+    </section>
+
+    <!-- About the Club Section -->
+    <section class="section about-section">
+      <div class="container">
+        <div class="about-club">
+          <div class="about-header">
+            <h2 class="section-title">About the Club</h2>
+            <p class="about-description">
+              The Research Club works to promote collaboration between faculty
+              and students on research. They ensure that students know of all
+              the support available for them if interested in research during
+              their study period in CMU-Africa, bridge the gap between faculty
+              and students, and raise awareness of support for African
+              researchers in different fields.
+            </p>
+          </div>
+
+          <div class="about-features">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-handshake" aria-hidden="true"></i>
+              </div>
+              <div class="feature-content">
+                <h3>Faculty-Student Collaboration</h3>
+                <p>
+                  Promoting meaningful partnerships between faculty and
+                  students in research endeavors.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-lightbulb" aria-hidden="true"></i>
+              </div>
+              <div class="feature-content">
+                <h3>Research Support</h3>
+                <p>
+                  Ensuring students are aware of all available resources and
+                  support for their research interests.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-globe-africa" aria-hidden="true"></i>
+              </div>
+              <div class="feature-content">
+                <h3>African Research Awareness</h3>
+                <p>
+                  Raising awareness of support opportunities for African
+                  researchers across various fields.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Load page sections dynamically -->
+    <div id="page-sections">
+      <!-- Sections will be loaded here -->
     </div>
+  </main>
 
-    <!-- JavaScript Files -->
-    <script src="js/utils.js"></script>
-    <script src="js/hero-slider.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/interactions.js"></script>
-    <script src="js/app.js"></script>
+  <!-- Load footer -->
+  <div id="footer-container">
+    <!-- Footer will be loaded here -->
+  </div>
 
-    <!-- Load page content -->
-    <script>
-      // Load sections dynamically
-      document.addEventListener("DOMContentLoaded", async () => {
-        try {
-          // Load navigation first
-          const navResponse = await fetch("navigation.html");
-          if (navResponse.ok) {
-            const navHTML = await navResponse.text();
-            document.getElementById("navigation-container").innerHTML = navHTML;
-            if (window.initializeNavigation) window.initializeNavigation();
-          }
+  <!-- JavaScript Files -->
+  <script src="js/utils.js"></script>
+  <script src="js/hero-slider.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/app.js"></script>
 
-          // Load sections
-          const sectionsResponse = await fetch("sections.html");
-          if (!sectionsResponse.ok) {
-            throw new Error(
-              `Failed to load sections: ${sectionsResponse.status}`,
-            );
-          }
-          const sectionsHTML = await sectionsResponse.text();
-          const sectionsContainer = document.getElementById("page-sections");
-          if (sectionsContainer) {
-            sectionsContainer.innerHTML = sectionsHTML;
-          }
+  <!-- Load page content -  all three partials fetched in parallel with Promise.all -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        // Fire all three fetches simultaneously instead of one-by-one
+        const [navRes, sectionsRes, footerRes] = await Promise.all([
+          fetch("navigation.html"),
+          fetch("sections.html"),
+          fetch("footer.html"),
+        ]);
 
-          // Load footer
-          const footerResponse = await fetch("footer.html");
-          if (!footerResponse.ok) {
-            throw new Error(`Failed to load footer: ${footerResponse.status}`);
-          }
-          const footerHTML = await footerResponse.text();
-          const footerContainer = document.getElementById("footer-container");
-          if (footerContainer) {
-            footerContainer.innerHTML = footerHTML;
-          }
+        if (!sectionsRes.ok) throw new Error(`sections.html: ${sectionsRes.status}`);
+        if (!footerRes.ok)   throw new Error(`footer.html: ${footerRes.status}`);
 
-          // Dispatch event that content is loaded
-          document.dispatchEvent(new CustomEvent("contentLoaded"));
-        } catch (error) {
-          console.error("Error loading page sections:", error);
+        // Parse all three responses in parallel
+        const [navHTML, sectionsHTML, footerHTML] = await Promise.all([
+          navRes.ok ? navRes.text() : Promise.resolve(""),
+          sectionsRes.text(),
+          footerRes.text(),
+        ]);
 
-          // Show fallback content
-          const sectionsContainer = document.getElementById("page-sections");
-          const footerContainer = document.getElementById("footer-container");
-
-          if (sectionsContainer) {
-            sectionsContainer.innerHTML =
-              '<div class="section"><div class="container"><p>Content is temporarily unavailable. Please refresh the page.</p></div></div>';
-          }
-
-          if (footerContainer) {
-            footerContainer.innerHTML =
-              '<footer class="footer"><div class="container"><p>&copy; 2025 CMU Africa Research Club. All rights reserved.</p></div></footer>';
-          }
+        // Inject into DOM
+        if (navHTML) {
+          document.getElementById("navigation-container").innerHTML = navHTML;
+          if (window.initializeNavigation) window.initializeNavigation();
         }
-      });
-    </script>
+        document.getElementById("page-sections").innerHTML   = sectionsHTML;
+        document.getElementById("footer-container").innerHTML = footerHTML;
 
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
+        // Signal that all content is now in the DOM
+        document.dispatchEvent(new CustomEvent("contentLoaded"));
+
+      } catch (error) {
+        console.error("Error loading page components:", error);
+        document.getElementById("page-sections").innerHTML =
+          '<div class="section"><div class="container"><p>Content is temporarily unavailable. Please refresh the page.</p></div></div>';
+        document.getElementById("footer-container").innerHTML =
+          '<footer class="footer"><div class="container"><p>&copy; 2026 CMU Africa Research Club. All rights reserved.</p></div></footer>';
+      }
+    });
+  </script>
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -371,5 +300,131 @@
         }
       }
     </script>
-  </body>
-</html>
+
+  <!-- ===== SHOWCASE LIGHTBOX (lives in index.html so it executes correctly) ===== -->
+  <div id="showcaseLightbox" style="
+      position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;
+      display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);
+    " role="dialog" aria-modal="true" aria-label="Poster viewer">
+    <button onclick="closeShowcaseLightbox()" aria-label="Close poster viewer" style="
+        position:absolute;top:1rem;right:1.5rem;background:rgba(255,255,255,0.12);
+        border:none;color:white;font-size:1.6rem;cursor:pointer;width:46px;height:46px;
+        border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:10000;
+        transition:background 0.2s;
+      " onmouseover="this.style.background='rgba(255,255,255,0.25)'"
+      onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+      <i class="fas fa-times"></i>
+    </button>
+    <button onclick="shiftLightbox(-1)" aria-label="Previous poster" style="
+        position:absolute;top:50%;transform:translateY(-50%);left:1.5rem;
+        background:rgba(255,255,255,0.12);border:none;color:white;font-size:1.4rem;
+        cursor:pointer;width:50px;height:50px;border-radius:50%;display:flex;
+        align-items:center;justify-content:center;z-index:10000;transition:background 0.2s;
+      " onmouseover="this.style.background='rgba(255,255,255,0.25)'"
+      onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <img id="lightboxImg" src="" alt="" style="
+        max-width:90vw;max-height:90vh;object-fit:contain;border-radius:16px;
+        box-shadow:0 30px 100px rgba(0,0,0,0.8);
+      " />
+    <button onclick="shiftLightbox(1)" aria-label="Next poster" style="
+        position:absolute;top:50%;transform:translateY(-50%);right:1.5rem;
+        background:rgba(255,255,255,0.12);border:none;color:white;font-size:1.4rem;
+        cursor:pointer;width:50px;height:50px;border-radius:50%;display:flex;
+        align-items:center;justify-content:center;z-index:10000;transition:background 0.2s;
+      " onmouseover="this.style.background='rgba(255,255,255,0.25)'"
+      onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    <p id="lightboxCaption" style="
+        position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);
+        color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:500;text-align:center;
+        white-space:nowrap;
+      "></p>
+  </div>
+
+  <!-- Showcase JS: countdown + lightbox -  runs after contentLoaded so DOM elements exist -->
+  <script>
+    (function () {
+      const POSTERS = [
+        { src: 'assets/images/paper_presentations/paper_presentation.webp', caption: 'Poster 1 of 2 - Submit Your Projects Today!' },
+        { src: 'assets/images/paper_presentations/paper_presentation2.webp', caption: 'Poster 2 of 2 - CMU Africa Research Showcase Details' }
+      ];
+      let lbCurrent = 0;
+      let countdownInterval = null;
+
+      /* ---------- Lightbox ---------- */
+      window.openShowcaseLightbox = function (idx) {
+        lbCurrent = idx;
+        const lb = document.getElementById('showcaseLightbox');
+        document.getElementById('lightboxImg').src = POSTERS[lbCurrent].src;
+        document.getElementById('lightboxImg').alt = POSTERS[lbCurrent].caption;
+        document.getElementById('lightboxCaption').textContent = POSTERS[lbCurrent].caption;
+        lb.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      };
+
+      window.closeShowcaseLightbox = function () {
+        document.getElementById('showcaseLightbox').style.display = 'none';
+        document.body.style.overflow = '';
+      };
+
+      window.shiftLightbox = function (dir) {
+        lbCurrent = (lbCurrent + dir + POSTERS.length) % POSTERS.length;
+        document.getElementById('lightboxImg').src = POSTERS[lbCurrent].src;
+        document.getElementById('lightboxImg').alt = POSTERS[lbCurrent].caption;
+        document.getElementById('lightboxCaption').textContent = POSTERS[lbCurrent].caption;
+      };
+
+      document.addEventListener('keydown', function (e) {
+        const lb = document.getElementById('showcaseLightbox');
+        if (lb.style.display !== 'flex') return;
+        if (e.key === 'Escape') window.closeShowcaseLightbox();
+        if (e.key === 'ArrowRight') window.shiftLightbox(1);
+        if (e.key === 'ArrowLeft') window.shiftLightbox(-1);
+      });
+
+      document.getElementById('showcaseLightbox').addEventListener('click', function (e) {
+        if (e.target === this) window.closeShowcaseLightbox();
+      });
+
+      /* ---------- Countdown -  starts after sections.html is injected ---------- */
+      function startCountdown() {
+        const target = new Date('2026-04-24T08:00:00+02:00');
+
+        function tick() {
+          const elDays = document.getElementById('cd-days');
+          const elHours = document.getElementById('cd-hours');
+          const elMins = document.getElementById('cd-mins');
+          const elSecs = document.getElementById('cd-secs');
+          const elBox = document.getElementById('showcaseCountdown');
+          if (!elDays || !elBox) return; // section not in DOM yet
+
+          const diff = target - new Date();
+          if (diff <= 0) {
+            elBox.innerHTML = '<div class="countdown-unit"><span class="countdown-number" style="font-size:1rem;color:#ffd700;">🎉 Happening Now!</span></div>';
+            clearInterval(countdownInterval);
+            return;
+          }
+          const d = Math.floor(diff / 86400000);
+          const h = Math.floor((diff % 86400000) / 3600000);
+          const m = Math.floor((diff % 3600000) / 60000);
+          const s = Math.floor((diff % 60000) / 1000);
+          elDays.textContent = String(d).padStart(2, '0');
+          elHours.textContent = String(h).padStart(2, '0');
+          elMins.textContent = String(m).padStart(2, '0');
+          elSecs.textContent = String(s).padStart(2, '0');
+        }
+
+        tick();
+        countdownInterval = setInterval(tick, 1000);
+      }
+
+      // Wait for sections to be injected before starting countdown
+      document.addEventListener('contentLoaded', startCountdown);
+    })();
+  </script>
+</body>
+
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           

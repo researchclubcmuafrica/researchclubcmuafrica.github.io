@@ -1,3 +1,171 @@
+<!-- ===== POST-EVENT HIGHLIGHTS - Research Showcase 2026 ===== -->
+<style>
+  /* Palette: Carnegie Red #C41230 · Black #000 · Iron Gray #6d6e71 · Steel Gray #E0E0E0 */
+  .hlt-section {
+    background: #000;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)),
+      url('assets/images/showcase/sc_3.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Full-bleed background video */
+  .hlt-video-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .hlt-video-bg.is-active { opacity: 1; }
+
+  /* Dark overlay so text stays readable */
+  .hlt-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.62);
+    z-index: 1;
+  }
+
+  .hlt-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .hlt-content { color: white; }
+
+  .hlt-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #C41230;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .hlt-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+    color: #fff;
+  }
+
+  .hlt-desc {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+
+  .hlt-award-list {
+    list-style: none;
+    padding: 0; margin: 0 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .hlt-award-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.55rem 0.85rem;
+    border-radius: 2px;
+  }
+
+  .hlt-award-list li i {
+    color: #fff;
+    font-size: 0.72rem;
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(196,18,48,0.65);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.25);
+  }
+
+  .hlt-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  @media (max-width: 900px) {
+    .hlt-inner { padding: 3.5rem 2rem; }
+    .hlt-award-list { grid-template-columns: 1fr; }
+    .hlt-ctas { justify-content: flex-start; }
+  }
+</style>
+
+<section class="hlt-section" aria-labelledby="hlt-heading">
+
+  <!-- Background video (muted autoplay; poster shown when video can't play) -->
+  <video class="hlt-video-bg" muted loop playsinline preload="none"
+         poster="assets/images/showcase/sc_3.webp"
+         data-src-webm="assets/videos/showcase/showcase_highlight2.webm"
+         data-src-mp4="assets/videos/showcase/showcase_highlight2.mp4"
+         aria-hidden="true">
+  </video>
+
+  <!-- Dark overlay -->
+  <div class="hlt-overlay" aria-hidden="true"></div>
+
+  <div class="hlt-inner">
+    <!-- Left: Content -->
+    <div class="hlt-content">
+      <span class="hlt-label">April 24, 2026 &nbsp;·&nbsp; DEC Resource Center</span>
+      <h2 class="hlt-title" id="hlt-heading">Research Showcase 2026</h2>
+      <p class="hlt-desc">
+        Our inaugural Research Showcase brought together brilliant minds from across CMU Africa.
+        Keynote by <strong style="color:#fff;">Mr. Samuel Rutunda (CTO, Digital Umuganda)</strong>,
+        two RA sessions, and five award categories celebrating outstanding research.
+      </p>
+
+      <ul class="hlt-award-list">
+        <li><i class="fas fa-star"></i> People's Choice Award</li>
+        <li><i class="fas fa-graduation-cap"></i> Best Capstone Project</li>
+        <li><i class="fas fa-award"></i> Best Poster Award</li>
+        <li><i class="fas fa-medal"></i> 2nd Place - Poster</li>
+        <li><i class="fas fa-file-alt"></i> Best Paper Award</li>
+        <li><i class="fas fa-microphone"></i> Keynote + RA Sessions</li>
+      </ul>
+
+      <div class="hlt-ctas">
+        <a href="showcase.html" class="btn btn-primary">
+          <i class="fas fa-trophy"></i> View Highlights &amp; Winners
+        </a>
+        <a href="gallery.html" class="btn btn-outline">
+          <i class="fas fa-images"></i> Gallery
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
 <!-- Featured Research Section -->
 <section class="section">
   <div class="container">
@@ -11,14 +179,9 @@
 
     <div class="research-grid">
       <article class="research-card">
-        <div
-          class="research-image"
-          style="
+        <div class="research-image" style="
             background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 200\'%3E%3Crect fill=\'%2310b981\' width=\'400\' height=\'200\'/%3E%3Crect x=\'50\' y=\'50\' width=\'120\' height=\'80\' rx=\'15\' fill=\'%23065f46\' opacity=\'0.3\'/%3E%3Crect x=\'230\' y=\'70\' width=\'100\' height=\'60\' rx=\'12\' fill=\'%23065f46\' opacity=\'0.5\'/%3E%3C/svg%3E');
-          "
-          role="img"
-          aria-label="Renewable Energy research visualization"
-        >
+          " role="img" aria-label="Renewable Energy research visualization">
           <span class="research-category badge badge-deep-learning">
             Renewable Energy
           </span>
@@ -36,7 +199,7 @@
           </p>
           <div class="research-meta">
             <span><strong>Advisor:</strong> Prof. Jesse Thornburg</span>
-            <span><strong>Team:</strong> Chisom Ogbogu (MSIT)</span>
+            <span><strong>Team:</strong> Chisom Ogbogu (MSECE-AD)</span>
           </div>
           <a href="projects/pem-electrolyzer.html" class="research-link">
             Learn More <i class="fas fa-arrow-right"></i>
@@ -45,14 +208,8 @@
       </article>
 
       <article class="research-card">
-        <div
-          class="research-image"
-          role="img"
-          aria-label="Deep Learning BCI research visualization"
-        >
-          <span class="research-category badge badge-deep-learning"
-            >Deep Learning</span
-          >
+        <div class="research-image" role="img" aria-label="Deep Learning BCI research visualization">
+          <span class="research-category badge badge-deep-learning">Deep Learning</span>
           <span class="research-status badge badge-info">Published</span>
         </div>
         <div class="research-content">
@@ -67,10 +224,8 @@
             when brain signals are unclear.
           </p>
           <div class="research-meta">
-            <span
-              ><strong>Advisors:</strong> Bhiksha Ramakrishnan & Rita
-              Singh</span
-            >
+            <span><strong>Advisors:</strong> Bhiksha Ramakrishnan & Rita
+              Singh</span>
             <span><strong>Team:</strong> Kipngeno Koech (MSEAI)</span>
           </div>
           <a href="projects/bci-spellers.html" class="research-link">
@@ -80,123 +235,26 @@
       </article>
 
       <article class="research-card">
-        <div
-          class="research-image"
-          role="img"
-          aria-label="Deep learning medical research visualization"
-        >
-          <span class="research-category badge badge-deep-learning"
-            >Deep Learning</span
-          >
+        <div class="research-image" role="img" aria-label="Smart Grid research visualization">
+          <span class="research-category badge badge-deep-learning">Energy Systems</span>
           <span class="research-status badge badge-info">Published</span>
         </div>
         <div class="research-content">
           <h3 class="research-title">
-            Deep Learning-Based Lesion Segmentation for Early Liver Tumor
-            Detection
+            Smart Grid Fault Mitigation and Cybersecurity with Wide-Area Measurement Systems: A Review
           </h3>
           <p class="research-description">
-            The research developed a deep learning model combining ResNet34 and
-            U-Net to improve liver lesion detection and segmentation, aiming to
-            enhance early liver tumor diagnosis and treatment in Rwanda through
-            scalable AI-driven healthcare solutions.
+            This review examines strategies for mitigating smart grid faults and enhancing cybersecurity
+            using Wide-Area Measurement Systems (WAMS), covering detection algorithms, communication
+            reliability, and resilient control frameworks for modern power grids.
           </p>
           <div class="research-meta">
-            <span><strong>Advisor:</strong> Prof. Ahmed Biyabani</span>
-            <span><strong>Team:</strong> Diane Mugunga (MSIT)</span>
+            <span><strong>Advisor:</strong> Prof. Jesse Thornburg</span>
+            <span><strong>Team:</strong> Chisom Ogbogu (MSECE-AD)</span>
           </div>
-          <a href="projects/liver-tumor-detection.html" class="research-link">
+          <a href="projects/smart-grid.html" class="research-link">
             Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Upcoming Events Section -->
-<section class="section">
-  <div class="container">
-    <div class="events-header">
-      <h2 class="section-title">Upcoming Events</h2>
-      <a href="#" class="view-all-link">
-        View All Events <i class="fas fa-arrow-right" aria-hidden="true"></i>
-      </a>
-    </div>
-
-    <div class="events-grid">
-      <article class="event-card">
-        <div class="event-date">
-          <span class="event-month">AUG</span>
-          <span class="event-day">15</span>
-        </div>
-        <div class="event-content">
-          <h3 class="event-title">AI Research Workshop</h3>
-          <p class="event-description">
-            Hands-on workshop covering the latest techniques in machine learning
-            and deep learning applications for research.
-          </p>
-          <div class="event-details">
-            <div class="event-detail">
-              <i class="fas fa-clock" aria-hidden="true"></i>
-              <span>2:00 PM - 5:00 PM</span>
-            </div>
-            <div class="event-detail">
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <span>CMU Africa Campus</span>
-            </div>
-          </div>
-          <button class="register-btn btn btn-primary">Register Now</button>
-        </div>
-      </article>
-
-      <article class="event-card">
-        <div class="event-date">
-          <span class="event-month">AUG</span>
-          <span class="event-day">22</span>
-        </div>
-        <div class="event-content">
-          <h3 class="event-title">Research Symposium</h3>
-          <p class="event-description">
-            Annual symposium featuring presentations of ongoing research
-            projects and networking opportunities with fellow researchers.
-          </p>
-          <div class="event-details">
-            <div class="event-detail">
-              <i class="fas fa-clock" aria-hidden="true"></i>
-              <span>9:00 AM - 5:00 PM</span>
-            </div>
-            <div class="event-detail">
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <span>Main Auditorium</span>
-            </div>
-          </div>
-          <button class="register-btn btn btn-primary">Register Now</button>
-        </div>
-      </article>
-
-      <article class="event-card">
-        <div class="event-date">
-          <span class="event-month">SEP</span>
-          <span class="event-day">05</span>
-        </div>
-        <div class="event-content">
-          <h3 class="event-title">Climate Data Presentation</h3>
-          <p class="event-description">
-            Presentation of latest findings from our climate research team on
-            ocean temperature modeling and environmental impact.
-          </p>
-          <div class="event-details">
-            <div class="event-detail">
-              <i class="fas fa-clock" aria-hidden="true"></i>
-              <span>3:00 PM - 4:30 PM</span>
-            </div>
-            <div class="event-detail">
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <span>Conference Room A</span>
-            </div>
-          </div>
-          <button class="register-btn btn btn-primary">Register Now</button>
         </div>
       </article>
     </div>
@@ -210,31 +268,27 @@
       <div class="newsletter-content">
         <h3>Latest Newsletter</h3>
         <h4 class="newsletter-subtitle">
-          Research Club Monthly - March-April 2025
+          Research Club Newsletter - Spring 2026
         </h4>
         <p>
-          This month's newsletter features updates on our latest AI research
-          breakthroughs, upcoming workshop schedules, new member introductions,
-          and exciting collaboration opportunities with industry partners.
+          Kickoff to 2026: Highlights from recent research activities, upcoming events, and community
+          updates from the CMU Africa Research Club.
         </p>
         <div class="newsletter-meta">
           <div class="newsletter-meta-item">
             <i class="fas fa-calendar" aria-hidden="true"></i>
-            <span>March 26, 2025</span>
+            <span>Spring 2026</span>
           </div>
           <div class="newsletter-meta-item">
-            <i class="fas fa-file-alt" aria-hidden="true"></i>
-            <span>12 pages</span>
+            <!-- <i class="fas fa-globe" aria-hidden="true"></i>
+            <span>4 Continents</span> -->
           </div>
         </div>
         <div class="newsletter-buttons">
-          <a
-            href="assets/documents/newsletters/[MarchApril 2025] Research Club Newsletter.pdf"
-            class="btn btn-primary"
-            target="_blank"
-          >
-            <i class="fas fa-download" aria-hidden="true"></i>
-            Download
+          <a href="assets/documents/newsletters/[January 2026] Research Club Newsletter.pdf" class="btn btn-primary"
+            target="_blank">
+            <i class="fas fa-book-open" aria-hidden="true"></i>
+            Read Newsletter
           </a>
           <a href="newsletter.html" class="btn btn-secondary">
             <i class="fas fa-archive" aria-hidden="true"></i>
@@ -243,15 +297,11 @@
         </div>
       </div>
       <div class="newsletter-preview">
-        <img
-          src="assets/images/newsletter/March-April Newsletter Front Page.png"
-          alt="March-April 2025 Newsletter Front Page"
-          loading="lazy"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-        />
+        <img src="assets/images/newsletter/Spring 2026 - January Newsletter.webp" alt="Spring 2026 Newsletter Front Page"
+          loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="pdf-overlay" style="display: none">
           <i class="fas fa-file-pdf" aria-hidden="true"></i>
-          <span>March-April 2025</span>
+          <span>Spring 2026</span>
         </div>
       </div>
     </div>
@@ -272,51 +322,52 @@
     <div class="testimonials-grid">
       <article class="testimonial-card">
         <blockquote class="testimonial-quote">
-          "The Research Club has been instrumental in advancing my research. The
-          collaborative environment and access to diverse expertise has
-          accelerated my work significantly."
+          "The research club has been very instrumental in aiding my settling in into the research track. Coming
+          directly from undergraduate studies with no prior knowledge of what is required of me on this path, the club
+          demystified the whole topic, exposed me to the skills and collaborations I need to sail through this path
+          seamlessly."
         </blockquote>
         <div class="testimonial-author">
           <div class="author-avatar avatar">
             <i class="fas fa-user" aria-hidden="true"></i>
           </div>
           <div class="author-info">
-            <h4>Sarah Chen</h4>
-            <p>PhD Student, Computer Science</p>
+            <h4>Wanchi Lucia Yen</h4>
+            <p>MSEAI '27</p>
           </div>
         </div>
       </article>
 
       <article class="testimonial-card">
         <blockquote class="testimonial-quote">
-          "Being part of this community has opened doors to interdisciplinary
-          collaboration that I never thought possible. The quality of
-          discussions and shared resources is exceptional."
+          "The club helped me become more intentional about my research interests and I also value the resources that
+          have been shared as they helped me figure out more about the PhD application process."
         </blockquote>
         <div class="testimonial-author">
           <div class="author-avatar avatar">
             <i class="fas fa-user" aria-hidden="true"></i>
           </div>
           <div class="author-info">
-            <h4>Dr. Michael Johnson</h4>
-            <p>Professor, Environmental Science</p>
+            <h4>Victor Miene</h4>
+            <p>MSEAI '26</p>
           </div>
         </div>
       </article>
 
       <article class="testimonial-card">
         <blockquote class="testimonial-quote">
-          "The Research Club provides an invaluable platform for sharing ideas
-          and getting feedback from experts across different fields. It has
-          enriched my research journey immensely."
+          "Research is sweeter and more intriguing when done in a team of passionate, high-spirited individuals, though
+          special interests/focus may vary. If you enjoy being challenged to being the researcher you envision, being
+          inspired by peers to greatness, and being at the forefront of innovation, this is the place for you. My growth
+          in research would have been much slower if not surrounded by such a team."
         </blockquote>
         <div class="testimonial-author">
           <div class="author-avatar avatar">
             <i class="fas fa-user" aria-hidden="true"></i>
           </div>
           <div class="author-info">
-            <h4>Alex Rodriguez</h4>
-            <p>PhD Candidate, Physics</p>
+            <h4>Nchofon Tagha Ghogomu</h4>
+            <p>MSIT '26</p>
           </div>
         </div>
       </article>
@@ -333,11 +384,11 @@
       groundbreaking projects that make a difference.
     </p>
     <div class="cta-buttons">
-      <a href="#" class="btn btn-white">
+      <a href="join-us.html" class="btn btn-white">
         <i class="fas fa-user-plus" aria-hidden="true"></i>
         Become a Member
       </a>
-      <a href="#" class="btn btn-outline">
+      <a href="contact.html" class="btn btn-outline">
         <i class="fas fa-envelope" aria-hidden="true"></i>
         Get in Touch
       </a>
