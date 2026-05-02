@@ -1,23 +1,44 @@
-<!-- ===== POST-EVENT HIGHLIGHTS -  Research Showcase 2026 ===== -->
+<!-- ===== POST-EVENT HIGHLIGHTS - Research Showcase 2026 ===== -->
 <style>
   /* Palette: Carnegie Red #C41230 · Black #000 · Iron Gray #6d6e71 · Steel Gray #E0E0E0 */
   .hlt-section {
     background: #000;
     position: relative;
     overflow: hidden;
-    padding: 5rem 0;
+    min-height: 540px;
+    display: flex;
+    align-items: center;
   }
 
-.hlt-inner {
+  /* Full-bleed background video */
+  .hlt-video-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Dark overlay so text stays readable */
+  .hlt-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.62);
+    z-index: 1;
+  }
+
+  .hlt-inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 5rem 2rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 4rem;
     align-items: center;
     position: relative;
     z-index: 2;
+    width: 100%;
   }
 
   .hlt-content { color: white; }
@@ -63,7 +84,7 @@
     font-weight: 600;
     color: rgba(255,255,255,0.75);
     background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
     padding: 0.55rem 0.85rem;
     border-radius: 2px;
   }
@@ -84,41 +105,81 @@
 
   .hlt-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
-  /* Photo strip */
-  .hlt-photos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 0.6rem;
+  /* Right side: play button */
+  .hlt-play-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .hlt-photo {
-    overflow: hidden;
-    border-radius: 2px;
-    border: 1px solid rgba(255,255,255,0.06);
+  .hlt-play-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-decoration: none;
+    color: #fff;
   }
 
-  .hlt-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
+  .hlt-play-circle {
+    width: 88px;
+    height: 88px;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(4px);
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
   }
 
-  .hlt-photo:hover img { transform: scale(1.05); }
+  .hlt-play-btn:hover .hlt-play-circle {
+    background: #C41230;
+    border-color: #C41230;
+    transform: scale(1.1);
+  }
 
-  .hlt-photo img { height: 160px; }
+  .hlt-play-circle i {
+    font-size: 1.75rem;
+    color: #fff;
+    margin-left: 5px; /* optical centre for play triangle */
+  }
+
+  .hlt-play-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: rgba(255,255,255,0.7);
+    transition: color 0.3s ease;
+  }
+
+  .hlt-play-btn:hover .hlt-play-label { color: #fff; }
 
   @media (max-width: 900px) {
-    .hlt-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hlt-photos { max-width: 480px; margin: 0 auto; }
+    .hlt-inner { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 2rem; }
+    .hlt-play-side { justify-content: flex-start; }
+    .hlt-play-btn { flex-direction: row; gap: 1rem; }
+    .hlt-play-circle { width: 56px; height: 56px; }
+    .hlt-play-circle i { font-size: 1.2rem; margin-left: 3px; }
     .hlt-award-list { grid-template-columns: 1fr; }
     .hlt-ctas { justify-content: flex-start; }
   }
 </style>
 
 <section class="hlt-section" aria-labelledby="hlt-heading">
+
+  <!-- Background video (muted autoplay; poster shown when video can't play) -->
+  <video class="hlt-video-bg" autoplay muted loop playsinline
+         poster="assets/images/showcase/sc_3.jpg"
+         aria-hidden="true">
+    <source src="assets/videos/showcase/showcase_highlight2.mp4" type="video/mp4">
+  </video>
+
+  <!-- Dark overlay -->
+  <div class="hlt-overlay" aria-hidden="true"></div>
+
   <div class="hlt-inner">
     <!-- Left: Content -->
     <div class="hlt-content">
@@ -134,7 +195,7 @@
         <li><i class="fas fa-star"></i> People's Choice Award</li>
         <li><i class="fas fa-graduation-cap"></i> Best Capstone Project</li>
         <li><i class="fas fa-award"></i> Best Poster Award</li>
-        <li><i class="fas fa-medal"></i> 2nd Place -  Poster</li>
+        <li><i class="fas fa-medal"></i> 2nd Place - Poster</li>
         <li><i class="fas fa-file-alt"></i> Best Paper Award</li>
         <li><i class="fas fa-microphone"></i> Keynote + RA Sessions</li>
       </ul>
@@ -149,26 +210,18 @@
       </div>
     </div>
 
-    <!-- Right: Photo strip -->
-    <div class="hlt-photos" role="img" aria-label="Research Showcase 2026 photos">
-      <div class="hlt-photo">
-        <img src="assets/images/showcase/sc_3.jpg"
-             alt="Research Showcase 2026 - event overview" loading="lazy" />
-      </div>
-      <div class="hlt-photo">
-        <img src="assets/images/showcase/sc_6.jpg"
-             alt="Research Showcase 2026 - award ceremony" loading="lazy" />
-      </div>
-      <div class="hlt-photo">
-        <img src="assets/images/showcase/sc_9.jpg"
-             alt="Research Showcase 2026 - poster presentations" loading="lazy" />
-      </div>
-      <div class="hlt-photo">
-        <img src="assets/images/showcase/sc_2.jpg"
-             alt="Research Showcase 2026 - keynote session" loading="lazy" />
-      </div>
+    <!-- Right: Play button -->
+    <div class="hlt-play-side">
+      <a href="showcase.html" class="hlt-play-btn"
+         aria-label="Watch Research Showcase 2026 highlights">
+        <div class="hlt-play-circle">
+          <i class="fas fa-play" aria-hidden="true"></i>
+        </div>
+        <span class="hlt-play-label">Watch Highlights</span>
+      </a>
     </div>
   </div>
+
 </section>
 
 
@@ -400,4 +453,4 @@
       </a>
     </div>
   </div>
-</section>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+</section>
