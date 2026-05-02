@@ -527,11 +527,81 @@ class InteractiveElementsController {
   }
 }
 
+class BackgroundVideoController {
+  setupLazyBackgroundVideo() {
+    const video = document.querySelector('.hlt-video-bg');
+
+    if (!video || video.dataset.lazyVideoBound === 'true') {
+      return;
+    }
+
+    video.dataset.lazyVideoBound = 'true';
+
+    const target = video.closest('.hlt-section') || video;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobileViewport = window.matchMedia('(max-width: 767px)').matches;
+
+    if (prefersReducedMotion || utils.device.isMobile() || isMobileViewport) {
+      return;
+    }
+
+    const activateVideo = () => {
+      if (video.dataset.sourcesLoaded !== 'true') {
+        const sources = [
+          { src: video.dataset.srcWebm, type: 'video/webm' },
+          { src: video.dataset.srcMp4, type: 'video/mp4' }
+        ].filter(source => source.src);
+
+        sources.forEach(({ src, type }) => {
+          const source = document.createElement('source');
+          source.src = src;
+          source.type = type;
+          video.appendChild(source);
+        });
+
+        video.dataset.sourcesLoaded = 'true';
+        video.load();
+      }
+
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {})
+      }
+    };
+
+    video.addEventListener('loadeddata', () => {
+      video.classList.add('is-active');
+    }, { once: true });
+
+    if (!('IntersectionObserver' in window)) {
+      activateVideo();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          activateVideo();
+        } else if (video.dataset.sourcesLoaded === 'true') {
+          video.pause();
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    observer.observe(target);
+  }
+}
+
 // Initialize all components when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   const animationController = new AnimationController();
   const scrollEffectsController = new ScrollEffectsController();
   const interactiveElementsController = new InteractiveElementsController();
+  window.animationController = animationController;
+  window.backgroundVideoController = new BackgroundVideoController();
+  window.backgroundVideoController.setupLazyBackgroundVideo();
 });
 
 // Reinitialize animations when dynamic content is loaded
@@ -543,4 +613,6 @@ document.addEventListener('contentLoaded', () => {
     window.animationController.setupScrollAnimations();
     window.animationController.setupCounterAnimations();
   }
+
+  window.backgroundVideoController?.setupLazyBackgroundVideo();
 });

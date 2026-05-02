@@ -3,6 +3,12 @@
   /* Palette: Carnegie Red #C41230 · Black #000 · Iron Gray #6d6e71 · Steel Gray #E0E0E0 */
   .hlt-section {
     background: #000;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)),
+      url('assets/images/showcase/sc_3.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
     overflow: hidden;
     min-height: 540px;
@@ -18,7 +24,11 @@
     object-fit: cover;
     z-index: 0;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
   }
+
+  .hlt-video-bg.is-active { opacity: 1; }
 
   /* Dark overlay so text stays readable */
   .hlt-overlay {
@@ -111,10 +121,11 @@
 <section class="hlt-section" aria-labelledby="hlt-heading">
 
   <!-- Background video (muted autoplay; poster shown when video can't play) -->
-  <video class="hlt-video-bg" autoplay muted loop playsinline
-         poster="assets/images/showcase/sc_3.jpg"
+  <video class="hlt-video-bg" muted loop playsinline preload="none"
+         poster="assets/images/showcase/sc_3.webp"
+         data-src-webm="assets/videos/showcase/showcase_highlight2.webm"
+         data-src-mp4="assets/videos/showcase/showcase_highlight2.mp4"
          aria-hidden="true">
-    <source src="assets/videos/showcase/showcase_highlight2.mp4" type="video/mp4">
   </video>
 
   <!-- Dark overlay -->
@@ -286,7 +297,7 @@
         </div>
       </div>
       <div class="newsletter-preview">
-        <img src="assets/images/newsletter/Spring 2026 - January Newsletter.jpg" alt="Spring 2026 Newsletter Front Page"
+        <img src="assets/images/newsletter/Spring 2026 - January Newsletter.webp" alt="Spring 2026 Newsletter Front Page"
           loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="pdf-overlay" style="display: none">
           <i class="fas fa-file-pdf" aria-hidden="true"></i>
