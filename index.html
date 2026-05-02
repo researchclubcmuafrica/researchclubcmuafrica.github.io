@@ -72,7 +72,7 @@
 </head>
 
 <body class="home-page">
-  <!-- ★ RESEARCH SHOWCASE ANNOUNCEMENT BAR ★ -->
+  <!-- ★ RESEARCH SHOWCASE HIGHLIGHTS BANNER ★ -->
   <div id="showcaseBanner" style="
     background: linear-gradient(90deg, #6b0f22 0%, #8b1538 50%, #a01830 100%);
     color: white;
@@ -84,52 +84,27 @@
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    position: static;
+    position: relative;
     z-index: 1000;
     flex-wrap: wrap;
     border-bottom: 2px solid rgba(255,215,0,0.4);
-    margin-bottom: 10px; /* Slight buffer to place nav lower */
-  " role="banner" aria-label="Research Showcase announcement">
-    <!-- Live pulse dot -->
+  " role="banner" aria-label="Research Showcase highlights announcement">
     <span style="display:inline-flex;align-items:center;gap:0.4rem;">
-      <span style="
-        width:8px;height:8px;background:#ffd700;border-radius:50%;
-        display:inline-block;
-        box-shadow:0 0 0 0 rgba(255,215,0,0.6);
-        animation:bannerPulse 1.5s ease-in-out infinite;
-      "></span>
-      <style>
-        @keyframes bannerPulse {
-
-          0%,
-          100% {
-            box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.6);
-          }
-
-          70% {
-            box-shadow: 0 0 0 6px rgba(255, 215, 0, 0);
-          }
-        }
-      </style>
-      <strong style="color:#ffd700;">🏆 Research Showcase</strong>
+      <strong style="color:#ffd700;">🏆 Research Showcase 2026</strong>
     </span>
-    <span style="opacity:0.85;">April 24, 2026 · DEC Resource Center</span>
-    <span style="
-      background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);
-      border-radius:4px;padding:0.1rem 0.5rem;font-size:0.78rem;
-    ">Course Projects · Practicums · Capstones</span>
-    <a href="events.html" style="
+    <span style="opacity:0.85;">April 24, 2026 · DEC Resource Center · 5 Awards Presented</span>
+    <a href="showcase.html" style="
       background:linear-gradient(135deg,#ffd700,#ffb300);
       color:#6b0f22;font-weight:800;font-size:0.8rem;
       padding:0.3rem 0.9rem;border-radius:50px;text-decoration:none;
       transition:opacity 0.2s;white-space:nowrap;
     " onmouseover="this.style.opacity=0.85" onmouseout="this.style.opacity=1">
-      View Details →
+      See Highlights &amp; Winners →
     </a>
     <button onclick="
       document.getElementById('showcaseBanner').style.display='none';
       sessionStorage.setItem('showcaseBannerDismissed','1');
-    " aria-label="Dismiss announcement" style="
+    " aria-label="Dismiss banner" style="
       position:absolute;right:1rem;top:50%;transform:translateY(-50%);
       background:none;border:none;color:rgba(255,255,255,0.6);
       font-size:1.1rem;cursor:pointer;line-height:1;padding:0.2rem 0.4rem;
@@ -142,7 +117,7 @@
       document.getElementById('showcaseBanner').style.display = 'none';
     }
   </script>
-  <!-- ★ END ANNOUNCEMENT BAR ★ -->
+  <!-- ★ END HIGHLIGHTS BANNER ★ -->
 
   <!-- Skip to main content for accessibility -->
   <a href="#main-content" class="sr-only">Skip to main content</a>

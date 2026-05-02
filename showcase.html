@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="CMU Africa Research Club – Research Showcase 2026 highlights: award winners, keynote, RA sessions, posters, and gallery." />
+  <title>Research Showcase 2026 – CMU Africa Research Club</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="research_club_logo.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGRRFBFQN1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-HGRRFBFQN1');
+  </script>
+
+  <style>
+    /* =============================================
+       SHOWCASE PAGE — CUSTOM STYLES
+       ============================================= */
+
+    /* ---------- Hero ---------- */
+    .showcase-hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 5rem;
+      overflow: hidden;
+    }
+
+    .showcase-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.05);
+      animation: heroZoom 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1.05); }
+      to   { transform: scale(1.12); }
+    }
+
+    .showcase-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(107, 15, 34, 0.78) 0%,
+        rgba(139, 21, 56, 0.65) 40%,
+        rgba(30, 10, 15, 0.85) 100%
+      );
+    }
+
+    .showcase-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 215, 0, 0.15);
+      border: 1px solid rgba(255, 215, 0, 0.5);
+      color: #ffd700;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .showcase-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+    }
+
+    .showcase-hero h1 span {
+      color: #ffd700;
+    }
+
+    .showcase-hero-sub {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(255,255,255,0.85);
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-pill i { color: #ffd700; }
+
+    .hero-scroll-cue {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 1.5rem;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ---------- Section Shared ---------- */
+    .sc-section {
+      padding: 5rem 0;
+    }
+
+    .sc-section-alt {
+      background: var(--gray-50);
+    }
+
+    .sc-section-dark {
+      background: linear-gradient(135deg, #0f0a0c 0%, #1a0812 50%, #0f0a0c 100%);
+      color: white;
+    }
+
+    .sc-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .sc-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .sc-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(139, 21, 56, 0.1);
+      color: var(--primary-color);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(139, 21, 56, 0.2);
+    }
+
+    .sc-eyebrow-white {
+      background: rgba(255,215,0,0.1);
+      color: #ffd700;
+      border-color: rgba(255,215,0,0.25);
+    }
+
+    .sc-title {
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--gray-800);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .sc-title-white { color: #fff; }
+
+    .sc-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .sc-subtitle-white {
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ---------- Keynote ---------- */
+    .keynote-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .keynote-media {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+      aspect-ratio: 16/10;
+    }
+
+    .keynote-media img,
+    .keynote-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .keynote-media-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(139,21,56,0.6) 0%, transparent 60%);
+    }
+
+    .keynote-badge {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: linear-gradient(135deg, #ffd700, #ffb300);
+      color: #6b0f22;
+      font-size: 0.7rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+    }
+
+    .keynote-info {
+      padding: 1rem 0;
+    }
+
+    .keynote-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .keynote-name {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--gray-800);
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+
+    .keynote-title {
+      font-size: 1rem;
+      color: var(--gray-500);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .keynote-desc {
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .keynote-quote {
+      border-left: 4px solid #ffd700;
+      background: linear-gradient(135deg, rgba(139,21,56,0.05), rgba(255,215,0,0.05));
+      border-radius: 0 16px 16px 0;
+      padding: 1.25rem 1.5rem;
+      font-style: italic;
+      font-size: 0.98rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    /* ---------- RA Sessions ---------- */
+    .ra-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .ra-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--gray-100);
+    }
+
+    .ra-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .ra-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+
+    .ra-card-body {
+      padding: 1.75rem;
+    }
+
+    .ra-card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary-color);
+      background: rgba(139, 21, 56, 0.08);
+      padding: 0.3rem 0.75rem;
+      border-radius: 50px;
+      margin-bottom: 0.85rem;
+    }
+
+    .ra-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gray-800);
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .ra-card-presenter {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.92rem;
+      color: var(--gray-600);
+      font-weight: 600;
+    }
+
+    .ra-card-presenter i {
+      color: #ffd700;
+      background: rgba(255,215,0,0.15);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ---------- Awards ---------- */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .award-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .award-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--award-color, #ffd700), transparent);
+    }
+
+    .award-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,215,0,0.25);
+    }
+
+    .award-icon-wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: rgba(255,215,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .award-icon-wrap i {
+      font-size: 1.6rem;
+      color: #ffd700;
+    }
+
+    .award-category {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ffd700;
+      margin-bottom: 0.5rem;
+    }
+
+    .award-paper-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.45;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .award-authors {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 0.5rem;
+    }
+
+    .award-authors i {
+      color: rgba(255,215,0,0.6);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .award-supervisor {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+    }
+
+    .award-media {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 14px;
+      object-fit: cover;
+      margin-bottom: 1.25rem;
+      border: 2px solid rgba(255,215,0,0.2);
+    }
+
+    /* Featured (Best Paper / People's Choice) take full column width */
+    .award-card-featured {
+      grid-column: span 1;
+    }
+
+    /* ---------- Photo Gallery ---------- */
+    .gallery-masonry {
+      columns: 4;
+      column-gap: 0.75rem;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 0.75rem;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      display: block;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(139, 21, 56, 0.0);
+      transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      background: rgba(139, 21, 56, 0.45);
+    }
+
+    .gallery-item-overlay i {
+      color: white;
+      font-size: 1.75rem;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-item-overlay i {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ---------- Video Section ---------- */
+    .video-wrapper {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      background: #000;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+      max-height: 500px;
+    }
+
+    .video-note {
+      text-align: center;
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ---------- Lightbox ---------- */
+    #scLightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.94);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+
+    #scLightbox.open { display: flex; }
+
+    #scLightboxImg {
+      max-width: 92vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 16px;
+      box-shadow: 0 40px 120px rgba(0,0,0,0.9);
+      animation: lbPop 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    @keyframes lbPop {
+      from { transform: scale(0.75); opacity: 0; }
+      to   { transform: scale(1);    opacity: 1; }
+    }
+
+    #scLightboxCaption {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .lb-btn {
+      position: absolute;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 10000;
+    }
+
+    .lb-btn:hover { background: rgba(255,255,255,0.25); }
+
+    .lb-close {
+      top: 1rem; right: 1.5rem;
+      width: 46px; height: 46px;
+      font-size: 1.5rem;
+    }
+
+    .lb-prev {
+      top: 50%; left: 1.5rem;
+      transform: translateY(-50%);
+      width: 52px; height: 52px;
+      font-size: 1.35rem;
+    }
+
+    .lb-next {
+      top: 50%; right: 1.5rem;
+      transform: translateY(-50%);
+      width: 52px; height: 52px;
+      font-size: 1.35rem;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .keynote-block { grid-template-columns: 1fr; gap: 2rem; }
+      .ra-grid { grid-template-columns: 1fr; }
+      .gallery-masonry { columns: 2; }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-masonry { columns: 2; }
+      .awards-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Divider ---------- */
+    .sc-divider {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #8b1538, #ffd700);
+      border-radius: 4px;
+      margin: 1rem auto 0;
+    }
+
+    /* ---------- Stats Bar ---------- */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      background: var(--primary-color);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 4rem;
+    }
+
+    .stat-item {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-item .num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #ffd700;
+      line-height: 1;
+      display: block;
+    }
+
+    .stat-item .lbl {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0.4rem;
+      display: block;
+    }
+
+    @media (max-width: 700px) {
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.15); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <div id="navigation-container"></div>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════ -->
+    <section class="showcase-hero" aria-label="Research Showcase 2026 hero">
+      <div class="showcase-hero-bg" style="background-image: url('assets/images/showcase/sc_3.jpg');" role="img" aria-label="Research Showcase event photo"></div>
+      <div class="showcase-hero-overlay" aria-hidden="true"></div>
+
+      <div class="showcase-hero-content">
+        <div class="hero-eyebrow">
+          <i class="fas fa-trophy"></i>
+          CMU Africa Research Club &nbsp;·&nbsp; April 24, 2026
+        </div>
+
+        <h1>Research<br /><span>Showcase 2026</span></h1>
+
+        <p class="showcase-hero-sub">
+          An evening celebrating academic excellence — from cutting-edge AI research
+          to healthcare innovation. Five awards, two RA sessions, one unforgettable keynote.
+        </p>
+
+        <div class="hero-meta-pills">
+          <span class="hero-pill"><i class="fas fa-map-marker-alt"></i> DEC Resource Center, CMU Africa</span>
+          <span class="hero-pill"><i class="fas fa-calendar-alt"></i> 24th April 2026</span>
+          <span class="hero-pill"><i class="fas fa-award"></i> 5 Awards</span>
+          <span class="hero-pill"><i class="fas fa-users"></i> Multiple Presentations</span>
+        </div>
+
+        <div class="hero-scroll-cue">
+          <i class="fas fa-chevron-down"></i> Explore the highlights
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         STATS BAR
+    ════════════════════════════════════════════ -->
+    <div class="sc-container" style="margin-top: -2rem; position: relative; z-index: 10;">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="num">5</span>
+          <span class="lbl">Award Categories</span>
+        </div>
+        <div class="stat-item">
+          <span class="num">2</span>
+          <span class="lbl">RA Sessions</span>
+        </div>
+        <div class="stat-item">
+          <span class="num">1</span>
+          <span class="lbl">Industry Keynote</span>
+        </div>
+        <div class="stat-item">
+          <span class="num">🏆</span>
+          <span class="lbl">Research Excellence</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         KEYNOTE
+    ════════════════════════════════════════════ -->
+    <section class="sc-section" id="keynote">
+      <div class="sc-container">
+        <div class="keynote-block">
+          <!-- Media -->
+          <div class="keynote-media">
+            <img src="assets/images/showcase/img_2815.jpg"
+                 alt="Keynote session at the Research Showcase 2026"
+                 loading="lazy" />
+            <div class="keynote-media-overlay" aria-hidden="true"></div>
+            <div class="keynote-badge"><i class="fas fa-microphone"></i> Keynote Speaker</div>
+          </div>
+
+          <!-- Info -->
+          <div class="keynote-info">
+            <div class="sc-eyebrow"><i class="fas fa-microphone-alt"></i> Opening Keynote</div>
+            <h2 class="keynote-name">Mr. Samuel Rutunda</h2>
+            <p class="keynote-title">CTO, Digital Umuganda</p>
+
+            <p class="keynote-desc">
+              Digital Umuganda's CTO opened the Research Showcase with an inspiring keynote,
+              sharing industry perspectives on how cutting-edge African tech innovation is
+              reshaping digital services across the continent. Drawing from his experience
+              building impactful technology products for the African market, Mr. Rutunda
+              challenged researchers to bridge the gap between academic inquiry and
+              real-world deployment.
+            </p>
+
+            <blockquote class="keynote-quote">
+              "The best research doesn't end in a paper — it ends in a product that changes
+              someone's life. Africa's researchers are uniquely positioned to solve African
+              problems. This showcase is proof of that."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         RA SESSIONS
+    ════════════════════════════════════════════ -->
+    <section class="sc-section sc-section-alt" id="ra-sessions">
+      <div class="sc-container">
+        <div class="sc-header">
+          <div class="sc-eyebrow"><i class="fas fa-flask"></i> Research Assistant Sessions</div>
+          <h2 class="sc-title">RA Sessions</h2>
+          <div class="sc-divider"></div>
+          <p class="sc-subtitle" style="margin-top:1rem;">
+            Two exceptional researchers presented their ongoing work, showcasing the depth
+            and breadth of graduate research at CMU Africa.
+          </p>
+        </div>
+
+        <div class="ra-grid">
+          <!-- RA 1 -->
+          <div class="ra-card">
+            <img class="ra-card-img"
+                 src="assets/images/showcase/sc_6.jpg"
+                 alt="Mona Aman presenting AI-Assisted Stethoscopy research"
+                 loading="lazy" />
+            <div class="ra-card-body">
+              <div class="ra-card-tag"><i class="fas fa-heartbeat"></i> Healthcare AI</div>
+              <h3 class="ra-card-title">
+                Enhanced Cardiovascular Diseases Recovery in Medically Underserved
+                Communities via AI-Assisted Stethoscopy
+              </h3>
+              <div class="ra-card-presenter">
+                <i class="fas fa-user-graduate"></i>
+                <div>
+                  <strong>Mona Aman</strong><br />
+                  <span style="font-weight:400;font-size:0.82rem;color:var(--gray-400);">RA Presenter</span>
+                </div>
+              </div>
+              <p style="margin-top:1rem;font-size:0.92rem;color:var(--gray-500);line-height:1.7;">
+                Exploring how AI-powered diagnostic tools can extend quality cardiovascular
+                care to communities that lack access to traditional specialist resources —
+                combining deep learning with acoustic stethoscope signals.
+              </p>
+            </div>
+          </div>
+
+          <!-- RA 2 -->
+          <div class="ra-card">
+            <img class="ra-card-img"
+                 src="assets/images/showcase/sc_9.jpg"
+                 alt="Yohannes Haile presenting Social Robotics research"
+                 loading="lazy" />
+            <div class="ra-card-body">
+              <div class="ra-card-tag"><i class="fas fa-robot"></i> Social Robotics</div>
+              <h3 class="ra-card-title">
+                Culturally Sensitive Social Robotics for Africa
+              </h3>
+              <div class="ra-card-presenter">
+                <i class="fas fa-user-graduate"></i>
+                <div>
+                  <strong>Yohannes Haile</strong><br />
+                  <span style="font-weight:400;font-size:0.82rem;color:var(--gray-400);">RA Presenter</span>
+                </div>
+              </div>
+              <p style="margin-top:1rem;font-size:0.92rem;color:var(--gray-500);line-height:1.7;">
+                Designing robotic systems that honour African cultural norms, social
+                cues, and linguistic diversity — moving beyond Western-centric robotics
+                frameworks to build machines that feel familiar and trustworthy to
+                African users.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         AWARDS
+    ════════════════════════════════════════════ -->
+    <section class="sc-section sc-section-dark" id="awards">
+      <div class="sc-container">
+        <div class="sc-header">
+          <div class="sc-eyebrow sc-eyebrow-white"><i class="fas fa-trophy"></i> Award Winners</div>
+          <h2 class="sc-title sc-title-white">2026 Showcase Awards</h2>
+          <div class="sc-divider"></div>
+          <p class="sc-subtitle sc-subtitle-white" style="margin-top:1rem;">
+            Recognising outstanding research across poster presentations, capstone projects,
+            and academic papers.
+          </p>
+        </div>
+
+        <div class="awards-grid">
+
+          <!-- 1. People's Choice Award -->
+          <div class="award-card" style="--award-color: #a78bfa;">
+            <div class="award-icon-wrap" style="background:rgba(167,139,250,0.12);">
+              <i class="fas fa-star" style="color:#a78bfa;"></i>
+            </div>
+            <div class="award-category">🌟 People's Choice Award</div>
+            <!-- Placeholder image -->
+            <img class="award-media"
+                 src="assets/images/showcase/sc_5.jpg"
+                 alt="People's Choice Award winners"
+                 loading="lazy"
+                 onerror="this.style.display='none'" />
+            <p class="award-paper-title">
+              JEPA‑NAV: A Vision-Based Joint Embedding Architecture for Safe Indoor Navigation
+            </p>
+            <div class="award-authors">
+              <i class="fas fa-users"></i>
+              <span>Edward Ajayi &amp; Emrys Ladislaus</span>
+            </div>
+          </div>
+
+          <!-- 2. Best Capstone Project -->
+          <div class="award-card" style="--award-color: #ffd700;">
+            <div class="award-icon-wrap">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="award-category">🏆 Winner — Capstone Project Pitch</div>
+            <img class="award-media"
+                 src="assets/images/showcase/sc_4.jpg"
+                 alt="Capstone Project Award winner"
+                 loading="lazy"
+                 onerror="this.style.display='none'" />
+            <p class="award-paper-title">
+              Decolonizing Edge AI: National Standards for Culturally Adaptive Quantized SLMs
+            </p>
+            <div class="award-authors">
+              <i class="fas fa-user"></i>
+              <span>Waweru Muhura</span>
+            </div>
+            <div class="award-supervisor">
+              Supervisor: Prof. Nathan Williams
+            </div>
+          </div>
+
+          <!-- 3. Best Poster Award -->
+          <div class="award-card" style="--award-color: #34d399;">
+            <div class="award-icon-wrap" style="background:rgba(52,211,153,0.12);">
+              <i class="fas fa-award" style="color:#34d399;"></i>
+            </div>
+            <div class="award-category">🥇 Best Poster Award</div>
+            <img class="award-media"
+                 src="assets/images/showcase/sc_2.jpg"
+                 alt="Best Poster Award winners"
+                 loading="lazy"
+                 onerror="this.style.display='none'" />
+            <p class="award-paper-title">
+              ImaraCare: Contact-Free Fetal Heart Rate Monitoring Using Wi-Fi Channel State
+              Information and Deep Learning for Low-Resource Sub-Saharan African Settings
+            </p>
+            <div class="award-authors">
+              <i class="fas fa-users"></i>
+              <span>Hafiz Adjei Innocent Anyaele, Martin Koome, Paul Mugume</span>
+            </div>
+          </div>
+
+          <!-- 4. 2nd Place Poster -->
+          <div class="award-card" style="--award-color: #60a5fa;">
+            <div class="award-icon-wrap" style="background:rgba(96,165,250,0.12);">
+              <i class="fas fa-medal" style="color:#60a5fa;"></i>
+            </div>
+            <div class="award-category">🥈 2nd Place — Poster Presentations</div>
+            <img class="award-media"
+                 src="assets/images/showcase/sc_1.jpg"
+                 alt="2nd Place Poster Presentation"
+                 loading="lazy"
+                 onerror="this.style.display='none'" />
+            <p class="award-paper-title">
+              The African Speech Parity Gap: Benchmarking Edge-AI Across 32 Languages
+            </p>
+            <div class="award-authors">
+              <i class="fas fa-user"></i>
+              <span>Victor Olufemi</span>
+            </div>
+            <div class="award-supervisor">
+              Supervisor: Professor Mitra
+            </div>
+          </div>
+
+          <!-- 5. Best Paper Award — spans to be featured -->
+          <div class="award-card award-card-featured" style="--award-color: #ffd700; grid-column: span 1;">
+            <div class="award-icon-wrap">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="award-category">📄 Best Paper Award</div>
+            <img class="award-media"
+                 src="assets/images/showcase/sc_3.jpg"
+                 alt="Best Paper Award winners"
+                 loading="lazy"
+                 onerror="this.style.display='none'" />
+            <p class="award-paper-title">
+              Fairness-Aware Credit Scoring
+            </p>
+            <div class="award-authors">
+              <i class="fas fa-users"></i>
+              <span>Rhoda Ojetola, Whoopie Wanjiru, George Nyatangi, Djibrilla Boubacar</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         VIDEO HIGHLIGHT
+    ════════════════════════════════════════════ -->
+    <section class="sc-section" id="video-highlight" style="background: #0a0406;">
+      <div class="sc-container">
+        <div class="sc-header">
+          <div class="sc-eyebrow sc-eyebrow-white"><i class="fas fa-film"></i> Event Highlights</div>
+          <h2 class="sc-title sc-title-white">In the Moment</h2>
+          <div class="sc-divider"></div>
+          <p class="sc-subtitle sc-subtitle-white" style="margin-top:1rem;">
+            A glimpse into the energy and excitement of Research Showcase 2026.
+          </p>
+        </div>
+
+        <div class="video-wrapper">
+          <video controls preload="metadata" poster="assets/images/showcase/sc_1.jpg"
+                 aria-label="Research Showcase 2026 highlight video">
+            <source src="assets/videos/showcase/showcase_highlight.mov" type="video/mp4" />
+            <source src="assets/videos/showcase/showcase_highlight.mov" type="video/quicktime" />
+            <p style="padding:2rem;color:rgba(255,255,255,0.6);text-align:center;">
+              Your browser does not support video playback.
+              <a href="assets/videos/showcase/showcase_highlight.mov" style="color:#ffd700;">Download the video</a>.
+            </p>
+          </video>
+        </div>
+        <p class="video-note">
+          <i class="fas fa-info-circle"></i>
+          If the video does not play automatically, try downloading it or opening it in a different browser.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PHOTO GALLERY
+    ════════════════════════════════════════════ -->
+    <section class="sc-section" id="gallery">
+      <div class="sc-container">
+        <div class="sc-header">
+          <div class="sc-eyebrow"><i class="fas fa-images"></i> Photo Gallery</div>
+          <h2 class="sc-title">From the Event</h2>
+          <div class="sc-divider"></div>
+          <p class="sc-subtitle" style="margin-top:1rem;">
+            Candid moments, poster sessions, award ceremonies, and the community that makes it all possible.
+          </p>
+        </div>
+
+        <div class="gallery-masonry" id="galleryGrid">
+          <!-- Gallery items injected by JS below for DRY markup -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CTA
+    ════════════════════════════════════════════ -->
+    <section class="section cta">
+      <div class="container">
+        <h2>Be Part of the Next Showcase</h2>
+        <p>
+          Research Showcase is just one of the ways we celebrate academic excellence
+          at CMU Africa. Join our community, share your work, and make an impact.
+        </p>
+        <div class="cta-buttons">
+          <a href="join-us.html" class="btn btn-white">
+            <i class="fas fa-user-plus" aria-hidden="true"></i>
+            Join the Club
+          </a>
+          <a href="gallery.html" class="btn btn-outline">
+            <i class="fas fa-images" aria-hidden="true"></i>
+            View Full Gallery
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/interactions.js"></script>
+
+  <!-- Gallery + Lightbox -->
+  <script>
+    (function () {
+      // All gallery images — ordered for visual variety
+      const GALLERY = [
+        { src: 'assets/images/showcase/sc_1.jpg',      alt: 'Research Showcase 2026 - Event overview' },
+        { src: 'assets/images/showcase/img_2816.jpg',  alt: 'Research Showcase - Presentation' },
+        { src: 'assets/images/showcase/img_2819.jpg',  alt: 'Research Showcase - Poster session' },
+        { src: 'assets/images/showcase/img_2822.jpg',  alt: 'Research Showcase - Attendees' },
+        { src: 'assets/images/showcase/sc_6.jpg',      alt: 'Research Showcase - Group photo' },
+        { src: 'assets/images/showcase/img_2825.jpg',  alt: 'Research Showcase - Discussion' },
+        { src: 'assets/images/showcase/img_2828.jpg',  alt: 'Research Showcase - Networking' },
+        { src: 'assets/images/showcase/sc_9.jpg',      alt: 'Research Showcase - Award ceremony' },
+        { src: 'assets/images/showcase/img_2831.jpg',  alt: 'Research Showcase - Keynote' },
+        { src: 'assets/images/showcase/img_2834.jpg',  alt: 'Research Showcase - Poster display' },
+        { src: 'assets/images/showcase/sc_18.jpg',     alt: 'Research Showcase - Community moment' },
+        { src: 'assets/images/showcase/img_2837.jpg',  alt: 'Research Showcase - Presentation session' },
+        { src: 'assets/images/showcase/img_2840.jpg',  alt: 'Research Showcase - Audience' },
+        { src: 'assets/images/showcase/img_2843.jpg',  alt: 'Research Showcase - RA session' },
+        { src: 'assets/images/showcase/sc_35.jpg',     alt: 'Research Showcase - Winners' },
+        { src: 'assets/images/showcase/img_2846.jpg',  alt: 'Research Showcase - Interaction' },
+        { src: 'assets/images/showcase/img_2849.jpg',  alt: 'Research Showcase - Panel' },
+        { src: 'assets/images/showcase/img_2852.jpg',  alt: 'Research Showcase - Podium' },
+        { src: 'assets/images/showcase/img_2855.jpg',  alt: 'Research Showcase - Crowd' },
+        { src: 'assets/images/showcase/img_2858.jpg',  alt: 'Research Showcase - Celebration' },
+        { src: 'assets/images/showcase/img_2861.jpg',  alt: 'Research Showcase - Networking session' },
+        { src: 'assets/images/showcase/img_2864.jpg',  alt: 'Research Showcase - Award winner' },
+        { src: 'assets/images/showcase/img_2867.jpg',  alt: 'Research Showcase - Poster judging' },
+        { src: 'assets/images/showcase/img_2870.jpg',  alt: 'Research Showcase - Hall overview' },
+        { src: 'assets/images/showcase/img_2874.jpg',  alt: 'Research Showcase - Delegates' },
+        { src: 'assets/images/showcase/img_2877.jpg',  alt: 'Research Showcase - Live presentation' },
+        { src: 'assets/images/showcase/img_2880.jpg',  alt: 'Research Showcase - Closing moments' },
+      ];
+
+      let current = 0;
+
+      // Build gallery grid
+      const grid = document.getElementById('galleryGrid');
+      GALLERY.forEach((item, idx) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'gallery-item';
+        wrap.setAttribute('tabindex', '0');
+        wrap.setAttribute('role', 'button');
+        wrap.setAttribute('aria-label', `View photo: ${item.alt}`);
+        wrap.innerHTML = `
+          <img src="${item.src}" alt="${item.alt}" loading="lazy" />
+          <div class="gallery-item-overlay" aria-hidden="true">
+            <i class="fas fa-expand-alt"></i>
+          </div>
+        `;
+        wrap.addEventListener('click', () => openLightbox(idx));
+        wrap.addEventListener('keydown', e => { if (e.key === 'Enter') openLightbox(idx); });
+        grid.appendChild(wrap);
+      });
+
+      // Lightbox
+      const lb     = document.getElementById('scLightbox');
+      const lbImg  = document.getElementById('scLightboxImg');
+      const lbCap  = document.getElementById('scLightboxCaption');
+
+      function openLightbox(idx) {
+        current = idx;
+        lbImg.src = GALLERY[current].src;
+        lbImg.alt = GALLERY[current].alt;
+        lbCap.textContent = `${current + 1} / ${GALLERY.length} — ${GALLERY[current].alt}`;
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        lb.focus();
+      }
+
+      window.scCloseLightbox = function () {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+      };
+
+      window.scShift = function (dir) {
+        current = (current + dir + GALLERY.length) % GALLERY.length;
+        lbImg.style.animation = 'none';
+        requestAnimationFrame(() => {
+          lbImg.style.animation = '';
+          lbImg.src = GALLERY[current].src;
+          lbImg.alt = GALLERY[current].alt;
+          lbCap.textContent = `${current + 1} / ${GALLERY.length} — ${GALLERY[current].alt}`;
+        });
+      };
+
+      lb.addEventListener('click', e => { if (e.target === lb) scCloseLightbox(); });
+
+      document.addEventListener('keydown', e => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape')     scCloseLightbox();
+        if (e.key === 'ArrowRight') scShift(1);
+        if (e.key === 'ArrowLeft')  scShift(-1);
+      });
+    })();
+  </script>
+
+  <!-- Lightbox DOM -->
+  <div id="scLightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" tabindex="-1">
+    <button class="lb-btn lb-close" onclick="scCloseLightbox()" aria-label="Close photo viewer">
+      <i class="fas fa-times"></i>
+    </button>
+    <button class="lb-btn lb-prev" onclick="scShift(-1)" aria-label="Previous photo">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <img id="scLightboxImg" src="" alt="" />
+    <button class="lb-btn lb-next" onclick="scShift(1)" aria-label="Next photo">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    <p id="scLightboxCaption"></p>
+  </div>
+
+  <!-- Load nav + footer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const [navRes, footerRes] = await Promise.all([
+          fetch('navigation.html'),
+          fetch('footer.html')
+        ]);
+        if (navRes.ok) {
+          document.getElementById('navigation-container').innerHTML = await navRes.text();
+          if (window.initializeNavigation) window.initializeNavigation();
+        }
+        if (footerRes.ok) {
+          document.getElementById('footer-container').innerHTML = await footerRes.text();
+        }
+      } catch (e) {
+        console.error('Error loading components:', e);
+      }
+    });
+  </script>
+</body>
+</html>
