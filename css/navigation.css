@@ -8,17 +8,19 @@
 }
 
 .main-nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   padding: var(--space-4) 0;
   position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all var(--transition-base);
-  height: 80px; /* Fixed height for consistency */
+  transition: box-shadow 0.3s ease;
+  height: 80px;
+  box-shadow: 0 1px 20px rgba(0,0,0,0.04);
 }
 
 .nav-container {
@@ -95,16 +97,47 @@
   display: flex;
   align-items: center;
   gap: var(--space-1);
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-2) var(--space-1);
   font-weight: var(--font-weight-medium);
-  color: var(--gray-700);
-  transition: color var(--transition-base);
-  border-radius: var(--radius);
+  color: var(--gray-600);
+  text-decoration: none;
+  border-radius: 0;
+  background: none;
+  position: relative;
+  transition: color 0.25s ease;
+  letter-spacing: 0.01em;
+}
+
+/* Animated underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover {
+  color: var(--gray-900);
+  background: none;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
   color: var(--primary-color);
-  background-color: rgba(196, 18, 48, 0.05);
+  font-weight: var(--font-weight-bold);
+  background: none;
+}
+
+.nav-link.active::after {
+  width: 100%;
 }
 
 .nav-link i {
@@ -154,7 +187,7 @@
 }
 
 .dropdown-icon {
-  color: var(--primary-color);
+  color: var(--gray-500);
   font-size: var(--text-lg);
 }
 
@@ -246,8 +279,10 @@
 .mobile-menu .nav-link:hover,
 .mobile-menu .nav-link:active,
 .mobile-menu .nav-link:focus {
-  color: var(--primary-color) !important;
-  background-color: rgba(196, 18, 48, 0.05);
+  color: var(--gray-900) !important;
+  background-color: transparent;
+  padding-left: calc(var(--space-3) + 3px);
+  border-left: 3px solid var(--primary-color);
 }
 
 .mobile-menu .dropdown {

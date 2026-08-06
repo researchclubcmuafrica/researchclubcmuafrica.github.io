@@ -329,10 +329,33 @@ class DesktopDropdownHandler {
   }
 }
 
+// Active Page Link Highlighter
+function highlightActiveLink() {
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const links = document.querySelectorAll('.nav-link, .dropdown-item');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+    const linkPath = href.split('/').pop();
+    if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+      link.classList.add('active');
+      const parentDropdown = link.closest('.dropdown');
+      if (parentDropdown) {
+        const parentNavItem = parentDropdown.closest('.nav-item');
+        if (parentNavItem) {
+          const parentLink = parentNavItem.querySelector('.nav-link');
+          if (parentLink) parentLink.classList.add('active');
+        }
+      }
+    }
+  });
+}
+
 // Global initialization function for dynamically loaded navigation
 function initializeNavigation() {
   const mobileNav = new MobileNavigation();
   const desktopDropdowns = new DesktopDropdownHandler();
+  highlightActiveLink();
 
   return { mobileNav, desktopDropdowns };
 }

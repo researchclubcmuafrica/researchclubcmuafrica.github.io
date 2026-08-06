@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AI & ML Summer Schools with Open Applications 2026 - CMU Africa Research Club" />
+    <meta name="description" content="Fully Funded AI and ML Summer Schools 2026-2027 - CMU Africa Research Club" />
     <title>Summer Schools - CMU Africa Research Club</title>
 
     <!-- Favicon -->
@@ -71,7 +71,7 @@
             gap: 0.75rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 1rem;
+            margin-top: 1.25rem;
         }
 
         .header-pill {
@@ -178,7 +178,7 @@
         /* ===== School Cards ===== */
         .schools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2rem;
         }
 
@@ -198,27 +198,33 @@
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
         }
 
+        /* Card header: icon top-left, meta top-right */
         .school-header {
             padding: 1.25rem 1.5rem;
-            background-color: #fff5f7;
+            background: #f8fafc;
+            border-bottom: 1px solid #f1f5f9;
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
             gap: 0.75rem;
         }
 
+        /* Square icon, top-left, NOT centred */
         .school-icon {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             color: #c41230;
-            background: white;
-            width: 48px;
-            height: 48px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            width: 42px;
+            height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
             flex-shrink: 0;
+            margin-top: 0;          /* stays at top */
+            align-self: flex-start; /* never stretches to fill column height */
         }
 
         .school-meta {
@@ -229,182 +235,130 @@
         }
 
         .school-type {
-            font-size: 0.78rem;
-            color: #6c757d;
+            font-size: 0.72rem;
+            color: #64748b;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.7px;
+            font-weight: 600;
         }
 
         .school-deadline {
             font-weight: 700;
-            color: #c41230;
+            color: #0f172a;
             font-size: 0.95rem;
         }
 
-        /* Countdown badge */
+        /* Countdown badge - coloured text below the date */
         .countdown-badge {
-            display: inline-block;
-            padding: 0.2rem 0.65rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
+            display: block;
+            text-align: right;
+            font-size: 0.78rem;
             font-weight: 600;
-            margin-top: 0.4rem;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-top: 0.2rem;
         }
 
-        .days-many {
-            background: #d4edda;
-            color: #155724;
-        }
+        .days-many  { color: #16a34a; }
+        .days-few   { color: #d97706; }
+        .days-urgent{ color: #dc2626; }
+        .days-passed{ color: #94a3b8; text-decoration: line-through; }
+        .days-tba   { color: #2563eb; }
 
-        .days-few {
-            background: #fff3cd;
-            color: #856404;
-        }
-
-        .days-urgent {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .days-passed {
-            background: #e2e3e5;
-            color: #383d41;
-            text-decoration: line-through;
-        }
-
-        .days-tba {
-            background: #e0e7ff;
-            color: #3730a3;
-        }
-
+        /* ===== Card body ===== */
         .school-content {
-            padding: 1.25rem 1.5rem;
+            padding: 1.4rem 1.5rem;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
         .school-title {
-            margin: 0 0 0.35rem 0;
+            margin: 0 0 0.25rem 0;
             font-size: 1.1rem;
             font-weight: 700;
-            color: #1a1a2e;
-            line-height: 1.3;
+            color: #0f172a;
+            line-height: 1.35;
         }
 
         .school-topic {
-            color: #5a6a85;
-            margin-bottom: 0.75rem;
-            font-weight: 500;
-            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.9rem;
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .school-details {
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             flex: 1;
         }
 
+        /* Icons always top-aligned with text */
         .detail-item {
             display: flex;
             align-items: flex-start;
             gap: 0.65rem;
-            margin-bottom: 0.4rem;
-            color: #4a5568;
+            margin-bottom: 0.5rem;
+            color: #334155;
             font-size: 0.92rem;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .detail-item i {
-            width: 18px;
+            width: 16px;
             text-align: center;
             color: #c41230;
-            margin-top: 2px;
+            padding-top: 3px;  /* nudges icon down to align with first line cap-height */
             flex-shrink: 0;
         }
 
-        /* Fee pill */
-        .fee-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: #c41230;
-            background: #fff0f3;
-            border: 1px solid rgba(196, 18, 48, 0.2);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            margin-bottom: 1rem;
-            width: fit-content;
-        }
 
-        /* Scholarship badge */
-        .scholarship-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: #065f46;
-            background: #d1fae5;
-            border: 1px solid rgba(16, 185, 129, 0.25);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            margin-bottom: 1rem;
-            margin-left: 0.4rem;
-            width: fit-content;
-        }
-
-        .pill-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0;
-        }
 
         .school-link {
-            display: inline-block;
-            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
             background-color: #c41230;
             color: white;
-            padding: 0.7rem 1rem;
+            padding: 0.7rem 1.25rem;
             border-radius: 8px;
             text-decoration: none;
-            transition: background-color 0.2s;
+            transition: all 0.2s ease;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+            box-shadow: 0 2px 4px rgba(196, 18, 48, 0.15);
+            margin-top: auto;
         }
 
         .school-link:hover {
             background-color: #a00e26;
-        }
-
-        .school-link i {
-            margin-right: 0.4rem;
-        }
-
-        /* Month section divider */
-        .section-label {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 2.5rem 0 1.5rem;
-            color: #c41230;
-            font-size: 1.05rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-label::after {
-            content: '';
-            flex: 1;
-            height: 2px;
-            background: #e2e8f0;
+            box-shadow: 0 4px 10px rgba(196, 18, 48, 0.25);
+            transform: translateY(-1px);
         }
 
         /* Utility */
         .hidden {
             display: none !important;
+        }
+
+        #noResults {
+            display: none;
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 1rem;
+            color: #64748b;
+            font-size: 1.05rem;
+        }
+
+        #noResults i {
+            font-size: 2.5rem;
+            color: #cbd5e1;
+            display: block;
+            margin-bottom: 1rem;
         }
     </style>
 
@@ -419,15 +373,10 @@
 </head>
 
 <body class="summerschools-page">
-    <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="sr-only">Skip to main content</a>
 
-    <!-- Load Navigation -->
-    <div id="navigation-container">
-        <!-- Navigation will be loaded here -->
-    </div>
+    <div id="navigation-container"></div>
 
-    <!-- Main Content -->
     <main id="main-content">
 
         <!-- Header -->
@@ -435,25 +384,21 @@
             <div class="summerschools-header-content">
                 <h1><i class="fas fa-sun" style="opacity:0.85;margin-right:0.5rem;"></i>Summer Schools</h1>
                 <p>
-                    Intensive AI&nbsp;&amp;&nbsp;ML summer schools and winter schools with open applications for 2026.
-                    Expand your skills, build your network, and connect with world-class researchers.
+                    Fully funded AI and ML summer schools with open applications for 2026 and 2027.
+                    Every programme listed here covers registration, travel, and accommodation --
+                    at no cost to you.
                 </p>
                 <div class="header-links">
-                    <a href="conferences_new.html" class="header-pill"
-                        onmouseover="this.style.background='rgba(255,255,255,0.30)'"
-                        onmouseout="this.style.background='rgba(255,255,255,0.18)'">
+                    <a href="conferences_new.html" class="header-pill">
                         <i class="fas fa-calendar-check"></i> Conferences &rarr;
                     </a>
-                    <a href="workshops.html" class="header-pill"
-                        onmouseover="this.style.background='rgba(255,255,255,0.30)'"
-                        onmouseout="this.style.background='rgba(255,255,255,0.18)'">
+                    <a href="workshops.html" class="header-pill">
                         <i class="fas fa-chalkboard-teacher"></i> Workshops &rarr;
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Schools Section -->
         <section class="section" style="padding-top:0;">
             <div class="container">
 
@@ -463,7 +408,7 @@
                         <div class="search-box">
                             <i class="fas fa-search"></i>
                             <input type="text" id="searchInput" class="search-input"
-                                placeholder="Search by name, location, or topic…">
+                                placeholder="Search by name, location, or topic...">
                         </div>
                         <select id="topicFilter" class="category-select">
                             <option value="all">All Topics</option>
@@ -474,609 +419,95 @@
                 <!-- Schools Grid -->
                 <div class="schools-grid" id="schoolsGrid">
 
-                    <!-- ===== MARCH 2026 ===== -->
-                    <!-- March 2026 section label removed as all March deadlines have passed -->
+                    <!-- =============================================
+                         ONLY 100% FULLY FUNDED SCHOOLS ARE LISTED
+                         ============================================= -->
 
-                    <!-- MLSS R&S 2026 -  early deadline Mar 8 -->
-                    <!-- <div class="school-card" data-topic="Machine Learning / Safety">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-shield-alt"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">Mar 8, 2026</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">MLSS^R&amp;S 2026 -  Machine Learning Summer School on Reliability
-                                &amp; Safety</h3>
-                            <p class="school-topic">Machine Learning / Safety</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>29 Jun -  3
-                                        Jul 2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Krakow,
-                                        Poland</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>Jagiellonian University,
-                                        GMUM, ML in PL, IDEAS RI, ELLIS Unit Warsaw</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Early deadline Mar 8;
-                                        late deadline Apr 19. Focus on safe and reliable ML systems.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> €350 academia / €700
-                                    industry</span>
-                            </div>
-                            <a href="https://mlss2026.mlinpl.org" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>Apply Now</a>
-                        </div>
-                    </div> -->
-
-                    <!-- MARSS 2026 -  deadline Mar 2 (deadline passed) -->
-                    <!-- <div class="school-card" data-topic="Medical AR / AI / Robotics">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-vr-cardboard"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">Mar 2, 2026</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">MARSS 2026 -  Medical Augmented Reality Summer School</h3>
-                            <p class="school-topic">Medical AR / AI / Robotics</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>20 -  29 Apr
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Shenzhen &amp; Hong
-                                        Kong, China</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>CAIR Hong Kong, TU
-                                        Munich, USTC, CUHK</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>6th edition. Focus on
-                                        Medical AR, Surgical Data Science &amp; Robotics. Includes hackathon with
-                                        interdisciplinary teams. Endorsed by the MICCAI society.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> €300 (no accom.) / €490 (with
-                                    accom.)</span>
-                                <span class="scholarship-pill"><i class="fas fa-award"></i> Free registration
-                                    awards</span>
-                            </div>
-                            <a href="https://www.medicalaugmentedreality.org/events/marss2026/" target="_blank"
-                                class="school-link"><i class="fas fa-external-link-alt"></i>Apply Now</a>
-                        </div>
-                    </div> -->
-
-                    <!-- ACVSS 2026 -  deadline Mar 1 (deadline passed) -->
-                    <!-- <div class="school-card" data-topic="Computer Vision / Africa">
+                    <!-- Deep Learning Indaba 2027 -->
+                    <div class="school-card" data-topic="Deep Learning / Africa">
                         <div class="school-header">
                             <div class="school-icon"><i class="fas fa-globe-africa"></i></div>
                             <div class="school-meta">
                                 <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">Mar 1, 2026</span>
+                                <span class="school-deadline">Dec 15, 2026</span>
                             </div>
                         </div>
                         <div class="school-content">
-                            <h3 class="school-title">African Computer Vision Summer School (ACVSS) 2026</h3>
-                            <p class="school-topic">Computer Vision / Africa</p>
+                            <h3 class="school-title">Deep Learning Indaba 2027</h3>
+                            <p class="school-topic">Deep Learning / Africa</p>
                             <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>19 -  29 Jul
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Accra, Ghana</span>
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>August / September 2027</span>
                                 </div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>DAIR, INRIA, Google
-                                        DeepMind, and others</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Intensive hands-on
-                                        computer vision school designed for African researchers.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-dollar-sign"></i> $500 -  $1,000</span>
-                                <span class="scholarship-pill"><i class="fas fa-award"></i> Scholarships
-                                    available</span>
-                            </div>
-                            <a href="https://www.acvss.ai/" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>Apply Now</a>
-                        </div>
-                    </div> -->
-
-                    <!-- MALGA MLCC 2026 -  deadline Mar 1 -->
-                    <!-- <div class="school-card" data-topic="Machine Learning">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-brain"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">Mar 1, 2026</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">Machine Learning Crash Course at MALGA 2026</h3>
-                            <p class="school-topic">Machine Learning</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>15 -  19 Jun
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Genoa, Italy</span>
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Africa (Host Location TBA)</span>
                                 </div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>Machine Learning Genoa
-                                        Center, University of Genoa</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Hands-on crash course
-                                        covering core ML theory and practice.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> €50 students / €100 faculty /
-                                    €300 professionals</span>
-                                <span class="scholarship-pill"><i class="fas fa-award"></i> Free for UniGe
-                                    students</span>
-                            </div>
-                            <a href="https://malga.unige.it/education/schools/mlcc2026/" target="_blank"
-                                class="school-link"><i class="fas fa-external-link-alt"></i>Apply Now</a>
-                        </div>
-                    </div> -->
-
-                    <!-- AIces -  deadline ongoing from Nov 25 -->
-                    <!-- <div class="school-card" data-topic="AI Ethics / Society">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-balance-scale"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">Rolling / Open</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">AIces 2026 -  Cognitive, Ethical &amp; Societal Dimensions of AI
-                            </h3>
-                            <p class="school-topic">AI Ethics / Society</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>30 Mar -  3
-                                        Apr 2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Porto,
-                                        Portugal</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>IRDTA -  Institute for
-                                        Research Development, Training and Advice</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Applications accepted
-                                        from 25 Nov 2025 on a rolling basis.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> €340 -  €670</span>
-                                <span class="scholarship-pill"><i class="fas fa-award"></i> Limited scholarships</span>
-                            </div>
-                            <a href="https://aices.irdta.eu/2026/" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>Apply Now</a>
-                        </div>
-                    </div> -->
-
-                    <!-- ===== MARCH (IEEE EMBS) ===== -->
-
-                    <!-- 23rd Int'l Summer Academy (IEEE EMBS) -  deadline Mar 15 -->
-                    <!-- <div class="school-card" data-topic="AI in Healthcare">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-heartbeat"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">Mar 15, 2026</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">23rd Int'l Summer Academy on AI in Healthcare, Medicine &amp;
-                                Biology</h3>
-                            <p class="school-topic">AI in Healthcare</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>7 -  13 Jun
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Chalkida,
-                                        Greece</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>IEEE EMBS</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Annual academy covering
-                                        AI applications in medicine, biology, and healthcare systems.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-dollar-sign"></i> $1,500 USD</span>
-                            </div>
-                            <a href="http://2026.biocomplexitysummerschool.org/" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>Apply Now</a>
-                        </div>
-                    </div> -->
-
-                    <!-- ===== MARCH - JUNE (Columbia) ===== -->
-
-                    <!-- Columbia MLSS -  deadline Mar 22 -->
-                    <!-- <div class="school-card" data-topic="Machine Learning">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">Mar 22, 2026</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">Columbia University Machine Learning Summer School 2026</h3>
-                            <p class="school-topic">Machine Learning</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>15 -  26 Jun
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>New York, USA</span>
+                                <div class="detail-item">
+                                    <i class="fas fa-university"></i>
+                                    <span>Deep Learning Indaba Organisation and African Universities</span>
                                 </div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>Columbia University, NYU
-                                        CDS, Cornell Tech</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Two-week intensive
-                                        covering foundations and frontiers of modern machine learning.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-dollar-sign"></i> $800 USD</span>
-                                <span class="scholarship-pill"><i class="fas fa-award"></i> Limited travel
-                                    support</span>
-                            </div>
-                            <a href="https://cfe.columbia.edu/content/mlss2" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>Apply Now</a>
-                        </div>
-                    </div> -->
-
-                    <!-- Ital-IA -  deadline TBA -->
-                    <!-- <div class="school-card" data-topic="AI in Health &amp; Life Sciences">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-dna"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">TBA</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">Ital-IA Summer School on AI in Health &amp; Life Sciences</h3>
-                            <p class="school-topic">AI in Health &amp; Life Sciences</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>13 -  29 Jun
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Rome, Italy</span>
+                                <div class="detail-item">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>The premier annual gathering of African AI researchers. Masterclasses, poster sessions, hands-on labs, and mentorship from world-class faculty. Priority given to African applicants.</span>
                                 </div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>Università Campus
-                                        Bio-Medico di Roma</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Covering clinical AI,
-                                        medical imaging, bioinformatics, and life-science data.</span></div>
                             </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> €600</span>
-                                <span class="scholarship-pill"><i class="fas fa-award"></i> Reduced fee for
-                                    students</span>
-                            </div>
-                            <a href="https://ucbmacademy.unicampus.it/summer-school-artificial-intelligence/"
-                                target="_blank" class="school-link"><i class="fas fa-external-link-alt"></i>View
-                                School</a>
-                        </div>
-                    </div> -->
-
-                    <!-- ===== APRIL / ONGOING ===== -->
-                    <div class="section-label" style="grid-column:1/-1;">April 2026</div>
-
-                    <!-- MLSS R&S late deadline Apr 19 -->
-                    <!-- (already listed under March with dual deadlines note) -->
-
-                    <!-- CCN Summer School 2026 -  deadline Apr 1 -->
-                    <div class="school-card" data-topic="Computational Neuroscience">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-brain"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">Apr 1, 2026</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">Computational and Cognitive Neuroscience Summer School (CCN) 2026
-                            </h3>
-                            <p class="school-topic">Computational Neuroscience</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>Summer
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Suzhou,
-                                        China</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>CSH-Asia, NYU, Harvard,
-                                        CMU, and others</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Covers decision-making,
-                                        attention, learning &amp; memory at multiple levels from single neurons to
-                                        large-scale brain systems and AI. Python-based programming labs
-                                        included.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-dollar-sign"></i> TBA</span>
-                            </div>
-                            <a href="https://www.csh-asia.org/?content/3046" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>Apply Now</a>
+                            <a href="https://deeplearningindaba.com/" target="_blank" class="school-link">
+                                <i class="fas fa-external-link-alt"></i> View and Apply
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Spring School LOT 2.0 -  TBA -->
-                    <!-- <div class="school-card" data-topic="Machine Learning / Time Series">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-clock"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">TBA</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">Spring School on Learning Over Time (LOT 2.0)</h3>
-                            <p class="school-topic">Machine Learning / Time Series</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>27 -  30 Apr
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Barcelona,
-                                        Spain</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>Centre Tecnològic de
-                                        Telecomunicacions de Catalunya (CTTC)</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Learning Over Time:
-                                        sequential, temporal and online learning methods.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> €500 academia / €700
-                                    industry</span>
-                            </div>
-                            <a href="https://lot2-spring-school.cttc.es/" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>View School</a>
-                        </div>
-                    </div> -->
-
-                    <!-- ===== MAY / JUNE ===== -->
-                    <div class="section-label" style="grid-column:1/-1;">May -  June 2026</div>
-
-                    <!-- ELLIS ML for Healthcare (Manchester) -  deadline May 30 -->
-                    <!-- <div class="school-card" data-topic="ML / Healthcare">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-hospital"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">May 30, 2026</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">ELLIS Summer School on Machine Learning for Healthcare &amp;
-                                Biology 2026</h3>
-                            <p class="school-topic">ML / Healthcare</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>7 -  9 Jul
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Manchester,
-                                        UK</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>ELLIS and University of
-                                        Manchester</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>ML methods for clinical
-                                        applications, genomics, and biological data.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> €150 (already reduced)</span>
-                            </div>
-                            <a href="https://www.ellismcr.org/summerschool" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>Apply Now</a>
-                        </div>
-                    </div> -->
-
-                    <!-- UK Robotics Summer School -  deadline May 29 -->
-                    <!-- <div class="school-card" data-topic="Robotics">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-robot"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">May 29, 2026</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">UK Robotics Summer School 2026</h3>
-                            <p class="school-topic">Robotics</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>22 -  26 Jun
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Edinburgh, UK</span>
-                                </div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>Heriot-Watt
-                                        University</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Hands-on robotics
-                                        school covering planning, perception, and control.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-pound-sign"></i> £400 students / £800
-                                    faculty</span>
-                                <span class="scholarship-pill"><i class="fas fa-award"></i> Limited travel
-                                    support</span>
-                            </div>
-                            <a href="https://ukrss.site.hw.ac.uk/" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>Apply Now</a>
-                        </div>
-                    </div> -->
-
-                    <!-- ===== SUMMER (TBA deadlines) ===== -->
-                    <div class="section-label" style="grid-column:1/-1;">July -  September 2026</div>
-
-                    <!-- ProbAI 2026 -  opens in February -->
-                    <!-- <div class="school-card" data-topic="Probabilistic AI">
+                    <!-- Data Science Africa (DSA) 2027 -->
+                    <div class="school-card" data-topic="Data Science / Africa">
                         <div class="school-header">
                             <div class="school-icon"><i class="fas fa-chart-bar"></i></div>
                             <div class="school-meta">
                                 <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">Opens Feb 2026</span>
+                                <span class="school-deadline">Jan 10, 2027</span>
                             </div>
                         </div>
                         <div class="school-content">
-                            <h3 class="school-title">Probabilistic AI School (ProbAI) 2026</h3>
-                            <p class="school-topic">Probabilistic AI</p>
+                            <h3 class="school-title">Data Science Africa (DSA) Summer School 2027</h3>
+                            <p class="school-topic">Data Science / Africa</p>
                             <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>3 -  7 Aug
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Vilnius,
-                                        Lithuania</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>NTNU &amp; AI
-                                        Association of Lithuania</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Bayesian methods,
-                                        probabilistic programming, and uncertainty quantification.</span></div>
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>June 2027</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>East Africa (Host Location TBA)</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-university"></i>
+                                    <span>Data Science Africa and Regional Universities</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Grassroots African AI school combining end-to-end data science workshops, field deployments, and hands-on ML applied to real African development challenges.</span>
+                                </div>
                             </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> TBA for industry; free for
-                                    students</span>
-                            </div>
-                            <a href="https://probai.school/" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>View School</a>
+                            <a href="https://www.datascienceafrica.org/" target="_blank" class="school-link">
+                                <i class="fas fa-external-link-alt"></i> View and Apply
+                            </a>
                         </div>
-                    </div> -->
+                    </div>
 
-                    <!-- ESSAI 2026 -  no deadline listed -->
-                    <!-- <div class="school-card" data-topic="AI (General)">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-lightbulb"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">TBA</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">European Summer School on Artificial Intelligence (ESSAI 2026)</h3>
-                            <p class="school-topic">AI (General)</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>6 -  10 Jul
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Vienna,
-                                        Austria</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>TU Wien &amp; WU
-                                        Wien</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Broad AI summer school
-                                        covering reasoning, ML, planning, and AI applications.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> TBA</span>
-                                <span class="scholarship-pill"><i class="fas fa-award"></i> Limited scholarships</span>
-                            </div>
-                            <a href="https://essai2026.eu/" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>View School</a>
-                        </div>
-                    </div> -->
-
-                    <!-- Oxford MLx Health & Bio 2026 -  TBA -->
-                    <!-- <div class="school-card" data-topic="ML / Healthcare">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-flask"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">TBA</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">Oxford Machine Learning Summer School -  MLx HEALTH &amp; BIO 2026
-                            </h3>
-                            <p class="school-topic">ML / Healthcare</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>10 -  13 Jul
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Oxford, United
-                                        Kingdom</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>University of Oxford
-                                        Mathematical Institute &amp; AI for Global Goals</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>ML for health and
-                                        biology applications; covers omics, imaging, and clinical AI.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> TBA</span>
-                                <span class="scholarship-pill"><i class="fas fa-award"></i> 50% waiver for low-income
-                                    countries</span>
-                            </div>
-                            <a href="https://www.oxfordml.school/2026" target="_blank" class="school-link"><i
-                                    class="fas fa-external-link-alt"></i>View School</a>
-                        </div>
-                    </div> -->
-
-                    <!-- ScaDS.AI Summer School -  TBA -->
-                    <!-- <div class="school-card" data-topic="Neuro-Symbolic AI">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-network-wired"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">TBA</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">12th ScaDS.AI International Summer School on AI and Big Data - 
-                                Neuro+Symbolic AI</h3>
-                            <p class="school-topic">Neuro-Symbolic AI</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>22 -  26 Jun
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Leipzig,
-                                        Germany</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>Center for Scalable Data
-                                        Analytics and AI (ScaDS.AI) Dresden/Leipzig</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Annual school on big
-                                        data and AI; 2026 theme is neuro-symbolic approaches.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> TBA</span>
-                            </div>
-                            <a href="https://scads.ai/event/summer-schools/summer-school-2026/" target="_blank"
-                                class="school-link"><i class="fas fa-external-link-alt"></i>View School</a>
-                        </div>
-                    </div> -->
-
-                    <!-- Cambridge CCAIM -  TBA -->
-                    <!-- <div class="school-card" data-topic="ML / Healthcare">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-stethoscope"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">TBA</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">Cambridge CCAIM Machine Learning for Healthcare Summer School 2026
-                            </h3>
-                            <p class="school-topic">ML / Healthcare</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>7 -  11 Sep
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Cambridge, United
-                                        Kingdom</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>Cambridge Centre for AI
-                                        in Medicine (CCAIM)</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>Covers causal ML,
-                                        clinical trial design, and AI in precision medicine.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> TBA</span>
-                            </div>
-                            <a href="https://www.vanderschaar-lab.com/ml-healthcare-summer-school-2026/" target="_blank"
-                                class="school-link"><i class="fas fa-external-link-alt"></i>View School</a>
-                        </div>
-                    </div> -->
-
-                    <!-- UEF Summer School on AI for Computer Games -  TBA -->
-                    <!-- <div class="school-card" data-topic="AI / Game AI">
-                        <div class="school-header">
-                            <div class="school-icon"><i class="fas fa-gamepad"></i></div>
-                            <div class="school-meta">
-                                <span class="school-type">Application Deadline</span>
-                                <span class="school-deadline">TBA</span>
-                            </div>
-                        </div>
-                        <div class="school-content">
-                            <h3 class="school-title">UEF Summer School on AI for Computer Games 2026</h3>
-                            <p class="school-topic">AI / Game AI</p>
-                            <div class="school-details">
-                                <div class="detail-item date-item"><i class="fas fa-calendar-alt"></i><span>10 -  21 Aug
-                                        2026</span></div>
-                                <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span>Joensuu,
-                                        Finland</span></div>
-                                <div class="detail-item"><i class="fas fa-university"></i><span>Statistical Machine
-                                        Learning Group, University of Eastern Finland</span></div>
-                                <div class="detail-item"><i class="fas fa-info-circle"></i><span>AI techniques applied
-                                        to game design, playing, and procedural content generation.</span></div>
-                            </div>
-                            <div class="pill-row">
-                                <span class="fee-pill"><i class="fas fa-euro-sign"></i> TBA</span>
-                            </div>
-                            <a href="https://www.uef.fi/en/uef-summer-school-courses" target="_blank"
-                                class="school-link"><i class="fas fa-external-link-alt"></i>View School</a>
-                        </div>
-                    </div> -->
+                    <!-- No results placeholder -->
+                    <div id="noResults">
+                        <i class="fas fa-search"></i>
+                        No summer schools match your search. Try a different keyword or topic.
+                    </div>
 
                 </div><!-- /.schools-grid -->
             </div>
         </section>
     </main>
 
-    <!-- Load footer -->
-    <div id="footer-container">
-        <!-- Footer will be loaded here -->
-    </div>
+    <div id="footer-container"></div>
 
-    <!-- JavaScript Files -->
     <script src="js/utils.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/interactions.js"></script>
@@ -1084,29 +515,26 @@
     <script>
         document.addEventListener("DOMContentLoaded", async function () {
 
-            // --- Component Loading ---
+            // Component loading
             try {
-                const navResponse = await fetch("navigation.html");
-                if (navResponse.ok) {
-                    const navHTML = await navResponse.text();
-                    document.getElementById("navigation-container").innerHTML = navHTML;
+                const navRes = await fetch("navigation.html");
+                if (navRes.ok) {
+                    document.getElementById("navigation-container").innerHTML = await navRes.text();
                     if (window.initializeNavigation) window.initializeNavigation();
                 }
-                const footerResponse = await fetch("footer.html");
-                if (footerResponse.ok) {
-                    const footerHTML = await footerResponse.text();
-                    document.getElementById("footer-container").innerHTML = footerHTML;
+                const footRes = await fetch("footer.html");
+                if (footRes.ok) {
+                    document.getElementById("footer-container").innerHTML = await footRes.text();
                 }
-            } catch (e) {
-                console.error("Error loading components:", e);
-            }
+            } catch (e) { console.error(e); }
 
-            // --- Countdown Logic ---
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
             const cards = document.querySelectorAll(".school-card");
             const topicSet = new Set();
-            const today = new Date();
 
-            cards.forEach((card) => {
+            cards.forEach(function(card) {
                 const deadlineEl = card.querySelector(".school-deadline");
                 if (!deadlineEl) return;
 
@@ -1114,84 +542,90 @@
                 const badge = document.createElement("span");
                 badge.classList.add("countdown-badge");
 
-                if (rawText === "TBA" || rawText === "Rolling / Open" || rawText.includes("Opens")) {
-                    badge.textContent = rawText === "Rolling / Open" ? "Rolling" : rawText === "TBA" ? "Deadline TBA" : "Opening Soon";
+                if (rawText === "TBA" || rawText === "Rolling / Open") {
+                    badge.textContent = rawText === "TBA" ? "Deadline TBA" : "Rolling";
                     badge.classList.add("days-tba");
                 } else {
-                    const deadlineDate = new Date(rawText);
-                    if (isNaN(deadlineDate.getTime())) {
+                    const dl = new Date(rawText);
+                    dl.setHours(0, 0, 0, 0);
+                    if (isNaN(dl)) {
                         badge.textContent = "Check Deadline";
                         badge.classList.add("days-few");
                     } else {
-                        const diffDays = Math.ceil((deadlineDate - today) / (1000 * 60 * 60 * 24));
-                        if (diffDays < 0) {
+                        const diff = Math.ceil((dl - today) / 86400000);
+                        if (diff < 0) {
                             badge.textContent = "Deadline Passed";
                             badge.classList.add("days-passed");
-                        } else if (diffDays === 0) {
+                        } else if (diff === 0) {
                             badge.textContent = "Deadline Today!";
                             badge.classList.add("days-urgent");
                         } else {
-                            badge.textContent = `${diffDays} days left`;
-                            badge.classList.add(diffDays <= 7 ? "days-urgent" : diffDays <= 30 ? "days-few" : "days-many");
+                            badge.textContent = diff + " days left";
+                            badge.classList.add(diff <= 7 ? "days-urgent" : diff <= 30 ? "days-few" : "days-many");
                         }
                     }
                 }
+                // Append badge below date in the meta section
                 card.querySelector(".school-meta").appendChild(badge);
 
-                // Collect topic
                 const topicEl = card.querySelector(".school-topic");
-                if (topicEl) {
-                    const topic = topicEl.textContent;
-                    card.setAttribute("data-topic", topic);
-                    topicSet.add(topic);
-                }
+                if (topicEl) topicSet.add(topicEl.textContent.trim());
             });
 
-            // --- Populate Topic Filter ---
+            // Sort: upcoming first, passed last
+            const grid = document.getElementById("schoolsGrid");
+            const noResults = document.getElementById("noResults");
+            const cardArr = Array.from(grid.querySelectorAll(".school-card"));
+
+            cardArr.sort(function(a, b) {
+                const getD = function(c) {
+                    var t = (c.querySelector(".school-deadline") || {}).textContent || "";
+                    var d = new Date(t.trim());
+                    return isNaN(d) ? null : d;
+                };
+                var dA = getD(a), dB = getD(b);
+                var pA = dA && dA < today, pB = dB && dB < today;
+                if (pA && !pB) return 1;
+                if (!pA && pB) return -1;
+                if (!dA && dB) return 1;
+                if (dA && !dB) return -1;
+                if (!dA && !dB) return 0;
+                return dA - dB;
+            });
+            cardArr.forEach(function(c) { grid.insertBefore(c, noResults); });
+
+            // Populate topic filter
             const topicSelect = document.getElementById("topicFilter");
-            Array.from(topicSet).sort().forEach(topic => {
-                const option = document.createElement("option");
-                option.value = topic;
-                option.textContent = topic;
-                topicSelect.appendChild(option);
+            Array.from(topicSet).sort().forEach(function(t) {
+                var o = document.createElement("option");
+                o.value = t; o.textContent = t;
+                topicSelect.appendChild(o);
             });
 
-            // --- Search & Filter Logic ---
+            // Search and filter
             const searchInput = document.getElementById("searchInput");
 
-            function filterSchools() {
-                const term = searchInput.value.toLowerCase();
-                const selectedTopic = topicSelect.value;
-
-                cards.forEach(card => {
-                    const title = card.querySelector(".school-title").textContent.toLowerCase();
-                    const topic = card.querySelector(".school-topic")?.textContent || "";
-                    const locEl = card.querySelectorAll(".detail-item")[1];
-                    const location = locEl ? locEl.textContent.toLowerCase() : "";
-
-                    const topicMatch = selectedTopic === "all" || topic === selectedTopic;
-                    const searchMatch = title.includes(term) || topic.toLowerCase().includes(term) || location.includes(term);
-
-                    card.classList.toggle("hidden", !(topicMatch && searchMatch));
+            function filter() {
+                var term = searchInput.value.toLowerCase();
+                var sel = topicSelect.value;
+                var count = 0;
+                cards.forEach(function(card) {
+                    var title = (card.querySelector(".school-title") || {}).textContent || "";
+                    var topic = (card.querySelector(".school-topic") || {}).textContent || "";
+                    var items = card.querySelectorAll(".detail-item");
+                    var loc = items[1] ? items[1].textContent : "";
+                    var topicOk = sel === "all" || topic.trim() === sel;
+                    var searchOk = title.toLowerCase().includes(term) || topic.toLowerCase().includes(term) || loc.toLowerCase().includes(term);
+                    var show = topicOk && searchOk;
+                    card.classList.toggle("hidden", !show);
+                    if (show) count++;
                 });
-
-                // Show/hide section labels based on visible cards
-                document.querySelectorAll(".section-label").forEach(label => {
-                    const siblings = [];
-                    let next = label.nextElementSibling;
-                    while (next && !next.classList.contains("section-label")) {
-                        if (next.classList.contains("school-card")) siblings.push(next);
-                        next = next.nextElementSibling;
-                    }
-                    const anyVisible = siblings.some(s => !s.classList.contains("hidden"));
-                    label.classList.toggle("hidden", !anyVisible);
-                });
+                noResults.style.display = count === 0 ? "block" : "none";
             }
 
-            searchInput.addEventListener("input", filterSchools);
-            topicSelect.addEventListener("change", filterSchools);
+            searchInput.addEventListener("input", filter);
+            topicSelect.addEventListener("change", filter);
         });
     </script>
 </body>
-
 </html>

@@ -588,5 +588,41 @@
         }
       }
     </style>
+        </div>
+      </section>
+    </main>
+
+    <!-- Load footer -->
+    <div id="footer-container">
+      <!-- Footer will be loaded here -->
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/interactions.js"></script>
+
+    <!-- Component Loading Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async function () {
+        try {
+          const [navResponse, footerResponse] = await Promise.all([
+            fetch("navigation.html"),
+            fetch("footer.html")
+          ]);
+          if (navResponse.ok) {
+            const navHTML = await navResponse.text();
+            document.getElementById("navigation-container").innerHTML = navHTML;
+            if (window.initializeNavigation) window.initializeNavigation();
+          }
+          if (footerResponse.ok) {
+            const footerHTML = await footerResponse.text();
+            document.getElementById("footer-container").innerHTML = footerHTML;
+          }
+        } catch (e) {
+          console.error("Error loading components:", e);
+        }
+      });
+    </script>
   </body>
 </html>

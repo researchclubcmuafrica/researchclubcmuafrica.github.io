@@ -339,10 +339,10 @@ body.resources-page {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 20px;
-    background: var(--primary-50);
-    border: 1px solid var(--primary-200);
-    border-radius: 20px;
+    padding: 4px 0;
+    background: none;
+    border: none;
+    border-radius: 0;
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--primary-color);
@@ -367,15 +367,16 @@ body.resources-page {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 24px;
-    border-radius: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
     font-weight: 600;
     font-size: 0.875rem;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid;
+    border: 1.5px solid transparent;
     position: relative;
     overflow: hidden;
+    background: none;
 }
 
 .event-link::before {
@@ -412,67 +413,70 @@ body.resources-page {
 }
 
 .event-link.recording {
-    background: var(--blue-50);
-    border-color: var(--blue-500);
-    color: var(--blue-700);
+    background: none;
+    border-color: transparent;
+    color: var(--blue-600);
 }
 
 .event-link.recording:hover {
     background: var(--blue-600);
+    border-color: var(--blue-600);
     color: white;
-    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
     transform: translateY(-2px);
 }
 
 .event-link.slides {
-    background: var(--orange-50);
-    border-color: var(--orange-600);
-    color: var(--orange-700);
+    background: none;
+    border-color: transparent;
+    color: var(--orange-600);
 }
 
 .event-link.slides:hover {
     background: var(--orange-600);
+    border-color: var(--orange-600);
     color: white;
-    box-shadow: 0 8px 24px rgba(251, 146, 60, 0.4);
+    box-shadow: 0 8px 24px rgba(251, 146, 60, 0.3);
     transform: translateY(-2px);
 }
 
 .event-link.tracker {
-    background: var(--green-50);
-    border-color: var(--green-600);
-    color: var(--green-700);
+    background: none;
+    border-color: transparent;
+    color: var(--green-600);
 }
 
 .event-link.tracker:hover {
     background: var(--green-600);
+    border-color: var(--green-600);
     color: white;
-    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.4);
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3);
     transform: translateY(-2px);
 }
 
 /* Season Banner */
 .season-banner {
     margin: 48px 0;
-    padding: 32px 40px;
-    background: linear-gradient(135deg, var(--primary-50), rgba(139, 69, 94, 0.05));
-    border-radius: 24px;
-    border-left: 4px solid var(--primary-color);
+    padding: 24px 32px;
+    background: none;
+    border-radius: 0;
+    border-left: 3px solid var(--primary-color);
 }
 
 .season-banner h3 {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
     color: var(--primary-color);
 }
 
 .season-banner p {
-    color: var(--gray-700);
-    font-size: 1rem;
+    color: var(--gray-600);
+    font-size: 0.95rem;
 }
 
 .season-banner.blue {
-    background: linear-gradient(135deg, var(--blue-50), rgba(59, 130, 246, 0.05));
+    background: none;
     border-left-color: var(--blue-500);
 }
 
