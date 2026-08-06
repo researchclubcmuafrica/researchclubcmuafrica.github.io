@@ -19,7 +19,7 @@ This repository contains a complete website with:
 ****
 ## 🚀 Deployment
 
-This website is designed to work seamlessly with GitHub Pages. Simply enable GitHub Pages in your repository settings to deploy automatically.
+This website is designed to work seamlessly with GitHub Pages. Simply enable GitHub Pages in your repository settings to deploy automatically
 
 ## 🛠️ Local Development
 
