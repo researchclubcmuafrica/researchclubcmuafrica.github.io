@@ -19,8 +19,10 @@
   /* Full-bleed background video */
   .hlt-video-bg {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 0;
     pointer-events: none;
@@ -28,7 +30,9 @@
     transition: opacity 0.4s ease;
   }
 
-  .hlt-video-bg.is-active { opacity: 1; }
+  .hlt-video-bg.is-active {
+    opacity: 1;
+  }
 
   /* Dark overlay so text stays readable */
   .hlt-overlay {
@@ -47,7 +51,9 @@
     width: 100%;
   }
 
-  .hlt-content { color: white; }
+  .hlt-content {
+    color: white;
+  }
 
   .hlt-label {
     font-size: 0.7rem;
@@ -69,14 +75,15 @@
 
   .hlt-desc {
     font-size: 1rem;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255, 255, 255, 0.65);
     line-height: 1.75;
     margin-bottom: 2rem;
   }
 
   .hlt-award-list {
     list-style: none;
-    padding: 0; margin: 0 0 2rem;
+    padding: 0;
+    margin: 0 0 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
@@ -88,9 +95,9 @@
     gap: 0.45rem;
     font-size: 0.85rem;
     font-weight: 600;
-    color: rgba(255,255,255,0.75);
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 0.55rem 0.85rem;
     border-radius: 2px;
   }
@@ -101,31 +108,41 @@
     width: 26px;
     height: 26px;
     flex-shrink: 0;
-    border: 1.5px solid rgba(196,18,48,0.65);
+    border: 1.5px solid rgba(196, 18, 48, 0.65);
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.25);
+    background: rgba(0, 0, 0, 0.25);
   }
 
-  .hlt-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .hlt-ctas {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
 
   @media (max-width: 900px) {
-    .hlt-inner { padding: 3.5rem 2rem; }
-    .hlt-award-list { grid-template-columns: 1fr; }
-    .hlt-ctas { justify-content: flex-start; }
+    .hlt-inner {
+      padding: 3.5rem 2rem;
+    }
+
+    .hlt-award-list {
+      grid-template-columns: 1fr;
+    }
+
+    .hlt-ctas {
+      justify-content: flex-start;
+    }
   }
 </style>
 
 <section class="hlt-section" aria-labelledby="hlt-heading">
 
   <!-- Background video (muted autoplay; poster shown when video can't play) -->
-  <video class="hlt-video-bg" muted loop playsinline preload="none"
-         poster="assets/images/showcase/sc_3.webp"
-         data-src-webm="assets/videos/showcase/showcase_highlight2.webm"
-         data-src-mp4="assets/videos/showcase/showcase_highlight2.mp4"
-         aria-hidden="true">
+  <video class="hlt-video-bg" muted loop playsinline preload="none" poster="assets/images/showcase/sc_3.webp"
+    data-src-webm="assets/videos/showcase/showcase_highlight2.webm"
+    data-src-mp4="assets/videos/showcase/showcase_highlight2.mp4" aria-hidden="true">
   </video>
 
   <!-- Dark overlay -->
@@ -268,16 +285,16 @@
       <div class="newsletter-content">
         <h3>Latest Newsletter</h3>
         <h4 class="newsletter-subtitle">
-          Research Club Newsletter - Spring 2026
+          Research Club Newsletter - Summer 2026
         </h4>
         <p>
-          Kickoff to 2026: Highlights from recent research activities, upcoming events, and community
-          updates from the CMU Africa Research Club.
+          A look back at the summer of 2026: internship highlights, research milestones, conference
+          attendances, and community updates from CMU Africa Research Club members.
         </p>
         <div class="newsletter-meta">
           <div class="newsletter-meta-item">
             <i class="fas fa-calendar" aria-hidden="true"></i>
-            <span>Spring 2026</span>
+            <span>Summer 2026</span>
           </div>
           <div class="newsletter-meta-item">
             <!-- <i class="fas fa-globe" aria-hidden="true"></i>
@@ -285,8 +302,8 @@
           </div>
         </div>
         <div class="newsletter-buttons">
-          <a href="assets/documents/newsletters/[January 2026] Research Club Newsletter.pdf" class="btn btn-primary"
-            target="_blank">
+          <a href="assets/documents/newsletters/Official Summer 2026-CMU-Africa Research Club Newsletter.pdf"
+            class="btn btn-primary" target="_blank">
             <i class="fas fa-book-open" aria-hidden="true"></i>
             Read Newsletter
           </a>
@@ -297,11 +314,11 @@
         </div>
       </div>
       <div class="newsletter-preview">
-        <img src="assets/images/newsletter/Spring 2026 - January Newsletter.webp" alt="Spring 2026 Newsletter Front Page"
+        <img src="assets/images/newsletter/Summer 2026-Newsletter.webp" alt="Summer 2026 Newsletter Front Page"
           loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="pdf-overlay" style="display: none">
           <i class="fas fa-file-pdf" aria-hidden="true"></i>
-          <span>Spring 2026</span>
+          <span>Summer 2026</span>
         </div>
       </div>
     </div>

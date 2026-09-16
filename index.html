@@ -67,8 +67,8 @@
 
   <!-- Prefetch HTML partials so they are ready before the JS fetches them -->
   <link rel="prefetch" href="navigation.html" as="fetch" crossorigin />
-  <link rel="prefetch" href="sections.html"   as="fetch" crossorigin />
-  <link rel="prefetch" href="footer.html"     as="fetch" crossorigin />
+  <link rel="prefetch" href="sections.html?v=4" as="fetch" crossorigin />
+  <link rel="prefetch" href="footer.html" as="fetch" crossorigin />
 </head>
 
 <body class="home-page">
@@ -241,12 +241,12 @@
         // Fire all three fetches simultaneously instead of one-by-one
         const [navRes, sectionsRes, footerRes] = await Promise.all([
           fetch("navigation.html"),
-          fetch("sections.html"),
+          fetch("sections.html?v=4"),
           fetch("footer.html"),
         ]);
 
         if (!sectionsRes.ok) throw new Error(`sections.html: ${sectionsRes.status}`);
-        if (!footerRes.ok)   throw new Error(`footer.html: ${footerRes.status}`);
+        if (!footerRes.ok) throw new Error(`footer.html: ${footerRes.status}`);
 
         // Parse all three responses in parallel
         const [navHTML, sectionsHTML, footerHTML] = await Promise.all([
@@ -260,7 +260,7 @@
           document.getElementById("navigation-container").innerHTML = navHTML;
           if (window.initializeNavigation) window.initializeNavigation();
         }
-        document.getElementById("page-sections").innerHTML   = sectionsHTML;
+        document.getElementById("page-sections").innerHTML = sectionsHTML;
         document.getElementById("footer-container").innerHTML = footerHTML;
 
         // Signal that all content is now in the DOM
@@ -427,4 +427,4 @@
   </script>
 </body>
 
-</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+</html>
