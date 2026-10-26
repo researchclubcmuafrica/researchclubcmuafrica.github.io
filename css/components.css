@@ -13,6 +13,9 @@
   transition: all var(--transition-base);
   white-space: nowrap;
   user-select: none;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .btn:focus {
@@ -201,7 +204,7 @@
 
 /* Deep Learning badge with dark maroon/burgundy color */
 .badge-deep-learning {
-  background: #8b1538;
+  background: #C41230;
   color: var(--white);
 }
 

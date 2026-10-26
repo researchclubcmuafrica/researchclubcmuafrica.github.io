@@ -97,41 +97,38 @@ class AnimationController {
   }
 
   animateCounter(element) {
-    const text = element.textContent;
-    const number = parseInt(text.replace(/\D/g, ''));
+    if (element.dataset.counterAnimated === 'true') {
+      return;
+    }
+
+    const text = (element.dataset.counterOriginal || element.textContent || '').trim();
+    const number = parseInt(text.replace(/\D/g, ''), 10);
     const suffix = text.replace(/\d/g, '');
-    
+
     if (isNaN(number)) return;
 
-    utils.animateNumber(element, 0, number, 2000);
-    
-    // Add suffix back after animation
-    const originalAnimate = utils.animateNumber;
-    utils.animateNumber = function(el, start, end, duration) {
-      const startTime = performance.now();
-      const range = end - start;
+    element.dataset.counterOriginal = text;
+    element.dataset.counterAnimated = 'true';
 
-      function updateNumber(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        const current = Math.floor(start + (range * easeOut));
-        
-        el.textContent = current + suffix;
+    const startTime = performance.now();
+    const duration = 2000;
 
-        if (progress < 1) {
-          requestAnimationFrame(updateNumber);
-        } else {
-          el.textContent = end + suffix;
-        }
+    const updateNumber = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(number * easeOut);
+
+      element.textContent = `${current}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateNumber);
+      } else {
+        element.textContent = `${number}${suffix}`;
       }
-
-      requestAnimationFrame(updateNumber);
     };
 
-    utils.animateNumber(element, 0, number, 2000);
-    utils.animateNumber = originalAnimate;
+    requestAnimationFrame(updateNumber);
   }
 
   // Public API
@@ -310,18 +307,29 @@ class InteractiveElementsController {
   setupImageLoading() {
     // Progressive image loading - exclude images that have their own handling
     document.querySelectorAll('img').forEach(img => {
+      if (img.dataset.imageLoadingBound === 'true') {
+        return;
+      }
+
       // Skip images in executive-image containers (they have their own CSS handling)
       if (img.closest('.executive-image') || img.closest('.faculty-image')) {
         return;
       }
 
-      img.addEventListener('load', function() {
-        this.style.opacity = '1';
-      });
-
-      // Add loading state
-      img.style.opacity = '0';
+      img.dataset.imageLoadingBound = 'true';
       img.style.transition = 'opacity 0.3s ease';
+
+      const revealImage = () => {
+        img.style.opacity = '1';
+      };
+
+      if (img.complete) {
+        revealImage();
+        return;
+      }
+
+      img.addEventListener('load', revealImage, { once: true });
+      img.addEventListener('error', revealImage, { once: true });
     });
   }
 
@@ -527,11 +535,82 @@ class InteractiveElementsController {
   }
 }
 
+class BackgroundVideoController {
+  setupLazyBackgroundVideo() {
+    const video = document.querySelector('.hlt-video-bg');
+
+    if (!video || video.dataset.lazyVideoBound === 'true') {
+      return;
+    }
+
+    video.dataset.lazyVideoBound = 'true';
+
+    const target = video.closest('.hlt-section') || video;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobileViewport = window.matchMedia('(max-width: 767px)').matches;
+
+    if (prefersReducedMotion || utils.device.isMobile() || isMobileViewport) {
+      return;
+    }
+
+    const activateVideo = () => {
+      if (video.dataset.sourcesLoaded !== 'true') {
+        const sources = [
+          { src: video.dataset.srcWebm, type: 'video/webm' },
+          { src: video.dataset.srcMp4, type: 'video/mp4' }
+        ].filter(source => source.src);
+
+        sources.forEach(({ src, type }) => {
+          const source = document.createElement('source');
+          source.src = src;
+          source.type = type;
+          video.appendChild(source);
+        });
+
+        video.dataset.sourcesLoaded = 'true';
+        video.load();
+      }
+
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {})
+      }
+    };
+
+    video.addEventListener('loadeddata', () => {
+      video.classList.add('is-active');
+    }, { once: true });
+
+    if (!('IntersectionObserver' in window)) {
+      activateVideo();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          activateVideo();
+        } else if (video.dataset.sourcesLoaded === 'true') {
+          video.pause();
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    observer.observe(target);
+  }
+}
+
 // Initialize all components when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   const animationController = new AnimationController();
   const scrollEffectsController = new ScrollEffectsController();
   const interactiveElementsController = new InteractiveElementsController();
+  window.animationController = animationController;
+  window.interactiveElementsController = interactiveElementsController;
+  window.backgroundVideoController = new BackgroundVideoController();
+  window.backgroundVideoController.setupLazyBackgroundVideo();
 });
 
 // Reinitialize animations when dynamic content is loaded
@@ -543,4 +622,7 @@ document.addEventListener('contentLoaded', () => {
     window.animationController.setupScrollAnimations();
     window.animationController.setupCounterAnimations();
   }
+
+  window.interactiveElementsController?.setupImageLoading();
+  window.backgroundVideoController?.setupLazyBackgroundVideo();
 });

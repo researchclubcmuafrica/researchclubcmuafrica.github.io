@@ -5,7 +5,7 @@ Welcome to the official website repository for the CMU-Africa Research Club.
 ## 🌐 Live Website
 
 Once GitHub Pages is enabled, your website will be available at:
-**<https://researchclub-cmuafrica.github.io/researchclub-cmuafrica/>**
+**<https://researchclubcmuafrica.github.io/>**
 
 ## 📁 Project Structure
 
@@ -19,7 +19,7 @@ This repository contains a complete website with:
 ****
 ## 🚀 Deployment
 
-This website is designed to work seamlessly with GitHub Pages. Simply enable GitHub Pages in your repository settings to deploy automatically.
+This website is designed to work seamlessly with GitHub Pages. Simply enable GitHub Pages in your repository settings to deploy automatically
 
 ## 🛠️ Local Development
 
@@ -34,4 +34,4 @@ To run locally:
 For questions about the website or Research Club, please visit our contact page or reach out through the website.
 
 ---
-*Proudly representing CMU-Africa's research community*
+*Proudly representing CMU-Africa's research club community*
