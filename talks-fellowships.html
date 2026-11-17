@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Calls for talks at community conferences, and fellowships, in Kigali time - CMU Africa Research Club" />
+    <title>Talks & Fellowships - CMU Africa Research Club</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="research_club_logo.png" />
+
+    <!-- CSS Files (same as the rest of the site) -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/tracker.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R2LTW1285G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-R2LTW1285G');
+    </script>
+</head>
+
+<body class="tracker-page">
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Navigation is loaded here -->
+    <div id="navigation-container"></div>
+
+    <main id="main-content">
+        <section class="tracker-header">
+            <div class="tracker-header-content">
+                <h1><i class="fas fa-microphone" aria-hidden="true"></i> Talks &amp; Fellowships</h1>
+                <p>
+                    Calls for talks at community conferences such as PyCon and PyData, and fellowships for students and researchers. Each deadline is shown in Kigali time with a countdown.
+                </p>
+                <div class="header-links">
+                    <a class="header-link" href="conferences.html">
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i> Conferences &rarr;
+                    </a>
+                    <a class="header-link" href="workshops.html">
+                        <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Workshops &rarr;
+                    </a>
+                    <a class="header-link" href="summerschools.html">
+                        <i class="fas fa-sun" aria-hidden="true"></i> Summer schools &rarr;
+                    </a>
+                    <a class="header-link header-link-quiet" id="suggestLink" href="#" target="_blank" rel="noopener">
+                        <i class="fas fa-lightbulb" aria-hidden="true"></i> Suggest an opportunity
+                    </a>
+                </div>
+                <div class="tracker-stats" aria-live="polite">
+                    <span class="tracker-stat" id="statOpen">Loading…</span>
+                    <span class="tracker-stat" id="statSoon"></span>
+                    <span class="tracker-stat" id="statUpcoming"></span>
+                </div>
+                <p class="header-note">
+                    <span id="lastUpdated" hidden>
+                        <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                        Last updated <time id="lastUpdatedTime"></time> (Kigali time).
+                    </span>
+                    Conferences and workshops update automatically every day. Summer schools, fellowships and
+                    other items are checked by student volunteers.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="filters-section">
+                    <div class="filters-container">
+                        <div class="search-box">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <input type="search" id="searchInput" class="search-input" autocomplete="off"
+                                placeholder="Search by name, topic or location..." aria-label="Search" />
+                        </div>
+                        <div class="filter-group">
+                            <label for="typeFilter"><i class="fas fa-layer-group" aria-hidden="true"></i> Type</label>
+                            <select id="typeFilter" class="category-select">
+                                <option value="all">All types</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="fieldFilter"><i class="fas fa-filter" aria-hidden="true"></i> Field</label>
+                            <select id="fieldFilter" class="category-select">
+                                <option value="all">All fields</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <details class="tz-note">
+                    <summary>
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <strong>All times are Kigali time</strong> (CAT, UTC+2).
+                        <span class="tz-more">What about AoE and OpenReview?</span>
+                    </summary>
+                    <p>
+                        CAT is Central Africa Time, which is UTC+2 (UTC means Coordinated Universal Time). Many
+                        conferences give deadlines in <strong>AoE, Anywhere on Earth</strong> (UTC−12). This means the
+                        deadline has passed only when it is over everywhere in the world. AoE is 14 hours behind
+                        Kigali, so <em>23:59 AoE on 7 December</em> is <em>13:59 on 8 December</em> in Kigali.
+                        Some cards also show when the <strong>OpenReview</strong> submission form closes (OpenReview is
+                        the website many conferences use to collect papers). This is often the abstract or
+                        registration deadline, a few days before the full paper deadline.
+                        Always check the official page before you submit.
+                    </p>
+                </details>
+
+                <h2 class="group-title" id="openTitle">
+                    <i class="fas fa-door-open" aria-hidden="true"></i>
+                    Open deadlines <span class="count" id="openCount">0</span>
+                </h2>
+                <div class="conferences-grid" id="openGrid"></div>
+                <p class="empty-state hidden" id="openEmpty">No open deadlines right now.</p>
+
+                <div id="tbaGroup" class="hidden">
+                    <h2 class="group-title is-muted">
+                        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+                        Upcoming: deadline not announced yet <span class="count" id="tbaCount">0</span>
+                    </h2>
+                    <p class="group-note">
+                        The next edition of these events is expected, but the deadline is not out yet.
+                        The expected month is a guess based on the last edition's deadline.
+                    </p>
+                    <div class="conferences-grid" id="tbaGrid"></div>
+                </div>
+
+                <div id="closedGroup" class="hidden">
+                    <h2 class="group-title is-muted">
+                        <i class="fas fa-lock" aria-hidden="true"></i>
+                        Closed deadlines <span class="count" id="closedCount">0</span>
+                    </h2>
+                    <div class="conferences-grid hidden" id="closedGrid"></div>
+                    <button type="button" class="btn btn-secondary show-closed" id="toggleClosed"
+                        aria-controls="closedGrid" aria-expanded="false">
+                        <i class="fas fa-eye" aria-hidden="true"></i> Show closed deadlines
+                    </button>
+                </div>
+
+                <p class="load-error hidden" id="loadError">
+                    The deadline list could not be loaded. Please refresh the page in a minute.
+                </p>
+
+                <p class="data-source" id="dataSource"></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer is loaded here -->
+    <div id="footer-container"></div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/interactions.js"></script>
+
+    <script>
+        // Which kinds of deadline this page shows (see js/tracker.js).
+        window.TRACKER_CONFIG = { types: ["Community talk", "Fellowship"] };
+    </script>
+    <script src="js/tracker.js"></script>
+</body>
+
+</html>
