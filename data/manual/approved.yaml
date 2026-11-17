@@ -1,0 +1,29 @@
+# APPROVED - items a volunteer has checked. These ARE shown on the tracker.
+#
+# How items get here (see docs/volunteers.md):
+#   * from the review list: move an item from data/review/pending.yaml after checking it;
+#   * from a student suggestion (the "Suggest an opportunity" form): type it in.
+#
+# Use the same fields as the other files in data/manual/. The important ones:
+#   title, year, type (Conference, Workshop, Summer school, Community talk or Fellowship),
+#   deadline ('YYYY-MM-DD HH:MM:SS' or TBA), timezone (AoE, UTC, Africa/Kigali, ...),
+#   place (City, Country), field (list), link (official page).
+# Optional: full_name, submission_type, start, end, africa: true, parent, note,
+#   check_date: true, recurring: yearly, source, source_link.
+#
+# Example:
+# - title: Example School
+#   year: 2027
+#   type: Summer school
+#   submission_type: Application
+#   deadline: '2027-03-01 23:59:59'
+#   timezone: AoE
+#   start: 2027-07-05
+#   end: 2027-07-16
+#   place: Kigali, Rwanda
+#   field: [Machine Learning]
+#   link: https://example.org
+#   africa: true
+#   source: Student suggestion
+
+[]

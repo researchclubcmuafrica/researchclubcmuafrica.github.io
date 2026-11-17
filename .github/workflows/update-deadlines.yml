@@ -1,0 +1,57 @@
+# Updates data/deadlines.json once a day for tracker.html.
+# It runs scripts/update_deadlines.py and commits the JSON only when it changed.
+name: Update conference deadlines
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # every day at 03:00 UTC (05:00 in Kigali)
+  workflow_dispatch: # lets you run it by hand from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - data/african_venues.yml
+      - data/openreview_venues.yml
+      - data/full_names.yml
+      - data/manual/**
+      - data/review/**
+      - scripts/**
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-deadlines
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Build data/deadlines.json and the review list
+        # Papers with Code AI deadlines (kept by Hugging Face), OpenReview, awesome-mlss,
+        # Python Deadlines and the hand-kept files. Also adds new items from the ACL member
+        # portal to data/review/pending.yaml (not shown on the page until a volunteer approves them).
+        # OpenReview and the ACL portal must be read slowly, so this step takes a few minutes.
+        run: python scripts/update_deadlines.py
+
+      - name: Commit if the data changed
+        run: |
+          if [ -z "$(git status --porcelain -- data/deadlines.json data/review/pending.yaml)" ]; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/deadlines.json data/review/pending.yaml
+          git commit -m "Update deadlines and review list"
+          git push

@@ -1,0 +1,45 @@
+# African venues, kept by hand.
+# African workshops (such as AfricaNLP) are in data/manual/workshops.yaml,
+# and African summer schools (such as the Deep Learning Indaba) in data/manual/summer-schools.yaml.
+#
+# The daily job (scripts/update_deadlines.py) adds these to the ai-deadlines list
+# and writes data/deadlines.json. Edit this file when a new call for papers comes out.
+#
+# Fields:
+#   title            Short name shown on the card (the year is added after it).
+#   year             Year of the event.
+#   full_name        Full name, with acronyms spelled out.
+#   submission_type  What you submit, for example "Full paper", "Extended abstract", "Application".
+#   deadline         'YYYY-MM-DD HH:MM:SS', or 'TBA' if not announced yet.
+#   abstract_deadline (optional) Same format as deadline.
+#   timezone         AoE (Anywhere on Earth), UTC, UTC+2, Africa/Kigali, and so on.
+#   start, end       Event dates as YYYY-MM-DD. If unknown, leave them out and set date: 'To be announced'.
+#   place            City, Country.
+#   field            One or more fields, written in full.
+#   link             Official page.
+#   type             (optional) Conference, Workshop, Summer school, Community talk or Fellowship.
+#                    Leave it out for a conference.
+
+- title: AfriCHI
+  year: 2027
+  full_name: African Conference on Human-Computer Interaction
+  submission_type: Full paper
+  deadline: '2026-12-07 23:59:59'
+  timezone: AoE
+  start: 2027-06-28
+  end: 2027-07-02
+  place: Lagos, Nigeria
+  field: [Human-Computer Interaction]
+  link: https://2027.africhi.africa/tracks/papers
+
+- title: PowerAfrica
+  year: 2027
+  full_name: IEEE (Institute of Electrical and Electronics Engineers) PES/IAS PowerAfrica Conference, run by the Power and Energy Society and the Industry Applications Society
+  submission_type: Full paper
+  deadline: TBA
+  timezone: AoE
+  start: 2027-11-07
+  end: 2027-11-11
+  place: Dakar, Senegal
+  field: [Power and Energy Systems]
+  link: https://ieee-pes.org/events/upcoming-events/

@@ -1,0 +1,36 @@
+# Workshops that are NOT on OpenReview, kept by hand.
+#
+# Workshops of NeurIPS, ICLR, ICML and other conferences that use OpenReview are
+# found by the daily job (scripts/update_deadlines.py), so you do not need to add them here.
+#
+# Same fields as data/african_venues.yml, plus:
+#   parent   The conference the workshop belongs to, for example "EACL 2027".
+#            The card shows "Workshop at <parent>".
+#   africa   true for African workshops (shows an "African venue" label).
+#
+# Fields:
+#   title            Short name shown on the card (the year is added after it).
+#   year             Year of the event.
+#   full_name        Full name, with acronyms spelled out.
+#   submission_type  What you submit, for example "Full paper", "Extended abstract".
+#   deadline         'YYYY-MM-DD HH:MM:SS', or 'TBA' if not announced yet.
+#   abstract_deadline (optional) Same format as deadline.
+#   timezone         AoE (Anywhere on Earth), UTC, UTC+2, Africa/Kigali, and so on.
+#   start, end       Event dates as YYYY-MM-DD. If unknown, leave them out and set date: 'To be announced'.
+#   place            City, Country.
+#   field            One or more fields, written in full.
+#   link             Official page.
+
+- title: AfricaNLP
+  year: 2027
+  parent: EACL 2027
+  africa: true
+  full_name: 8th Workshop on African Natural Language Processing (at EACL, the European Chapter of the Association for Computational Linguistics)
+  submission_type: Full paper or extended abstract
+  deadline: '2026-12-15 23:59:59'
+  timezone: AoE
+  start: 2027-03-09
+  end: 2027-03-14
+  place: Athens, Greece (and online)
+  field: [Natural Language Processing]
+  link: https://africanlp.github.io/2027/

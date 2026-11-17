@@ -1,0 +1,342 @@
+# REVIEW LIST - items waiting for a volunteer to check them.
+#
+# The daily job adds new items here. Nothing in this file is shown on the tracker.
+# To publish an item: check it on its official page, fix any field, then MOVE it
+# (cut and paste) to data/manual/approved.yaml. See docs/volunteers.md.
+# To turn an item down: add the line   reject: true   to it. It then stays here (so it is
+# not added again) and is removed by the daily job once its deadline has passed.
+#
+# "link" points to the item's ACL portal page. When checking, replace it with the
+# official website, and check the deadline: the portal gives only a date, so the
+# deadline is set to 23:59 AoE (Anywhere on Earth). Fix the time and time zone if needed.
+
+- title: 26th Nordic Conference on Computational Linguistics (call for workshop proposals)
+  year: 2027
+  type: Workshop
+  submission_type: Workshop proposal
+  deadline: '2026-11-16 23:59:59'
+  timezone: AoE
+  place: Copenhagen, Denmark
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/workshop-proposals-26th-nordic-conference-computational-linguistics
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/workshop-proposals-26th-nordic-conference-computational-linguistics
+  found: '2026-11-15'
+  start: '2027-05-25'
+  end: '2027-05-28'
+- title: DACH-CSS 2027 Conference
+  year: 2027
+  type: Conference
+  submission_type: Paper
+  deadline: '2026-12-04 23:59:59'
+  timezone: AoE
+  place: Cologne, Germany
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/call-abstracts-dach-css-2027-conference
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/call-abstracts-dach-css-2027-conference
+  found: '2026-11-15'
+  start: '2027-04-22'
+  end: '2027-04-23'
+- title: The 2nd Workshop on NLP for the Iranian language family
+  year: 2027
+  type: Workshop
+  submission_type: Paper
+  deadline: '2026-12-15 23:59:59'
+  timezone: AoE
+  place: Athens, Greece
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/2nd-workshop-nlp-iranian-language-family
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/2nd-workshop-nlp-iranian-language-family
+  found: '2026-11-15'
+  start: '2027-03-09'
+  end: '2027-03-14'
+- title: CHOMPS Workshop colocated with EACL 2027
+  year: 2027
+  type: Workshop
+  submission_type: Paper
+  deadline: '2026-12-15 23:59:59'
+  timezone: AoE
+  place: Athens, Greece
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/call-papers-chomps-workshop-colocated-eacl-2027
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/call-papers-chomps-workshop-colocated-eacl-2027
+  found: '2026-11-15'
+  start: '2027-03-14'
+  end: '2027-03-14'
+- title: The 1st Multidisciplinary Workshop on NLP for Democracies (MultiDems)
+  year: 2027
+  type: Workshop
+  submission_type: Paper
+  deadline: '2026-12-23 23:59:59'
+  timezone: AoE
+  place: Athens, Greece
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/cfp-1st-multidisciplinary-workshop-nlp-democracies-multidems
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/cfp-1st-multidisciplinary-workshop-nlp-democracies-multidems
+  found: '2026-11-15'
+  start: '2027-03-09'
+  end: '2027-03-14'
+- title: TrustNLP 2027 @ COLING 2027
+  year: 2027
+  type: Workshop
+  submission_type: Paper
+  deadline: '2027-01-05 23:59:59'
+  timezone: AoE
+  place: Macau, China
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/first-call-papers-trustnlp-2027-coling-2027
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/first-call-papers-trustnlp-2027-coling-2027
+  found: '2026-11-15'
+  start: '2027-05-13'
+  end: '2027-05-14'
+- title: SlavicNLP Workshop 2027 co-located with EACL, Athens
+  year: 2027
+  type: Workshop
+  submission_type: Paper
+  deadline: '2027-01-09 23:59:59'
+  timezone: AoE
+  place: Athens, Greece
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/slavicnlp-workshop-2027-co-located-eacl-athens
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/slavicnlp-workshop-2027-co-located-eacl-athens
+  found: '2026-11-15'
+  start: '2027-03-09'
+  end: '2027-03-09'
+- title: AIGCTrustDetect@ COLING 2027
+  year: 2027
+  type: Workshop
+  submission_type: Shared task participation
+  deadline: '2027-01-10 23:59:59'
+  timezone: AoE
+  place: Macao, China
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/1st-call-papers-and-shared-tasks-participation-aigctrustdetect-coling-2027-1st-workshop-ai
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/1st-call-papers-and-shared-tasks-participation-aigctrustdetect-coling-2027-1st-workshop-ai
+  found: '2026-11-15'
+  start: '2027-05-09'
+  end: '2027-05-09'
+- title: Student Research Workshop at NAACL 2027
+  year: 2027
+  type: Workshop
+  submission_type: Paper
+  deadline: '2027-01-11 23:59:59'
+  timezone: AoE
+  place: San Francisco, USA
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/second-call-papers-call-papers-and-mentors-student-research-workshop-naacl-2027
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/second-call-papers-call-papers-and-mentors-student-research-workshop-naacl-2027
+  found: '2026-11-15'
+  start: '2027-06-01'
+  end: '2027-06-01'
+- title: Preconference on Computational Affective Linguistics @ SAS 2027
+  year: 2027
+  type: Workshop
+  submission_type: Shared task participation
+  deadline: '2027-01-11 23:59:59'
+  timezone: AoE
+  place: San Diego, USA
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/call-participation-preconference-computational-affective-linguistics-sas-2027
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/call-participation-preconference-computational-affective-linguistics-sas-2027
+  found: '2026-11-15'
+  start: '2027-03-04'
+  end: '2027-03-04'
+- title: 26th Nordic Conference on Computational Linguistics, Copenhagen, May 25–28, 2027
+  year: 2027
+  type: Conference
+  submission_type: Paper
+  deadline: '2027-01-18 23:59:59'
+  timezone: AoE
+  place: Copenhagen, Denmark
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/cfp-26th-nordic-conference-computational-linguistics-copenhagen-may-25-28-2027
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/cfp-26th-nordic-conference-computational-linguistics-copenhagen-may-25-28-2027
+  found: '2026-11-15'
+  start: '2027-05-25'
+  end: '2027-05-28'
+- title: The 10th International Conference on Historical Cryptology
+  year: 2027
+  type: Conference
+  submission_type: Paper
+  deadline: '2027-01-22 23:59:59'
+  timezone: AoE
+  place: Stockholm, Sweden
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/10th-international-conference-historical-cryptology
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/10th-international-conference-historical-cryptology
+  found: '2026-11-15'
+  start: '2027-06-22'
+  end: '2027-06-23'
+- title: 'FLAIRS-40 Special Track: Deliberative and Generative AI Hybrids and Foundations'
+  year: 2027
+  type: Conference
+  submission_type: Paper
+  deadline: '2027-01-22 23:59:59'
+  timezone: AoE
+  place: St. Pete Beach, USA
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/flairs-40-special-track-deliberative-and-generative-ai-hybrids-and-foundations
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/flairs-40-special-track-deliberative-and-generative-ai-hybrids-and-foundations
+  found: '2026-11-15'
+  start: '2027-05-24'
+  end: '2027-05-24'
+- title: 'Philology Meets AI: Second Workshop on the Analysis of Rare Scripts'
+  year: 2027
+  type: Workshop
+  submission_type: Paper
+  deadline: '2027-01-22 23:59:59'
+  timezone: AoE
+  place: Stockholm, Sweden
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/philology-meets-ai-second-workshop-analysis-rare-scripts
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/philology-meets-ai-second-workshop-analysis-rare-scripts
+  found: '2026-11-15'
+  start: '2027-06-21'
+  end: '2027-06-21'
+- title: LangCode 2027 Shared Task 2, Adversarial Prompt Detection @ NAACL 2027
+  year: 2027
+  type: Workshop
+  submission_type: Shared task participation
+  deadline: '2027-01-24 23:59:59'
+  timezone: AoE
+  place: San Francisco, United States
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/call-participation-langcode-2027-shared-task-2-adversarial-prompt-detection-naacl-2027
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/call-participation-langcode-2027-shared-task-2-adversarial-prompt-detection-naacl-2027
+  found: '2026-11-15'
+  start: '2027-06-01'
+  end: '2027-06-05'
+- title: 'BanglaKnight: Shared Task on Adversarial Bangla Prompt Classification at BLP 2027 (NAACL 2027): Call for Participation'
+  year: 2027
+  type: Workshop
+  submission_type: Shared task participation
+  deadline: '2027-01-24 23:59:59'
+  timezone: AoE
+  place: San Francisco, USA
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/banglaknight-shared-task-adversarial-bangla-prompt-classification-blp-2027-naacl-2027-call
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/banglaknight-shared-task-adversarial-bangla-prompt-classification-blp-2027-naacl-2027-call
+  found: '2026-11-15'
+  start: '2027-06-01'
+  end: '2027-06-05'
+- title: 'SemEval-2027 Task 6: MMCultureQA'
+  year: 2027
+  type: Workshop
+  submission_type: Shared task participation
+  deadline: '2027-01-31 23:59:59'
+  timezone: AoE
+  place: To be announced
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/call-participation-semeval-2027-task-6-mmcultureqa-0
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/call-participation-semeval-2027-task-6-mmcultureqa-0
+  found: '2026-11-15'
+  start: '2027-01-10'
+  end: '2027-01-31'
+- title: 5th Workshop on Artificial Intelligence for Scientific Publications
+  year: 2027
+  type: Workshop
+  submission_type: Paper
+  deadline: '2027-02-05 23:59:59'
+  timezone: AoE
+  place: San Francisco, USA
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/5th-workshop-artificial-intelligence-scientific-publications
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/5th-workshop-artificial-intelligence-scientific-publications
+  found: '2026-11-15'
+  start: '2027-06-01'
+  end: '2027-06-05'
+- title: SyntaxFest 2027
+  year: 2027
+  type: Conference
+  submission_type: Paper
+  deadline: '2027-04-22 23:59:59'
+  timezone: AoE
+  place: Prague, Czechia
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/syntaxfest-2027
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/syntaxfest-2027
+  found: '2026-11-15'
+  start: '2027-08-30'
+  end: '2027-09-03'
+- title: 'XAI4Who: Audience-Aware Explainability for Language Technologies at ACL 2027'
+  year: 2027
+  type: Workshop
+  submission_type: Paper
+  deadline: '2027-04-25 23:59:59'
+  timezone: AoE
+  place: Kyoto, Japan
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/xai4who-audience-aware-explainability-language-technologies-acl-2027
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/xai4who-audience-aware-explainability-language-technologies-acl-2027
+  found: '2026-11-15'
+  start: '2027-08-18'
+  end: '2027-08-19'
+- title: Recent Advances in Natural Language Processing (RANLP'27)
+  year: 2027
+  type: Conference
+  submission_type: Paper
+  deadline: '2027-05-25 23:59:59'
+  timezone: AoE
+  place: Varna, Bulgaria
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/recent-advances-natural-language-processing-8
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/recent-advances-natural-language-processing-8
+  found: '2026-11-15'
+  start: '2027-09-06'
+  end: '2027-09-08'
+- title: 'SemEval-2027 Task 3: Semantic Change Across Multiple Time Periods'
+  year: 2027
+  type: Workshop
+  submission_type: Shared task participation
+  deadline: TBA
+  timezone: AoE
+  place: Kyoto, Japan
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/semeval-2027-task-3-semantic-change-across-multiple-time-periods-2nd-call-participation
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/semeval-2027-task-3-semantic-change-across-multiple-time-periods-2nd-call-participation
+  found: '2026-11-15'
+  start: '2027-08-17'
+  end: '2027-08-17'

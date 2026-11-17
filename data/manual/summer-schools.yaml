@@ -1,0 +1,74 @@
+# Summer schools kept by hand, especially African ones that are missing from awesome-mlss.
+#
+# Same fields as data/african_venues.yml, plus:
+#   africa       true for African schools (shows an "African venue" label).
+#   check_date   true when the date could not be confirmed on the official site.
+#                The card shows "Check date" instead of a deadline. Remove it once you confirm a date.
+#   recurring    yearly  -> when the deadline passes, the card says "Check next year's date",
+#                           so volunteers know this entry needs updating.
+#   note         (optional) One short line shown on the card.
+#
+# Only write dates you have confirmed on the official site. If you cannot confirm one,
+# leave the deadline as TBA and set check_date: true.
+#
+# Fields:
+#   title            Short name shown on the card (the year is added after it).
+#   year             Year of the event.
+#   full_name        Full name, with acronyms spelled out.
+#   submission_type  What you send, for example "Application".
+#   deadline         'YYYY-MM-DD HH:MM:SS', or TBA if not announced yet.
+#   timezone         AoE (Anywhere on Earth), UTC, UTC+2, Africa/Kigali, and so on.
+#   start, end       Event dates as YYYY-MM-DD. If unknown, leave them out and set date: 'To be announced'.
+#   place            City, Country.
+#   field            One or more fields, written in full.
+#   link             Official page.
+
+# Checked on deeplearningindaba.com/2027 on 15 Nov 2026:
+# "South Africa, 2027. Dates and venue announced soon." Applications open in 2027.
+- title: Deep Learning Indaba
+  year: 2027
+  full_name: Deep Learning Indaba, the yearly meeting of the African machine learning community
+  submission_type: Application
+  deadline: TBA
+  timezone: Africa/Johannesburg
+  date: To be announced
+  place: South Africa
+  field: [Machine Learning]
+  link: https://deeplearningindaba.com/2027/
+  africa: true
+  check_date: true
+  recurring: yearly
+
+# Checked on deeplearningindaba.com/2026/indabax on 15 Nov 2026:
+# applications open in October 2026; closing date "will be announced soon".
+- title: IndabaX
+  year: 2027
+  full_name: IndabaX, locally organised Deep Learning Indaba events held in many African countries
+  submission_type: Application to host an event
+  deadline: TBA
+  timezone: AoE
+  date: To be announced
+  place: Many African countries
+  field: [Machine Learning]
+  link: https://deeplearningindaba.com/2026/indabax/
+  africa: true
+  check_date: true
+  recurring: yearly
+  note: Applications are for teams who want to host an IndabaX in their country. Each event sets its own dates.
+
+# Checked on datascienceafrica.org on 15 Nov 2026: DSA 2026 was held 20-24 July 2026
+# at Makerere University, Kampala. Nothing announced yet for 2027.
+- title: Data Science Africa
+  year: 2027
+  full_name: Data Science Africa (DSA) summer school and workshop
+  submission_type: Application
+  deadline: TBA
+  timezone: Africa/Kampala
+  date: To be announced
+  place: To be announced
+  field: [Machine Learning, Data Science]
+  link: https://www.datascienceafrica.org/
+  africa: true
+  check_date: true
+  recurring: yearly
+  note: Last edition was DSA 2026, 20-24 July 2026, Makerere University, Kampala, Uganda.
