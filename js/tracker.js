@@ -1,6 +1,6 @@
 // Deadline tracker: loads data/deadlines.json and draws the cards.
-// Used by tracker.html and workshops.html. A page can set window.TRACKER_CONFIG = { types: [...] }
-// before loading this file, to show only some types (for example Workshop and Summer school).
+// Used by conferences.html, workshops.html, summerschools.html and talks-fellowships.html.
+// Each page sets window.TRACKER_CONFIG = { types: [...] } before loading this file, to show only those types.
 (function () {
     // ================================================================================
     // "Suggest an opportunity" form. PUT THE GOOGLE FORM LINK HERE (this is the only place).
@@ -151,7 +151,8 @@
         if (st === "open") pills.append(el("span", "pill pill-open", "Open"));
         if (st === "closed") pills.append(el("span", "pill pill-closed", "Closed"));
         if (st === "tba") pills.append(el("span", "pill pill-tba", checkLabel(conf, now) || "Upcoming"));
-        if (conf.type && conf.type !== "Conference") pills.append(el("span", "pill pill-type", conf.type));
+        // Type badge only on a page that mixes types (on the Workshops page every card is a workshop).
+        if (!SINGLE_TYPE && conf.type && conf.type !== "Conference") pills.append(el("span", "pill pill-type", conf.type));
         if (conf.africa) pills.append(el("span", "pill pill-africa", "African venue"));
         body.append(pills);
 
@@ -203,7 +204,9 @@
             const ai = el("i", "fas fa-external-link-alt");
             ai.setAttribute("aria-hidden", "true");
             const lastSite = conf.upcoming && !conf.openreview_link;
-            a.append(ai, document.createTextNode(lastSite ? "Last edition's website" : "View Details"));
+            const apply = conf.type === "Summer school" || conf.type === "Fellowship";
+            a.append(ai, document.createTextNode(
+                lastSite ? "Last edition's website" : apply ? "View and Apply" : "View Details"));
             a.setAttribute("aria-label", `View details for ${conf.name} (opens in a new tab)`);
             body.append(a);
         }
@@ -216,8 +219,11 @@
         const now = Date.now();
         const field = document.getElementById("fieldFilter").value;
         const type = document.getElementById("typeFilter").value;
+        const searchBox = document.getElementById("searchInput");
+        const words = (searchBox ? searchBox.value : "").toLowerCase().split(/\s+/).filter(Boolean);
         const list = conferences.filter(c =>
-            (field === "all" || c.fields.includes(field)) && (type === "all" || c.type === type));
+            (field === "all" || c.fields.includes(field)) && (type === "all" || c.type === type) &&
+            words.every(w => c.searchText.includes(w)));
 
         const open = list.filter(c => status(c, now) === "open").sort((a, b) => a.deadlineMs - b.deadlineMs);
         // Upcoming: soonest expected first, then ones whose expected date has passed, then no guess at all.
@@ -238,7 +244,13 @@
         document.getElementById("openCount").textContent = open.length;
         document.getElementById("tbaCount").textContent = tba.length;
         document.getElementById("closedCount").textContent = closed.length;
-        document.getElementById("openEmpty").classList.toggle("hidden", open.length > 0);
+        const empty = document.getElementById("openEmpty");
+        const filtered = words.length > 0 || field !== "all" || type !== "all";
+        empty.textContent = !filtered ? "No open deadlines right now."
+            : list.length === 0 ? "Nothing matches your search. Try fewer words or another field."
+                : tba.length > 0 ? "No open deadlines match your search. See the upcoming ones below."
+                    : "Only closed deadlines match your search. Use \"Show closed deadlines\" below to see them.";
+        empty.classList.toggle("hidden", open.length > 0);
         document.getElementById("tbaGroup").classList.toggle("hidden", tba.length === 0);
         document.getElementById("closedGroup").classList.toggle("hidden", closed.length === 0);
         document.getElementById("closedGrid").classList.toggle("hidden", !showClosed);
@@ -267,6 +279,7 @@
 
     // Which types this page shows (null = all). Set by the page in window.TRACKER_CONFIG.
     const ALLOWED_TYPES = (window.TRACKER_CONFIG && window.TRACKER_CONFIG.types) || null;
+    const SINGLE_TYPE = !!ALLOWED_TYPES && ALLOWED_TYPES.length === 1;
 
     // Kinds of opportunity, in the same order as the data script.
     const TYPES = ["Conference", "Workshop", "Summer school", "Community talk", "Fellowship"];
@@ -278,7 +291,10 @@
     function fillTypeFilter() {
         // Only one type on this page: no need for a Type filter.
         if (ALLOWED_TYPES && ALLOWED_TYPES.length === 1) {
-            document.getElementById("typeFilter").hidden = true;
+            const select = document.getElementById("typeFilter");
+            const group = select.closest(".filter-group");
+            if (group) group.hidden = true;
+            select.hidden = true;
             document.querySelector('label[for="typeFilter"]').hidden = true;
             return;
         }
@@ -332,6 +348,11 @@
                 openreviewMs: c.openreview_deadline_utc ? Date.parse(c.openreview_deadline_utc) : null,
                 expectedMs: c.expected_deadline_utc ? Date.parse(c.expected_deadline_utc) : null,
             })).filter(c => !ALLOWED_TYPES || ALLOWED_TYPES.includes(c.type));
+            // Text the search box looks in: name, full name, fields, place, main conference, note.
+            conferences.forEach(c => {
+                c.searchText = [c.name, c.full_name, c.fields.join(" "), c.location, c.parent, c.note, c.type]
+                    .filter(Boolean).join(" ").toLowerCase();
+            });
             fillTypeFilter();
             fillFieldFilter();
             render();
@@ -387,6 +408,8 @@
         setUpSuggestLink();
         document.getElementById("fieldFilter").addEventListener("change", render);
         document.getElementById("typeFilter").addEventListener("change", render);
+        const searchBox = document.getElementById("searchInput");
+        if (searchBox) searchBox.addEventListener("input", render);
         document.getElementById("toggleClosed").addEventListener("click", function () {
             showClosed = !showClosed;
             this.setAttribute("aria-expanded", String(showClosed));

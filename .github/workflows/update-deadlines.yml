@@ -1,4 +1,4 @@
-# Updates data/deadlines.json once a day for tracker.html.
+# Updates data/deadlines.json once a day for the deadline pages (conferences.html, workshops.html, summerschools.html, talks-fellowships.html).
 # It runs scripts/update_deadlines.py and, only when the data changed, opens a pull
 # request from the bot/update-deadlines branch (main does not accept direct pushes).
 name: Update conference deadlines
@@ -70,5 +70,5 @@ jobs:
           else
             gh pr create --base main --head "$BRANCH" \
               --title "Update deadlines and review list" \
-              --body "Automatic update from the **Update conference deadlines** workflow (run ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}). Merge this to publish the new deadlines on tracker.html."
+              --body "Automatic update from the **Update conference deadlines** workflow (run ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}). Merge this to publish the new deadlines on the website."
           fi

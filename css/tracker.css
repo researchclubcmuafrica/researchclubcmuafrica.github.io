@@ -1,5 +1,6 @@
-/* Styles for the deadline tracker pages (tracker.html, workshops.html). */
-/* Red header, same as conferences_new.html */
+/* Styles for the deadline tracker pages (conferences.html, workshops.html, summerschools.html, talks-fellowships.html).
+   Colours: only the site's brand red (--primary-*) and greys (--gray-*), as on the other pages. */
+/* Red header, same as the other pages of the site */
 .tracker-header {
     text-align: center;
     padding: 4rem 2rem 3rem;
@@ -38,31 +39,38 @@
     line-height: 1.6;
 }
 
-.last-updated {
-    margin-top: 1rem;
-    font-size: 0.9rem !important;
-    opacity: 0.9;
+/* Small line under the stats: last update + who keeps the list */
+.tracker-header .header-note {
+    margin: 0.75rem auto 0;
+    max-width: 640px;
+    font-size: 0.85rem;
+    opacity: 0.85;
 }
 
-.last-updated i {
-    margin-right: 0.35rem;
+.header-note i {
+    margin-right: 0.3rem;
 }
 
+/* Counts as plain text (not pills, so they don't look like buttons) */
 .tracker-stats {
     display: flex;
     justify-content: center;
-    gap: 1rem;
     flex-wrap: wrap;
     margin-top: 1.5rem;
 }
 
 .tracker-stat {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 50px;
-    padding: 0.4rem 1.1rem;
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+.tracker-stat:empty {
+    display: none;
+}
+
+.tracker-stat + .tracker-stat:not(:empty) {
+    border-left: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 /* Filter box, overlapping the header */
@@ -91,6 +99,60 @@
 .filters-container label {
     font-weight: 600;
     color: var(--gray-700, #374151);
+    white-space: nowrap;
+}
+
+/* A label and its list stay together when the row wraps */
+.filter-group {
+    flex: 1 1 240px;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.filter-group[hidden] {
+    display: none;
+}
+
+.filter-group .category-select {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+/* With two lists (Type and Field), the search box gets its own row */
+.filters-container:has(.filter-group:not([hidden]) + .filter-group) .search-box {
+    flex-basis: 100%;
+}
+
+/* Search box (same as the old conferences and summer schools pages) */
+.search-box {
+    flex: 999 1 300px;
+    position: relative;
+}
+
+.search-box i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-500, #6b7280);
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color, #c41230);
+    box-shadow: 0 0 0 3px rgba(196, 18, 48, 0.1);
 }
 
 .category-select {
@@ -109,22 +171,46 @@
     box-shadow: 0 0 0 3px rgba(196, 18, 48, 0.1);
 }
 
-/* Time zone note */
+/* Time zone note: one line, opens for the details */
 .tz-note {
     max-width: 800px;
     margin: 0 auto 2rem;
-    padding: 1rem 1.25rem;
-    background: #f8fafc;
-    border-left: 4px solid #c41230;
+    padding: 0.85rem 1.25rem;
+    background: var(--gray-50, #f8fafc);
+    border-left: 4px solid var(--primary-color, #c41230);
     border-radius: 6px;
-    color: #374151;
+    color: var(--gray-700, #374151);
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
-.tz-note i {
-    color: #c41230;
+.tz-note summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.tz-note summary::-webkit-details-marker {
+    display: none;
+}
+
+.tz-note summary i {
+    color: var(--primary-color, #c41230);
     margin-right: 0.4rem;
+}
+
+.tz-note .tz-more {
+    color: var(--primary-color, #c41230);
+    font-weight: 600;
+    text-decoration: underline;
+    margin-left: 0.25rem;
+}
+
+.tz-note[open] .tz-more {
+    display: none;
+}
+
+.tz-note p {
+    margin: 0.6rem 0 0;
 }
 
 .group-title {
@@ -135,6 +221,14 @@
     display: flex;
     align-items: center;
     gap: 0.6rem;
+}
+
+.group-title i {
+    color: var(--primary-color, #c41230);
+}
+
+.group-title.is-muted i {
+    color: var(--gray-400, #9ca3af);
 }
 
 .group-note {
@@ -152,7 +246,7 @@
     padding: 0.1rem 0.7rem;
 }
 
-/* Cards, same as conferences_new.html */
+/* Cards (same look as the old hand-made conference cards) */
 .conferences-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -234,20 +328,22 @@
     margin-top: 0.2rem;
 }
 
+/* Countdown: grey when there is time, brand red when it is close */
 .days-many {
-    color: #16a34a;
+    color: var(--gray-600, #4b5563);
 }
 
 .days-few {
-    color: #d97706;
+    color: var(--primary-color, #c41230);
 }
 
 .days-urgent {
-    color: #dc2626;
+    color: var(--primary-color, #c41230);
+    font-weight: 800;
 }
 
 .days-passed {
-    color: #94a3b8;
+    color: var(--gray-400, #9ca3af);
 }
 
 .conference-content {
@@ -273,29 +369,32 @@
     padding: 0.15rem 0.6rem;
 }
 
+/* Badges: brand red for status, greys for the rest (no green/amber/blue) */
 .pill-open {
-    background: #dcfce7;
-    color: #166534;
+    background: #fde7ea;
+    color: var(--primary-hover, #a00e26);
 }
 
 .pill-closed {
-    background: #f1f5f9;
-    color: #64748b;
+    background: var(--gray-100, #f1f5f9);
+    color: var(--gray-500, #6b7280);
 }
 
 .pill-tba {
-    background: #fef3c7;
-    color: #92400e;
+    background: var(--white, #fff);
+    color: var(--gray-600, #4b5563);
+    border: 1px solid var(--gray-300, #d1d5db);
 }
 
 .pill-type {
-    background: #e0e7ff;
-    color: #3730a3;
+    background: var(--gray-100, #f1f5f9);
+    color: var(--gray-700, #374151);
 }
 
 .pill-africa {
-    background: #fde7ea;
-    color: #a00e26;
+    background: var(--white, #fff);
+    color: var(--primary-color, #c41230);
+    border: 1px solid var(--primary-color, #c41230);
 }
 
 .conference-title {
@@ -399,12 +498,19 @@
     }
 }
 
-/* Pill-shaped link in the red header (same style as on conferences_new.html) */
+/* Pill-shaped links in the red header  */
+.header-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
 .header-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 1rem;
     background: rgba(255, 255, 255, 0.18);
     color: white;
     padding: 0.5rem 1.25rem;
@@ -427,13 +533,6 @@
     margin-right: 0.4rem;
 }
 
-/* Line about who keeps the list up to date */
-.volunteer-note {
-    margin-top: 0.75rem;
-    font-size: 0.9rem !important;
-    opacity: 0.9;
-}
-
 .header-link.is-disabled {
     opacity: 0.7;
     cursor: default;
@@ -441,4 +540,22 @@
 
 .header-link.is-disabled:hover {
     background: rgba(255, 255, 255, 0.18);
+}
+
+/* "Suggest an opportunity": a plain text link under the page links, not another pill */
+.header-links .header-link-quiet {
+    flex-basis: 100%;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.header-links .header-link-quiet:hover,
+.header-links .header-link-quiet:focus,
+.header-links .header-link-quiet.is-disabled:hover {
+    background: none;
 }
