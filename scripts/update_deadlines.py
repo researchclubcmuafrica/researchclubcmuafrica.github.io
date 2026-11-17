@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build data/deadlines.json for tracker.html.
+"""Build data/deadlines.json for the deadline pages (conferences.html, workshops.html, summerschools.html, talks-fellowships.html).
 
 Steps:
   1. Read conference deadlines from the AI deadlines list that Hugging Face keeps

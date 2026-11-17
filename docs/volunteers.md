@@ -1,7 +1,9 @@
 # Guide for volunteers: keeping the deadline tracker up to date
 
-The tracker (`tracker.html`) and the workshops page (`workshops.html`) show deadlines from
-`data/deadlines.json`. A GitHub Action rebuilds that file every day at 05:00 Kigali time.
+Four pages show deadlines from `data/deadlines.json`, one kind of item each: `conferences.html`
+(conferences), `workshops.html` (workshops), `summerschools.html` (summer schools) and
+`talks-fellowships.html` (community talks and fellowships). The `type` of an item decides its page.
+A GitHub Action rebuilds that file every day at 05:00 Kigali time.
 
 | Kind of item | How it gets on the page |
 |---|---|
