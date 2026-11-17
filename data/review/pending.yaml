@@ -10,21 +10,6 @@
 # official website, and check the deadline: the portal gives only a date, so the
 # deadline is set to 23:59 AoE (Anywhere on Earth). Fix the time and time zone if needed.
 
-- title: 26th Nordic Conference on Computational Linguistics (call for workshop proposals)
-  year: 2027
-  type: Workshop
-  submission_type: Workshop proposal
-  deadline: '2026-11-16 23:59:59'
-  timezone: AoE
-  place: Copenhagen, Denmark
-  field:
-  - Natural Language Processing
-  link: https://www.aclweb.org/portal/content/workshop-proposals-26th-nordic-conference-computational-linguistics
-  source: ACL member portal
-  source_link: https://www.aclweb.org/portal/content/workshop-proposals-26th-nordic-conference-computational-linguistics
-  found: '2026-11-15'
-  start: '2027-05-25'
-  end: '2027-05-28'
 - title: DACH-CSS 2027 Conference
   year: 2027
   type: Conference
@@ -40,6 +25,21 @@
   found: '2026-11-15'
   start: '2027-04-22'
   end: '2027-04-23'
+- title: PART Shared Task on Parameterized Argumentative Reasoning at EACL2027
+  year: 2027
+  type: Workshop
+  submission_type: Shared task participation
+  deadline: '2026-12-11 23:59:59'
+  timezone: AoE
+  place: Athens, Greece
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/part-shared-task-parameterized-argumentative-reasoning-eacl2027
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/part-shared-task-parameterized-argumentative-reasoning-eacl2027
+  found: '2026-11-17'
+  start: '2027-03-09'
+  end: '2027-03-14'
 - title: The 2nd Workshop on NLP for the Iranian language family
   year: 2027
   type: Workshop
@@ -69,6 +69,21 @@
   source_link: https://www.aclweb.org/portal/content/call-papers-chomps-workshop-colocated-eacl-2027
   found: '2026-11-15'
   start: '2027-03-14'
+  end: '2027-03-14'
+- title: The Fourteenth Workshop on NLP for Similar Languages, Varieties and Dialects
+  year: 2027
+  type: Workshop
+  submission_type: Paper
+  deadline: '2026-12-15 23:59:59'
+  timezone: AoE
+  place: Athens, Greece
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/fourteenth-workshop-nlp-similar-languages-varieties-and-dialects
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/fourteenth-workshop-nlp-similar-languages-varieties-and-dialects
+  found: '2026-11-17'
+  start: '2027-03-09'
   end: '2027-03-14'
 - title: The 1st Multidisciplinary Workshop on NLP for Democracies (MultiDems)
   year: 2027
