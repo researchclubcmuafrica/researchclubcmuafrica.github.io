@@ -1,0 +1,104 @@
+# OpenReview venues to show on the tracker, kept by hand.
+#
+# You do NOT need to list conferences that are already in the ai-deadlines list
+# (ICLR, NeurIPS, ICML, CVPR, ...). The script finds those on OpenReview by itself
+# and adds the OpenReview date to their card.
+#
+# List here only extra venues you want on the page. OpenReview has about 1,000
+# active venues, most of them outside the club's fields, so nothing else is added.
+# Full list: https://openreview.net/venues
+#
+# Fields:
+#   openreview  The venue ID on OpenReview with {year} in place of the year.
+#               Find it in the venue's address: openreview.net/group?id=<ID>
+#   title       Short name shown on the card (the year is added after it).
+#   field       One or more fields, written in full.
+#   africa      true for African venues (shows an "African venue" label).
+
+# --- African venues and workshops ---
+- openreview: AfriLang_AI/{year}/Conference
+  title: AfriLang AI
+  field: [Natural Language Processing]
+  africa: true
+
+- openreview: MICCAI.org/{year}/Workshop/AFRICAI
+  title: AFRICAI
+  field: [Medical Imaging]
+  africa: true
+
+- openreview: NeurIPS.cc/{year}/Workshop/Africa_in_AI
+  title: Africa at NeurIPS
+  field: [Machine Learning]
+  africa: true
+
+# --- Machine learning ---
+- openreview: cclear.cc/CLeaR/{year}/Conference
+  title: CLeaR
+  field: [Machine Learning]
+
+- openreview: L4DC.org/{year}/Conference
+  title: L4DC
+  field: [Machine Learning, Robotics]
+
+- openreview: MLSys.org/{year}/Conference
+  title: MLSys
+  field: [Machine Learning]
+
+- openreview: logconference.io/LOG/{year}/Conference
+  title: LoG
+  field: [Machine Learning]
+
+- openreview: ACML.org/{year}/Conference
+  title: ACML
+  field: [Machine Learning]
+
+- openreview: NLDL.org/{year}/Conference
+  title: NLDL
+  field: [Machine Learning]
+
+- openreview: algorithmiclearningtheory.org/ALT/{year}/Conference
+  title: ALT
+  field: [Machine Learning]
+
+# --- Computer vision and medical imaging ---
+- openreview: bmva.org/BMVC/{year}/Conference
+  title: BMVC
+  field: [Computer Vision]
+
+- openreview: afcv.org/ACCV/{year}/Conference
+  title: ACCV
+  field: [Computer Vision]
+
+- openreview: MIDL.io/{year}/Conference
+  title: MIDL
+  field: [Medical Imaging, Machine Learning]
+
+- openreview: ipmi-conf.org/IPMI/{year}/Conference
+  title: IPMI
+  field: [Medical Imaging]
+
+# --- Language ---
+- openreview: aclweb.org/AACL-IJCNLP/{year}/Conference
+  title: IJCNLP & AACL  # same name as in the ai-deadlines list, so it is not shown twice
+  field: [Natural Language Processing]
+
+- openreview: SIGARAB.org/ArabicNLP/{year}/Conference
+  title: ArabicNLP
+  field: [Natural Language Processing]
+
+# --- Society, health and optimisation ---
+- openreview: ACM.org/FAccT/{year}/Conference
+  title: FAccT
+  field: [Fairness]
+
+- openreview: ACM.org/EAAMO/{year}/Conference
+  title: EAAMO
+  field: [Fairness]
+
+- openreview: IEEE.org/EMBS/BHI/{year}/Conference
+  title: BHI
+  field: [Health Informatics]
+
+- openreview: cpaior.org/CPAIOR/{year}/Conference
+  title: CPAIOR
+  field: [Optimization Methods]

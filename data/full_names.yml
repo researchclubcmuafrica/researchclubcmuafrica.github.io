@@ -1,0 +1,10 @@
+# Full conference names, kept by hand.
+#
+# The page shows a full name under each short name, so acronyms are spelled out.
+# Most full names come from the data sources. Add a line here when a card has none,
+# or when you want to replace the one a source gives.
+#
+# Format:   SHORT NAME: Full name
+# The short name is the card title without the year (for "ICWM 2027", write ICWM).
+
+ICWM: International Conference on World Models
