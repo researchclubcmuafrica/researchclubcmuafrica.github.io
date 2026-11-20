@@ -295,6 +295,21 @@
   found: '2026-11-15'
   start: '2027-06-01'
   end: '2027-06-05'
+- title: 3rd Workshop on Computational Humor
+  year: 2027
+  type: Workshop
+  submission_type: Paper
+  deadline: '2027-02-05 23:59:59'
+  timezone: AoE
+  place: San Francisco, USA
+  field:
+  - Natural Language Processing
+  link: https://www.aclweb.org/portal/content/3rd-workshop-computational-humor
+  source: ACL member portal
+  source_link: https://www.aclweb.org/portal/content/3rd-workshop-computational-humor
+  found: '2026-11-20'
+  start: '2027-06-01'
+  end: '2027-06-01'
 - title: SyntaxFest 2027
   year: 2027
   type: Conference
